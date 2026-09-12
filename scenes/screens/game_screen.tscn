@@ -1,0 +1,467 @@
+[gd_scene format=3 uid="uid://depvk2coryhsp"]
+
+[ext_resource type="Script" uid="uid://iepascnjhthy" path="res://scripts/game_screen.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/game/board_view.tscn" id="2_board"]
+[ext_resource type="PackedScene" path="res://scenes/game/piece_tray.tscn" id="3_tray"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_popup.tscn" id="4_pause"]
+[ext_resource type="PackedScene" path="res://scenes/ui/result_popup.tscn" id="5_result"]
+[ext_resource type="Script" path="res://scripts/game/game_session.gd" id="6_session"]
+[ext_resource type="PackedScene" path="res://scenes/ui/drag_piece_preview.tscn" id="7_drag"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoardFrame"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.690196, 0.545098, 0.321569, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.254902, 0.164706, 0.0823529, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="GameScreen" type="Control" unique_id=671056095]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="." unique_id=751414390]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.203922, 0.14902, 0.0901961, 1)
+
+[node name="SideDecorLeft" type="ColorRect" parent="." unique_id=1737892408]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.341176, 0.258824, 0.137255, 0.7)
+
+[node name="SideDecorRight" type="ColorRect" parent="." unique_id=915384580]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.341176, 0.258824, 0.137255, 0.7)
+
+[node name="ContentCenter" type="CenterContainer" parent="." unique_id=1127377220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PortraitContent" type="MarginContainer" parent="ContentCenter" unique_id=2011920377]
+custom_minimum_size = Vector2(720, 1280)
+layout_mode = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 26
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 26
+
+[node name="MainLayout" type="VBoxContainer" parent="ContentCenter/PortraitContent" unique_id=401779901]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Header" type="HBoxContainer" parent="ContentCenter/PortraitContent/MainLayout" unique_id=571279702]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="PauseButton" type="Button" parent="ContentCenter/PortraitContent/MainLayout/Header" unique_id=1051682394]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(92, 68)
+layout_mode = 2
+text = "Пауза"
+
+[node name="HeaderText" type="VBoxContainer" parent="ContentCenter/PortraitContent/MainLayout/Header" unique_id=903109608]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="ExpeditionTitle" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText" unique_id=1654553847]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 30
+text = "Экспедиция 1 — Древний двор"
+horizontal_alignment = 2
+
+[node name="FragmentProgress" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText" unique_id=705776830]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760784, 0.835294, 0.611765, 1)
+theme_override_font_sizes/font_size = 22
+text = "M1 — базовая головоломка"
+horizontal_alignment = 2
+
+[node name="ObjectiveText" type="Label" parent="ContentCenter/PortraitContent/MainLayout" unique_id=1160356646]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 22
+text = "Перетаскивайте фигуры на поле и собирайте линии"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BoardFrame" type="PanelContainer" parent="ContentCenter/PortraitContent/MainLayout" unique_id=541883573]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoardFrame")
+
+[node name="Board" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame" unique_id=1859167373 instance=ExtResource("2_board")]
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell01" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell02" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell03" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell04" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell05" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell06" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell07" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell08" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell09" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell10" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell11" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell12" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell13" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell14" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell15" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell16" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell17" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell18" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell19" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell20" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell21" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell22" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell23" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell24" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell25" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell26" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell27" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell28" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell29" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell30" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell31" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell32" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell33" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell34" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell35" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell36" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell37" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell38" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell39" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell40" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell41" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell42" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell43" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell44" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell45" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell46" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell47" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell48" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell49" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell50" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell51" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell52" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell53" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell54" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell55" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell56" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell57" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell58" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell59" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell60" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell61" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell62" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell63" index="1"]
+anchors_preset = -1
+
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell64" index="1"]
+anchors_preset = -1
+
+[node name="TrayCaption" type="Label" parent="ContentCenter/PortraitContent/MainLayout" unique_id=1039996115]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+text = "Фигуры"
+horizontal_alignment = 1
+
+[node name="PieceTray" parent="ContentCenter/PortraitContent/MainLayout" unique_id=1840694966 instance=ExtResource("3_tray")]
+
+[node name="Actions" type="HBoxContainer" parent="ContentCenter/PortraitContent/MainLayout" unique_id=2092121438]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="UndoButton" type="Button" parent="ContentCenter/PortraitContent/MainLayout/Actions" unique_id=1979767949]
+custom_minimum_size = Vector2(210, 64)
+layout_mode = 2
+text = "Отменить"
+
+[node name="HintButton" type="Button" parent="ContentCenter/PortraitContent/MainLayout/Actions" unique_id=1661159885]
+custom_minimum_size = Vector2(210, 64)
+layout_mode = 2
+text = "Подсказка"
+
+[node name="NoMovesLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.956863, 0.47451, 0.352941, 1)
+theme_override_font_sizes/font_size = 20
+text = "NO_MOVES — нет доступных ходов"
+horizontal_alignment = 1
+
+[node name="Stats" type="HBoxContainer" parent="ContentCenter/PortraitContent/MainLayout" unique_id=589944491]
+layout_mode = 2
+alignment = 1
+
+[node name="MovesLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Stats" unique_id=903683038]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+text = "Ходы: 0"
+
+[node name="ScoreLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Stats" unique_id=958632143]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+text = "Счёт: 0"
+horizontal_alignment = 2
+
+[node name="PausePopup" parent="." unique_id=1472598138 instance=ExtResource("4_pause")]
+layout_mode = 1
+
+[node name="ResultPopup" parent="." unique_id=1565151705 instance=ExtResource("5_result")]
+layout_mode = 1
+
+[node name="DragPreview" parent="." instance=ExtResource("7_drag")]
+
+[node name="GameSession" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_session")
+board_view_path = NodePath("../ContentCenter/PortraitContent/MainLayout/BoardFrame/Board")
+piece_tray_path = NodePath("../ContentCenter/PortraitContent/MainLayout/PieceTray")
+drag_preview_path = NodePath("../DragPreview")
+moves_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Stats/MovesLabel")
+no_moves_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/NoMovesLabel")
+pause_popup_path = NodePath("../PausePopup")
+result_popup_path = NodePath("../ResultPopup")
+
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell01"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell02"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell03"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell04"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell05"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell06"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell07"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell08"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell09"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell10"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell11"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell12"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell13"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell14"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell15"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell16"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell17"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell18"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell19"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell20"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell21"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell22"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell23"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell24"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell25"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell26"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell27"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell28"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell29"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell30"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell31"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell32"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell33"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell34"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell35"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell36"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell37"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell38"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell39"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell40"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell41"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell42"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell43"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell44"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell45"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell46"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell47"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell48"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell49"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell50"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell51"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell52"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell53"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell54"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell55"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell56"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell57"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell58"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell59"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell60"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell61"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell62"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell63"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell64"]
+[editable path="ContentCenter/PortraitContent/MainLayout/PieceTray"]
+[editable path="ContentCenter/PortraitContent/MainLayout/PieceTray/LSlot"]
+[editable path="ContentCenter/PortraitContent/MainLayout/PieceTray/TSlot"]
+[editable path="ContentCenter/PortraitContent/MainLayout/PieceTray/LineSlot"]
+[editable path="PausePopup"]
+[editable path="ResultPopup"]

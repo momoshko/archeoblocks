@@ -1,0 +1,147 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/expedition_select.gd" id="1_script"]
+
+[node name="ExpeditionSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.211765, 0.152941, 0.0901961, 1)
+
+[node name="ContentCenter" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PortraitContent" type="MarginContainer" parent="ContentCenter"]
+custom_minimum_size = Vector2(720, 1280)
+layout_mode = 2
+theme_override_constants/margin_left = 34
+theme_override_constants/margin_top = 52
+theme_override_constants/margin_right = 34
+theme_override_constants/margin_bottom = 52
+
+[node name="Layout" type="VBoxContainer" parent="ContentCenter/PortraitContent"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Header" type="HBoxContainer" parent="ContentCenter/PortraitContent/Layout"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BackButton" type="Button" parent="ContentCenter/PortraitContent/Layout/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 66)
+layout_mode = 2
+text = "Назад"
+
+[node name="Title" type="Label" parent="ContentCenter/PortraitContent/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 38
+text = "Экспедиции"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="ContentCenter/PortraitContent/Layout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+text = "Выберите место раскопок"
+horizontal_alignment = 1
+
+[node name="ExpeditionGrid" type="GridContainer" parent="ContentCenter/PortraitContent/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
+columns = 3
+
+[node name="Expedition01" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = false
+text = "1\nДревний двор\nОткрыто"
+
+[node name="Expedition02" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = true
+text = "2\nЗакрыто"
+
+[node name="Expedition03" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = true
+text = "3\nЗакрыто"
+
+[node name="Expedition04" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = true
+text = "4\nЗакрыто"
+
+[node name="Expedition05" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = true
+text = "5\nЗакрыто"
+
+[node name="Expedition06" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = true
+text = "6\nЗакрыто"
+
+[node name="Expedition07" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = true
+text = "7\nЗакрыто"
+
+[node name="Expedition08" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = true
+text = "8\nЗакрыто"
+
+[node name="Expedition09" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = true
+text = "9\nЗакрыто"
+
+[node name="Expedition10" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = true
+text = "10\nЗакрыто"
+
+[node name="Expedition11" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = true
+text = "11\nЗакрыто"
+
+[node name="Expedition12" type="Button" parent="ContentCenter/PortraitContent/Layout/ExpeditionGrid"]
+custom_minimum_size = Vector2(200, 190)
+layout_mode = 2
+disabled = true
+text = "12\nЗакрыто"

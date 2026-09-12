@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/piece_slot.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleSlot"]
+bg_color = Color(0.882353, 0.8, 0.627451, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.384314, 0.286275, 0.160784, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[node name="PieceSlot" type="PanelContainer"]
+custom_minimum_size = Vector2(178, 140)
+layout_mode = 2
+mouse_filter = 0
+theme_override_styles/panel = SubResource("StyleSlot")
+script = ExtResource("1_script")
+
+[node name="SlotLayout" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="PieceName" type="Label" parent="SlotLayout"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 17
+text = "L"
+horizontal_alignment = 1
+
+[node name="PieceCanvas" type="Control" parent="SlotLayout"]
+custom_minimum_size = Vector2(150, 92)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="PieceCell01" type="ColorRect" parent="SlotLayout/PieceCanvas"]
+layout_mode = 0
+mouse_filter = 2
+offset_left = 46.0
+offset_top = 8.0
+offset_right = 72.0
+offset_bottom = 34.0
+color = Color(0.176471, 0.513726, 0.309804, 1)
+
+[node name="PieceCell02" type="ColorRect" parent="SlotLayout/PieceCanvas"]
+layout_mode = 0
+mouse_filter = 2
+offset_left = 46.0
+offset_top = 36.0
+offset_right = 72.0
+offset_bottom = 62.0
+color = Color(0.176471, 0.513726, 0.309804, 1)
+
+[node name="PieceCell03" type="ColorRect" parent="SlotLayout/PieceCanvas"]
+layout_mode = 0
+mouse_filter = 2
+offset_left = 46.0
+offset_top = 64.0
+offset_right = 72.0
+offset_bottom = 90.0
+color = Color(0.176471, 0.513726, 0.309804, 1)
+
+[node name="PieceCell04" type="ColorRect" parent="SlotLayout/PieceCanvas"]
+layout_mode = 0
+mouse_filter = 2
+offset_left = 74.0
+offset_top = 64.0
+offset_right = 100.0
+offset_bottom = 90.0
+color = Color(0.176471, 0.513726, 0.309804, 1)
+
+[node name="PieceCell05" type="ColorRect" parent="SlotLayout/PieceCanvas"]
+visible = false
+layout_mode = 0
+mouse_filter = 2
+offset_left = 102.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 90.0
+color = Color(0.176471, 0.513726, 0.309804, 1)

@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/drag_piece_preview.gd" id="1_script"]
+
+[node name="DragPiecePreview" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="PreviewCell01" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+mouse_filter = 2
+color = Color(0.239216, 0.741176, 0.380392, 0.78)
+
+[node name="PreviewCell02" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_right = 101.0
+offset_bottom = 48.0
+mouse_filter = 2
+color = Color(0.239216, 0.741176, 0.380392, 0.78)
+
+[node name="PreviewCell03" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 53.0
+offset_right = 48.0
+offset_bottom = 101.0
+mouse_filter = 2
+color = Color(0.239216, 0.741176, 0.380392, 0.78)
+
+[node name="PreviewCell04" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 53.0
+offset_right = 101.0
+offset_bottom = 101.0
+mouse_filter = 2
+color = Color(0.239216, 0.741176, 0.380392, 0.78)
+
+[node name="PreviewCell05" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 106.0
+offset_top = 53.0
+offset_right = 154.0
+offset_bottom = 101.0
+mouse_filter = 2
+color = Color(0.239216, 0.741176, 0.380392, 0.78)
+

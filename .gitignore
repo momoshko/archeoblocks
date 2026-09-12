@@ -1,0 +1,23 @@
+﻿# Godot 4
+.godot/
+
+# Build / export output
+build/
+dist/
+exports/
+
+# Export credentials must never be committed
+export_credentials.cfg
+
+# Temporary / backup files
+*.tmp
+*.bak
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/

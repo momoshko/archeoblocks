@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PieceDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="1_definition"]
+
+[resource]
+script = ExtResource("1_definition")
+id = &"small_t"
+display_name = "Маленькая T"
+cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 1)])
+cosmetic_color = Color(0.74902, 0.301961, 0.2, 1)
+

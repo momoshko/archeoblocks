@@ -1,0 +1,130 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/simple_back_screen.gd" id="1_script"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.211765, 0.152941, 0.0901961, 1)
+
+[node name="ContentCenter" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PortraitContent" type="MarginContainer" parent="ContentCenter"]
+custom_minimum_size = Vector2(720, 1280)
+layout_mode = 2
+theme_override_constants/margin_left = 56
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 56
+theme_override_constants/margin_bottom = 90
+
+[node name="Layout" type="VBoxContainer" parent="ContentCenter/PortraitContent"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Header" type="HBoxContainer" parent="ContentCenter/PortraitContent/Layout"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="ContentCenter/PortraitContent/Layout/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 66)
+layout_mode = 2
+text = "Назад"
+
+[node name="Title" type="Label" parent="ContentCenter/PortraitContent/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 38
+text = "Настройки"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SettingsPanel" type="PanelContainer" parent="ContentCenter/PortraitContent/Layout"]
+layout_mode = 2
+
+[node name="SettingsRows" type="VBoxContainer" parent="ContentCenter/PortraitContent/Layout/SettingsPanel"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="MusicRow" type="HBoxContainer" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/MusicRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 27
+text = "Музыка"
+vertical_alignment = 1
+
+[node name="MusicToggle" type="CheckButton" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/MusicRow"]
+custom_minimum_size = Vector2(150, 64)
+layout_mode = 2
+button_pressed = true
+text = "Вкл."
+
+[node name="SoundRow" type="HBoxContainer" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+
+[node name="SoundLabel" type="Label" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/SoundRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 27
+text = "Звуки"
+vertical_alignment = 1
+
+[node name="SoundToggle" type="CheckButton" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/SoundRow"]
+custom_minimum_size = Vector2(150, 64)
+layout_mode = 2
+button_pressed = true
+text = "Вкл."
+
+[node name="LanguageRow" type="HBoxContainer" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+
+[node name="LanguageLabel" type="Label" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/LanguageRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 27
+text = "Язык"
+vertical_alignment = 1
+
+[node name="LanguageOption" type="OptionButton" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/LanguageRow"]
+custom_minimum_size = Vector2(220, 64)
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "Русский"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
+
+[node name="Note" type="Label" parent="ContentCenter/PortraitContent/Layout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+text = "В M0 настройки служат редактируемым визуальным примером."
+horizontal_alignment = 1
+autowrap_mode = 2
+
