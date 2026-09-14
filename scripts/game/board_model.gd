@@ -73,6 +73,13 @@ func get_full_columns() -> Array[int]:
 
 
 func clear_lines(rows: Array[int], columns: Array[int]) -> Array[Vector2i]:
+	var cleared_cells := get_line_cells(rows, columns)
+	for cell in cleared_cells:
+		_cells[cell.y][cell.x] = null
+	return cleared_cells
+
+
+func get_line_cells(rows: Array[int], columns: Array[int]) -> Array[Vector2i]:
 	var cleared_lookup: Dictionary = {}
 	for y in rows:
 		if y < 0 or y >= HEIGHT:
@@ -87,7 +94,6 @@ func clear_lines(rows: Array[int], columns: Array[int]) -> Array[Vector2i]:
 
 	var cleared_cells: Array[Vector2i] = []
 	for cell: Vector2i in cleared_lookup:
-		_cells[cell.y][cell.x] = null
 		cleared_cells.append(cell)
 	return cleared_cells
 
@@ -98,6 +104,15 @@ func has_legal_placement(shape: Array[Vector2i]) -> bool:
 			if can_place(shape, Vector2i(x, y)):
 				return true
 	return false
+
+
+func count_legal_placements(shape: Array[Vector2i]) -> int:
+	var count := 0
+	for y in HEIGHT:
+		for x in WIDTH:
+			if can_place(shape, Vector2i(x, y)):
+				count += 1
+	return count
 
 
 func get_value(cell: Vector2i) -> Variant:
@@ -114,3 +129,11 @@ func occupied_count() -> int:
 				count += 1
 	return count
 
+
+func capture_state() -> Array:
+	return _cells.duplicate(true)
+
+
+func restore_state(state: Array) -> void:
+	assert(state.size() == HEIGHT, "BoardModel state must contain 8 rows")
+	_cells = state.duplicate(true)

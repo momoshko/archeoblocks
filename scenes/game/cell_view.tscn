@@ -1,6 +1,18 @@
-[gd_scene format=3 uid="uid://dnwyxibgs1ve4"]
+[gd_scene load_steps=18 format=3 uid="uid://dnwyxibgs1ve4"]
 
 [ext_resource type="Script" path="res://scripts/ui/cell_view.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/cell_excavated_depth0_v2.png" id="2_excavated"]
+[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/cell_soil_depth1_v2.png" id="3_soil"]
+[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/cell_soil_depth2_v2.png" id="4_strong"]
+[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/artifact_hint_depth2_v2.png" id="5_hint2"]
+[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/artifact_hint_depth1_v2.png" id="6_hint1"]
+[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/preview_valid_v2.png" id="7_valid"]
+[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/preview_invalid_v2.png" id="8_invalid"]
+[ext_resource type="Texture2D" path="res://assets/blocks/core_blocks_pack_v1/block_green_v1.png" id="9_green"]
+[ext_resource type="Resource" path="res://resources/visuals/core_block_textures_v1.tres" id="10_blocks"]
+[ext_resource type="PackedScene" path="res://scenes/game/stone_obstacle_view.tscn" id="11_stone"]
+[ext_resource type="PackedScene" path="res://scenes/game/root_obstacle_view.tscn" id="12_root"]
+[ext_resource type="PackedScene" path="res://scenes/game/root_growth_warning.tscn" id="13_root_warning"]
 
 [sub_resource type="StyleBoxFlat" id="StyleSelection"]
 bg_color = Color(0, 0, 0, 0)
@@ -14,14 +26,51 @@ corner_radius_top_right = 7
 corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 
+[sub_resource type="StyleBoxFlat" id="StyleArtifactTarget"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.792157, 0.25098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleArtifactTargetEmphasis"]
+bg_color = Color(1, 0.815686, 0.321569, 0.08)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.901961, 0.552941, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleArtifactTargetRing"]
+bg_color = Color(0.196078, 0.113725, 0.0352941, 0.72)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.847059, 0.352941, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
 [node name="CellView" type="Control" unique_id=1062485386]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
 script = ExtResource("1_script")
+block_texture_set = ExtResource("10_blocks")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1541206171]
+[node name="Background" type="TextureRect" parent="." unique_id=1541206171]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,22 +78,80 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.258824, 0.184314, 0.105882, 1)
+texture_filter = 2
+texture = ExtResource("2_excavated")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="ArtifactHint" type="ColorRect" parent="." unique_id=51880285]
+[node name="ArtifactHint" type="Control" parent="." unique_id=51880285]
 visible = false
+z_index = 1
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.24
-anchor_top = 0.24
-anchor_right = 0.76
-anchor_bottom = 0.76
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.976471, 0.764706, 0.258824, 0.5)
 
-[node name="SoilVisual" type="ColorRect" parent="." unique_id=1349798796]
+[node name="BurialDepth2" type="TextureRect" parent="ArtifactHint"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_filter = 2
+texture = ExtResource("5_hint2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BurialDepth1" type="TextureRect" parent="ArtifactHint"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_filter = 2
+texture = ExtResource("6_hint1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SoilVisual" type="TextureRect" parent="." unique_id=1349798796]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_filter = 2
+texture = ExtResource("3_soil")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StrongSoilVisual" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_filter = 2
+texture = ExtResource("4_strong")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DigFlash" type="ColorRect" parent="."]
+visible = false
+z_index = 6
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,55 +163,138 @@ offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.666667, 0.505882, 0.294118, 0.88)
+color = Color(1, 0.890196, 0.541176, 0.62)
 
-[node name="BlockVisual" type="ColorRect" parent="." unique_id=1951806786]
+[node name="BlockVisual" type="TextureRect" parent="." unique_id=1951806786]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_filter = 2
+texture = ExtResource("9_green")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StoneObstacle" parent="." instance=ExtResource("11_stone")]
+layout_mode = 1
+
+[node name="RootObstacle" parent="." instance=ExtResource("12_root")]
+layout_mode = 1
+
+[node name="ArtifactTargetBorder" type="Panel" parent="."]
+visible = false
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleArtifactTarget")
+
+[node name="PredictionEmphasis" type="Panel" parent="ArtifactTargetBorder"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 7.0
-offset_right = -7.0
-offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.176471, 0.513726, 0.309804, 1)
+theme_override_styles/panel = SubResource("StyleArtifactTargetEmphasis")
 
-[node name="ValidPreview" type="ColorRect" parent="."]
+[node name="TargetRing" type="Panel" parent="ArtifactTargetBorder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleArtifactTargetRing")
+
+[node name="TargetDiamond" type="ColorRect" parent="ArtifactTargetBorder/TargetRing"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.785398
+pivot_offset = Vector2(3, 3)
+mouse_filter = 2
+color = Color(1, 0.886275, 0.486275, 1)
+
+[node name="ValidPreview" type="TextureRect" parent="."]
 visible = false
+z_index = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.239216, 0.741176, 0.380392, 0.5)
+texture_filter = 2
+texture = ExtResource("7_valid")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="InvalidPreview" type="ColorRect" parent="."]
+[node name="InvalidPreview" type="TextureRect" parent="."]
 visible = false
+z_index = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.85098, 0.180392, 0.117647, 0.58)
+texture_filter = 2
+texture = ExtResource("8_invalid")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HintGhost" type="TextureRect" parent="."]
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture_filter = 2
+texture = ExtResource("9_green")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="SelectionHighlight" type="Panel" parent="." unique_id=677626497]
 visible = false
+z_index = 5
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -113,3 +303,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleSelection")
+
+[node name="RootGrowthWarning" parent="." instance=ExtResource("13_root_warning")]
+layout_mode = 1

@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=19 format=3]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="3"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_horizontal.tres" id="4"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_vertical.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/pieces/small_l.tres" id="6"]
+[ext_resource type="Resource" path="res://resources/pieces/small_t.tres" id="7"]
+[ext_resource type="Resource" path="res://resources/pieces/square_2.tres" id="8"]
+[ext_resource type="Resource" path="res://resources/pieces/domino_vertical.tres" id="9"]
+[sub_resource type="Resource" id="FA"]
+script = ExtResource("2")
+id = &"burial_tablet_a"
+cells = Array[Vector2i]([Vector2i(2,3)])
+[sub_resource type="Resource" id="FB"]
+script = ExtResource("2")
+id = &"burial_tablet_b"
+cells = Array[Vector2i]([Vector2i(5,4)])
+[sub_resource type="Resource" id="R1"]
+script = ExtResource("3")
+cell = Vector2i(1,3)
+[sub_resource type="Resource" id="R2"]
+script = ExtResource("3")
+cell = Vector2i(2,2)
+[sub_resource type="Resource" id="R3"]
+script = ExtResource("3")
+cell = Vector2i(5,5)
+[sub_resource type="Resource" id="R4"]
+script = ExtResource("3")
+cell = Vector2i(6,4)
+[sub_resource type="Resource" id="R5"]
+script = ExtResource("3")
+cell = Vector2i(7,1)
+[resource]
+script = ExtResource("1")
+id = &"overgrown_catacombs_03"
+title_ru = "Заросшие катакомбы 3 — На пути к находке"
+card_title_ru = "3 — На пути к находке"
+debug_name = "Overgrown Catacombs 3 - Roots by the Find"
+artifact_id = &"burial_tablet"
+artifact_name_ru = "Погребальная табличка"
+objective_ru = "Доберитесь до таблички сквозь корни"
+instruction_ru = "Выбирайте: продолжить раскопки или остановить ближайшее разрастание."
+normal_soil_cells = Array[Vector2i]([Vector2i(0,3), Vector2i(1,3), Vector2i(2,3), Vector2i(3,3), Vector2i(4,3), Vector2i(5,3), Vector2i(6,3), Vector2i(7,3), Vector2i(0,4), Vector2i(1,4), Vector2i(2,4), Vector2i(3,4), Vector2i(4,4), Vector2i(5,4), Vector2i(6,4), Vector2i(7,4)])
+strong_soil_cells = Array[Vector2i]([Vector2i(5,4)])
+artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FA"), SubResource("FB")])
+root_obstacles = Array[RootObstacleDefinition]([SubResource("R1"), SubResource("R2"), SubResource("R3"), SubResource("R4"), SubResource("R5")])
+opening_piece_set = Array[PieceDefinition]([ExtResource("4"), ExtResource("9"), ExtResource("6")])
+curated_piece_sequence = Array[PieceDefinition]([ExtResource("7"), ExtResource("5"), ExtResource("8"), ExtResource("6"), ExtResource("4"), ExtResource("9"), ExtResource("8"), ExtResource("7"), ExtResource("5")])
+expected_moves_min = 18
+expected_moves_max = 25

@@ -7,11 +7,14 @@ signal drag_ended(pointer_position: Vector2)
 
 @export_range(12.0, 40.0, 1.0) var preview_cell_size := 26.0
 @export_range(0.0, 12.0, 1.0) var preview_gap := 2.0
+@export_range(0.0, 24.0, 1.0) var preview_padding := 5.0
+@export var block_texture_set: BlockTextureSet
 
 @onready var piece_name: Label = $SlotLayout/PieceName
 @onready var piece_canvas: Control = $SlotLayout/PieceCanvas
+@onready var hint_highlight: Panel = $HintHighlight
 
-var _piece_cells: Array[ColorRect] = []
+var _piece_cells: Array[TextureRect] = []
 var _definition: PieceDefinition
 var _available := false
 var _interaction_enabled := true
@@ -22,9 +25,11 @@ var _touch_index := -1
 
 func _ready() -> void:
 	for child in piece_canvas.get_children():
-		if child is ColorRect:
+		if child is TextureRect:
 			_piece_cells.append(child)
+	piece_canvas.resized.connect(_layout_piece_preview)
 	_refresh_visual()
+	call_deferred("_layout_piece_preview")
 
 
 func set_definition(value: PieceDefinition) -> void:
@@ -55,6 +60,10 @@ func cancel_drag() -> void:
 	_touch_index = -1
 
 
+func set_hint_highlight(enabled: bool) -> void:
+	hint_highlight.visible = enabled
+
+
 func _refresh_visual() -> void:
 	if not is_node_ready():
 		return
@@ -68,6 +77,13 @@ func _refresh_visual() -> void:
 
 	piece_name.text = _definition.display_name
 	modulate = Color.WHITE
+	_layout_piece_preview()
+	_update_mouse_filter()
+
+
+func _layout_piece_preview() -> void:
+	if not is_node_ready() or _definition == null or _definition.cells.is_empty():
+		return
 	var minimum := _definition.cells[0]
 	var maximum := _definition.cells[0]
 	for cell in _definition.cells:
@@ -75,17 +91,39 @@ func _refresh_visual() -> void:
 		minimum.y = mini(minimum.y, cell.y)
 		maximum.x = maxi(maximum.x, cell.x)
 		maximum.y = maxi(maximum.y, cell.y)
-	var step := preview_cell_size + preview_gap
-	var visual_size := Vector2(maximum - minimum + Vector2i.ONE) * preview_cell_size
-	visual_size += Vector2(maximum - minimum) * preview_gap
+	var dimensions := maximum - minimum + Vector2i.ONE
+	var available_size := piece_canvas.size - Vector2.ONE * preview_padding * 2.0
+	var fit_x := (available_size.x - preview_gap * (dimensions.x - 1)) / dimensions.x
+	var fit_y := (available_size.y - preview_gap * (dimensions.y - 1)) / dimensions.y
+	var cell_size := minf(preview_cell_size, minf(fit_x, fit_y))
+	var step := cell_size + preview_gap
+	var visual_size := Vector2(dimensions) * cell_size
+	visual_size += Vector2(dimensions - Vector2i.ONE) * preview_gap
 	var start := (piece_canvas.size - visual_size) * 0.5
 	for index in mini(_piece_cells.size(), _definition.cells.size()):
 		var piece_cell := _piece_cells[index]
 		piece_cell.position = start + Vector2(_definition.cells[index] - minimum) * step
-		piece_cell.size = Vector2.ONE * preview_cell_size
-		piece_cell.color = _definition.cosmetic_color
+		piece_cell.size = Vector2.ONE * cell_size
+		piece_cell.texture = BlockTextureResolver.texture_for_color(
+			block_texture_set,
+			_definition.cosmetic_color
+		)
+		piece_cell.modulate = Color.WHITE
 		piece_cell.show()
-	_update_mouse_filter()
+
+
+func get_piece_visual_bounds() -> Rect2:
+	var bounds := Rect2()
+	var has_visible_cell := false
+	for piece_cell in _piece_cells:
+		if not piece_cell.visible:
+			continue
+		if not has_visible_cell:
+			bounds = Rect2(piece_cell.position, piece_cell.size)
+			has_visible_cell = true
+		else:
+			bounds = bounds.merge(Rect2(piece_cell.position, piece_cell.size))
+	return bounds
 
 
 func _update_mouse_filter() -> void:

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=18 format=3]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="3"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_horizontal.tres" id="4"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_vertical.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/pieces/small_l.tres" id="6"]
+[ext_resource type="Resource" path="res://resources/pieces/small_t.tres" id="7"]
+[ext_resource type="Resource" path="res://resources/pieces/square_2.tres" id="8"]
+[ext_resource type="Resource" path="res://resources/pieces/domino_horizontal.tres" id="9"]
+[sub_resource type="Resource" id="FA"]
+script = ExtResource("2")
+id = &"copper_pendant_a"
+cells = Array[Vector2i]([Vector2i(2, 2)])
+[sub_resource type="Resource" id="FB"]
+script = ExtResource("2")
+id = &"copper_pendant_b"
+cells = Array[Vector2i]([Vector2i(5, 6)])
+[sub_resource type="Resource" id="R1"]
+script = ExtResource("3")
+cell = Vector2i(0,1)
+[sub_resource type="Resource" id="R2"]
+script = ExtResource("3")
+cell = Vector2i(1,1)
+[sub_resource type="Resource" id="R3"]
+script = ExtResource("3")
+cell = Vector2i(6,5)
+[sub_resource type="Resource" id="R4"]
+script = ExtResource("3")
+cell = Vector2i(7,5)
+[resource]
+script = ExtResource("1")
+id = &"overgrown_catacombs_02"
+title_ru = "Заросшие катакомбы 2 — Первый очаг"
+card_title_ru = "2 — Первый очаг"
+debug_name = "Overgrown Catacombs 2 - First Nest"
+artifact_id = &"copper_pendant"
+artifact_name_ru = "Медная подвеска"
+objective_ru = "Найдите обе части подвески"
+instruction_ru = "Не оставляйте очаги без внимания — они отнимают свободное место."
+normal_soil_cells = Array[Vector2i]([Vector2i(2,2), Vector2i(5,6), Vector2i(0,2), Vector2i(1,2), Vector2i(3,2), Vector2i(4,2), Vector2i(6,2), Vector2i(7,2), Vector2i(0,6), Vector2i(1,6), Vector2i(2,6), Vector2i(3,6), Vector2i(4,6), Vector2i(6,6), Vector2i(7,6)])
+artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FA"), SubResource("FB")])
+root_obstacles = Array[RootObstacleDefinition]([SubResource("R1"), SubResource("R2"), SubResource("R3"), SubResource("R4")])
+opening_piece_set = Array[PieceDefinition]([ExtResource("6"), ExtResource("7"), ExtResource("9")])
+curated_piece_sequence = Array[PieceDefinition]([ExtResource("4"), ExtResource("5"), ExtResource("8"), ExtResource("9"), ExtResource("6"), ExtResource("7"), ExtResource("4"), ExtResource("8"), ExtResource("5")])
+expected_moves_min = 15
+expected_moves_max = 22

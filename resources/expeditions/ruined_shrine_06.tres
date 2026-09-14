@@ -1,0 +1,92 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=25 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1_expedition"]
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2_fragment"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="3_stone"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_horizontal.tres" id="4_line_h"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_vertical.tres" id="5_line_v"]
+[ext_resource type="Resource" path="res://resources/pieces/line_4_horizontal.tres" id="6_line4"]
+[ext_resource type="Resource" path="res://resources/pieces/large_l.tres" id="7_large_l"]
+[ext_resource type="Resource" path="res://resources/pieces/plus_5.tres" id="8_plus"]
+[ext_resource type="Resource" path="res://resources/pieces/small_l.tres" id="9_l"]
+[ext_resource type="Resource" path="res://resources/pieces/small_t.tres" id="10_t"]
+[ext_resource type="Resource" path="res://resources/pieces/domino_vertical.tres" id="11_domino"]
+
+[sub_resource type="Resource" id="FragmentA"]
+script = ExtResource("2_fragment")
+id = &"incense_vessel_a"
+cells = Array[Vector2i]([Vector2i(1, 1)])
+
+[sub_resource type="Resource" id="FragmentB"]
+script = ExtResource("2_fragment")
+id = &"incense_vessel_b"
+cells = Array[Vector2i]([Vector2i(6, 3)])
+
+[sub_resource type="Resource" id="FragmentC"]
+script = ExtResource("2_fragment")
+id = &"incense_vessel_c"
+cells = Array[Vector2i]([Vector2i(2, 6)])
+
+[sub_resource type="Resource" id="StoneA"]
+script = ExtResource("3_stone")
+cell = Vector2i(3, 0)
+durability = 2
+
+[sub_resource type="Resource" id="StoneB"]
+script = ExtResource("3_stone")
+cell = Vector2i(3, 1)
+durability = 1
+
+[sub_resource type="Resource" id="StoneC"]
+script = ExtResource("3_stone")
+cell = Vector2i(3, 2)
+durability = 2
+
+[sub_resource type="Resource" id="StoneD"]
+script = ExtResource("3_stone")
+cell = Vector2i(3, 4)
+durability = 1
+
+[sub_resource type="Resource" id="StoneE"]
+script = ExtResource("3_stone")
+cell = Vector2i(3, 5)
+durability = 2
+
+[sub_resource type="Resource" id="StoneF"]
+script = ExtResource("3_stone")
+cell = Vector2i(3, 6)
+durability = 1
+
+[sub_resource type="Resource" id="StoneG"]
+script = ExtResource("3_stone")
+cell = Vector2i(1, 4)
+durability = 1
+
+[sub_resource type="Resource" id="StoneH"]
+script = ExtResource("3_stone")
+cell = Vector2i(5, 4)
+durability = 2
+
+[sub_resource type="Resource" id="StoneI"]
+script = ExtResource("3_stone")
+cell = Vector2i(6, 4)
+durability = 1
+
+[resource]
+script = ExtResource("1_expedition")
+id = &"ruined_shrine_06"
+title_ru = "Разрушенное святилище 6 — Два пути"
+card_title_ru = "6 — Два пути"
+debug_name = "Ruined Shrine 6 - Two Paths"
+artifact_id = &"incense_vessel"
+artifact_name_ru = "Сосуд для благовоний"
+objective_ru = "Откройте три части сосуда для благовоний"
+instruction_ru = "Выбирайте: продвигать раскопки или сначала освободить поле"
+normal_soil_cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1), Vector2i(7, 1), Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2), Vector2i(5, 2), Vector2i(6, 2), Vector2i(7, 2), Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(6, 3), Vector2i(7, 3), Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4), Vector2i(5, 4), Vector2i(6, 4), Vector2i(7, 4), Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5), Vector2i(4, 5), Vector2i(5, 5), Vector2i(6, 5), Vector2i(7, 5), Vector2i(0, 6), Vector2i(1, 6), Vector2i(2, 6), Vector2i(3, 6), Vector2i(4, 6), Vector2i(5, 6), Vector2i(6, 6), Vector2i(7, 6), Vector2i(0, 7), Vector2i(1, 7), Vector2i(2, 7), Vector2i(3, 7), Vector2i(4, 7), Vector2i(5, 7), Vector2i(6, 7), Vector2i(7, 7)])
+strong_soil_cells = Array[Vector2i]([Vector2i(1, 1), Vector2i(6, 3)])
+artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FragmentA"), SubResource("FragmentB"), SubResource("FragmentC")])
+stone_obstacles = Array[StoneObstacleDefinition]([SubResource("StoneA"), SubResource("StoneB"), SubResource("StoneC"), SubResource("StoneD"), SubResource("StoneE"), SubResource("StoneF"), SubResource("StoneG"), SubResource("StoneH"), SubResource("StoneI")])
+opening_piece_set = Array[PieceDefinition]([ExtResource("4_line_h"), ExtResource("9_l"), ExtResource("11_domino")])
+curated_piece_sequence = Array[PieceDefinition]([ExtResource("7_large_l"), ExtResource("5_line_v"), ExtResource("10_t"), ExtResource("8_plus"), ExtResource("6_line4"), ExtResource("11_domino"), ExtResource("9_l"), ExtResource("4_line_h"), ExtResource("5_line_v")])
+expected_moves_min = 25
+expected_moves_max = 35

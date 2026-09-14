@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ChapterDefinition" load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/chapter_definition.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_01.tres" id="2"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_02.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_03.tres" id="4"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_04.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_05.tres" id="6"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_06.tres" id="7"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_07.tres" id="8"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_08.tres" id="9"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_09.tres" id="10"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_10.tres" id="11"]
+
+[resource]
+script = ExtResource("1")
+id = &"overgrown_catacombs"
+number_ru = "Глава III"
+title_ru = "Заросшие катакомбы"
+subtitle_ru = "Корни не ждут"
+completion_title_ru = "Заросшие катакомбы исследованы"
+expeditions = Array[ExpeditionDefinition]([ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11")])
+completion_reward_coins = 200

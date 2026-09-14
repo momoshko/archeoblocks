@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://cjlc2sag6i33"]
 
 [ext_resource type="PackedScene" path="res://scenes/screens/main_menu.tscn" id="1_menu"]
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" unique_id=548726836]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,8 +10,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MainMenu" parent="." instance=ExtResource("1_menu")]
+[node name="MainMenu" parent="." unique_id=964738430 instance=ExtResource("1_menu")]
 layout_mode = 1
 
-[editable path="MainMenu"]
+[node name="SideDecorLeft" parent="MainMenu" index="1"]
+anchors_preset = 4
+grow_horizontal = 0
 
+[editable path="MainMenu"]

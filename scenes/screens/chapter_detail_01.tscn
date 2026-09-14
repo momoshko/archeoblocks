@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/screens/chapter_detail.tscn" id="1_detail"]
+[ext_resource type="Resource" path="res://resources/chapters/ancient_courtyard.tres" id="2_chapter"]
+
+[node name="ChapterDetailOne" instance=ExtResource("1_detail")]
+chapter_definition = ExtResource("2_chapter")
+expedition_scene_paths = PackedStringArray("res://scenes/screens/game_screen.tscn", "res://scenes/screens/game_screen_02.tscn", "res://scenes/screens/game_screen_03.tscn", "res://scenes/screens/game_screen_04.tscn", "res://scenes/screens/game_screen_05.tscn", "res://scenes/screens/game_screen_06.tscn")

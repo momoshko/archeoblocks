@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1_expedition"]
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2_fragment"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_horizontal.tres" id="3_line"]
+[ext_resource type="Resource" path="res://resources/pieces/domino_horizontal.tres" id="4_domino"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ancient_courtyard/courtyard_seal_full_v1.png" id="5_artifact"]
+
+[sub_resource type="Resource" id="FragmentSeal"]
+script = ExtResource("2_fragment")
+id = &"courtyard_seal"
+cells = Array[Vector2i]([Vector2i(3, 3)])
+
+[resource]
+script = ExtResource("1_expedition")
+id = &"expedition_01"
+title_ru = "Древний двор 1 — Первая линия"
+card_title_ru = "1 — Первая линия"
+debug_name = "Ancient Courtyard 1 - First Line"
+artifact_id = &"courtyard_seal"
+artifact_name_ru = "Печать двора"
+full_artifact_texture = ExtResource("5_artifact")
+objective_ru = "Откройте печать под грунтом"
+instruction_ru = "Заполните строку или столбец — линия снимет грунт"
+normal_soil_cells = Array[Vector2i]([Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(6, 3), Vector2i(7, 3)])
+artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FragmentSeal")])
+opening_piece_set = Array[PieceDefinition]([ExtResource("3_line"), ExtResource("3_line"), ExtResource("4_domino")])
+expected_moves_min = 3
+expected_moves_max = 5

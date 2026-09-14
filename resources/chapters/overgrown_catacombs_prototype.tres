@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ChapterDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/chapter_definition.gd" id="1_chapter"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_prototype_01.tres" id="2_expedition"]
+
+[resource]
+script = ExtResource("1_chapter")
+id = &"overgrown_catacombs_prototype"
+number_ru = "Глава III · прототип"
+title_ru = "Заросшие катакомбы"
+subtitle_ru = "Живые корни"
+expeditions = Array[ExpeditionDefinition]([ExtResource("2_expedition")])
+completion_reward_coins = 0

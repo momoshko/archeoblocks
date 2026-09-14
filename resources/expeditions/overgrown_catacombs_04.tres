@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=22 format=3]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="4"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_horizontal.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_vertical.tres" id="6"]
+[ext_resource type="Resource" path="res://resources/pieces/small_l.tres" id="7"]
+[ext_resource type="Resource" path="res://resources/pieces/small_t.tres" id="8"]
+[ext_resource type="Resource" path="res://resources/pieces/square_2.tres" id="9"]
+[sub_resource type="Resource" id="FA"]
+script = ExtResource("2")
+id = &"carved_vessel_a"
+cells = Array[Vector2i]([Vector2i(1,2)])
+[sub_resource type="Resource" id="FB"]
+script = ExtResource("2")
+id = &"carved_vessel_b"
+cells = Array[Vector2i]([Vector2i(6,5)])
+[sub_resource type="Resource" id="R1"]
+script = ExtResource("3")
+cell = Vector2i(1,1)
+[sub_resource type="Resource" id="R2"]
+script = ExtResource("3")
+cell = Vector2i(5,2)
+[sub_resource type="Resource" id="R3"]
+script = ExtResource("3")
+cell = Vector2i(2,6)
+[sub_resource type="Resource" id="R4"]
+script = ExtResource("3")
+cell = Vector2i(6,6)
+[sub_resource type="Resource" id="S1"]
+script = ExtResource("4")
+cell = Vector2i(3,1)
+durability = 1
+[sub_resource type="Resource" id="S2"]
+script = ExtResource("4")
+cell = Vector2i(4,4)
+durability = 1
+[sub_resource type="Resource" id="S3"]
+script = ExtResource("4")
+cell = Vector2i(3,7)
+durability = 1
+[sub_resource type="Resource" id="STA"]
+script = ExtResource("4")
+cell = Vector2i(1,2)
+durability = 1
+[sub_resource type="Resource" id="STB"]
+script = ExtResource("4")
+cell = Vector2i(6,5)
+durability = 1
+[resource]
+script = ExtResource("1")
+id = &"overgrown_catacombs_04"
+title_ru = "Заросшие катакомбы 4 — Камень и корни"
+card_title_ru = "4 — Камень и корни"
+debug_name = "Overgrown Catacombs 4 - Stone and Roots"
+artifact_id = &"carved_vessel"
+artifact_name_ru = "Резной сосуд"
+objective_ru = "Найдите две части резного сосуда"
+instruction_ru = "Камни сдерживают корни, но мешают строить линии."
+normal_soil_cells = Array[Vector2i]([Vector2i(0,2), Vector2i(1,2), Vector2i(2,2), Vector2i(3,2), Vector2i(4,2), Vector2i(5,2), Vector2i(6,2), Vector2i(7,2), Vector2i(0,5), Vector2i(1,5), Vector2i(2,5), Vector2i(3,5), Vector2i(4,5), Vector2i(5,5), Vector2i(6,5), Vector2i(7,5)])
+artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FA"), SubResource("FB")])
+stone_obstacles = Array[StoneObstacleDefinition]([SubResource("S1"), SubResource("S2"), SubResource("S3"), SubResource("STA"), SubResource("STB")])
+root_obstacles = Array[RootObstacleDefinition]([SubResource("R1"), SubResource("R2"), SubResource("R3"), SubResource("R4")])
+opening_piece_set = Array[PieceDefinition]([ExtResource("5"), ExtResource("7"), ExtResource("9")])
+curated_piece_sequence = Array[PieceDefinition]([ExtResource("8"), ExtResource("6"), ExtResource("7"), ExtResource("5"), ExtResource("9"), ExtResource("8"), ExtResource("6"), ExtResource("5"), ExtResource("7")])
+expected_moves_min = 20
+expected_moves_max = 28

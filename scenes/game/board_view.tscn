@@ -15,386 +15,378 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="BoardView" type="PanelContainer" unique_id=2041360387]
+clip_contents = true
 custom_minimum_size = Vector2(552, 552)
 theme_override_styles/panel = SubResource("StyleBoardBed")
 script = ExtResource("2_script")
 
-[node name="Grid" type="GridContainer" parent="." unique_id=466708686]
+[node name="BoardContentCenter" type="CenterContainer" parent="."]
 layout_mode = 2
-theme_override_constants/h_separation = 5
-theme_override_constants/v_separation = 5
+mouse_filter = 2
+
+[node name="Grid" type="GridContainer" parent="BoardContentCenter" unique_id=466708686]
+layout_mode = 2
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = 3
 columns = 8
 
-[node name="Cell01" parent="Grid" unique_id=1826740680 instance=ExtResource("1_cell")]
+[node name="Cell01" parent="BoardContentCenter/Grid" unique_id=1826740680 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell01" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell01" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell01" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell01" index="5" unique_id=1951806786]
 visible = true
 
-[node name="Cell02" parent="Grid" unique_id=1014984439 instance=ExtResource("1_cell")]
+[node name="Cell02" parent="BoardContentCenter/Grid" unique_id=1014984439 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell02" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell02" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell02" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell02" index="5" unique_id=1951806786]
 visible = true
 
-[node name="Cell03" parent="Grid" unique_id=885011683 instance=ExtResource("1_cell")]
+[node name="Cell03" parent="BoardContentCenter/Grid" unique_id=885011683 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell03" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell03" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell03" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell03" index="5" unique_id=1951806786]
 visible = true
 
-[node name="Cell04" parent="Grid" unique_id=1798007281 instance=ExtResource("1_cell")]
+[node name="Cell04" parent="BoardContentCenter/Grid" unique_id=1798007281 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell05" parent="Grid" unique_id=1589418758 instance=ExtResource("1_cell")]
+[node name="Cell05" parent="BoardContentCenter/Grid" unique_id=1589418758 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell06" parent="Grid" unique_id=1044477278 instance=ExtResource("1_cell")]
+[node name="Cell06" parent="BoardContentCenter/Grid" unique_id=1044477278 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell07" parent="Grid" unique_id=700328361 instance=ExtResource("1_cell")]
+[node name="Cell07" parent="BoardContentCenter/Grid" unique_id=700328361 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell08" parent="Grid" unique_id=1587022424 instance=ExtResource("1_cell")]
+[node name="Cell08" parent="BoardContentCenter/Grid" unique_id=1587022424 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell09" parent="Grid" unique_id=1189422741 instance=ExtResource("1_cell")]
+[node name="Cell09" parent="BoardContentCenter/Grid" unique_id=1189422741 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell09" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell09" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell09" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell09" index="5" unique_id=1951806786]
 visible = true
 
-[node name="Cell10" parent="Grid" unique_id=1117108024 instance=ExtResource("1_cell")]
+[node name="Cell10" parent="BoardContentCenter/Grid" unique_id=1117108024 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell10" index="2" unique_id=1349798796]
-color = Color(0.407843, 0.278431, 0.141176, 0.96)
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell10" index="2" unique_id=1349798796]
 
-[node name="Cell11" parent="Grid" unique_id=1409947551 instance=ExtResource("1_cell")]
+[node name="Cell11" parent="BoardContentCenter/Grid" unique_id=1409947551 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell11" index="2" unique_id=1349798796]
-color = Color(0.407843, 0.278431, 0.141176, 0.96)
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell11" index="2" unique_id=1349798796]
 
-[node name="Cell12" parent="Grid" unique_id=806286741 instance=ExtResource("1_cell")]
+[node name="Cell12" parent="BoardContentCenter/Grid" unique_id=806286741 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell13" parent="Grid" unique_id=473842524 instance=ExtResource("1_cell")]
+[node name="Cell13" parent="BoardContentCenter/Grid" unique_id=473842524 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell14" parent="Grid" unique_id=1980390003 instance=ExtResource("1_cell")]
+[node name="Cell14" parent="BoardContentCenter/Grid" unique_id=1980390003 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell15" parent="Grid" unique_id=579514323 instance=ExtResource("1_cell")]
+[node name="Cell15" parent="BoardContentCenter/Grid" unique_id=579514323 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell16" parent="Grid" unique_id=953447403 instance=ExtResource("1_cell")]
+[node name="Cell16" parent="BoardContentCenter/Grid" unique_id=953447403 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell17" parent="Grid" unique_id=971592048 instance=ExtResource("1_cell")]
+[node name="Cell17" parent="BoardContentCenter/Grid" unique_id=971592048 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell17" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell17" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell17" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell17" index="5" unique_id=1951806786]
 visible = true
 
-[node name="Cell18" parent="Grid" unique_id=500440019 instance=ExtResource("1_cell")]
+[node name="Cell18" parent="BoardContentCenter/Grid" unique_id=500440019 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell18" index="2" unique_id=1349798796]
-color = Color(0.407843, 0.278431, 0.141176, 0.96)
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell18" index="2" unique_id=1349798796]
 
-[node name="Cell19" parent="Grid" unique_id=955350909 instance=ExtResource("1_cell")]
+[node name="Cell19" parent="BoardContentCenter/Grid" unique_id=955350909 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="ArtifactHint" parent="Grid/Cell19" index="1" unique_id=51880285]
+[node name="ArtifactHint" parent="BoardContentCenter/Grid/Cell19" index="1" unique_id=51880285]
 visible = true
 
-[node name="Cell20" parent="Grid" unique_id=1688721175 instance=ExtResource("1_cell")]
+[node name="Cell20" parent="BoardContentCenter/Grid" unique_id=1688721175 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="ArtifactHint" parent="Grid/Cell20" index="1" unique_id=51880285]
+[node name="ArtifactHint" parent="BoardContentCenter/Grid/Cell20" index="1" unique_id=51880285]
 visible = true
 
-[node name="Cell21" parent="Grid" unique_id=1996158931 instance=ExtResource("1_cell")]
+[node name="Cell21" parent="BoardContentCenter/Grid" unique_id=1996158931 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell22" parent="Grid" unique_id=1636794189 instance=ExtResource("1_cell")]
+[node name="Cell22" parent="BoardContentCenter/Grid" unique_id=1636794189 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell23" parent="Grid" unique_id=1290401886 instance=ExtResource("1_cell")]
+[node name="Cell23" parent="BoardContentCenter/Grid" unique_id=1290401886 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell24" parent="Grid" unique_id=898699258 instance=ExtResource("1_cell")]
+[node name="Cell24" parent="BoardContentCenter/Grid" unique_id=898699258 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell25" parent="Grid" unique_id=1187154139 instance=ExtResource("1_cell")]
+[node name="Cell25" parent="BoardContentCenter/Grid" unique_id=1187154139 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell26" parent="Grid" unique_id=1510138212 instance=ExtResource("1_cell")]
+[node name="Cell26" parent="BoardContentCenter/Grid" unique_id=1510138212 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell27" parent="Grid" unique_id=710497926 instance=ExtResource("1_cell")]
+[node name="Cell27" parent="BoardContentCenter/Grid" unique_id=710497926 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="ArtifactHint" parent="Grid/Cell27" index="1" unique_id=51880285]
+[node name="ArtifactHint" parent="BoardContentCenter/Grid/Cell27" index="1" unique_id=51880285]
 visible = true
 
-[node name="Cell28" parent="Grid" unique_id=340520376 instance=ExtResource("1_cell")]
+[node name="Cell28" parent="BoardContentCenter/Grid" unique_id=340520376 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="ArtifactHint" parent="Grid/Cell28" index="1" unique_id=51880285]
+[node name="ArtifactHint" parent="BoardContentCenter/Grid/Cell28" index="1" unique_id=51880285]
 visible = true
 
-[node name="Cell29" parent="Grid" unique_id=851300354 instance=ExtResource("1_cell")]
+[node name="Cell29" parent="BoardContentCenter/Grid" unique_id=851300354 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell30" parent="Grid" unique_id=1673923029 instance=ExtResource("1_cell")]
+[node name="Cell30" parent="BoardContentCenter/Grid" unique_id=1673923029 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell31" parent="Grid" unique_id=653006065 instance=ExtResource("1_cell")]
+[node name="Cell31" parent="BoardContentCenter/Grid" unique_id=653006065 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell32" parent="Grid" unique_id=17069481 instance=ExtResource("1_cell")]
+[node name="Cell32" parent="BoardContentCenter/Grid" unique_id=17069481 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell33" parent="Grid" unique_id=1562476206 instance=ExtResource("1_cell")]
+[node name="Cell33" parent="BoardContentCenter/Grid" unique_id=1562476206 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell34" parent="Grid" unique_id=1166222763 instance=ExtResource("1_cell")]
+[node name="Cell34" parent="BoardContentCenter/Grid" unique_id=1166222763 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell35" parent="Grid" unique_id=920353062 instance=ExtResource("1_cell")]
+[node name="Cell35" parent="BoardContentCenter/Grid" unique_id=920353062 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell36" parent="Grid" unique_id=627580672 instance=ExtResource("1_cell")]
+[node name="Cell36" parent="BoardContentCenter/Grid" unique_id=627580672 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell37" parent="Grid" unique_id=1356045925 instance=ExtResource("1_cell")]
+[node name="Cell37" parent="BoardContentCenter/Grid" unique_id=1356045925 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell38" parent="Grid" unique_id=901493440 instance=ExtResource("1_cell")]
+[node name="Cell38" parent="BoardContentCenter/Grid" unique_id=901493440 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell38" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell38" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell38" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell38" index="5" unique_id=1951806786]
 visible = true
-color = Color(0.74902, 0.301961, 0.2, 1)
 
-[node name="Cell39" parent="Grid" unique_id=258472937 instance=ExtResource("1_cell")]
+[node name="Cell39" parent="BoardContentCenter/Grid" unique_id=258472937 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell39" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell39" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell39" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell39" index="5" unique_id=1951806786]
 visible = true
-color = Color(0.74902, 0.301961, 0.2, 1)
 
-[node name="Cell40" parent="Grid" unique_id=732930752 instance=ExtResource("1_cell")]
+[node name="Cell40" parent="BoardContentCenter/Grid" unique_id=732930752 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell40" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell40" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell40" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell40" index="5" unique_id=1951806786]
 visible = true
-color = Color(0.74902, 0.301961, 0.2, 1)
 
-[node name="Cell41" parent="Grid" unique_id=902191349 instance=ExtResource("1_cell")]
+[node name="Cell41" parent="BoardContentCenter/Grid" unique_id=902191349 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell42" parent="Grid" unique_id=1913232643 instance=ExtResource("1_cell")]
+[node name="Cell42" parent="BoardContentCenter/Grid" unique_id=1913232643 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell43" parent="Grid" unique_id=1866628950 instance=ExtResource("1_cell")]
+[node name="Cell43" parent="BoardContentCenter/Grid" unique_id=1866628950 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell44" parent="Grid" unique_id=894680842 instance=ExtResource("1_cell")]
+[node name="Cell44" parent="BoardContentCenter/Grid" unique_id=894680842 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell45" parent="Grid" unique_id=1478352572 instance=ExtResource("1_cell")]
+[node name="Cell45" parent="BoardContentCenter/Grid" unique_id=1478352572 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell46" parent="Grid" unique_id=900246155 instance=ExtResource("1_cell")]
+[node name="Cell46" parent="BoardContentCenter/Grid" unique_id=900246155 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell46" index="2" unique_id=1349798796]
-color = Color(0.407843, 0.278431, 0.141176, 0.96)
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell46" index="2" unique_id=1349798796]
 
-[node name="Cell47" parent="Grid" unique_id=1809595955 instance=ExtResource("1_cell")]
+[node name="Cell47" parent="BoardContentCenter/Grid" unique_id=1809595955 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell47" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell47" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell47" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell47" index="5" unique_id=1951806786]
 visible = true
-color = Color(0.74902, 0.301961, 0.2, 1)
 
-[node name="Cell48" parent="Grid" unique_id=1692065470 instance=ExtResource("1_cell")]
+[node name="Cell48" parent="BoardContentCenter/Grid" unique_id=1692065470 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell49" parent="Grid" unique_id=1418424793 instance=ExtResource("1_cell")]
+[node name="Cell49" parent="BoardContentCenter/Grid" unique_id=1418424793 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell50" parent="Grid" unique_id=111290852 instance=ExtResource("1_cell")]
+[node name="Cell50" parent="BoardContentCenter/Grid" unique_id=111290852 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell51" parent="Grid" unique_id=143392613 instance=ExtResource("1_cell")]
+[node name="Cell51" parent="BoardContentCenter/Grid" unique_id=143392613 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell52" parent="Grid" unique_id=273484249 instance=ExtResource("1_cell")]
+[node name="Cell52" parent="BoardContentCenter/Grid" unique_id=273484249 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell53" parent="Grid" unique_id=1186819907 instance=ExtResource("1_cell")]
+[node name="Cell53" parent="BoardContentCenter/Grid" unique_id=1186819907 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell54" parent="Grid" unique_id=28917339 instance=ExtResource("1_cell")]
+[node name="Cell54" parent="BoardContentCenter/Grid" unique_id=28917339 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell55" parent="Grid" unique_id=1236529797 instance=ExtResource("1_cell")]
+[node name="Cell55" parent="BoardContentCenter/Grid" unique_id=1236529797 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell55" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell55" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell55" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell55" index="5" unique_id=1951806786]
 visible = true
-color = Color(0.74902, 0.301961, 0.2, 1)
 
-[node name="Cell56" parent="Grid" unique_id=232728669 instance=ExtResource("1_cell")]
+[node name="Cell56" parent="BoardContentCenter/Grid" unique_id=232728669 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell57" parent="Grid" unique_id=622226221 instance=ExtResource("1_cell")]
+[node name="Cell57" parent="BoardContentCenter/Grid" unique_id=622226221 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell58" parent="Grid" unique_id=1055102173 instance=ExtResource("1_cell")]
+[node name="Cell58" parent="BoardContentCenter/Grid" unique_id=1055102173 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell58" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell58" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell58" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell58" index="5" unique_id=1951806786]
 visible = true
-color = Color(0.2, 0.443137, 0.67451, 1)
 
-[node name="Cell59" parent="Grid" unique_id=1045805209 instance=ExtResource("1_cell")]
+[node name="Cell59" parent="BoardContentCenter/Grid" unique_id=1045805209 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell59" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell59" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell59" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell59" index="5" unique_id=1951806786]
 visible = true
-color = Color(0.2, 0.443137, 0.67451, 1)
 
-[node name="Cell60" parent="Grid" unique_id=133502575 instance=ExtResource("1_cell")]
+[node name="Cell60" parent="BoardContentCenter/Grid" unique_id=133502575 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell60" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell60" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell60" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell60" index="5" unique_id=1951806786]
 visible = true
-color = Color(0.2, 0.443137, 0.67451, 1)
 
-[node name="Cell61" parent="Grid" unique_id=1978913381 instance=ExtResource("1_cell")]
+[node name="Cell61" parent="BoardContentCenter/Grid" unique_id=1978913381 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="SoilVisual" parent="Grid/Cell61" index="2" unique_id=1349798796]
+[node name="SoilVisual" parent="BoardContentCenter/Grid/Cell61" index="2" unique_id=1349798796]
 visible = false
 
-[node name="BlockVisual" parent="Grid/Cell61" index="3" unique_id=1951806786]
+[node name="BlockVisual" parent="BoardContentCenter/Grid/Cell61" index="5" unique_id=1951806786]
 visible = true
-color = Color(0.2, 0.443137, 0.67451, 1)
 
-[node name="Cell62" parent="Grid" unique_id=1422810224 instance=ExtResource("1_cell")]
+[node name="Cell62" parent="BoardContentCenter/Grid" unique_id=1422810224 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell63" parent="Grid" unique_id=973208094 instance=ExtResource("1_cell")]
+[node name="Cell63" parent="BoardContentCenter/Grid" unique_id=973208094 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[node name="Cell64" parent="Grid" unique_id=1940490386 instance=ExtResource("1_cell")]
+[node name="Cell64" parent="BoardContentCenter/Grid" unique_id=1940490386 instance=ExtResource("1_cell")]
 layout_mode = 2
 
-[editable path="Grid/Cell01"]
-[editable path="Grid/Cell02"]
-[editable path="Grid/Cell03"]
-[editable path="Grid/Cell04"]
-[editable path="Grid/Cell05"]
-[editable path="Grid/Cell06"]
-[editable path="Grid/Cell07"]
-[editable path="Grid/Cell08"]
-[editable path="Grid/Cell09"]
-[editable path="Grid/Cell10"]
-[editable path="Grid/Cell11"]
-[editable path="Grid/Cell12"]
-[editable path="Grid/Cell13"]
-[editable path="Grid/Cell14"]
-[editable path="Grid/Cell15"]
-[editable path="Grid/Cell16"]
-[editable path="Grid/Cell17"]
-[editable path="Grid/Cell18"]
-[editable path="Grid/Cell19"]
-[editable path="Grid/Cell20"]
-[editable path="Grid/Cell21"]
-[editable path="Grid/Cell22"]
-[editable path="Grid/Cell23"]
-[editable path="Grid/Cell24"]
-[editable path="Grid/Cell25"]
-[editable path="Grid/Cell26"]
-[editable path="Grid/Cell27"]
-[editable path="Grid/Cell28"]
-[editable path="Grid/Cell29"]
-[editable path="Grid/Cell30"]
-[editable path="Grid/Cell31"]
-[editable path="Grid/Cell32"]
-[editable path="Grid/Cell33"]
-[editable path="Grid/Cell34"]
-[editable path="Grid/Cell35"]
-[editable path="Grid/Cell36"]
-[editable path="Grid/Cell37"]
-[editable path="Grid/Cell38"]
-[editable path="Grid/Cell39"]
-[editable path="Grid/Cell40"]
-[editable path="Grid/Cell41"]
-[editable path="Grid/Cell42"]
-[editable path="Grid/Cell43"]
-[editable path="Grid/Cell44"]
-[editable path="Grid/Cell45"]
-[editable path="Grid/Cell46"]
-[editable path="Grid/Cell47"]
-[editable path="Grid/Cell48"]
-[editable path="Grid/Cell49"]
-[editable path="Grid/Cell50"]
-[editable path="Grid/Cell51"]
-[editable path="Grid/Cell52"]
-[editable path="Grid/Cell53"]
-[editable path="Grid/Cell54"]
-[editable path="Grid/Cell55"]
-[editable path="Grid/Cell56"]
-[editable path="Grid/Cell57"]
-[editable path="Grid/Cell58"]
-[editable path="Grid/Cell59"]
-[editable path="Grid/Cell60"]
-[editable path="Grid/Cell61"]
-[editable path="Grid/Cell62"]
-[editable path="Grid/Cell63"]
-[editable path="Grid/Cell64"]
+[editable path="BoardContentCenter/Grid/Cell01"]
+[editable path="BoardContentCenter/Grid/Cell02"]
+[editable path="BoardContentCenter/Grid/Cell03"]
+[editable path="BoardContentCenter/Grid/Cell04"]
+[editable path="BoardContentCenter/Grid/Cell05"]
+[editable path="BoardContentCenter/Grid/Cell06"]
+[editable path="BoardContentCenter/Grid/Cell07"]
+[editable path="BoardContentCenter/Grid/Cell08"]
+[editable path="BoardContentCenter/Grid/Cell09"]
+[editable path="BoardContentCenter/Grid/Cell10"]
+[editable path="BoardContentCenter/Grid/Cell11"]
+[editable path="BoardContentCenter/Grid/Cell12"]
+[editable path="BoardContentCenter/Grid/Cell13"]
+[editable path="BoardContentCenter/Grid/Cell14"]
+[editable path="BoardContentCenter/Grid/Cell15"]
+[editable path="BoardContentCenter/Grid/Cell16"]
+[editable path="BoardContentCenter/Grid/Cell17"]
+[editable path="BoardContentCenter/Grid/Cell18"]
+[editable path="BoardContentCenter/Grid/Cell19"]
+[editable path="BoardContentCenter/Grid/Cell20"]
+[editable path="BoardContentCenter/Grid/Cell21"]
+[editable path="BoardContentCenter/Grid/Cell22"]
+[editable path="BoardContentCenter/Grid/Cell23"]
+[editable path="BoardContentCenter/Grid/Cell24"]
+[editable path="BoardContentCenter/Grid/Cell25"]
+[editable path="BoardContentCenter/Grid/Cell26"]
+[editable path="BoardContentCenter/Grid/Cell27"]
+[editable path="BoardContentCenter/Grid/Cell28"]
+[editable path="BoardContentCenter/Grid/Cell29"]
+[editable path="BoardContentCenter/Grid/Cell30"]
+[editable path="BoardContentCenter/Grid/Cell31"]
+[editable path="BoardContentCenter/Grid/Cell32"]
+[editable path="BoardContentCenter/Grid/Cell33"]
+[editable path="BoardContentCenter/Grid/Cell34"]
+[editable path="BoardContentCenter/Grid/Cell35"]
+[editable path="BoardContentCenter/Grid/Cell36"]
+[editable path="BoardContentCenter/Grid/Cell37"]
+[editable path="BoardContentCenter/Grid/Cell38"]
+[editable path="BoardContentCenter/Grid/Cell39"]
+[editable path="BoardContentCenter/Grid/Cell40"]
+[editable path="BoardContentCenter/Grid/Cell41"]
+[editable path="BoardContentCenter/Grid/Cell42"]
+[editable path="BoardContentCenter/Grid/Cell43"]
+[editable path="BoardContentCenter/Grid/Cell44"]
+[editable path="BoardContentCenter/Grid/Cell45"]
+[editable path="BoardContentCenter/Grid/Cell46"]
+[editable path="BoardContentCenter/Grid/Cell47"]
+[editable path="BoardContentCenter/Grid/Cell48"]
+[editable path="BoardContentCenter/Grid/Cell49"]
+[editable path="BoardContentCenter/Grid/Cell50"]
+[editable path="BoardContentCenter/Grid/Cell51"]
+[editable path="BoardContentCenter/Grid/Cell52"]
+[editable path="BoardContentCenter/Grid/Cell53"]
+[editable path="BoardContentCenter/Grid/Cell54"]
+[editable path="BoardContentCenter/Grid/Cell55"]
+[editable path="BoardContentCenter/Grid/Cell56"]
+[editable path="BoardContentCenter/Grid/Cell57"]
+[editable path="BoardContentCenter/Grid/Cell58"]
+[editable path="BoardContentCenter/Grid/Cell59"]
+[editable path="BoardContentCenter/Grid/Cell60"]
+[editable path="BoardContentCenter/Grid/Cell61"]
+[editable path="BoardContentCenter/Grid/Cell62"]
+[editable path="BoardContentCenter/Grid/Cell63"]
+[editable path="BoardContentCenter/Grid/Cell64"]

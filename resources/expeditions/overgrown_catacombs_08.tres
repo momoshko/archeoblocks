@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=24 format=3]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="4"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_horizontal.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_vertical.tres" id="6"]
+[ext_resource type="Resource" path="res://resources/pieces/line_4_horizontal.tres" id="7"]
+[ext_resource type="Resource" path="res://resources/pieces/large_l.tres" id="8"]
+[ext_resource type="Resource" path="res://resources/pieces/plus_5.tres" id="9"]
+[ext_resource type="Resource" path="res://resources/pieces/square_2.tres" id="10"]
+[sub_resource type="Resource" id="FA"]
+script = ExtResource("2")
+id = &"ritual_bowl_a"
+cells = Array[Vector2i]([Vector2i(1,2)])
+[sub_resource type="Resource" id="FB"]
+script = ExtResource("2")
+id = &"ritual_bowl_b"
+cells = Array[Vector2i]([Vector2i(6,3)])
+[sub_resource type="Resource" id="FC"]
+script = ExtResource("2")
+id = &"ritual_bowl_c"
+cells = Array[Vector2i]([Vector2i(3,6)])
+[sub_resource type="Resource" id="R1"]
+script = ExtResource("3")
+cell = Vector2i(1,2)
+[sub_resource type="Resource" id="R2"]
+script = ExtResource("3")
+cell = Vector2i(6,3)
+[sub_resource type="Resource" id="R3"]
+script = ExtResource("3")
+cell = Vector2i(3,6)
+[sub_resource type="Resource" id="R4"]
+script = ExtResource("3")
+cell = Vector2i(0,5)
+[sub_resource type="Resource" id="R5"]
+script = ExtResource("3")
+cell = Vector2i(7,6)
+[sub_resource type="Resource" id="R6"]
+script = ExtResource("3")
+cell = Vector2i(4,1)
+[sub_resource type="Resource" id="S1"]
+script = ExtResource("4")
+cell = Vector2i(2,0)
+durability = 2
+[sub_resource type="Resource" id="S2"]
+script = ExtResource("4")
+cell = Vector2i(5,0)
+durability = 1
+[sub_resource type="Resource" id="S3"]
+script = ExtResource("4")
+cell = Vector2i(2,5)
+durability = 2
+[sub_resource type="Resource" id="S4"]
+script = ExtResource("4")
+cell = Vector2i(5,7)
+durability = 2
+[resource]
+script = ExtResource("1")
+id = &"overgrown_catacombs_08"
+title_ru = "Заросшие катакомбы 8 — Раскопки под корнями"
+card_title_ru = "8 — Раскопки под корнями"
+debug_name = "Overgrown Catacombs 8 - Digging under Roots"
+artifact_id = &"ritual_bowl"
+artifact_name_ru = "Ритуальная чаша"
+objective_ru = "Освободите три части ритуальной чаши"
+instruction_ru = "Сначала снимайте препятствие, затем удар линии дойдёт до грунта."
+normal_soil_cells = Array[Vector2i]([Vector2i(1,2), Vector2i(6,3), Vector2i(3,6)])
+strong_soil_cells = Array[Vector2i]([Vector2i(1,2), Vector2i(6,3), Vector2i(3,6)])
+artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FA"), SubResource("FB"), SubResource("FC")])
+stone_obstacles = Array[StoneObstacleDefinition]([SubResource("S1"), SubResource("S2"), SubResource("S3"), SubResource("S4")])
+root_obstacles = Array[RootObstacleDefinition]([SubResource("R1"), SubResource("R2"), SubResource("R3"), SubResource("R4"), SubResource("R5"), SubResource("R6")])
+opening_piece_set = Array[PieceDefinition]([ExtResource("7"), ExtResource("5"), ExtResource("6")])
+curated_piece_sequence = Array[PieceDefinition]([ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("6"), ExtResource("7"), ExtResource("5"), ExtResource("9"), ExtResource("8"), ExtResource("6")])
+expected_moves_min = 30
+expected_moves_max = 42

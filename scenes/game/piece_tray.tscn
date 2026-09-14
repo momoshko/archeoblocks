@@ -23,28 +23,24 @@ offset_left = 61.0
 offset_top = 12.0
 offset_right = 87.0
 offset_bottom = 38.0
-color = Color(0.74902, 0.301961, 0.2, 1)
 
 [node name="PieceCell02" parent="TSlot/SlotLayout/PieceCanvas" index="1"]
 offset_left = 33.0
 offset_top = 40.0
 offset_right = 59.0
 offset_bottom = 66.0
-color = Color(0.74902, 0.301961, 0.2, 1)
 
 [node name="PieceCell03" parent="TSlot/SlotLayout/PieceCanvas" index="2"]
 offset_left = 61.0
 offset_top = 40.0
 offset_right = 87.0
 offset_bottom = 66.0
-color = Color(0.74902, 0.301961, 0.2, 1)
 
 [node name="PieceCell04" parent="TSlot/SlotLayout/PieceCanvas" index="3"]
 offset_left = 89.0
 offset_top = 40.0
 offset_right = 115.0
 offset_bottom = 66.0
-color = Color(0.74902, 0.301961, 0.2, 1)
 
 [node name="LineSlot" parent="." instance=ExtResource("1_slot")]
 layout_mode = 2
@@ -57,28 +53,24 @@ offset_left = 19.0
 offset_top = 34.0
 offset_right = 45.0
 offset_bottom = 60.0
-color = Color(0.2, 0.443137, 0.67451, 1)
 
 [node name="PieceCell02" parent="LineSlot/SlotLayout/PieceCanvas" index="1"]
 offset_left = 47.0
 offset_top = 34.0
 offset_right = 73.0
 offset_bottom = 60.0
-color = Color(0.2, 0.443137, 0.67451, 1)
 
 [node name="PieceCell03" parent="LineSlot/SlotLayout/PieceCanvas" index="2"]
 offset_left = 75.0
 offset_top = 34.0
 offset_right = 101.0
 offset_bottom = 60.0
-color = Color(0.2, 0.443137, 0.67451, 1)
 
 [node name="PieceCell04" parent="LineSlot/SlotLayout/PieceCanvas" index="3"]
 offset_left = 103.0
 offset_top = 34.0
 offset_right = 129.0
 offset_bottom = 60.0
-color = Color(0.2, 0.443137, 0.67451, 1)
 
 [editable path="LSlot"]
 [editable path="TSlot"]

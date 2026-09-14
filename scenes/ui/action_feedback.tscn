@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/action_feedback.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleFeedback"]
+bg_color = Color(0.109804, 0.0705882, 0.0313725, 0.9)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.807843, 0.305882, 0.95)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+content_margin_left = 24.0
+content_margin_top = 14.0
+content_margin_right = 24.0
+content_margin_bottom = 14.0
+
+[node name="ActionFeedback" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -240.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MessagePanel" type="PanelContainer" parent="Center"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleFeedback")
+
+[node name="Message" type="Label" parent="Center/MessagePanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.92549, 0.65098, 1)
+theme_override_font_sizes/font_size = 28
+text = "2 ЛИНИИ! +250"
+horizontal_alignment = 1

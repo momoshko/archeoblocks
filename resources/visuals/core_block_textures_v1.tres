@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BlockTextureSet" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/block_texture_set.gd" id="1_set"]
+[ext_resource type="Texture2D" path="res://assets/blocks/core_blocks_pack_v1/block_green_v1.png" id="2_green"]
+[ext_resource type="Texture2D" path="res://assets/blocks/core_blocks_pack_v1/block_blue_v1.png" id="3_blue"]
+[ext_resource type="Texture2D" path="res://assets/blocks/core_blocks_pack_v1/block_red_v1.png" id="4_red"]
+[ext_resource type="Texture2D" path="res://assets/blocks/core_blocks_pack_v1/block_amber_v1.png" id="5_amber"]
+[ext_resource type="Texture2D" path="res://assets/blocks/core_blocks_pack_v1/block_purple_v1.png" id="6_purple"]
+[ext_resource type="Texture2D" path="res://assets/blocks/core_blocks_pack_v1/block_turquoise_v1.png" id="7_turquoise"]
+
+[resource]
+script = ExtResource("1_set")
+reference_colors = Array[Color]([Color(0.2, 0.55, 0.32, 1), Color(0.2, 0.443137, 0.67451, 1), Color(0.74902, 0.301961, 0.2, 1), Color(0.870588, 0.631373, 0.137255, 1), Color(0.55, 0.3, 0.72, 1), Color(0.1, 0.65, 0.68, 1)])
+textures = Array[Texture2D]([ExtResource("2_green"), ExtResource("3_blue"), ExtResource("4_red"), ExtResource("5_amber"), ExtResource("6_purple"), ExtResource("7_turquoise")])

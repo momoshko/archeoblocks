@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1_expedition"]
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2_fragment"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_horizontal.tres" id="3_line"]
+[ext_resource type="Resource" path="res://resources/pieces/domino_horizontal.tres" id="4_domino"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ancient_courtyard/stone_amulet_full_v1.png" id="5_artifact"]
+
+[sub_resource type="Resource" id="FragmentAmulet"]
+script = ExtResource("2_fragment")
+id = &"stone_amulet"
+cells = Array[Vector2i]([Vector2i(4, 4)])
+
+[resource]
+script = ExtResource("1_expedition")
+id = &"expedition_02"
+title_ru = "Древний двор 2 — Твёрдый грунт"
+card_title_ru = "2 — Твёрдый грунт"
+debug_name = "Ancient Courtyard 2 - Strong Soil"
+artifact_id = &"stone_amulet"
+artifact_name_ru = "Каменный амулет"
+full_artifact_texture = ExtResource("5_artifact")
+objective_ru = "Снимите 2 слоя грунта над амулетом"
+instruction_ru = "Плотный грунт нужно очистить дважды"
+normal_soil_cells = Array[Vector2i]([Vector2i(4, 0), Vector2i(4, 1), Vector2i(4, 2), Vector2i(4, 3), Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4), Vector2i(5, 4), Vector2i(6, 4), Vector2i(7, 4), Vector2i(4, 5), Vector2i(4, 6), Vector2i(4, 7)])
+strong_soil_cells = Array[Vector2i]([Vector2i(4, 4)])
+artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FragmentAmulet")])
+opening_piece_set = Array[PieceDefinition]([ExtResource("3_line"), ExtResource("3_line"), ExtResource("4_domino")])
+expected_moves_min = 7
+expected_moves_max = 10

@@ -67,9 +67,14 @@ custom_minimum_size = Vector2(0, 68)
 layout_mode = 2
 text = "Продолжить"
 
+[node name="RestartButton" type="Button" parent="PopupCenter/PopupPanel/PopupLayout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+text = "Начать заново"
+
 [node name="MenuButton" type="Button" parent="PopupCenter/PopupPanel/PopupLayout"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 68)
 layout_mode = 2
 text = "В меню"
-

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="Script" path="res://scripts/simple_back_screen.gd" id="1_script"]
+[ext_resource type="Script" path="res://scripts/collection.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://scenes/game/artifact_slot.tscn" id="2_slot"]
+[ext_resource type="Resource" path="res://resources/chapters/ancient_courtyard.tres" id="3_chapter"]
+[ext_resource type="Resource" path="res://resources/chapters/ruined_shrine.tres" id="4_chapter_two"]
+[ext_resource type="Resource" path="res://resources/chapters/overgrown_catacombs.tres" id="5_chapter_three"]
 
 [node name="Collection" type="Control"]
 layout_mode = 3
@@ -11,6 +14,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
+chapter_definition = ExtResource("3_chapter")
+chapter_two_definition = ExtResource("4_chapter_two")
+chapter_three_definition = ExtResource("5_chapter_three")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -21,24 +27,28 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.211765, 0.152941, 0.0901961, 1)
 
-[node name="ContentCenter" type="CenterContainer" parent="."]
+[node name="ContentCenter" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="PortraitContent" type="MarginContainer" parent="ContentCenter"]
-custom_minimum_size = Vector2(720, 1280)
-layout_mode = 2
 theme_override_constants/margin_left = 34
 theme_override_constants/margin_top = 52
 theme_override_constants/margin_right = 34
 theme_override_constants/margin_bottom = 52
 
-[node name="Layout" type="VBoxContainer" parent="ContentCenter/PortraitContent"]
+[node name="PortraitContent" type="ScrollContainer" parent="ContentCenter"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Layout" type="VBoxContainer" parent="ContentCenter/PortraitContent"]
+custom_minimum_size = Vector2(652, 0)
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 24
 
 [node name="Header" type="HBoxContainer" parent="ContentCenter/PortraitContent/Layout"]
@@ -59,6 +69,20 @@ theme_override_font_sizes/font_size = 38
 text = "Коллекция"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="ChapterTitle" type="Label" parent="ContentCenter/PortraitContent/Layout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 34
+text = "Древний двор"
+horizontal_alignment = 1
+
+[node name="CollectionProgress" type="Label" parent="ContentCenter/PortraitContent/Layout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.905882, 0.807843, 0.623529, 1)
+theme_override_font_sizes/font_size = 26
+text = "Коллекция: 0 / 6"
+horizontal_alignment = 1
 
 [node name="ArtifactGrid" type="GridContainer" parent="ContentCenter/PortraitContent/Layout"]
 layout_mode = 2
@@ -103,11 +127,98 @@ layout_mode = 2
 [node name="Artifact12" parent="ContentCenter/PortraitContent/Layout/ArtifactGrid" instance=ExtResource("2_slot")]
 layout_mode = 2
 
-[node name="ArtifactVisual" parent="ContentCenter/PortraitContent/Layout/ArtifactGrid/Artifact01/Layout" index="0"]
-color = Color(0.870588, 0.631373, 0.137255, 1)
+[node name="ChapterTwoSection" type="VBoxContainer" parent="ContentCenter/PortraitContent/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 14
 
-[node name="ArtifactName" parent="ContentCenter/PortraitContent/Layout/ArtifactGrid/Artifact01/Layout" index="1"]
-text = "Золотая маска"
+[node name="ChapterTitle" type="Label" parent="ContentCenter/PortraitContent/Layout/ChapterTwoSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 34
+text = "Разрушенное святилище"
+horizontal_alignment = 1
+
+[node name="CollectionProgress" type="Label" parent="ContentCenter/PortraitContent/Layout/ChapterTwoSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.905882, 0.807843, 0.623529, 1)
+theme_override_font_sizes/font_size = 26
+text = "Коллекция: 0 / 8"
+horizontal_alignment = 1
+
+[node name="ArtifactGrid" type="GridContainer" parent="ContentCenter/PortraitContent/Layout/ChapterTwoSection"]
+layout_mode = 2
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
+columns = 3
+
+[node name="ShrineArtifact01" parent="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="ShrineArtifact02" parent="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="ShrineArtifact03" parent="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="ShrineArtifact04" parent="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="ShrineArtifact05" parent="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="ShrineArtifact06" parent="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="ShrineArtifact07" parent="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="ShrineArtifact08" parent="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+
+[node name="ChapterThreeSection" type="VBoxContainer" parent="ContentCenter/PortraitContent/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="ChapterTitle" type="Label" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 34
+text = "Заросшие катакомбы"
+horizontal_alignment = 1
+
+[node name="CollectionProgress" type="Label" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.905882, 0.807843, 0.623529, 1)
+theme_override_font_sizes/font_size = 26
+text = "Коллекция: 0 / 10"
+horizontal_alignment = 1
+
+[node name="ArtifactGrid" type="GridContainer" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection"]
+layout_mode = 2
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
+columns = 3
+
+[node name="CatacombArtifact01" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+[node name="CatacombArtifact02" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+[node name="CatacombArtifact03" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+[node name="CatacombArtifact04" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+[node name="CatacombArtifact05" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+[node name="CatacombArtifact06" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+[node name="CatacombArtifact07" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+[node name="CatacombArtifact08" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+[node name="CatacombArtifact09" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
+[node name="CatacombArtifact10" parent="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid" instance=ExtResource("2_slot")]
+layout_mode = 2
 
 [editable path="ContentCenter/PortraitContent/Layout/ArtifactGrid/Artifact01"]
 [editable path="ContentCenter/PortraitContent/Layout/ArtifactGrid/Artifact02"]
@@ -121,3 +232,21 @@ text = "Золотая маска"
 [editable path="ContentCenter/PortraitContent/Layout/ArtifactGrid/Artifact10"]
 [editable path="ContentCenter/PortraitContent/Layout/ArtifactGrid/Artifact11"]
 [editable path="ContentCenter/PortraitContent/Layout/ArtifactGrid/Artifact12"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid/ShrineArtifact01"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid/ShrineArtifact02"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid/ShrineArtifact03"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid/ShrineArtifact04"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid/ShrineArtifact05"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid/ShrineArtifact06"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid/ShrineArtifact07"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterTwoSection/ArtifactGrid/ShrineArtifact08"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid/CatacombArtifact01"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid/CatacombArtifact02"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid/CatacombArtifact03"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid/CatacombArtifact04"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid/CatacombArtifact05"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid/CatacombArtifact06"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid/CatacombArtifact07"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid/CatacombArtifact08"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid/CatacombArtifact09"]
+[editable path="ContentCenter/PortraitContent/Layout/ChapterThreeSection/ArtifactGrid/CatacombArtifact10"]

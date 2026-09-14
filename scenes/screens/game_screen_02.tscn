@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen.tscn" id="1_game"]
+[ext_resource type="Resource" path="res://resources/expeditions/expedition_02.tres" id="2_expedition"]
+
+[node name="GameScreen02" instance=ExtResource("1_game")]
+next_expedition_scene_path = "res://scenes/screens/game_screen_03.tscn"
+
+[node name="GameSession" parent="." index="8"]
+expedition_definition = ExtResource("2_expedition")

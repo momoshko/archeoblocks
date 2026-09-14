@@ -1,0 +1,184 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/chapter_detail.gd" id="1_script"]
+
+[node name="ChapterDetail" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.211765, 0.152941, 0.0901961, 1)
+
+[node name="ContentCenter" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 52
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 52
+
+[node name="PortraitContent" type="VBoxContainer" parent="ContentCenter"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Header" type="HBoxContainer" parent="ContentCenter/PortraitContent"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BackButton" type="Button" parent="ContentCenter/PortraitContent/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 66)
+layout_mode = 2
+text = "Назад"
+
+[node name="ScreenTitle" type="Label" parent="ContentCenter/PortraitContent/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 34
+text = "Экспедиции"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ChapterNumber" type="Label" parent="ContentCenter/PortraitContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0.756863, 0.572549, 1)
+theme_override_font_sizes/font_size = 22
+text = "Глава I"
+horizontal_alignment = 1
+
+[node name="ChapterTitle" type="Label" parent="ContentCenter/PortraitContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 30
+text = "Древний двор"
+horizontal_alignment = 1
+
+[node name="ChapterSubtitle" type="Label" parent="ContentCenter/PortraitContent"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0.756863, 0.572549, 1)
+theme_override_font_sizes/font_size = 19
+text = "Первые раскопки"
+horizontal_alignment = 1
+
+[node name="Summary" type="HBoxContainer" parent="ContentCenter/PortraitContent"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ProgressLabel" type="Label" parent="ContentCenter/PortraitContent/Summary"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.905882, 0.807843, 0.623529, 1)
+theme_override_font_sizes/font_size = 21
+text = "Пройдено: 0 / 6"
+
+[node name="RewardLabel" type="Label" parent="ContentCenter/PortraitContent/Summary"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.905882, 0.807843, 0.623529, 1)
+theme_override_font_sizes/font_size = 21
+text = "Награда главы: +100 монет"
+horizontal_alignment = 2
+
+[node name="ExpeditionScroll" type="ScrollContainer" parent="ContentCenter/PortraitContent"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ExpeditionGrid" type="HFlowContainer" parent="ContentCenter/PortraitContent/ExpeditionScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
+alignment = 1
+
+[node name="Expedition01" type="Button" parent="ContentCenter/PortraitContent/ExpeditionScroll/ExpeditionGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(205, 136)
+layout_mode = 2
+text = "1\nОткрыто"
+
+[node name="Expedition02" type="Button" parent="ContentCenter/PortraitContent/ExpeditionScroll/ExpeditionGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(205, 136)
+layout_mode = 2
+disabled = true
+text = "2\nЗакрыто"
+
+[node name="Expedition03" type="Button" parent="ContentCenter/PortraitContent/ExpeditionScroll/ExpeditionGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(205, 136)
+layout_mode = 2
+disabled = true
+text = "3\nЗакрыто"
+
+[node name="Expedition04" type="Button" parent="ContentCenter/PortraitContent/ExpeditionScroll/ExpeditionGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(205, 136)
+layout_mode = 2
+disabled = true
+text = "4\nЗакрыто"
+
+[node name="Expedition05" type="Button" parent="ContentCenter/PortraitContent/ExpeditionScroll/ExpeditionGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(205, 136)
+layout_mode = 2
+disabled = true
+text = "5\nЗакрыто"
+
+[node name="Expedition06" type="Button" parent="ContentCenter/PortraitContent/ExpeditionScroll/ExpeditionGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(205, 136)
+layout_mode = 2
+disabled = true
+text = "6\nЗакрыто"
+
+[node name="Expedition07" type="Button" parent="ContentCenter/PortraitContent/ExpeditionScroll/ExpeditionGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(205, 136)
+layout_mode = 2
+disabled = true
+text = "7\nЗакрыто"
+
+[node name="Expedition08" type="Button" parent="ContentCenter/PortraitContent/ExpeditionScroll/ExpeditionGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(205, 136)
+layout_mode = 2
+disabled = true
+text = "8\nЗакрыто"
+
+[node name="Expedition09" type="Button" parent="ContentCenter/PortraitContent/ExpeditionScroll/ExpeditionGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(205, 136)
+layout_mode = 2
+disabled = true
+text = "9\nЗакрыто"
+
+[node name="Expedition10" type="Button" parent="ContentCenter/PortraitContent/ExpeditionScroll/ExpeditionGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(205, 136)
+layout_mode = 2
+disabled = true
+text = "10\nЗакрыто"

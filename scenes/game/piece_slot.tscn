@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/piece_slot.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/blocks/core_blocks_pack_v1/block_green_v1.png" id="2_green"]
+[ext_resource type="Resource" path="res://resources/visuals/core_block_textures_v1.tres" id="3_blocks"]
 
 [sub_resource type="StyleBoxFlat" id="StyleSlot"]
 bg_color = Color(0.882353, 0.8, 0.627451, 0.95)
@@ -18,12 +20,25 @@ content_margin_top = 8.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxFlat" id="StyleHint"]
+bg_color = Color(1, 0.85098, 0.286275, 0.12)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.85098, 0.286275, 0.95)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [node name="PieceSlot" type="PanelContainer"]
 custom_minimum_size = Vector2(178, 140)
 layout_mode = 2
 mouse_filter = 0
 theme_override_styles/panel = SubResource("StyleSlot")
 script = ExtResource("1_script")
+block_texture_set = ExtResource("3_blocks")
 
 [node name="SlotLayout" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -43,43 +58,55 @@ layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="PieceCell01" type="ColorRect" parent="SlotLayout/PieceCanvas"]
+[node name="PieceCell01" type="TextureRect" parent="SlotLayout/PieceCanvas"]
 layout_mode = 0
 mouse_filter = 2
 offset_left = 46.0
 offset_top = 8.0
 offset_right = 72.0
 offset_bottom = 34.0
-color = Color(0.176471, 0.513726, 0.309804, 1)
+texture_filter = 2
+texture = ExtResource("2_green")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="PieceCell02" type="ColorRect" parent="SlotLayout/PieceCanvas"]
+[node name="PieceCell02" type="TextureRect" parent="SlotLayout/PieceCanvas"]
 layout_mode = 0
 mouse_filter = 2
 offset_left = 46.0
 offset_top = 36.0
 offset_right = 72.0
 offset_bottom = 62.0
-color = Color(0.176471, 0.513726, 0.309804, 1)
+texture_filter = 2
+texture = ExtResource("2_green")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="PieceCell03" type="ColorRect" parent="SlotLayout/PieceCanvas"]
+[node name="PieceCell03" type="TextureRect" parent="SlotLayout/PieceCanvas"]
 layout_mode = 0
 mouse_filter = 2
 offset_left = 46.0
 offset_top = 64.0
 offset_right = 72.0
 offset_bottom = 90.0
-color = Color(0.176471, 0.513726, 0.309804, 1)
+texture_filter = 2
+texture = ExtResource("2_green")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="PieceCell04" type="ColorRect" parent="SlotLayout/PieceCanvas"]
+[node name="PieceCell04" type="TextureRect" parent="SlotLayout/PieceCanvas"]
 layout_mode = 0
 mouse_filter = 2
 offset_left = 74.0
 offset_top = 64.0
 offset_right = 100.0
 offset_bottom = 90.0
-color = Color(0.176471, 0.513726, 0.309804, 1)
+texture_filter = 2
+texture = ExtResource("2_green")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="PieceCell05" type="ColorRect" parent="SlotLayout/PieceCanvas"]
+[node name="PieceCell05" type="TextureRect" parent="SlotLayout/PieceCanvas"]
 visible = false
 layout_mode = 0
 mouse_filter = 2
@@ -87,4 +114,18 @@ offset_left = 102.0
 offset_top = 64.0
 offset_right = 128.0
 offset_bottom = 90.0
-color = Color(0.176471, 0.513726, 0.309804, 1)
+texture_filter = 2
+texture = ExtResource("2_green")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HintHighlight" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleHint")

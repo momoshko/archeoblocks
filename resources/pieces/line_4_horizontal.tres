@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PieceDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="1_piece"]
+
+[resource]
+script = ExtResource("1_piece")
+id = &"line_4_horizontal"
+display_name = "Линия 4"
+cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)])
+cosmetic_color = Color(0.18, 0.48, 0.78, 1)

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=17 format=3]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="3"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_horizontal.tres" id="4"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_vertical.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/pieces/small_l.tres" id="6"]
+[ext_resource type="Resource" path="res://resources/pieces/small_t.tres" id="7"]
+[ext_resource type="Resource" path="res://resources/pieces/square_2.tres" id="8"]
+[ext_resource type="Resource" path="res://resources/pieces/domino_horizontal.tres" id="9"]
+[ext_resource type="Resource" path="res://resources/pieces/domino_vertical.tres" id="10"]
+[sub_resource type="Resource" id="FA"]
+script = ExtResource("2")
+id = &"stone_comb_a"
+cells = Array[Vector2i]([Vector2i(5, 2)])
+[sub_resource type="Resource" id="FB"]
+script = ExtResource("2")
+id = &"stone_comb_b"
+cells = Array[Vector2i]([Vector2i(6, 5)])
+[sub_resource type="Resource" id="RA"]
+script = ExtResource("3")
+cell = Vector2i(1, 1)
+[sub_resource type="Resource" id="RB"]
+script = ExtResource("3")
+cell = Vector2i(1, 5)
+[sub_resource type="Resource" id="RC"]
+script = ExtResource("3")
+cell = Vector2i(4, 3)
+[sub_resource type="Resource" id="RD"]
+script = ExtResource("3")
+cell = Vector2i(6, 5)
+[resource]
+script = ExtResource("1")
+id = &"overgrown_catacombs_01"
+title_ru = "Заросшие катакомбы 1 — Живые корни"
+card_title_ru = "1 — Живые корни"
+debug_name = "Overgrown Catacombs 1 - Living Roots"
+artifact_id = &"stone_comb"
+artifact_name_ru = "Каменный гребень"
+objective_ru = "Откройте обе части каменного гребня"
+instruction_ru = "Корни расползаются после хода. Разрушайте их линиями или перекрывайте путь."
+normal_soil_cells = Array[Vector2i]([Vector2i(5,2), Vector2i(6,5), Vector2i(0,2), Vector2i(1,2), Vector2i(2,2), Vector2i(3,2), Vector2i(4,2), Vector2i(6,2), Vector2i(7,2), Vector2i(0,5), Vector2i(2,5), Vector2i(3,5), Vector2i(4,5), Vector2i(5,5), Vector2i(7,5)])
+artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FA"), SubResource("FB")])
+root_obstacles = Array[RootObstacleDefinition]([SubResource("RA"), SubResource("RB"), SubResource("RC")])
+opening_piece_set = Array[PieceDefinition]([ExtResource("4"), ExtResource("6"), ExtResource("8")])
+curated_piece_sequence = Array[PieceDefinition]([ExtResource("9"), ExtResource("5"), ExtResource("7"), ExtResource("4"), ExtResource("10"), ExtResource("6"), ExtResource("8"), ExtResource("4"), ExtResource("9")])
+expected_moves_min = 12
+expected_moves_max = 18

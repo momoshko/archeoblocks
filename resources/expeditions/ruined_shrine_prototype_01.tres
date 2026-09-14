@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1_expedition"]
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2_fragment"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="3_stone"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_horizontal.tres" id="4_line"]
+[ext_resource type="Resource" path="res://resources/pieces/single.tres" id="5_single"]
+
+[sub_resource type="Resource" id="FragmentReliefA"]
+script = ExtResource("2_fragment")
+id = &"shrine_relief_a"
+cells = Array[Vector2i]([Vector2i(6, 3)])
+
+[sub_resource type="Resource" id="FragmentReliefB"]
+script = ExtResource("2_fragment")
+id = &"shrine_relief_b"
+cells = Array[Vector2i]([Vector2i(4, 6)])
+
+[sub_resource type="Resource" id="StoneA"]
+script = ExtResource("3_stone")
+cell = Vector2i(2, 1)
+durability = 1
+
+[sub_resource type="Resource" id="StoneB"]
+script = ExtResource("3_stone")
+cell = Vector2i(6, 3)
+durability = 1
+
+[sub_resource type="Resource" id="StoneC"]
+script = ExtResource("3_stone")
+cell = Vector2i(5, 5)
+durability = 1
+
+[sub_resource type="Resource" id="StoneD"]
+script = ExtResource("3_stone")
+cell = Vector2i(1, 6)
+durability = 1
+
+[resource]
+script = ExtResource("1_expedition")
+id = &"ruined_shrine_prototype_01"
+title_ru = "Глава II — Заваленный вход"
+card_title_ru = "1 — Заваленный вход"
+debug_name = "Ruined Shrine Prototype 1 - Blocked Entrance"
+artifact_id = &"shrine_relief"
+artifact_name_ru = "Рельеф святилища"
+objective_ru = "Откройте обе части рельефа"
+instruction_ru = "Завалы занимают клетки. Проведите через завал линию, чтобы разбить его"
+normal_soil_cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1), Vector2i(7, 1), Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2), Vector2i(5, 2), Vector2i(6, 2), Vector2i(7, 2), Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(6, 3), Vector2i(7, 3), Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4), Vector2i(5, 4), Vector2i(6, 4), Vector2i(7, 4), Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5), Vector2i(4, 5), Vector2i(5, 5), Vector2i(6, 5), Vector2i(7, 5), Vector2i(0, 6), Vector2i(1, 6), Vector2i(2, 6), Vector2i(3, 6), Vector2i(4, 6), Vector2i(5, 6), Vector2i(6, 6), Vector2i(7, 6), Vector2i(0, 7), Vector2i(1, 7), Vector2i(2, 7), Vector2i(3, 7), Vector2i(4, 7), Vector2i(5, 7), Vector2i(6, 7), Vector2i(7, 7)])
+artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FragmentReliefA"), SubResource("FragmentReliefB")])
+stone_obstacles = Array[StoneObstacleDefinition]([SubResource("StoneA"), SubResource("StoneB"), SubResource("StoneC"), SubResource("StoneD")])
+opening_piece_set = Array[PieceDefinition]([ExtResource("4_line"), ExtResource("4_line"), ExtResource("5_single")])

@@ -1,0 +1,100 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/artifact_discovery_feedback.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleDiscovery"]
+bg_color = Color(0.109804, 0.0705882, 0.0313725, 0.96)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.807843, 0.305882, 0.95)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+content_margin_left = 18.0
+content_margin_top = 14.0
+content_margin_right = 18.0
+content_margin_bottom = 14.0
+
+[node name="ArtifactDiscoveryFeedback" type="Control"]
+visible = false
+z_index = 6
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_script")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DiscoveryCard" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(360, 250)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleDiscovery")
+
+[node name="Layout" type="VBoxContainer" parent="Center/DiscoveryCard"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Center/DiscoveryCard/Layout"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.92549, 0.65098, 1)
+theme_override_font_sizes/font_size = 25
+text = "ФРАГМЕНТ НАЙДЕН!"
+horizontal_alignment = 1
+
+[node name="ArtworkRow" type="HBoxContainer" parent="Center/DiscoveryCard/Layout"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Artwork01" type="TextureRect" parent="Center/DiscoveryCard/Layout/ArtworkRow"]
+custom_minimum_size = Vector2(100, 160)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Artwork02" type="TextureRect" parent="Center/DiscoveryCard/Layout/ArtworkRow"]
+custom_minimum_size = Vector2(100, 160)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Artwork03" type="TextureRect" parent="Center/DiscoveryCard/Layout/ArtworkRow"]
+custom_minimum_size = Vector2(100, 160)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ArtifactName" type="Label" parent="Center/DiscoveryCard/Layout"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 21
+text = "Золотая маска"
+horizontal_alignment = 1

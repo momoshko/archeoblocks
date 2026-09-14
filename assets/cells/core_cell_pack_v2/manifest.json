@@ -1,0 +1,93 @@
+{
+  "pack": "archeoblocks_core_cell_pack_v2",
+  "milestone": "M2.5A.1b",
+  "asset_count": 7,
+  "format": "PNG_RGBA8",
+  "size_px": [
+    256,
+    256
+  ],
+  "color_space": "sRGB",
+  "alpha": "straight",
+  "canvas_padding_px": 8,
+  "cell_content_rect_px": [
+    8,
+    8,
+    240,
+    240
+  ],
+  "base_edge_geometry": {
+    "identical_alpha_cutline": true,
+    "corner_radius_px": 6
+  },
+  "perspective": "orthographic_top_down",
+  "lighting": "upper_left",
+  "scene_integration": false,
+  "layer_order_bottom_to_top": [
+    "base_cell",
+    "external_artifact_if_visible",
+    "artifact_hint_if_buried",
+    "external_block_if_present",
+    "placement_preview"
+  ],
+  "composition_notes": [
+    "Use the same canvas origin and scale for all layers. Do not trim overlays individually.",
+    "For tight tiling use the common [8,8,240,240] content region consistently on every layer.",
+    "At depth2 show only the generic buried clue; keep actual artifact hidden.",
+    "At depth1 fit external artifact artwork in the opening, then draw the transparent edge overlay above it.",
+    "The opening is an edge treatment, not a clipping mask: it cannot erase soil or clip oversized artifact artwork.",
+    "At depth0 remove burial hints and display external artifact artwork if present.",
+    "No Golden Mask, other identifiable artifact, revealed-artifact state, or occupied block is baked into these PNGs."
+  ],
+  "depth1_artifact_review_fit_rect_px": [
+    90,
+    88,
+    76,
+    80
+  ],
+  "assets": [
+    {
+      "name": "cell_excavated_depth0_v2",
+      "file": "cell_excavated_depth0_v2.png",
+      "kind": "base_cell",
+      "description": "Recessed earth with inner shadow and dark bottom."
+    },
+    {
+      "name": "cell_soil_depth1_v2",
+      "file": "cell_soil_depth1_v2.png",
+      "kind": "base_cell",
+      "description": "Flat light warm-brown soil with modest shallow cracks."
+    },
+    {
+      "name": "cell_soil_depth2_v2",
+      "file": "cell_soil_depth2_v2.png",
+      "kind": "base_cell",
+      "description": "Flat darker compact soil with a connected crack."
+    },
+    {
+      "name": "artifact_hint_depth2_v2",
+      "file": "artifact_hint_depth2_v2.png",
+      "kind": "artifact_overlay",
+      "description": "Generic gold edge, no artifact identity."
+    },
+    {
+      "name": "artifact_hint_depth1_v2",
+      "file": "artifact_hint_depth1_v2.png",
+      "kind": "artifact_overlay",
+      "description": "Irregular earth opening with transparent center for external artwork."
+    },
+    {
+      "name": "preview_valid_v2",
+      "file": "preview_valid_v2.png",
+      "kind": "placement_overlay",
+      "description": "Transparent mint treatment, outline and checkmark."
+    },
+    {
+      "name": "preview_invalid_v2",
+      "file": "preview_invalid_v2.png",
+      "kind": "placement_overlay",
+      "description": "Transparent terracotta treatment, outline and X."
+    }
+  ],
+  "review_folder": "../../../art_review/core_cell_pack_v2"
+}

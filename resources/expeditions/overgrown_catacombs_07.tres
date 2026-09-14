@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=24 format=3]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="4"]
+[ext_resource type="Resource" path="res://resources/pieces/line_4_horizontal.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/pieces/large_l.tres" id="6"]
+[ext_resource type="Resource" path="res://resources/pieces/plus_5.tres" id="7"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_vertical.tres" id="8"]
+[ext_resource type="Resource" path="res://resources/pieces/small_l.tres" id="9"]
+[sub_resource type="Resource" id="FA"]
+script = ExtResource("2")
+id = &"bone_clasp_a"
+cells = Array[Vector2i]([Vector2i(1,1)])
+[sub_resource type="Resource" id="FB"]
+script = ExtResource("2")
+id = &"bone_clasp_b"
+cells = Array[Vector2i]([Vector2i(6,4)])
+[sub_resource type="Resource" id="FC"]
+script = ExtResource("2")
+id = &"bone_clasp_c"
+cells = Array[Vector2i]([Vector2i(2,7)])
+[sub_resource type="Resource" id="R1"]
+script = ExtResource("3")
+cell = Vector2i(0,2)
+[sub_resource type="Resource" id="R2"]
+script = ExtResource("3")
+cell = Vector2i(1,2)
+[sub_resource type="Resource" id="R3"]
+script = ExtResource("3")
+cell = Vector2i(3,0)
+[sub_resource type="Resource" id="R4"]
+script = ExtResource("3")
+cell = Vector2i(4,4)
+[sub_resource type="Resource" id="R5"]
+script = ExtResource("3")
+cell = Vector2i(6,6)
+[sub_resource type="Resource" id="R6"]
+script = ExtResource("3")
+cell = Vector2i(7,6)
+[sub_resource type="Resource" id="R7"]
+script = ExtResource("3")
+cell = Vector2i(4,7)
+[sub_resource type="Resource" id="S1"]
+script = ExtResource("4")
+cell = Vector2i(2,3)
+durability = 1
+[sub_resource type="Resource" id="S2"]
+script = ExtResource("4")
+cell = Vector2i(5,3)
+durability = 2
+[sub_resource type="Resource" id="S3"]
+script = ExtResource("4")
+cell = Vector2i(2,5)
+durability = 1
+[sub_resource type="Resource" id="S4"]
+script = ExtResource("4")
+cell = Vector2i(5,5)
+durability = 2
+[resource]
+script = ExtResource("1")
+id = &"overgrown_catacombs_07"
+title_ru = "Заросшие катакомбы 7 — Зарастающий зал"
+card_title_ru = "7 — Зарастающий зал"
+debug_name = "Overgrown Catacombs 7 - Closing Hall"
+artifact_id = &"bone_clasp"
+artifact_name_ru = "Костяная застёжка"
+objective_ru = "Откройте три части застёжки"
+instruction_ru = "Не отдавайте корням крупные свободные области."
+normal_soil_cells = Array[Vector2i]([Vector2i(1,1), Vector2i(6,4), Vector2i(2,7)])
+strong_soil_cells = Array[Vector2i]([Vector2i(6,4), Vector2i(2,7)])
+artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FA"), SubResource("FB"), SubResource("FC")])
+stone_obstacles = Array[StoneObstacleDefinition]([SubResource("S1"), SubResource("S2"), SubResource("S3"), SubResource("S4")])
+root_obstacles = Array[RootObstacleDefinition]([SubResource("R1"), SubResource("R2"), SubResource("R3"), SubResource("R4"), SubResource("R5"), SubResource("R6"), SubResource("R7")])
+opening_piece_set = Array[PieceDefinition]([ExtResource("5"), ExtResource("9"), ExtResource("8")])
+curated_piece_sequence = Array[PieceDefinition]([ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("5"), ExtResource("9"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("5")])
+expected_moves_min = 30
+expected_moves_max = 40

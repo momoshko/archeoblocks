@@ -55,6 +55,37 @@ func remaining_definitions() -> Array[PieceDefinition]:
 	return definitions
 
 
+func capture_state() -> Array[PieceDefinition]:
+	var definitions: Array[PieceDefinition] = []
+	for slot in _slots:
+		definitions.append(slot.get_definition())
+	return definitions
+
+
+func restore_state(definitions: Array[PieceDefinition]) -> void:
+	assert(definitions.size() == _slots.size(), "PieceTray state must contain exactly three slots")
+	for index in _slots.size():
+		_slots[index].set_definition(definitions[index])
+
+
+func get_active_slot_indices() -> Array[int]:
+	var indices: Array[int] = []
+	for index in _slots.size():
+		if _slots[index].is_available():
+			indices.append(index)
+	return indices
+
+
+func set_hint_slot(slot_index: int) -> void:
+	for index in _slots.size():
+		_slots[index].set_hint_highlight(index == slot_index)
+
+
+func clear_hint() -> void:
+	for slot in _slots:
+		slot.set_hint_highlight(false)
+
+
 func set_interaction_enabled(enabled: bool) -> void:
 	for slot in _slots:
 		slot.set_interaction_enabled(enabled)

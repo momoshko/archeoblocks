@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/result_popup.gd" id="1_script"]
 
 [sub_resource type="StyleBoxFlat" id="StyleResult"]
 bg_color = Color(0.890196, 0.803922, 0.619608, 1)
@@ -16,6 +18,22 @@ content_margin_top = 32.0
 content_margin_right = 36.0
 content_margin_bottom = 32.0
 
+[sub_resource type="StyleBoxFlat" id="StyleChapterComplete"]
+bg_color = Color(0.411765, 0.294118, 0.12549, 0.18)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.639216, 0.466667, 0.164706, 0.8)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+
 [node name="ResultPopup" type="Control"]
 visible = false
 layout_mode = 3
@@ -24,6 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_script")
 
 [node name="Dimmer" type="ColorRect" parent="."]
 layout_mode = 1
@@ -68,10 +87,64 @@ theme_override_font_sizes/font_size = 30
 text = "Золотая маска"
 horizontal_alignment = 1
 
-[node name="ArtifactPlaceholder" type="ColorRect" parent="PopupCenter/PopupPanel/Content"]
+[node name="ArtifactPreview" type="TextureRect" parent="PopupCenter/PopupPanel/Content"]
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
-color = Color(0.870588, 0.631373, 0.137255, 1)
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Progress" type="Label" parent="PopupCenter/PopupPanel/Content"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Фрагменты: 0 / 3"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="PopupCenter/PopupPanel/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Счёт: 0"
+horizontal_alignment = 1
+
+[node name="Coins" type="Label" parent="PopupCenter/PopupPanel/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Монеты: +20"
+horizontal_alignment = 1
+
+[node name="ChapterComplete" type="PanelContainer" parent="PopupCenter/PopupPanel/Content"]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleChapterComplete")
+
+[node name="Layout" type="VBoxContainer" parent="PopupCenter/PopupPanel/Content/ChapterComplete"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ChapterTitle" type="Label" parent="PopupCenter/PopupPanel/Content/ChapterComplete/Layout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Древний двор исследован"
+horizontal_alignment = 1
+
+[node name="ChapterProgress" type="Label" parent="PopupCenter/PopupPanel/Content/ChapterComplete/Layout"]
+layout_mode = 2
+text = "Коллекция 6/6"
+horizontal_alignment = 1
+
+[node name="ChapterReward" type="Label" parent="PopupCenter/PopupPanel/Content/ChapterComplete/Layout"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.545098, 0.333333, 0.0470588, 1)
+theme_override_font_sizes/font_size = 22
+text = "Награда главы: +100 монет"
+horizontal_alignment = 1
+
+[node name="UndoButton" type="Button" parent="PopupCenter/PopupPanel/Content"]
+visible = false
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+text = "Отменить ход · бесплатно"
 
 [node name="Buttons" type="HBoxContainer" parent="PopupCenter/PopupPanel/Content"]
 layout_mode = 2
@@ -87,4 +160,3 @@ text = "Повторить"
 custom_minimum_size = Vector2(210, 66)
 layout_mode = 2
 text = "Дальше"
-

@@ -1,0 +1,91 @@
+{
+  "pack": "archeoblocks_core_cell_states_v1",
+  "milestone": "M2.5A.1",
+  "perspective": "orthographic_top_down",
+  "light_direction": "upper_left",
+  "asset_count": 9,
+  "scene_integration": false,
+  "assets": [
+    {
+      "name": "cell_excavated_depth0",
+      "file": "cell_excavated_depth0.png",
+      "kind": "complete_cell",
+      "width": 256,
+      "height": 256,
+      "format": "PNG_RGBA8",
+      "minimum_transparent_padding_px": 8
+    },
+    {
+      "name": "cell_soil_depth1",
+      "file": "cell_soil_depth1.png",
+      "kind": "complete_cell",
+      "width": 256,
+      "height": 256,
+      "format": "PNG_RGBA8",
+      "minimum_transparent_padding_px": 8
+    },
+    {
+      "name": "cell_soil_depth2",
+      "file": "cell_soil_depth2.png",
+      "kind": "complete_cell",
+      "width": 256,
+      "height": 256,
+      "format": "PNG_RGBA8",
+      "minimum_transparent_padding_px": 8
+    },
+    {
+      "name": "cell_artifact_hidden_depth2",
+      "file": "cell_artifact_hidden_depth2.png",
+      "kind": "complete_cell",
+      "width": 256,
+      "height": 256,
+      "format": "PNG_RGBA8",
+      "minimum_transparent_padding_px": 8
+    },
+    {
+      "name": "cell_artifact_hidden_depth1",
+      "file": "cell_artifact_hidden_depth1.png",
+      "kind": "complete_cell",
+      "width": 256,
+      "height": 256,
+      "format": "PNG_RGBA8",
+      "minimum_transparent_padding_px": 8
+    },
+    {
+      "name": "cell_artifact_revealed",
+      "file": "cell_artifact_revealed.png",
+      "kind": "complete_cell",
+      "width": 256,
+      "height": 256,
+      "format": "PNG_RGBA8",
+      "minimum_transparent_padding_px": 8
+    },
+    {
+      "name": "cell_occupied_block",
+      "file": "cell_occupied_block.png",
+      "kind": "complete_cell",
+      "width": 256,
+      "height": 256,
+      "format": "PNG_RGBA8",
+      "minimum_transparent_padding_px": 8
+    },
+    {
+      "name": "preview_valid",
+      "file": "preview_valid.png",
+      "kind": "overlay",
+      "width": 256,
+      "height": 256,
+      "format": "PNG_RGBA8",
+      "minimum_transparent_padding_px": 8
+    },
+    {
+      "name": "preview_invalid",
+      "file": "preview_invalid.png",
+      "kind": "overlay",
+      "width": 256,
+      "height": 256,
+      "format": "PNG_RGBA8",
+      "minimum_transparent_padding_px": 8
+    }
+  ]
+}

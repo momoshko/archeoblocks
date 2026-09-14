@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="HelpConfig" format=3 uid="uid://sgqpq85qnvkx"]
+
+[ext_resource type="Script" uid="uid://jcamae46uld0" path="res://scripts/game/help_config.gd" id="1_help"]
+
+[resource]
+script = ExtResource("1_help")
+debug_unlimited_hints = true
+hint_expedition_victory_bonus = 1000000
+hint_fragment_completed_weight = 50000
+hint_artifact_excavation_weight = 5000
+hint_artifact_cell_weight = 500
+hint_excavation_weight = 150
+hint_obstacle_damage_weight = 400
+hint_obstacle_destroyed_weight = 1200
+hint_root_damage_weight = 500
+hint_root_destroyed_weight = 1600
+hint_root_growth_prevented_weight = 700
+hint_root_new_growth_penalty = 1800
+hint_blocked_piece_penalty = 6000
+hint_remaining_placement_weight = 3
+hint_line_weight = 100
+hint_free_cell_weight = 1
+hint_planning_depth = 5
+hint_beam_width = 12
+hint_leaf_legal_placement_weight = 8
+hint_leaf_connected_region_weight = 18
+hint_leaf_large_piece_space_weight = 120
+hint_leaf_artifact_depth_weight = 800

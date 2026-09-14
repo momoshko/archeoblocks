@@ -1,0 +1,102 @@
+{
+  "pack": "archeoblocks_core_blocks_pack_v1",
+  "milestone": "M2.5A.2",
+  "asset_count": 6,
+  "format": "PNG_RGBA8",
+  "size_px": [
+    256,
+    256
+  ],
+  "color_space": "sRGB",
+  "alpha": "straight",
+  "scene_integration": false,
+  "perspective": "orthographic_top_down",
+  "lighting": "upper_left",
+  "canvas_origin_px": [
+    0,
+    0
+  ],
+  "pivot_px": [
+    128,
+    128
+  ],
+  "transparent_padding_px": 18,
+  "alpha_bounds_xywh_px": [
+    18,
+    18,
+    220,
+    220
+  ],
+  "shared_layer_content_rect_px": [
+    8,
+    8,
+    240,
+    240
+  ],
+  "consistency": {
+    "identical_alpha": true,
+    "alpha_sha256": "8c0041335801bc2fb77dc3d5ad0617aa4d1e27af4f0394afb7d2ebb6c67acacf",
+    "common_generated_shape_master": true,
+    "common_export_transform": true,
+    "bevel_alignment": "reference-locked color edits; visually reviewed",
+    "rgb_identical": false
+  },
+  "production_notes": [
+    "Six single-cell sprites only. Compose polyominoes by repeating these sprites.",
+    "Draw base terrain first and block on top at the same origin/scale. No terrain, artifact or UI baked into the block.",
+    "For tight tiling, sample the same [8,8,240,240] region from both Core Cell Pack v2 and this pack. Never auto-trim colors independently.",
+    "Alpha normalized from one generated master: background noise removed, matte inset by one export pixel, solid interior made opaque. Color edits' painted checkerboard is not included in final files.",
+    "Raised appearance uses upper-left highlight, lower-right bevel and a tight dark contact rim; no large floating drop shadow."
+  ],
+  "assets": [
+    {
+      "name": "block_green_v1",
+      "file": "block_green_v1.png",
+      "kind": "block_overlay",
+      "material": "warm emerald / jade"
+    },
+    {
+      "name": "block_blue_v1",
+      "file": "block_blue_v1.png",
+      "kind": "block_overlay",
+      "material": "lapis blue stone"
+    },
+    {
+      "name": "block_red_v1",
+      "file": "block_red_v1.png",
+      "kind": "block_overlay",
+      "material": "terracotta / ruby red stone"
+    },
+    {
+      "name": "block_amber_v1",
+      "file": "block_amber_v1.png",
+      "kind": "block_overlay",
+      "material": "golden yellow-orange stone"
+    },
+    {
+      "name": "block_purple_v1",
+      "file": "block_purple_v1.png",
+      "kind": "block_overlay",
+      "material": "amethyst fantasy stone"
+    },
+    {
+      "name": "block_turquoise_v1",
+      "file": "block_turquoise_v1.png",
+      "kind": "block_overlay",
+      "material": "turquoise / cyan mineral stone"
+    }
+  ],
+  "review_folder": "../../../art_review/core_blocks_pack_v1",
+  "review_images": [
+    "blocks_overview.png",
+    "readability_48px.png",
+    "board_composite_8x8.png",
+    "board_composite_8x8_48px.png",
+    "grayscale_review_row.png",
+    "board_composite_8x8_grayscale_48px.png"
+  ],
+  "generation": {
+    "mode": "built_in_imagegen",
+    "prompts": "../../../art_review/core_blocks_pack_v1/prompts.json"
+  }
+}

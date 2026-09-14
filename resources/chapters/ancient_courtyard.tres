@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ChapterDefinition" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/game/chapter_definition.gd" id="1_chapter"]
+[ext_resource type="Resource" path="res://resources/expeditions/expedition_01.tres" id="2_exp01"]
+[ext_resource type="Resource" path="res://resources/expeditions/expedition_02.tres" id="3_exp02"]
+[ext_resource type="Resource" path="res://resources/expeditions/expedition_03.tres" id="4_exp03"]
+[ext_resource type="Resource" path="res://resources/expeditions/expedition_04.tres" id="5_exp04"]
+[ext_resource type="Resource" path="res://resources/expeditions/expedition_05.tres" id="6_exp05"]
+[ext_resource type="Resource" path="res://resources/expeditions/expedition_06.tres" id="7_exp06"]
+
+[resource]
+script = ExtResource("1_chapter")
+id = &"ancient_courtyard"
+number_ru = "Глава I"
+title_ru = "Древний двор"
+subtitle_ru = "Первые раскопки"
+expeditions = Array[ExpeditionDefinition]([ExtResource("2_exp01"), ExtResource("3_exp02"), ExtResource("4_exp03"), ExtResource("5_exp04"), ExtResource("6_exp05"), ExtResource("7_exp06")])
+completion_reward_coins = 100

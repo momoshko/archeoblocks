@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://depvk2coryhsp"]
+[gd_scene load_steps=15 format=3 uid="uid://depvk2coryhsp"]
 
 [ext_resource type="Script" uid="uid://iepascnjhthy" path="res://scripts/game_screen.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://scenes/game/board_view.tscn" id="2_board"]
@@ -7,6 +7,14 @@
 [ext_resource type="PackedScene" path="res://scenes/ui/result_popup.tscn" id="5_result"]
 [ext_resource type="Script" path="res://scripts/game/game_session.gd" id="6_session"]
 [ext_resource type="PackedScene" path="res://scenes/ui/drag_piece_preview.tscn" id="7_drag"]
+[ext_resource type="Resource" path="res://resources/expeditions/expedition_01.tres" id="8_expedition"]
+[ext_resource type="Resource" path="res://resources/config/help_config.tres" id="9_help"]
+[ext_resource type="Resource" path="res://resources/config/score_config.tres" id="10_score"]
+[ext_resource type="Resource" path="res://resources/config/economy_config.tres" id="11_economy"]
+[ext_resource type="PackedScene" path="res://scenes/ui/action_feedback.tscn" id="12_feedback"]
+[ext_resource type="Script" path="res://scripts/game/rewarded_action_service.gd" id="13_rewards"]
+[ext_resource type="PackedScene" path="res://scenes/ui/artifact_discovery_feedback.tscn" id="14_artifact_feedback"]
+[ext_resource type="Resource" path="res://resources/chapters/ancient_courtyard.tres" id="15_chapter"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoardFrame"]
 content_margin_left = 15.0
@@ -32,6 +40,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
+next_expedition_scene_path = "res://scenes/screens/game_screen_02.tscn"
 
 [node name="Background" type="ColorRect" parent="." unique_id=751414390]
 layout_mode = 1
@@ -107,22 +116,34 @@ theme_override_constants/separation = 4
 layout_mode = 2
 theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
 theme_override_font_sizes/font_size = 30
-text = "Экспедиция 1 — Древний двор"
+text = "Древний двор 1 — Первая линия"
 horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="FragmentProgress" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText" unique_id=705776830]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.760784, 0.835294, 0.611765, 1)
 theme_override_font_sizes/font_size = 22
-text = "M1 — базовая головоломка"
+text = "Фрагменты: 0 / 3"
 horizontal_alignment = 2
 
 [node name="ObjectiveText" type="Label" parent="ContentCenter/PortraitContent/MainLayout" unique_id=1160356646]
-custom_minimum_size = Vector2(0, 52)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
 theme_override_font_sizes/font_size = 22
-text = "Перетаскивайте фигуры на поле и собирайте линии"
+text = "Откройте печать под грунтом"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ObjectiveSecondary" type="Label" parent="ContentCenter/PortraitContent/MainLayout"]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760784, 0.835294, 0.611765, 1)
+theme_override_font_sizes/font_size = 18
+text = "Заполните строку или столбец — линия снимет грунт"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -134,196 +155,196 @@ theme_override_styles/panel = SubResource("StyleBoardFrame")
 
 [node name="Board" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame" unique_id=1859167373 instance=ExtResource("2_board")]
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell01" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell01" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell02" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell02" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell03" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell03" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell04" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell04" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell05" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell05" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell06" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell06" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell07" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell07" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell08" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell08" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell09" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell09" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell10" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell10" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell11" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell11" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell12" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell12" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell13" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell13" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell14" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell14" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell15" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell15" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell16" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell16" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell17" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell17" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell18" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell18" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell19" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell19" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell20" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell20" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell21" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell21" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell22" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell22" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell23" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell23" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell24" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell24" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell25" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell25" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell26" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell26" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell27" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell27" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell28" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell28" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell29" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell29" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell30" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell30" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell31" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell31" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell32" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell32" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell33" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell33" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell34" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell34" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell35" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell35" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell36" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell36" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell37" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell37" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell38" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell38" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell39" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell39" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell40" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell40" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell41" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell41" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell42" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell42" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell43" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell43" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell44" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell44" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell45" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell45" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell46" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell46" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell47" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell47" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell48" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell48" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell49" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell49" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell50" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell50" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell51" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell51" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell52" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell52" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell53" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell53" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell54" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell54" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell55" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell55" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell56" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell56" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell57" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell57" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell58" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell58" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell59" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell59" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell60" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell60" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell61" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell61" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell62" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell62" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell63" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell63" index="1"]
 anchors_preset = -1
 
-[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell64" index="1"]
+[node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell64" index="1"]
 anchors_preset = -1
 
 [node name="TrayCaption" type="Label" parent="ContentCenter/PortraitContent/MainLayout" unique_id=1039996115]
@@ -375,90 +396,120 @@ theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
 text = "Счёт: 0"
 horizontal_alignment = 2
 
-[node name="PausePopup" parent="." unique_id=1472598138 instance=ExtResource("4_pause")]
+[node name="ModalUI" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="PausePopup" parent="ModalUI" unique_id=1472598138 instance=ExtResource("4_pause")]
 layout_mode = 1
 
-[node name="ResultPopup" parent="." unique_id=1565151705 instance=ExtResource("5_result")]
+[node name="ResultPopup" parent="ModalUI" unique_id=1565151705 instance=ExtResource("5_result")]
+layout_mode = 1
+
+[node name="FeedbackUI" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="ActionFeedback" parent="FeedbackUI" instance=ExtResource("12_feedback")]
 layout_mode = 1
 
 [node name="DragPreview" parent="." instance=ExtResource("7_drag")]
 
+[node name="RewardedActionService" type="Node" parent="."]
+script = ExtResource("13_rewards")
+
 [node name="GameSession" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_session")
+expedition_definition = ExtResource("8_expedition")
+chapter_definition = ExtResource("15_chapter")
+help_config = ExtResource("9_help")
+score_config = ExtResource("10_score")
+economy_config = ExtResource("11_economy")
 board_view_path = NodePath("../ContentCenter/PortraitContent/MainLayout/BoardFrame/Board")
 piece_tray_path = NodePath("../ContentCenter/PortraitContent/MainLayout/PieceTray")
 drag_preview_path = NodePath("../DragPreview")
 moves_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Stats/MovesLabel")
+score_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Stats/ScoreLabel")
+fragment_progress_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Header/HeaderText/FragmentProgress")
+expedition_title_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Header/HeaderText/ExpeditionTitle")
+objective_text_path = NodePath("../ContentCenter/PortraitContent/MainLayout/ObjectiveText")
+instruction_text_path = NodePath("../ContentCenter/PortraitContent/MainLayout/ObjectiveSecondary")
 no_moves_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/NoMovesLabel")
-pause_popup_path = NodePath("../PausePopup")
-result_popup_path = NodePath("../ResultPopup")
+pause_popup_path = NodePath("../ModalUI/PausePopup")
+result_popup_path = NodePath("../ModalUI/ResultPopup")
+undo_button_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Actions/UndoButton")
+hint_button_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Actions/HintButton")
+action_feedback_path = NodePath("../FeedbackUI/ActionFeedback")
+artifact_discovery_feedback_path = NodePath("../FeedbackUI/ArtifactDiscoveryFeedback")
+rewarded_action_service_path = NodePath("../RewardedActionService")
+
+[node name="ArtifactDiscoveryFeedback" parent="FeedbackUI" instance=ExtResource("14_artifact_feedback")]
+layout_mode = 1
 
 [editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell01"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell02"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell03"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell04"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell05"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell06"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell07"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell08"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell09"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell10"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell11"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell12"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell13"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell14"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell15"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell16"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell17"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell18"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell19"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell20"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell21"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell22"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell23"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell24"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell25"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell26"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell27"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell28"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell29"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell30"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell31"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell32"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell33"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell34"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell35"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell36"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell37"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell38"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell39"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell40"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell41"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell42"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell43"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell44"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell45"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell46"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell47"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell48"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell49"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell50"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell51"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell52"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell53"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell54"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell55"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell56"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell57"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell58"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell59"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell60"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell61"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell62"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell63"]
-[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/Grid/Cell64"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell01"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell02"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell03"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell04"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell05"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell06"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell07"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell08"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell09"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell10"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell11"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell12"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell13"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell14"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell15"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell16"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell17"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell18"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell19"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell20"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell21"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell22"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell23"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell24"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell25"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell26"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell27"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell28"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell29"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell30"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell31"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell32"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell33"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell34"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell35"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell36"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell37"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell38"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell39"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell40"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell41"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell42"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell43"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell44"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell45"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell46"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell47"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell48"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell49"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell50"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell51"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell52"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell53"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell54"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell55"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell56"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell57"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell58"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell59"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell60"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell61"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell62"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell63"]
+[editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell64"]
 [editable path="ContentCenter/PortraitContent/MainLayout/PieceTray"]
 [editable path="ContentCenter/PortraitContent/MainLayout/PieceTray/LSlot"]
 [editable path="ContentCenter/PortraitContent/MainLayout/PieceTray/TSlot"]
