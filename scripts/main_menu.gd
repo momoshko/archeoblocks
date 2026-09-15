@@ -1,6 +1,11 @@
 extends Control
 
+const WEB_PLAYTEST_BUILD := "M2.10A"
+
+
 func _ready() -> void:
+	if OS.has_feature("web") and OS.is_debug_build():
+		print("Archeoblocks Web Playtest build=%s" % WEB_PLAYTEST_BUILD)
 	%PlayButton.pressed.connect(_open_game)
 	%ExpeditionsButton.pressed.connect(_open_expeditions)
 	%CollectionButton.pressed.connect(_open_collection)
@@ -17,4 +22,3 @@ func _open_collection() -> void:
 
 func _open_settings() -> void:
 	get_tree().change_scene_to_file("res://scenes/screens/settings.tscn")
-

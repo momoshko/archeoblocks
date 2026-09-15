@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/screens/chapter_detail.tscn" id="1_detail"]
 [ext_resource type="Resource" path="res://resources/chapters/overgrown_catacombs_prototype.tres" id="2_chapter"]
 [ext_resource type="Resource" path="res://resources/chapters/ruined_shrine.tres" id="3_prerequisite"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_ch3_prototype_01.tscn" id="4_game01"]
 
 [node name="ChapterDetailThreePrototype" instance=ExtResource("1_detail")]
 chapter_definition = ExtResource("2_chapter")
 prerequisite_chapter = ExtResource("3_prerequisite")
-expedition_scene_paths = PackedStringArray("res://scenes/screens/game_screen_ch3_prototype_01.tscn")
+expedition_scenes = Array[PackedScene]([ExtResource("4_game01")])

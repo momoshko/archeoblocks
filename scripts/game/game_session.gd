@@ -230,8 +230,8 @@ func _on_drag_started(slot_index: int, definition: PieceDefinition, pointer_posi
 	if not _can_interact() or not piece_tray.is_slot_available(slot_index):
 		piece_tray.cancel_drag()
 		return
-	_clear_hint_feedback()
 	if not obstacle_model.has_legal_placement(board_model, definition.cells):
+		_clear_hint_feedback()
 		piece_tray.cancel_drag()
 		action_feedback.show_message("Нет места для этой фигуры")
 		if not _has_any_legal_move():
@@ -240,6 +240,8 @@ func _on_drag_started(slot_index: int, definition: PieceDefinition, pointer_posi
 	_active_slot = slot_index
 	_active_definition = definition
 	_active_is_touch = is_touch
+	# Keep the pointer-down drag authoritative while removing informational Hint visuals.
+	_clear_hint_feedback()
 	drag_preview.show_definition(definition, board_view.get_cell_draw_size(), board_view.get_cell_step())
 	_update_active_drag(pointer_position)
 

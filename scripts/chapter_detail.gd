@@ -2,7 +2,7 @@ extends Control
 
 @export var chapter_definition: ChapterDefinition
 @export var prerequisite_chapter: ChapterDefinition
-@export_file("*.tscn") var expedition_scene_paths: PackedStringArray = []
+@export var expedition_scenes: Array[PackedScene] = []
 
 @onready var chapter_number: Label = %ChapterNumber
 @onready var chapter_title: Label = %ChapterTitle
@@ -34,8 +34,8 @@ func _ready() -> void:
 	for index in expedition_buttons.size():
 		var has_expedition := index < chapter_definition.expeditions.size()
 		expedition_buttons[index].visible = has_expedition
-		if has_expedition and index < expedition_scene_paths.size():
-			expedition_buttons[index].pressed.connect(_open_expedition.bind(expedition_scene_paths[index]))
+		if has_expedition and index < expedition_scenes.size():
+			expedition_buttons[index].pressed.connect(_open_expedition.bind(expedition_scenes[index]))
 	refresh_progress()
 
 
@@ -75,7 +75,7 @@ func refresh_progress() -> void:
 		elif is_unlocked:
 			state_text = "Открыто"
 		button.text = "%s\n%s" % [expedition.card_title_ru, state_text]
-		button.disabled = not is_unlocked or index >= expedition_scene_paths.size()
+		button.disabled = not is_unlocked or index >= expedition_scenes.size() or expedition_scenes[index] == null
 
 
 func _is_chapter_complete(chapter: ChapterDefinition, completed: Dictionary) -> bool:
@@ -91,5 +91,7 @@ func _back_to_chapters() -> void:
 	get_tree().change_scene_to_file("res://scenes/screens/expedition_select.tscn")
 
 
-func _open_expedition(scene_path: String) -> void:
-	get_tree().change_scene_to_file(scene_path)
+func _open_expedition(expedition_scene: PackedScene) -> void:
+	if expedition_scene == null:
+		return
+	get_tree().change_scene_to_packed(expedition_scene)
