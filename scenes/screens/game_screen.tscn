@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://depvk2coryhsp"]
+[gd_scene load_steps=16 format=3 uid="uid://depvk2coryhsp"]
 
 [ext_resource type="Script" uid="uid://iepascnjhthy" path="res://scripts/game_screen.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://scenes/game/board_view.tscn" id="2_board"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://scripts/game/rewarded_action_service.gd" id="13_rewards"]
 [ext_resource type="PackedScene" path="res://scenes/ui/artifact_discovery_feedback.tscn" id="14_artifact_feedback"]
 [ext_resource type="Resource" path="res://resources/chapters/ancient_courtyard.tres" id="15_chapter"]
+[ext_resource type="PackedScene" path="res://scenes/ui/onboarding_tutorial.tscn" id="16_tutorial"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoardFrame"]
 content_margin_left = 15.0
@@ -443,6 +444,13 @@ artifact_discovery_feedback_path = NodePath("../FeedbackUI/ArtifactDiscoveryFeed
 rewarded_action_service_path = NodePath("../RewardedActionService")
 
 [node name="ArtifactDiscoveryFeedback" parent="FeedbackUI" instance=ExtResource("14_artifact_feedback")]
+layout_mode = 1
+
+[node name="TutorialUI" type="CanvasLayer" parent="."]
+layer = 8
+
+[node name="OnboardingTutorial" parent="TutorialUI" instance=ExtResource("16_tutorial")]
+game_session_path = NodePath("../../GameSession")
 layout_mode = 1
 
 [editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board"]

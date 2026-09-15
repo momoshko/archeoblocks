@@ -10,6 +10,8 @@ signal fragment_collected(fragment_id: StringName)
 signal victory_reached
 signal score_changed(value: int)
 signal help_state_changed
+signal piece_placed(slot_index: int, origin: Vector2i)
+signal expedition_restarted
 
 @export var expedition_definition: ExpeditionDefinition
 @export var chapter_definition: ChapterDefinition
@@ -82,6 +84,9 @@ var _victory_bonus_awarded := false
 var _root_threat_source := Vector2i(-1, -1)
 var _root_threat_cell := Vector2i(-1, -1)
 var _web_test_unlimited_hints := false
+var _tutorial_active := false
+var _tutorial_required_slot := -1
+var _tutorial_required_origin := Vector2i(-999, -999)
 
 enum HintCandidatePriority {
 	IMMEDIATE_LOSS,
@@ -206,6 +211,7 @@ func restart_expedition() -> bool:
 	board_view.play_artifact_targets_intro()
 	piece_tray.set_interaction_enabled(true)
 	_update_help_ui()
+	expedition_restarted.emit()
 	return true
 
 
@@ -215,6 +221,24 @@ func set_input_blocked(blocked: bool) -> void:
 	if blocked:
 		_prepare_for_modal()
 	piece_tray.set_interaction_enabled(not blocked and not _busy and not _no_moves)
+
+
+func set_tutorial_placement(slot_index: int, origin: Vector2i) -> void:
+	_tutorial_active = true
+	_tutorial_required_slot = slot_index
+	_tutorial_required_origin = origin
+	piece_tray.set_required_slot(slot_index)
+	piece_tray.set_interaction_enabled(_can_interact())
+	_update_help_ui()
+
+
+func finish_tutorial() -> void:
+	_tutorial_active = false
+	_tutorial_required_slot = -1
+	_tutorial_required_origin = Vector2i(-999, -999)
+	piece_tray.clear_required_slot()
+	piece_tray.set_interaction_enabled(_can_interact())
+	_update_help_ui()
 
 
 func cancel_active_drag() -> void:
@@ -228,6 +252,9 @@ func cancel_active_drag() -> void:
 func _on_drag_started(slot_index: int, definition: PieceDefinition, pointer_position: Vector2, is_touch: bool) -> void:
 	_register_interaction()
 	if not _can_interact() or not piece_tray.is_slot_available(slot_index):
+		piece_tray.cancel_drag()
+		return
+	if _tutorial_active and slot_index != _tutorial_required_slot:
 		piece_tray.cancel_drag()
 		return
 	if not obstacle_model.has_legal_placement(board_model, definition.cells):
@@ -276,6 +303,8 @@ func _update_active_drag(pointer_position: Vector2) -> void:
 	_active_origin = anchor_board_cell - _active_definition.get_anchor_cell()
 	_active_cells = _active_definition.translated_cells(_active_origin)
 	_active_is_valid = obstacle_model.can_place(board_model, _active_definition.cells, _active_origin)
+	if _tutorial_active:
+		_active_is_valid = _active_is_valid and _active_origin == _tutorial_required_origin
 	var artifact_hit_cells: Array[Vector2i] = []
 	if _active_is_valid:
 		artifact_hit_cells = _predict_artifact_hit_cells(_active_definition, _active_origin)
@@ -318,6 +347,8 @@ func _predict_artifact_hit_cells(definition: PieceDefinition, origin: Vector2i) 
 func try_place_piece(slot_index: int, origin: Vector2i) -> bool:
 	if not _can_interact() or not piece_tray.is_slot_available(slot_index):
 		return false
+	if _tutorial_active and (slot_index != _tutorial_required_slot or origin != _tutorial_required_origin):
+		return false
 	var definition := piece_tray.get_definition(slot_index)
 	if definition == null or not obstacle_model.can_place(board_model, definition.cells, origin):
 		return false
@@ -341,6 +372,7 @@ func _commit_placement(slot_index: int, definition: PieceDefinition, origin: Vec
 	moves += 1
 	_add_score(score_config.successful_placement)
 	_update_moves_label()
+	piece_placed.emit(slot_index, origin)
 
 	var full_rows := obstacle_model.get_full_rows(board_model)
 	var full_columns := obstacle_model.get_full_columns(board_model)
@@ -1218,6 +1250,11 @@ func _update_help_ui() -> void:
 		hint_button.disabled = true
 	else:
 		hint_button.text = "Подсказка недоступна"
+		hint_button.disabled = true
+	if _tutorial_active:
+		undo_button.text = "Следуйте обучению"
+		undo_button.disabled = true
+		hint_button.text = "Следуйте обучению"
 		hint_button.disabled = true
 
 	if _no_moves and result_popup.visible:

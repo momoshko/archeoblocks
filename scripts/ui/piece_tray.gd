@@ -6,6 +6,8 @@ signal drag_moved(slot_index: int, pointer_position: Vector2)
 signal drag_ended(slot_index: int, pointer_position: Vector2)
 
 var _slots: Array[PieceSlot] = []
+var _interaction_enabled := true
+var _required_slot := -1
 
 
 func _ready() -> void:
@@ -23,6 +25,7 @@ func load_set(definitions: Array[PieceDefinition]) -> void:
 	assert(definitions.size() == _slots.size(), "PieceTray set must contain exactly three pieces")
 	for index in _slots.size():
 		_slots[index].set_definition(definitions[index])
+	_apply_interaction_state()
 
 
 func consume_slot(slot_index: int) -> void:
@@ -66,6 +69,7 @@ func restore_state(definitions: Array[PieceDefinition]) -> void:
 	assert(definitions.size() == _slots.size(), "PieceTray state must contain exactly three slots")
 	for index in _slots.size():
 		_slots[index].set_definition(definitions[index])
+	_apply_interaction_state()
 
 
 func get_active_slot_indices() -> Array[int]:
@@ -87,13 +91,36 @@ func clear_hint() -> void:
 
 
 func set_interaction_enabled(enabled: bool) -> void:
-	for slot in _slots:
-		slot.set_interaction_enabled(enabled)
+	_interaction_enabled = enabled
+	_apply_interaction_state()
+
+
+func set_required_slot(slot_index: int) -> void:
+	_required_slot = slot_index
+	_apply_interaction_state()
+
+
+func clear_required_slot() -> void:
+	_required_slot = -1
+	_apply_interaction_state()
+
+
+func get_slot_global_rect(slot_index: int) -> Rect2:
+	if slot_index < 0 or slot_index >= _slots.size():
+		return Rect2()
+	return _slots[slot_index].get_global_rect()
 
 
 func cancel_drag() -> void:
 	for slot in _slots:
 		slot.cancel_drag()
+
+
+func _apply_interaction_state() -> void:
+	for index in _slots.size():
+		_slots[index].set_interaction_enabled(
+			_interaction_enabled and (_required_slot < 0 or index == _required_slot)
+		)
 
 
 func _on_slot_drag_started(definition: PieceDefinition, pointer_position: Vector2, is_touch: bool, slot_index: int) -> void:
