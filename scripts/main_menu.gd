@@ -1,6 +1,6 @@
 extends Control
 
-const WEB_PLAYTEST_BUILD := "M2.11-onboarding-2"
+const WEB_PLAYTEST_BUILD := "M2.11-onboarding-3"
 
 
 func _ready() -> void:

@@ -21,7 +21,7 @@ func _run() -> void:
 	_delete_test_progress()
 	await _test_guided_first_run()
 	await _test_completed_replay_starts_tutorial_and_can_skip()
-	await _test_other_expeditions_do_not_start_tutorial()
+	await _test_other_expeditions_use_resource_driven_intro()
 	_delete_test_progress()
 	ProgressStore.storage_path = ProgressStore.DEFAULT_STORAGE_PATH
 
@@ -49,6 +49,7 @@ func _test_guided_first_run() -> void:
 	_expect(tutorial.visible, "First unfinished expedition should show the onboarding overlay")
 	_expect(game.get_node("TutorialUI").layer < game.get_node("ModalUI").layer, "Modal UI must remain above the tutorial")
 	_expect(session._tutorial_active and session._tutorial_required_slot == 0, "Tutorial should initially require the first curated piece")
+	_expect(_spotlight_matches(tutorial, session.board_view.get_cell_view(Vector2i(3, 3)).get_global_rect()), "Artifact spotlight should follow the actual Expedition 1 artifact cell")
 	_expect(
 		slots[0].mouse_filter == Control.MOUSE_FILTER_STOP
 		and slots[1].mouse_filter == Control.MOUSE_FILTER_IGNORE
@@ -59,9 +60,13 @@ func _test_guided_first_run() -> void:
 	_expect(not session.try_place_piece(0, Vector2i(1, 3)), "The instructed piece must only place at the highlighted origin")
 
 	tutorial.continue_button.pressed.emit()
+	await process_frame
 	_expect(tutorial.spotlight_border.visible and not tutorial.continue_button.visible, "Continue should advance to the interactive take-piece step")
+	_expect(_spotlight_matches(tutorial, tray.get_slot_global_rect(0)), "Tray spotlight should align with the first instructed PieceSlot")
 	_expect(session.try_place_piece(0, Vector2i(0, 3)), "First guided placement should be accepted")
+	await process_frame
 	_expect(session._tutorial_required_slot == 1 and tutorial._placement_index == 1, "Tutorial should advance to the second piece")
+	_expect(_spotlight_matches(tutorial, tray.get_slot_global_rect(1)), "Tray spotlight should follow the second PieceSlot after layout updates")
 	_expect(session.try_place_piece(1, Vector2i(3, 3)), "Second guided placement should be accepted")
 	_expect(session._tutorial_required_slot == 2 and tutorial._placement_index == 2, "Tutorial should advance to the final piece")
 	_expect(session.try_place_piece(2, Vector2i(6, 3)), "Final guided placement should complete the excavation line")
@@ -83,13 +88,14 @@ func _test_completed_replay_starts_tutorial_and_can_skip() -> void:
 	var tutorial := game.get_node("TutorialUI/OnboardingTutorial") as OnboardingTutorial
 	_expect(tutorial.visible and session._tutorial_active, "Play should start Expedition 1 onboarding even after an earlier completion")
 	_expect(tutorial.skip_button.visible, "Onboarding should provide an explicit skip button")
+	_expect(tutorial.skip_button.anchor_left == 1.0 and tutorial.skip_button.anchor_right == 1.0, "Skip should be anchored in the screen corner instead of the speech bubble")
 	tutorial.skip_button.pressed.emit()
 	_expect(not tutorial.visible, "Skip should close the onboarding overlay")
 	_expect(not session._tutorial_active and session.piece_tray._required_slot == -1, "Skip should immediately restore ordinary piece input")
 	await _remove_scene(game)
 
 
-func _test_other_expeditions_do_not_start_tutorial() -> void:
+func _test_other_expeditions_use_resource_driven_intro() -> void:
 	var game := load("res://scenes/screens/game_screen_02.tscn").instantiate() as Control
 	root.add_child(game)
 	await process_frame
@@ -98,9 +104,18 @@ func _test_other_expeditions_do_not_start_tutorial() -> void:
 	var session := game.get_node("GameSession") as GameSession
 	var tutorial := game.get_node("TutorialUI/OnboardingTutorial") as OnboardingTutorial
 	_expect(session.expedition_definition.id == &"expedition_02", "Regression fixture should load Expedition 2")
-	_expect(not tutorial.visible and not session._tutorial_active, "Expedition 2 must not inherit Expedition 1 tutorial coordinates or input gate")
+	_expect(tutorial.visible and not tutorial._guided_mode, "Expedition 2 should keep its artifact introduction without using Expedition 1 guided moves")
 	_expect(session.piece_tray._required_slot == -1, "Expedition 2 tray should remain unrestricted")
+	_expect(_spotlight_matches(tutorial, session.board_view.get_cell_view(Vector2i(4, 4)).get_global_rect()), "Expedition 2 spotlight should use its real artifact cell from resource data")
+	tutorial.continue_button.pressed.emit()
+	_expect(not tutorial.visible and not session._tutorial_active, "Starting Expedition 2 should close the introduction without leaving an input lock")
 	await _remove_scene(game)
+
+
+func _spotlight_matches(tutorial: OnboardingTutorial, target_global_rect: Rect2) -> bool:
+	var inverse_canvas_transform := tutorial.get_global_transform_with_canvas().affine_inverse()
+	var expected_center := inverse_canvas_transform * target_global_rect.get_center()
+	return tutorial.spotlight_border.get_rect().get_center().distance_to(expected_center) < 1.0
 
 
 func _remove_scene(node: Node) -> void:

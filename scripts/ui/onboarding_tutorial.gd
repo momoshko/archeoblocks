@@ -3,7 +3,6 @@ extends Control
 
 @export var game_session_path: NodePath
 @export var tutorial_expedition_id: StringName = &"expedition_01"
-@export var artifact_cell := Vector2i(3, 3)
 @export var required_slots := PackedInt32Array([0, 1, 2])
 @export var required_origins: Array[Vector2i] = [
 	Vector2i(0, 3),
@@ -39,13 +38,27 @@ var _placement_index := 0
 var _waiting_for_placement := false
 var _placement_committed := false
 var _pulse_tween: Tween
+var _guided_mode := false
+var _spotlight_target := SpotlightTarget.NONE
+
+enum SpotlightTarget {
+	NONE,
+	ARTIFACT,
+	TRAY_SLOT,
+	PLACEMENT,
+}
 
 
 func _ready() -> void:
 	hide()
+	set_process(false)
 	continue_button.pressed.connect(_on_continue_pressed)
 	skip_button.pressed.connect(_finish)
 	call_deferred("_setup")
+
+
+func _process(_delta: float) -> void:
+	_refresh_spotlight()
 
 
 func _setup() -> void:
@@ -64,22 +77,36 @@ func _setup() -> void:
 
 
 func _start_if_needed() -> void:
-	if _session.expedition_definition.id != tutorial_expedition_id:
+	if _session.expedition_definition.artifact_fragments.is_empty():
 		_finish()
 		return
+	_guided_mode = _session.expedition_definition.id == tutorial_expedition_id
 	_placement_index = 0
 	_waiting_for_placement = false
 	_placement_committed = false
 	show()
-	_session.set_tutorial_placement(required_slots[0], required_origins[0])
+	set_process(true)
 	_tray.clear_hint()
-	tutorial_text.text = goal_text
+	if _guided_mode:
+		_session.set_tutorial_placement(required_slots[0], required_origins[0])
+		tutorial_text.text = goal_text
+		continue_button.text = "Понятно"
+	else:
+		_session.finish_tutorial()
+		tutorial_text.text = "%s\n%s" % [
+			_session.expedition_definition.objective_ru,
+			_session.expedition_definition.instruction_ru,
+		]
+		continue_button.text = "Начать"
 	continue_button.show()
-	_show_spotlight(_board.get_cell_view(artifact_cell).get_global_rect())
+	_set_spotlight_target(SpotlightTarget.ARTIFACT)
 
 
 func _on_continue_pressed() -> void:
-	_show_take_step()
+	if _guided_mode:
+		_show_take_step()
+	else:
+		_finish()
 
 
 func _show_take_step() -> void:
@@ -92,7 +119,7 @@ func _show_take_step() -> void:
 	_tray.set_hint_slot(slot_index)
 	tutorial_text.text = take_texts[_placement_index]
 	continue_button.hide()
-	_show_spotlight(_tray.get_slot_global_rect(slot_index))
+	_set_spotlight_target(SpotlightTarget.TRAY_SLOT)
 
 
 func _on_drag_started(
@@ -109,7 +136,7 @@ func _on_drag_started(
 	_placement_committed = false
 	_tray.clear_hint()
 	tutorial_text.text = place_texts[_placement_index]
-	_show_spotlight(_expected_cells_rect())
+	_set_spotlight_target(SpotlightTarget.PLACEMENT)
 
 
 func _on_drag_ended(slot_index: int, _pointer_position: Vector2) -> void:
@@ -150,7 +177,7 @@ func _show_excavation_step() -> void:
 	_tray.clear_hint()
 	tutorial_text.text = excavation_text
 	continue_button.hide()
-	_show_spotlight(_board.get_cell_view(artifact_cell).get_global_rect())
+	_set_spotlight_target(SpotlightTarget.ARTIFACT)
 
 
 func _on_fragment_collected(_fragment_id: StringName) -> void:
@@ -163,6 +190,8 @@ func _on_expedition_restarted() -> void:
 
 
 func _finish() -> void:
+	_spotlight_target = SpotlightTarget.NONE
+	set_process(false)
 	if _session != null:
 		_session.finish_tutorial()
 	if _tray != null:
@@ -173,11 +202,49 @@ func _finish() -> void:
 	hide()
 
 
+func _set_spotlight_target(target: SpotlightTarget) -> void:
+	_spotlight_target = target
+	_refresh_spotlight()
+	if _pulse_tween != null:
+		_pulse_tween.kill()
+	spotlight_border.modulate = Color.WHITE
+	_pulse_tween = create_tween().set_loops()
+	_pulse_tween.tween_property(spotlight_border, "modulate:a", 0.45, 0.45)
+	_pulse_tween.tween_property(spotlight_border, "modulate:a", 1.0, 0.45)
+
+
+func _refresh_spotlight() -> void:
+	if not visible or _spotlight_target == SpotlightTarget.NONE:
+		return
+	var target_rect := Rect2()
+	var margin := 4.0
+	match _spotlight_target:
+		SpotlightTarget.ARTIFACT:
+			target_rect = _artifact_target_rect()
+		SpotlightTarget.TRAY_SLOT:
+			if _placement_index < required_slots.size():
+				target_rect = _tray.get_slot_global_rect(required_slots[_placement_index])
+			margin = 2.0
+		SpotlightTarget.PLACEMENT:
+			target_rect = _expected_cells_rect()
+	_layout_spotlight(target_rect, margin)
+
+
+func _artifact_target_rect() -> Rect2:
+	for fragment in _session.expedition_definition.artifact_fragments:
+		if not _session.excavation_model.is_fragment_collected(fragment.id):
+			return _cells_global_rect(fragment.cells)
+	return Rect2()
+
+
 func _expected_cells_rect() -> Rect2:
 	var definition := _tray.get_definition(required_slots[_placement_index])
 	if definition == null:
 		return Rect2()
-	var cells := definition.translated_cells(required_origins[_placement_index])
+	return _cells_global_rect(definition.translated_cells(required_origins[_placement_index]))
+
+
+func _cells_global_rect(cells: Array[Vector2i]) -> Rect2:
 	var result := Rect2()
 	var has_rect := false
 	for cell in cells:
@@ -190,11 +257,14 @@ func _expected_cells_rect() -> Rect2:
 	return result
 
 
-func _show_spotlight(target_rect: Rect2) -> void:
+func _layout_spotlight(target_rect: Rect2, margin: float) -> void:
 	if target_rect.size == Vector2.ZERO:
 		return
 	var viewport_size := get_viewport_rect().size
-	var rect := target_rect.grow(12.0)
+	var inverse_canvas_transform := get_global_transform_with_canvas().affine_inverse()
+	var local_start := inverse_canvas_transform * target_rect.position
+	var local_end := inverse_canvas_transform * target_rect.end
+	var rect := Rect2(local_start, local_end - local_start).grow(margin)
 	rect.position.x = clampf(rect.position.x, 0.0, viewport_size.x)
 	rect.position.y = clampf(rect.position.y, 0.0, viewport_size.y)
 	rect.size.x = minf(rect.size.x, viewport_size.x - rect.position.x)
@@ -210,10 +280,3 @@ func _show_spotlight(target_rect: Rect2) -> void:
 	dim_right.size = Vector2(maxf(0.0, viewport_size.x - rect.end.x), rect.size.y)
 	spotlight_border.position = rect.position
 	spotlight_border.size = rect.size
-
-	if _pulse_tween != null:
-		_pulse_tween.kill()
-	spotlight_border.modulate = Color.WHITE
-	_pulse_tween = create_tween().set_loops()
-	_pulse_tween.tween_property(spotlight_border, "modulate:a", 0.45, 0.45)
-	_pulse_tween.tween_property(spotlight_border, "modulate:a", 1.0, 0.45)
