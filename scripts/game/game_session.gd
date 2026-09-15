@@ -582,6 +582,7 @@ func _on_reward_granted(_request_id: int, reward_type: int) -> void:
 		RewardedActionService.RewardType.HINT:
 			if not _no_moves and not find_best_hint().is_empty() and help_state.consume_rewarded_hint():
 				_show_best_hint()
+	piece_tray.set_interaction_enabled(_can_interact())
 	_update_help_ui()
 
 

@@ -40,8 +40,9 @@ theme_override_constants/margin_right = 34
 theme_override_constants/margin_bottom = 52
 
 [node name="PortraitContent" type="ScrollContainer" parent="ContentCenter"]
+custom_minimum_size = Vector2(652, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
