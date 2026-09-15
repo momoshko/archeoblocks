@@ -20,7 +20,8 @@ func _run() -> void:
 	ProgressStore.storage_path = ProjectSettings.globalize_path(TEST_PROGRESS_PATH)
 	_delete_test_progress()
 	await _test_guided_first_run()
-	await _test_completed_replay_skips_tutorial()
+	await _test_completed_replay_starts_tutorial_and_can_skip()
+	await _test_other_expeditions_do_not_start_tutorial()
 	_delete_test_progress()
 	ProgressStore.storage_path = ProgressStore.DEFAULT_STORAGE_PATH
 
@@ -72,7 +73,7 @@ func _test_guided_first_run() -> void:
 	current_scene = null
 
 
-func _test_completed_replay_skips_tutorial() -> void:
+func _test_completed_replay_starts_tutorial_and_can_skip() -> void:
 	var game := load("res://scenes/screens/game_screen.tscn").instantiate() as Control
 	root.add_child(game)
 	await process_frame
@@ -80,8 +81,25 @@ func _test_completed_replay_skips_tutorial() -> void:
 	await process_frame
 	var session := game.get_node("GameSession") as GameSession
 	var tutorial := game.get_node("TutorialUI/OnboardingTutorial") as OnboardingTutorial
-	_expect(not tutorial.visible, "Completed Expedition 1 replay should not show onboarding again")
-	_expect(not session._tutorial_active and session.piece_tray._required_slot == -1, "Replay should keep ordinary piece input unrestricted")
+	_expect(tutorial.visible and session._tutorial_active, "Play should start Expedition 1 onboarding even after an earlier completion")
+	_expect(tutorial.skip_button.visible, "Onboarding should provide an explicit skip button")
+	tutorial.skip_button.pressed.emit()
+	_expect(not tutorial.visible, "Skip should close the onboarding overlay")
+	_expect(not session._tutorial_active and session.piece_tray._required_slot == -1, "Skip should immediately restore ordinary piece input")
+	await _remove_scene(game)
+
+
+func _test_other_expeditions_do_not_start_tutorial() -> void:
+	var game := load("res://scenes/screens/game_screen_02.tscn").instantiate() as Control
+	root.add_child(game)
+	await process_frame
+	await process_frame
+	await process_frame
+	var session := game.get_node("GameSession") as GameSession
+	var tutorial := game.get_node("TutorialUI/OnboardingTutorial") as OnboardingTutorial
+	_expect(session.expedition_definition.id == &"expedition_02", "Regression fixture should load Expedition 2")
+	_expect(not tutorial.visible and not session._tutorial_active, "Expedition 2 must not inherit Expedition 1 tutorial coordinates or input gate")
+	_expect(session.piece_tray._required_slot == -1, "Expedition 2 tray should remain unrestricted")
 	await _remove_scene(game)
 
 

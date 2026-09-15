@@ -72,20 +72,6 @@ layout_mode = 0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleSpotlight")
 
-[node name="Pointer" type="Label" parent="."]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(48, 48)
-layout_mode = 0
-mouse_filter = 2
-theme_override_colors/font_color = Color(1, 0.85098, 0.313726, 1)
-theme_override_colors/font_shadow_color = Color(0.141176, 0.0823529, 0.0235294, 1)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 3
-theme_override_font_sizes/font_size = 42
-text = "▼"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="SpeechBubble" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -94,7 +80,7 @@ anchor_right = 0.5
 offset_left = -280.0
 offset_top = 150.0
 offset_right = 280.0
-offset_bottom = 330.0
+offset_bottom = 390.0
 grow_horizontal = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBubble")
@@ -122,3 +108,10 @@ custom_minimum_size = Vector2(220, 54)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Понятно"
+
+[node name="SkipButton" type="Button" parent="SpeechBubble/BubbleLayout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Пропустить обучение"

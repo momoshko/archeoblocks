@@ -2,6 +2,7 @@ class_name OnboardingTutorial
 extends Control
 
 @export var game_session_path: NodePath
+@export var tutorial_expedition_id: StringName = &"expedition_01"
 @export var artifact_cell := Vector2i(3, 3)
 @export var required_slots := PackedInt32Array([0, 1, 2])
 @export var required_origins: Array[Vector2i] = [
@@ -27,9 +28,9 @@ extends Control
 @onready var dim_left: ColorRect = %DimLeft
 @onready var dim_right: ColorRect = %DimRight
 @onready var spotlight_border: Panel = %SpotlightBorder
-@onready var pointer: Label = %Pointer
 @onready var tutorial_text: Label = %TutorialText
 @onready var continue_button: Button = %ContinueButton
+@onready var skip_button: Button = %SkipButton
 
 var _session: GameSession
 var _board: BoardView
@@ -43,6 +44,7 @@ var _pulse_tween: Tween
 func _ready() -> void:
 	hide()
 	continue_button.pressed.connect(_on_continue_pressed)
+	skip_button.pressed.connect(_finish)
 	call_deferred("_setup")
 
 
@@ -62,7 +64,7 @@ func _setup() -> void:
 
 
 func _start_if_needed() -> void:
-	if ProgressStore.is_expedition_completed(_session.expedition_definition.id):
+	if _session.expedition_definition.id != tutorial_expedition_id:
 		_finish()
 		return
 	_placement_index = 0
@@ -208,7 +210,6 @@ func _show_spotlight(target_rect: Rect2) -> void:
 	dim_right.size = Vector2(maxf(0.0, viewport_size.x - rect.end.x), rect.size.y)
 	spotlight_border.position = rect.position
 	spotlight_border.size = rect.size
-	pointer.position = Vector2(rect.get_center().x - 24.0, maxf(4.0, rect.position.y - 58.0))
 
 	if _pulse_tween != null:
 		_pulse_tween.kill()
