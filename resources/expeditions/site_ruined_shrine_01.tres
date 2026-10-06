@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_mvfvu"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_1dulj"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ruined_shrine/stone_charm_full_v1.png" id="3_7evna"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_2.tres" id="4_0pixk"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_t2s5p"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_bp7k7"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_ken67"]
+
+[sub_resource type="Resource" id="Resource_mvfvu"]
+script = ExtResource("7_ken67")
+cell = Vector2i(2, 1)
+
+[resource]
+script = ExtResource("6_bp7k7")
+id = &"ruined_shrine_01_site"
+goal = &"clear_site"
+title_ru = "Разрушенное святилище 1 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Ruined Shrine 1 - Blocked Entrance - site"
+artifact_id = &"stone_charm"
+artifact_name_ru = "Каменный оберег"
+full_artifact_texture = ExtResource("3_7evna")
+objective_ru = "Расчистите участок: снимите весь грунт, разбейте завалы"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4), Vector2i(5, 4)])
+stone_obstacles = Array[ExtResource("7_ken67")]([SubResource("Resource_mvfvu")])
+piece_generation = ExtResource("4_0pixk")
+expected_moves_min = 16
+expected_moves_max = 17
+hard_move_limit = 18
+game_scene_path = "res://scenes/screens/game_screen_site_ruined_shrine_01.tscn"

@@ -4,6 +4,7 @@ extends Control
 @export_range(0.5, 1.0, 0.05) var display_seconds := 0.75
 
 @onready var card: PanelContainer = $Center/DiscoveryCard
+@onready var find_glow: FindGlow = $FindGlow
 @onready var artifact_name: Label = $Center/DiscoveryCard/Layout/ArtifactName
 @onready var artwork_slots: Array[TextureRect] = [
 	$Center/DiscoveryCard/Layout/ArtworkRow/Artwork01,
@@ -28,6 +29,7 @@ func clear() -> void:
 		slot.hide()
 	card.modulate = Color.WHITE
 	card.scale = Vector2.ONE
+	find_glow.stop()
 	hide()
 
 
@@ -52,6 +54,7 @@ func show_discoveries(textures: Array[Texture2D], name_ru: String) -> void:
 			slot.hide()
 
 	show()
+	find_glow.play()
 	card.pivot_offset = card.size * 0.5
 	card.scale = Vector2.ONE * 0.82
 	card.modulate = Color(1.0, 1.0, 1.0, 0.0)

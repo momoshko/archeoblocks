@@ -14,8 +14,7 @@
 - Fully excavating every fragment wins the expedition.
 - The player loses when none of the remaining tray pieces can be legally placed.
 - The current campaign contains 24 curated expeditions: Chapter I has 6, Chapter II has 8, and Chapter III has 10.
-- The first tutorial expeditions use scripted piece sequences.
-- Later expeditions use seeded weighted piece generation.
+- Every campaign expedition may start with scripted pieces (`opening_piece_set`, `curated_piece_sequence`), then uses seeded weighted piece generation (M4.0, see below).
 - V1 has no player rotation button. Rotated shapes are separate piece definitions.
 - Block colors are cosmetic and are not matching mechanics.
 - Score and move count are feedback/statistics, not the primary victory requirement.
@@ -98,12 +97,19 @@ This is a design plan. M2 implements only the curated sample resource for Expedi
 - M2.1 calculates `base_victory_coins = 20` for the run result but does not persist a wallet.
 - `DOUBLE_COINS` is reserved as a future optional rewarded action; M2.1 exposes no production button for it.
 
-## Future mode: Endless Excavation
+## Endless Excavation (M4.2)
 
-- Uses the same 8×8 placement and score core without an expedition victory target.
-- A run ends at NO_MOVES and the goal is maximum Score.
-- A future Yandex leaderboard and occasional buried bonus finds are possible extensions.
-- Endless gameplay is design-only in M2.1.
+Full design and later steps: `ENDLESS_MODE_RU.md`.
+
+- Screen `scenes/screens/endless_screen.tscn` inherits `game_screen.tscn`; its GameSession has `endless_definition = resources/endless/endless_default.tres` and no expedition.
+- Same 8×8 board, pieces and score core; no victory. A run ends at NO_MOVES; there is no Undo or Hint (the record must mean something).
+- Each run uses a new random piece seed (`GameSession.endless_seed_override` fixes it in tests).
+- Streak: a move with a line adds a step; after a line the player has `streak_grace_moves` (3) moves to clear the next one. Line score × (1 + 0.5 × (streak − 1)), capped at ×4.
+- Clean board (no blocks after a clear): +1000 × streak multiplier.
+- Depth: every 10 lines = 1 m. Layers switch the piece weights: Topsoil 0 m (Chapter I weights), Clay 5 m (Chapter II), Catacombs 10 m (Chapter III). The seed and set number stay, so a run is reproducible.
+- Records: best score, best depth and run count in `progress.cfg` section `records`, mirrored to the cloud; merge keeps the larger values.
+- Unlocks in the main menu after `expedition_03`.
+- Not yet (M4.3): buried finds, Stones/Roots by layer, rewarded "clear 3×3" continue, probe support.
 
 ## Future M3 save schema
 
@@ -146,3 +152,18 @@ This is a design plan. M2 implements only the curated sample resource for Expedi
 - Chapters unlock sequentially; completed chapters remain replayable. Each chapter owns a resource-driven collection and a one-time completion reward.
 - Campaign Hint uses the bounded planner documented above and is validated through deterministic Hint-only runs across curated content.
 - `Ctrl+Alt+H` is a hidden debug-Web playtest toggle for unlimited free Hints. Its handler requires both the Web platform feature and a debug build, is never persisted, and is not a production feature.
+
+## M4.0 seeded weighted piece generation
+
+- Each chapter has a `PieceGenerationConfig` (`resources/config/pieces_chapter_1..3.tres`): pieces, weights, `max_same_piece`, `fairness_attempts`, `fallback_piece`.
+- An expedition plays `opening_piece_set` (if any), then its `curated_piece_sequence` triples once, then generated sets. Without a config the old fixed loop is used (prototypes, tests).
+- A generated set depends only on the expedition seed (`piece_seed`, or a stable FNV-1a hash of the expedition id), the set number and the board at refill time. Undo, Hint planning, autoplay validation and the difficulty probe therefore see exactly the same pieces as the player.
+- Fairness: if none of the three pieces fits the board, the set is re-rolled up to `fairness_attempts` times; then one piece is replaced by the fallback (single block) if that fits. It only guarantees one playable piece; it is not a solver.
+- Chapter I has no Cross 5 and few large pieces; Chapters II and III add large pieces gradually. Balancing individual expeditions is M4.1 and uses `tools/difficulty_probe.gd`.
+
+## M4.1 difficulty curve
+
+- Reference: `tools/difficulty_probe.gd --policy=player` — a one-step bot that reads the objective (fills rows/columns crossing unexcavated finds), keeps room for the tray and never uses Undo or Hint. Real players with help do better; the numbers are for comparing expeditions.
+- Targets and result (40 games each): Chapter I ≈ 100%; Chapter II 100 → ~40% (2-8); Chapter III 85–100 → ~30% (3-10), with a short breather at 3-6.
+- Levers used: fewer and weaker Stones in the middle of Chapter II, less strong soil on finds, fewer central Roots, shorter curated heavy-piece starts on 2-7, 2-8, 3-7, 3-9 (the old 12-piece scripts killed runs in the first dozen moves), and a representative `piece_seed` where the id-derived seed was an outlier (2-7, 3-7).
+- `expected_moves_min/max` = middle half of the winning move counts of the same bot.

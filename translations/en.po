@@ -1,0 +1,1151 @@
+# English translation of Archeoblocks.
+#
+# msgid  = the exact Russian text from a scene, script or resource (.tres).
+# msgstr = the English text shown when the game language is English.
+#
+# If you change a Russian text in the editor, change the msgid here too,
+# otherwise that text stays Russian in the English version.
+# "%d" and "%s" are numbers/words inserted by the game - keep them.
+# "\n" is a line break.
+msgid ""
+msgstr ""
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# ---- Common UI ----
+msgid "Вкл."
+msgstr "On"
+
+msgid "Выкл."
+msgstr "Off"
+
+msgid "Пройдено: %d / %d"
+msgstr "Completed: %d / %d"
+
+msgid "Награда главы получена: +%d монет"
+msgstr "Chapter reward received: +%d coins"
+
+msgid "Награда главы: +%d монет"
+msgstr "Chapter reward: +%d coins"
+
+msgid "Закрыто"
+msgstr "Locked"
+
+msgid "Пройдено"
+msgstr "Completed"
+
+msgid "Открыто"
+msgstr "Open"
+
+msgid "Награда: +%d монет"
+msgstr "Reward: +%d coins"
+
+msgid "Прогресс: %d / %d"
+msgstr "Progress: %d / %d"
+
+msgid "Коллекция: %d / %d"
+msgstr "Collection: %d / %d"
+
+msgid "Неизвестная находка"
+msgstr "Unknown find"
+
+msgid "Продолжить"
+msgstr "Continue"
+
+msgid "Играть"
+msgstr "Play"
+
+msgid "Звук: вкл."
+msgstr "Sound: on"
+
+msgid "Звук: выкл."
+msgstr "Sound: off"
+
+msgid "Использовано"
+msgstr "Used"
+
+msgid "Понятно"
+msgstr "Got it"
+
+msgid "Начать"
+msgstr "Start"
+
+msgid "ЭКСПЕДИЦИЯ ЗАВЕРШЕНА!"
+msgstr "EXPEDITION COMPLETE!"
+
+msgid "Находка восстановлена"
+msgstr "Find restored"
+
+msgid "Счёт: %d"
+msgstr "Score: %d"
+
+msgid "Монеты: +%d"
+msgstr "Coins: +%d"
+
+msgid "Повторить"
+msgstr "Retry"
+
+msgid "Дальше"
+msgstr "Next"
+
+msgid "РАСКОПКИ ЗАШЛИ В ТУПИК"
+msgstr "THE DIG IS STUCK"
+
+msgid "Оставшиеся фигуры больше не помещаются."
+msgstr "The remaining pieces no longer fit."
+
+msgid "В меню"
+msgstr "Menu"
+
+msgid "Фрагменты: %d / %d"
+msgstr "Fragments: %d / %d"
+
+msgid "Отменить ход · бесплатно"
+msgstr "Undo move · free"
+
+msgid "Отменить ход за рекламу"
+msgstr "Undo move for an ad"
+
+msgid "Отмена недоступна"
+msgstr "Undo unavailable"
+
+msgid "%s исследован"
+msgstr "%s explored"
+
+msgid "Коллекция %d/%d"
+msgstr "Collection %d/%d"
+
+msgid "Награду главы не удалось сохранить"
+msgstr "Could not save the chapter reward"
+
+msgid "Награда главы уже получена"
+msgstr "Chapter reward already received"
+
+msgid "Нет места для этой фигуры"
+msgstr "No room for this piece"
+
+msgid "ЗАВАЛ РАЗБИТ!"
+msgstr "RUBBLE SMASHED!"
+
+msgid "КОРНИ СРЕЗАНЫ!"
+msgstr "ROOTS CUT!"
+
+msgid "ФРАГМЕНТ НАЙДЕН! +%d"
+msgstr "FRAGMENT FOUND! +%d"
+
+msgid "НАХОДКА ВОССТАНОВЛЕНА! +%d"
+msgstr "FIND RESTORED! +%d"
+
+msgid "Награда недоступна"
+msgstr "Reward unavailable"
+
+msgid "Отменить · %d"
+msgstr "Undo · %d"
+
+msgid "Отменить · реклама"
+msgstr "Undo · ad"
+
+msgid "Подсказка · %d"
+msgstr "Hint · %d"
+
+msgid "Подсказка · реклама"
+msgstr "Hint · ad"
+
+msgid "Подсказки закончились"
+msgstr "No hints left"
+
+msgid "Подсказка недоступна"
+msgstr "Hint unavailable"
+
+msgid "Следуйте обучению"
+msgstr "Follow the tutorial"
+
+msgid "Ходы: %d"
+msgstr "Moves: %d"
+
+msgid "ЛИНИЯ! +%d"
+msgstr "LINE! +%d"
+
+msgid "%d ЛИНИИ! +%d"
+msgstr "%d LINES! +%d"
+
+msgid "Пауза"
+msgstr "Pause"
+
+msgid "Начать заново"
+msgstr "Restart"
+
+msgid "ФРАГМЕНТ НАЙДЕН!"
+msgstr "FRAGMENT FOUND!"
+
+msgid "Пропустить"
+msgstr "Skip"
+
+msgid "Фигуры"
+msgstr "Pieces"
+
+msgid "Отменить"
+msgstr "Undo"
+
+msgid "Подсказка"
+msgstr "Hint"
+
+msgid "NO_MOVES — нет доступных ходов"
+msgstr "NO_MOVES — no moves left"
+
+msgid "Назад"
+msgstr "Back"
+
+msgid "Экспедиции"
+msgstr "Expeditions"
+
+msgid "Выберите главу"
+msgstr "Choose a chapter"
+
+msgid "Коллекция"
+msgstr "Collection"
+
+msgid "Археоблоки"
+msgstr "Archeoblocks"
+
+msgid "Раскапывай находки, собирая линии"
+msgstr "Dig up finds by clearing lines"
+
+msgid "Настройки"
+msgstr "Settings"
+
+msgid "Музыка"
+msgstr "Music"
+
+msgid "Звуки"
+msgstr "Sounds"
+
+msgid "Язык"
+msgstr "Language"
+
+
+# ---- Tutorial ----
+msgid "Главная цель — раскопать артефакт.\nГотовые линии снимают грунт."
+msgstr "Your goal is to dig up the artifact.\nCompleted lines remove soil."
+
+msgid "Возьми подсвеченную фигуру."
+msgstr "Take the highlighted piece."
+
+msgid "Теперь возьми вторую фигуру."
+msgstr "Now take the second piece."
+
+msgid "Осталось закрыть линию этой фигурой."
+msgstr "Finish the line with this piece."
+
+msgid "Поставь её в начало строки."
+msgstr "Place it at the start of the row."
+
+msgid "Продолжи заполнять ту же строку."
+msgstr "Keep filling the same row."
+
+msgid "Заполни последние клетки строки."
+msgstr "Fill the last cells of the row."
+
+msgid "Отлично! Линия снимает грунт\nи открывает спрятанную находку."
+msgstr "Great! The line removes soil\nand uncovers the hidden find."
+
+msgid "Раскопайте все фрагменты артефакта"
+msgstr "Dig up every fragment of the artifact"
+
+msgid "Собирайте строки и столбцы, чтобы снимать грунт"
+msgstr "Complete rows and columns to remove soil"
+
+
+# ---- Chapters ----
+msgid "Глава I"
+msgstr "Chapter I"
+
+msgid "Глава II"
+msgstr "Chapter II"
+
+msgid "Глава III"
+msgstr "Chapter III"
+
+msgid "Глава III · прототип"
+msgstr "Chapter III · prototype"
+
+msgid "Древний двор"
+msgstr "Ancient Courtyard"
+
+msgid "Первые раскопки"
+msgstr "First Digs"
+
+msgid "Разрушенное святилище"
+msgstr "Ruined Shrine"
+
+msgid "Камни помнят удары"
+msgstr "Stones Remember Every Blow"
+
+msgid "Разрушенное святилище исследовано"
+msgstr "Ruined Shrine explored"
+
+msgid "Заросшие катакомбы"
+msgstr "Overgrown Catacombs"
+
+msgid "Корни не ждут"
+msgstr "Roots Wait for No One"
+
+msgid "Заросшие катакомбы исследованы"
+msgstr "Overgrown Catacombs explored"
+
+msgid "Живые корни"
+msgstr "Living Roots"
+
+
+# ---- Chapter I ----
+msgid "Древний двор 1 — Первая линия"
+msgstr "Ancient Courtyard 1 — First Line"
+
+msgid "1 — Первая линия"
+msgstr "1 — First Line"
+
+msgid "Печать двора"
+msgstr "Courtyard Seal"
+
+msgid "Откройте печать под грунтом"
+msgstr "Uncover the seal under the soil"
+
+msgid "Заполните строку или столбец — линия снимет грунт"
+msgstr "Fill a row or column — the line removes soil"
+
+msgid "Древний двор 2 — Твёрдый грунт"
+msgstr "Ancient Courtyard 2 — Hard Soil"
+
+msgid "2 — Твёрдый грунт"
+msgstr "2 — Hard Soil"
+
+msgid "Каменный амулет"
+msgstr "Stone Amulet"
+
+msgid "Снимите 2 слоя грунта над амулетом"
+msgstr "Remove 2 layers of soil above the amulet"
+
+msgid "Плотный грунт нужно очистить дважды"
+msgstr "Dense soil has to be cleared twice"
+
+msgid "Древний двор 3 — Перекрёсток"
+msgstr "Ancient Courtyard 3 — Crossroads"
+
+msgid "3 — Перекрёсток"
+msgstr "3 — Crossroads"
+
+msgid "Бронзовый ключ"
+msgstr "Bronze Key"
+
+msgid "Откройте ключ в центре перекрёстка"
+msgstr "Uncover the key in the middle of the crossroads"
+
+msgid "Пересечение строки и столбца получает два удара"
+msgstr "Where a row and a column cross, the cell takes two hits"
+
+msgid "Древний двор 4 — Две находки"
+msgstr "Ancient Courtyard 4 — Two Finds"
+
+msgid "4 — Две находки"
+msgstr "4 — Two Finds"
+
+msgid "Мозаичная табличка"
+msgstr "Mosaic Tablet"
+
+msgid "Откройте обе части мозаичной таблички"
+msgstr "Uncover both parts of the mosaic tablet"
+
+msgid "Выбирайте линии, которые помогают раскопкам"
+msgstr "Choose lines that help the dig"
+
+msgid "Древний двор 5 — Тесные раскопки"
+msgstr "Ancient Courtyard 5 — Tight Dig"
+
+msgid "5 — Тесные раскопки"
+msgstr "5 — Tight Dig"
+
+msgid "Фигурка хранителя"
+msgstr "Guardian Figurine"
+
+msgid "Найдите все части фигурки хранителя"
+msgstr "Find every part of the guardian figurine"
+
+msgid "Планируйте поле — свободное место важнее быстрых линий"
+msgstr "Plan the board — free space matters more than quick lines"
+
+msgid "Древний двор 6 — Золотая маска"
+msgstr "Ancient Courtyard 6 — Golden Mask"
+
+msgid "6 — Золотая маска"
+msgstr "6 — Golden Mask"
+
+msgid "Золотая маска"
+msgstr "Golden Mask"
+
+msgid "Откройте все 3 фрагмента Золотой маски"
+msgstr "Uncover all 3 fragments of the Golden Mask"
+
+msgid "Используйте всё, чему научились в Древнем дворе"
+msgstr "Use everything you learned in the Ancient Courtyard"
+
+
+# ---- Chapter II ----
+msgid "Разрушенное святилище 1 — Заваленный вход"
+msgstr "Ruined Shrine 1 — Blocked Entrance"
+
+msgid "1 — Заваленный вход"
+msgstr "1 — Blocked Entrance"
+
+msgid "Глава II — Заваленный вход"
+msgstr "Chapter II — Blocked Entrance"
+
+msgid "Каменный оберег"
+msgstr "Stone Charm"
+
+msgid "Откройте обе части каменного оберега"
+msgstr "Uncover both parts of the stone charm"
+
+msgid "Завал занимает клетку, но помогает собрать линию"
+msgstr "Rubble takes up a cell but still helps complete a line"
+
+msgid "Завалы занимают клетки. Проведите через завал линию, чтобы разбить его"
+msgstr "Rubble takes up cells. Run a line through it to smash it"
+
+msgid "Рельеф святилища"
+msgstr "Shrine Relief"
+
+msgid "Откройте обе части рельефа"
+msgstr "Uncover both parts of the relief"
+
+msgid "Разрушенное святилище 2 — Каменная стена"
+msgstr "Ruined Shrine 2 — Stone Wall"
+
+msgid "2 — Каменная стена"
+msgstr "2 — Stone Wall"
+
+msgid "Бронзовый колокольчик"
+msgstr "Bronze Bell"
+
+msgid "Откройте две части бронзового колокольчика"
+msgstr "Uncover the two parts of the bronze bell"
+
+msgid "Разбейте часть стены, чтобы соединить свободные области"
+msgstr "Break part of the wall to join the open areas"
+
+msgid "Разрушенное святилище 3 — Треснувшая кладка"
+msgstr "Ruined Shrine 3 — Cracked Masonry"
+
+msgid "3 — Треснувшая кладка"
+msgstr "3 — Cracked Masonry"
+
+msgid "Печать жреца"
+msgstr "Priest's Seal"
+
+msgid "Откройте обе части печати жреца"
+msgstr "Uncover both parts of the priest's seal"
+
+msgid "Укреплённый завал нужно разбить дважды."
+msgstr "Reinforced rubble has to be smashed twice."
+
+msgid "Разрушенное святилище 4 — Под завалом"
+msgstr "Ruined Shrine 4 — Under the Rubble"
+
+msgid "4 — Под завалом"
+msgstr "4 — Under the Rubble"
+
+msgid "Обломок стелы"
+msgstr "Stele Fragment"
+
+msgid "Освободите и раскопайте два фрагмента стелы"
+msgstr "Free and dig up the two stele fragments"
+
+msgid "Сначала уберите завал, затем очищайте грунт под ним"
+msgstr "Clear the rubble first, then the soil beneath it"
+
+msgid "Разрушенное святилище 5 — Узкие проходы"
+msgstr "Ruined Shrine 5 — Narrow Passages"
+
+msgid "5 — Узкие проходы"
+msgstr "5 — Narrow Passages"
+
+msgid "Ритуальный браслет"
+msgstr "Ritual Bracelet"
+
+msgid "Найдите три части ритуального браслета"
+msgstr "Find the three parts of the ritual bracelet"
+
+msgid "Берегите крупные свободные области для сложных фигур"
+msgstr "Save large open areas for awkward pieces"
+
+msgid "Разрушенное святилище 6 — Два пути"
+msgstr "Ruined Shrine 6 — Two Paths"
+
+msgid "6 — Два пути"
+msgstr "6 — Two Paths"
+
+msgid "Сосуд для благовоний"
+msgstr "Incense Vessel"
+
+msgid "Откройте три части сосуда для благовоний"
+msgstr "Uncover the three parts of the incense vessel"
+
+msgid "Выбирайте: продвигать раскопки или сначала освободить поле"
+msgstr "Choose: push the dig forward or clear the board first"
+
+msgid "Разрушенное святилище 7 — Обрушенный зал"
+msgstr "Ruined Shrine 7 — Collapsed Hall"
+
+msgid "7 — Обрушенный зал"
+msgstr "7 — Collapsed Hall"
+
+msgid "Алтарный медальон"
+msgstr "Altar Medallion"
+
+msgid "Найдите три части алтарного медальона"
+msgstr "Find the three parts of the altar medallion"
+
+msgid "Сохраняйте место: зал легко заполнить неудачными фигурами"
+msgstr "Keep space free: bad pieces fill the hall quickly"
+
+msgid "Разрушенное святилище 8 — Сердце святилища"
+msgstr "Ruined Shrine 8 — Heart of the Shrine"
+
+msgid "8 — Сердце святилища"
+msgstr "8 — Heart of the Shrine"
+
+msgid "Идол святилища"
+msgstr "Shrine Idol"
+
+msgid "Восстановите три части идола святилища"
+msgstr "Restore the three parts of the shrine idol"
+
+msgid "Балансируйте раскопки, разрушение завалов и свободное место"
+msgstr "Balance digging, smashing rubble and keeping space free"
+
+
+# ---- Chapter III ----
+msgid "Заросшие катакомбы 1 — Живые корни"
+msgstr "Overgrown Catacombs 1 — Living Roots"
+
+msgid "1 — Живые корни"
+msgstr "1 — Living Roots"
+
+msgid "Каменный гребень"
+msgstr "Stone Comb"
+
+msgid "Откройте обе части каменного гребня"
+msgstr "Uncover both parts of the stone comb"
+
+msgid "Корни расползаются после хода. Разрушайте их линиями или перекрывайте путь."
+msgstr "Roots spread after each move. Destroy them with lines or block their way."
+
+msgid "Табличка катакомб"
+msgstr "Catacomb Tablet"
+
+msgid "Откройте обе части таблички"
+msgstr "Uncover both parts of the tablet"
+
+msgid "Заросшие катакомбы 2 — Первый очаг"
+msgstr "Overgrown Catacombs 2 — First Patch"
+
+msgid "2 — Первый очаг"
+msgstr "2 — First Patch"
+
+msgid "Медная подвеска"
+msgstr "Copper Pendant"
+
+msgid "Найдите обе части подвески"
+msgstr "Find both parts of the pendant"
+
+msgid "Не оставляйте очаги без внимания — они отнимают свободное место."
+msgstr "Don't leave root patches unchecked — they eat up free space."
+
+msgid "Заросшие катакомбы 3 — На пути к находке"
+msgstr "Overgrown Catacombs 3 — On the Way to the Find"
+
+msgid "3 — На пути к находке"
+msgstr "3 — On the Way to the Find"
+
+msgid "Погребальная табличка"
+msgstr "Burial Tablet"
+
+msgid "Доберитесь до таблички сквозь корни"
+msgstr "Reach the tablet through the roots"
+
+msgid "Выбирайте: продолжить раскопки или остановить ближайшее разрастание."
+msgstr "Choose: keep digging or stop the nearest growth."
+
+msgid "Заросшие катакомбы 4 — Камень и корни"
+msgstr "Overgrown Catacombs 4 — Stone and Roots"
+
+msgid "4 — Камень и корни"
+msgstr "4 — Stone and Roots"
+
+msgid "Резной сосуд"
+msgstr "Carved Vessel"
+
+msgid "Найдите две части резного сосуда"
+msgstr "Find the two parts of the carved vessel"
+
+msgid "Камни сдерживают корни, но мешают строить линии."
+msgstr "Stones hold the roots back but get in the way of lines."
+
+msgid "Заросшие катакомбы 5 — Заросший проход"
+msgstr "Overgrown Catacombs 5 — Overgrown Passage"
+
+msgid "5 — Заросший проход"
+msgstr "5 — Overgrown Passage"
+
+msgid "Амулет лозы"
+msgstr "Vine Amulet"
+
+msgid "Откройте три части амулета"
+msgstr "Uncover the three parts of the amulet"
+
+msgid "Иногда безопаснее перекрыть предупреждённую клетку, чем сразу рубить корень."
+msgstr "Sometimes it is safer to cover the warned cell than to cut the root right away."
+
+msgid "Заросшие катакомбы 6 — Два фронта"
+msgstr "Overgrown Catacombs 6 — Two Fronts"
+
+msgid "6 — Два фронта"
+msgstr "6 — Two Fronts"
+
+msgid "Фрагмент фрески"
+msgstr "Fresco Fragment"
+
+msgid "Найдите три части фрески"
+msgstr "Find the three parts of the fresco"
+
+msgid "Следите за предупреждением: разные очаги будут по очереди требовать внимания."
+msgstr "Watch the warning: different root patches will take turns demanding attention."
+
+msgid "Заросшие катакомбы 7 — Зарастающий зал"
+msgstr "Overgrown Catacombs 7 — Overgrowing Hall"
+
+msgid "7 — Зарастающий зал"
+msgstr "7 — Overgrowing Hall"
+
+msgid "Костяная застёжка"
+msgstr "Bone Clasp"
+
+msgid "Откройте три части застёжки"
+msgstr "Uncover the three parts of the clasp"
+
+msgid "Не отдавайте корням крупные свободные области."
+msgstr "Don't give large open areas to the roots."
+
+msgid "Заросшие катакомбы 8 — Раскопки под корнями"
+msgstr "Overgrown Catacombs 8 — Digging Under the Roots"
+
+msgid "8 — Раскопки под корнями"
+msgstr "8 — Digging Under the Roots"
+
+msgid "Ритуальная чаша"
+msgstr "Ritual Bowl"
+
+msgid "Освободите три части ритуальной чаши"
+msgstr "Free the three parts of the ritual bowl"
+
+msgid "Сначала снимайте препятствие, затем удар линии дойдёт до грунта."
+msgstr "Remove the obstacle first; then the line will reach the soil."
+
+msgid "Заросшие катакомбы 9 — Последний проход"
+msgstr "Overgrown Catacombs 9 — Last Passage"
+
+msgid "9 — Последний проход"
+msgstr "9 — Last Passage"
+
+msgid "Печать хранителя"
+msgstr "Guardian's Seal"
+
+msgid "Найдите три части печати хранителя"
+msgstr "Find the three parts of the guardian's seal"
+
+msgid "Сохраняйте место для крупных фигур, пока корни закрывают проходы."
+msgstr "Keep room for large pieces while roots close off the passages."
+
+msgid "Заросшие катакомбы 10 — Сердце катакомб"
+msgstr "Overgrown Catacombs 10 — Heart of the Catacombs"
+
+msgid "10 — Сердце катакомб"
+msgstr "10 — Heart of the Catacombs"
+
+msgid "Изумрудный идол"
+msgstr "Emerald Idol"
+
+msgid "Восстановите три части изумрудного идола"
+msgstr "Restore the three parts of the emerald idol"
+
+msgid "Завершите раскопки, пока несколько фронтов закрывают поле."
+msgstr "Finish the dig while several fronts close in on the board."
+
+
+# ---- Pieces ----
+msgid "Линия"
+msgstr "Line"
+
+msgid "Домино — горизонталь"
+msgstr "Domino — horizontal"
+
+msgid "Домино — вертикаль"
+msgstr "Domino — vertical"
+
+msgid "Большая Г"
+msgstr "Large L"
+
+msgid "Линия 3 — горизонталь"
+msgstr "Line 3 — horizontal"
+
+msgid "Линия 3 — вертикаль"
+msgstr "Line 3 — vertical"
+
+msgid "Линия 4"
+msgstr "Line 4"
+
+msgid "Крест 5"
+msgstr "Cross 5"
+
+msgid "Один блок"
+msgstr "Single block"
+
+msgid "Маленькая L"
+msgstr "Small L"
+
+msgid "Маленькая T"
+msgstr "Small T"
+
+msgid "Квадрат 2×2"
+msgstr "Square 2×2"
+
+
+# ---- Endless Excavation (M4.2) ----
+msgid "Бесконечные раскопки"
+msgstr "Endless Dig"
+
+msgid "Собирайте линии подряд: серия умножает очки"
+msgstr "Clear lines in a row: a streak multiplies your score"
+
+msgid "Откроется после экспедиции «Древний двор 3»"
+msgstr "Unlocks after the expedition “Ancient Courtyard 3”"
+
+msgid "Очки"
+msgstr "Score"
+
+msgid "Очки: %s"
+msgstr "Score: %s"
+
+msgid "СЕРИЯ %s! +%d"
+msgstr "STREAK %s! +%d"
+
+msgid "ЧИСТОЕ ПОЛЕ! +%d"
+msgstr "CLEAN BOARD! +%d"
+
+msgid "ГЛУБИНА %d М: %s"
+msgstr "DEPTH %d M: %s"
+
+msgid "Глубина: %d м · %s"
+msgstr "Depth: %d m · %s"
+
+msgid "Серия %s  %s"
+msgstr "Streak %s  %s"
+
+msgid "Серия: соберите линию"
+msgstr "Streak: clear a line"
+
+msgid "Рекорд: —"
+msgstr "Best: —"
+
+msgid "Рекорд: %s"
+msgstr "Best: %s"
+
+msgid "До рекорда: %s"
+msgstr "To beat your best: %s"
+
+msgid "Новый рекорд!"
+msgstr "New best!"
+
+msgid "НОВЫЙ РЕКОРД!"
+msgstr "NEW BEST!"
+
+msgid "Верхний слой"
+msgstr "Topsoil"
+
+msgid "Глина"
+msgstr "Clay"
+
+msgid "Катакомбы"
+msgstr "Catacombs"
+
+msgid "РАСКОПКИ ЗАВЕРШЕНЫ"
+msgstr "THE DIG IS OVER"
+
+msgid "Фигурам больше нет места"
+msgstr "No room left for the pieces"
+
+msgid "Глубина: %d м · Линий: %d · Лучшая серия: %d"
+msgstr "Depth: %d m · Lines: %d · Best streak: %d"
+
+msgid "Рекорд: %s · Лучшая глубина: %d м"
+msgstr "Best: %s · Best depth: %d m"
+
+msgid "Ещё раз"
+msgstr "Play again"
+
+# ---- Restoration of finds (prototype) ----
+msgid "Реставрация"
+msgstr "Restoration"
+
+
+msgid "Кисть: снимите грунт"
+msgstr "Brush: remove the soil"
+
+msgid "Губка: сотрите налёт"
+msgstr "Sponge: wipe off the patina"
+
+msgid "Находка отреставрирована!"
+msgstr "The find is restored!"
+
+msgid "Водите пальцем по находке"
+msgstr "Rub the find with your finger"
+
+msgid "Протрите находку, чтобы вернуть цвет"
+msgstr "Wipe the find to bring its colour back"
+
+msgid "Находка очищена и заняла место в коллекции."
+msgstr "The find is clean and has taken its place in the collection."
+
+msgid "Готово"
+msgstr "Done"
+
+msgid "Все экспедиции пройдены"
+msgstr "All expeditions completed"
+
+msgid "Дальше — раскопки этой находки:"
+msgstr "Next: dig up this find:"
+
+msgid "Дальше: очистка"
+msgstr "Next: cleaning"
+
+msgid "Дальше: раскопка"
+msgstr "Next: dig"
+
+msgid "Дальше: расчистка"
+msgstr "Next: site clearing"
+
+msgid "Завалы: %d"
+msgstr "Rubble: %d"
+
+msgid "К раскопкам"
+msgstr "To the dig"
+
+msgid "Коллекция: %d / %d · очищено: %d"
+msgstr "Collection: %d / %d · cleaned: %d"
+
+msgid "Нажмите, чтобы очистить находку"
+msgstr "Tap to clean the find"
+
+msgid "Находки: %d / %d"
+msgstr "Finds: %d / %d"
+
+msgid "Осталось завалов: %d"
+msgstr "Rubble left: %d"
+
+msgid "Очистить находку"
+msgstr "Clean the find"
+
+msgid "Расчистите участок: снимите весь грунт"
+msgstr "Clear the site: remove all the soil"
+
+msgid "Расчистите участок: снимите весь грунт, разбейте завалы"
+msgstr "Clear the site: remove all the soil, break the rubble"
+
+msgid "Расчистите участок: снимите весь грунт, разбейте завалы, срежьте корни"
+msgstr "Clear the site: remove all the soil, break the rubble, cut the roots"
+
+msgid "Расчистите участок: снимите весь грунт, срежьте корни"
+msgstr "Clear the site: remove all the soil, cut the roots"
+
+msgid "Расчистка"
+msgstr "Site clearing"
+
+msgid "Раскопка"
+msgstr "Dig"
+
+msgid "Очистка"
+msgstr "Cleaning"
+
+msgid "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+msgstr "Clear lines through the soil and rubble — the dig starts here next."
+
+msgid "УЧАСТОК ГОТОВ!"
+msgstr "SITE READY!"
+
+msgid "УЧАСТОК ГОТОВ! +%d"
+msgstr "SITE READY! +%d"
+
+msgid "Древний двор 1 — Расчистка участка"
+msgstr "Ancient Courtyard 1 — Site Clearing"
+
+msgid "Древний двор 2 — Расчистка участка"
+msgstr "Ancient Courtyard 2 — Site Clearing"
+
+msgid "Древний двор 3 — Расчистка участка"
+msgstr "Ancient Courtyard 3 — Site Clearing"
+
+msgid "Древний двор 4 — Расчистка участка"
+msgstr "Ancient Courtyard 4 — Site Clearing"
+
+msgid "Древний двор 5 — Расчистка участка"
+msgstr "Ancient Courtyard 5 — Site Clearing"
+
+msgid "Древний двор 6 — Расчистка участка"
+msgstr "Ancient Courtyard 6 — Site Clearing"
+
+msgid "Разрушенное святилище 1 — Расчистка участка"
+msgstr "Ruined Shrine 1 — Site Clearing"
+
+msgid "Разрушенное святилище 2 — Расчистка участка"
+msgstr "Ruined Shrine 2 — Site Clearing"
+
+msgid "Разрушенное святилище 3 — Расчистка участка"
+msgstr "Ruined Shrine 3 — Site Clearing"
+
+msgid "Разрушенное святилище 4 — Расчистка участка"
+msgstr "Ruined Shrine 4 — Site Clearing"
+
+msgid "Разрушенное святилище 5 — Расчистка участка"
+msgstr "Ruined Shrine 5 — Site Clearing"
+
+msgid "Разрушенное святилище 6 — Расчистка участка"
+msgstr "Ruined Shrine 6 — Site Clearing"
+
+msgid "Разрушенное святилище 7 — Расчистка участка"
+msgstr "Ruined Shrine 7 — Site Clearing"
+
+msgid "Разрушенное святилище 8 — Расчистка участка"
+msgstr "Ruined Shrine 8 — Site Clearing"
+
+msgid "Заросшие катакомбы 1 — Расчистка участка"
+msgstr "Overgrown Catacombs 1 — Site Clearing"
+
+msgid "Заросшие катакомбы 2 — Расчистка участка"
+msgstr "Overgrown Catacombs 2 — Site Clearing"
+
+msgid "Заросшие катакомбы 3 — Расчистка участка"
+msgstr "Overgrown Catacombs 3 — Site Clearing"
+
+msgid "Заросшие катакомбы 4 — Расчистка участка"
+msgstr "Overgrown Catacombs 4 — Site Clearing"
+
+msgid "Заросшие катакомбы 5 — Расчистка участка"
+msgstr "Overgrown Catacombs 5 — Site Clearing"
+
+msgid "Заросшие катакомбы 6 — Расчистка участка"
+msgstr "Overgrown Catacombs 6 — Site Clearing"
+
+msgid "Заросшие катакомбы 7 — Расчистка участка"
+msgstr "Overgrown Catacombs 7 — Site Clearing"
+
+msgid "Заросшие катакомбы 8 — Расчистка участка"
+msgstr "Overgrown Catacombs 8 — Site Clearing"
+
+msgid "Заросшие катакомбы 9 — Расчистка участка"
+msgstr "Overgrown Catacombs 9 — Site Clearing"
+
+msgid "Заросшие катакомбы 10 — Расчистка участка"
+msgstr "Overgrown Catacombs 10 — Site Clearing"
+
+msgid "Раскоп дня"
+msgstr "Daily Dig"
+
+msgid "Откопайте %d находки: они появляются под грунтом после линий"
+msgstr "Dig up %d finds: they appear under the soil after lines"
+
+msgid "Находки: %d"
+msgstr "Finds: %d"
+
+msgid "Грунт осыпался — находка потеряна"
+msgstr "The soil caved in — the find is lost"
+
+msgid "РАСКОП! Откопайте за %d ходов"
+msgstr "DIG SPOT! Dig it up within %d moves"
+
+msgid "С потолка упал камень!"
+msgstr "A stone fell from above!"
+
+msgid "Пророс корень!"
+msgstr "A root sprouted!"
+
+msgid "НАХОДКА! +%d"
+msgstr "FIND! +%d"
+
+msgid "РАСКОП ДНЯ ПРОЙДЕН! +%d"
+msgstr "DAILY DIG DONE! +%d"
+
+msgid "Рекорд: %s · глубина %d м"
+msgstr "Record: %s · depth %d m"
+
+msgid "Одни и те же фигуры для всех. Откопайте %d находки."
+msgstr "The same pieces for everyone. Dig up %d finds."
+
+msgid "Сегодня пройден! Лучший счёт дня: %s"
+msgstr "Done today! Best score of the day: %s"
+
+msgid "Сегодня ещё не пройден"
+msgstr "Not done yet today"
+
+msgid "Сыграть ещё раз"
+msgstr "Play again"
+
+msgid "пн"
+msgstr "Mo"
+
+msgid "вт"
+msgstr "Tu"
+
+msgid "ср"
+msgstr "We"
+
+msgid "чт"
+msgstr "Th"
+
+msgid "пт"
+msgstr "Fr"
+
+msgid "сб"
+msgstr "Sa"
+
+msgid "вс"
+msgstr "Su"
+
+msgid "РАСКОП ДНЯ ЗАВЕРШЁН"
+msgstr "DAILY DIG OVER"
+
+msgid "Раскоп дня пройден! Возвращайтесь завтра"
+msgstr "Daily Dig done! Come back tomorrow"
+
+msgid "Находки: %d / %d — попробуйте ещё раз"
+msgstr "Finds: %d / %d — try again"
+
+msgid "Глубина: %d м · Находки: %d · Лучшая серия: %d"
+msgstr "Depth: %d m · Finds: %d · Best streak: %d"
+
+msgid "Лучший счёт дня: %s"
+msgstr "Best score of the day: %s"
+
+msgid "Копать"
+msgstr "Dig"
+
+msgid "Копайте всё глубже: серии линий умножают очки, под грунтом попадаются находки, на глубине — камни и корни."
+msgstr "Dig ever deeper: line streaks multiply points, finds hide under the soil, and stones and roots wait below."
+
+msgid "Одни и те же фигуры для всех. Откопайте 3 находки."
+msgstr "The same pieces for everyone. Dig up 3 finds."
+
+msgid "Рекорд: 0 · глубина 0 м"
+msgstr "Record: 0 · depth 0 m"
+
+msgid "Находки: 0"
+msgstr "Finds: 0"
+
+msgid "Ходы: %d / %d"
+msgstr "Moves: %d / %d"
+
+msgid "ХОДЫ ЗАКОНЧИЛИСЬ"
+msgstr "OUT OF MOVES"
+
+msgid "На сложной экспедиции ходы ограничены."
+msgstr "On Hard, moves are limited."
+
+msgid "Открыта сложность: %s!"
+msgstr "New difficulty unlocked: %s!"
+
+msgid "Лёгкая"
+msgstr "Easy"
+
+msgid "Средняя"
+msgstr "Medium"
+
+msgid "Сложная"
+msgstr "Hard"
+
+msgid "Бронза"
+msgstr "Bronze"
+
+msgid "Серебро"
+msgstr "Silver"
+
+msgid "Золото"
+msgstr "Gold"
+
+msgid "3 подсказки и отмены, тонкий грунт, удобные фигуры · бронза"
+msgstr "3 hints and undos, thin soil, handy pieces · bronze"
+
+msgid "1 подсказка и отмена, обычный грунт · серебро"
+msgstr "1 hint and undo, normal soil · silver"
+
+msgid "Грунт над находкой глубже, ходы ограничены, без бесплатных подсказок · очки ×2 · золото"
+msgstr "Deeper soil over the find, limited moves, no free hints · score ×2 · gold"
+
+msgid "Откроется после прохождения всей игры на лёгкой"
+msgstr "Unlocks after finishing the whole game on Easy"
+
+msgid "Откроется после прохождения всей игры на средней"
+msgstr "Unlocks after finishing the whole game on Medium"
+
+msgid "Таблица лидеров"
+msgstr "Leaderboard"
+
+msgid "Рекорды бесконечных раскопок"
+msgstr "Endless Dig records"
+
+msgid "Ваше место: %d · %s"
+msgstr "Your place: %d · %s"
+
+msgid "Загрузка…"
+msgstr "Loading…"
+
+msgid "Войти, чтобы попасть в таблицу"
+msgstr "Sign in to join the leaderboard"
+
+msgid "Таблица лидеров работает в Яндекс Играх."
+msgstr "The leaderboard works on Yandex Games."
+
+msgid "Не удалось загрузить таблицу. Попробуйте позже."
+msgstr "Could not load the leaderboard. Try again later."
+
+msgid "Пока здесь пусто — станьте первым!"
+msgstr "Nobody here yet — be the first!"
+
+msgid "Ваш рекорд: %s. Войдите в аккаунт Яндекса, чтобы он попал в таблицу."
+msgstr "Your record: %s. Sign in to Yandex to put it on the leaderboard."
+
+msgid "Игрок"
+msgstr "Player"
+
+msgid "Лидеры"
+msgstr "Leaders"
+
+msgid "Осколки: соберите находку"
+msgstr "Shards: put the find together"
+
+msgid "Находка разбита! Перетащите осколки на свои места"
+msgstr "The find is broken! Drag the shards into place"
+
+msgid "Скальпель: снимите корку"
+msgstr "Scalpel: chip off the crust"
+
+msgid "Проведите несколько раз по светлым наростам"
+msgstr "Go over the pale lumps a few times"
+
+msgid "Осколки склеены!"
+msgstr "Shards glued!"
+
+msgid "Этап %d из %d"
+msgstr "Step %d of %d"
+
+msgid "Звуки: UI Sound Effects by lolurio (CC BY 4.0), Kenney (CC0)"
+msgstr "Sounds: UI Sound Effects by lolurio (CC BY 4.0), Kenney (CC0)"

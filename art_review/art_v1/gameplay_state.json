@@ -1,0 +1,741 @@
+{
+	"cells": [
+		{
+			"artifact": "",
+			"block": "e07a1f",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 0,
+			"y": 0
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 1,
+			"y": 0
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 2,
+			"obstacle": 0,
+			"soil": 0,
+			"x": 2,
+			"y": 0
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 3,
+			"y": 0
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 4,
+			"y": 0
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 2,
+			"obstacle": 0,
+			"soil": 0,
+			"x": 5,
+			"y": 0
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 6,
+			"y": 0
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 7,
+			"y": 0
+		},
+		{
+			"artifact": "",
+			"block": "e07a1f",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 0,
+			"y": 1
+		},
+		{
+			"artifact": "vine_amulet_a",
+			"block": "",
+			"durability": 1,
+			"obstacle": 0,
+			"soil": 1,
+			"x": 1,
+			"y": 1
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 2,
+			"y": 1
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 3,
+			"y": 1
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 4,
+			"y": 1
+		},
+		{
+			"artifact": "",
+			"block": "2d834f",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 5,
+			"y": 1
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 6,
+			"y": 1
+		},
+		{
+			"artifact": "",
+			"block": "3d8d57",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 7,
+			"y": 1
+		},
+		{
+			"artifact": "",
+			"block": "e07a1f",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 0,
+			"y": 2
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 1,
+			"obstacle": 1,
+			"soil": 0,
+			"x": 1,
+			"y": 2
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 1,
+			"obstacle": 1,
+			"soil": 0,
+			"x": 2,
+			"y": 2
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 1,
+			"obstacle": 1,
+			"soil": 0,
+			"x": 3,
+			"y": 2
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 1,
+			"obstacle": 1,
+			"soil": 0,
+			"x": 4,
+			"y": 2
+		},
+		{
+			"artifact": "",
+			"block": "2d834f",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 5,
+			"y": 2
+		},
+		{
+			"artifact": "",
+			"block": "2d834f",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 6,
+			"y": 2
+		},
+		{
+			"artifact": "",
+			"block": "3d8d57",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 7,
+			"y": 2
+		},
+		{
+			"artifact": "",
+			"block": "e07a1f",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 0,
+			"y": 3
+		},
+		{
+			"artifact": "",
+			"block": "e07a1f",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 1,
+			"y": 3
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 1,
+			"obstacle": 1,
+			"soil": 0,
+			"x": 2,
+			"y": 3
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 1,
+			"obstacle": 1,
+			"soil": 0,
+			"x": 3,
+			"y": 3
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 4,
+			"y": 3
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 5,
+			"y": 3
+		},
+		{
+			"artifact": "vine_amulet_b",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 2,
+			"x": 6,
+			"y": 3
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 7,
+			"y": 3
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 0,
+			"y": 4
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 1,
+			"y": 4
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 2,
+			"y": 4
+		},
+		{
+			"artifact": "",
+			"block": "2e7ac7",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 3,
+			"y": 4
+		},
+		{
+			"artifact": "",
+			"block": "2e7ac7",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 4,
+			"y": 4
+		},
+		{
+			"artifact": "",
+			"block": "2e7ac7",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 5,
+			"y": 4
+		},
+		{
+			"artifact": "",
+			"block": "2e7ac7",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 6,
+			"y": 4
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 7,
+			"y": 4
+		},
+		{
+			"artifact": "",
+			"block": "3d8d57",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 0,
+			"y": 5
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 1,
+			"y": 5
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 2,
+			"obstacle": 0,
+			"soil": 0,
+			"x": 2,
+			"y": 5
+		},
+		{
+			"artifact": "",
+			"block": "7a47b8",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 3,
+			"y": 5
+		},
+		{
+			"artifact": "",
+			"block": "2d834f",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 4,
+			"y": 5
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 2,
+			"obstacle": 0,
+			"soil": 0,
+			"x": 5,
+			"y": 5
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 6,
+			"y": 5
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 7,
+			"y": 5
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 0,
+			"y": 6
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 1,
+			"y": 6
+		},
+		{
+			"artifact": "",
+			"block": "7a47b8",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 2,
+			"y": 6
+		},
+		{
+			"artifact": "vine_amulet_c",
+			"block": "7a47b8",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 2,
+			"x": 3,
+			"y": 6
+		},
+		{
+			"artifact": "",
+			"block": "7a47b8",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 4,
+			"y": 6
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 5,
+			"y": 6
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 6,
+			"y": 6
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 7,
+			"y": 6
+		},
+		{
+			"artifact": "",
+			"block": "3d8d57",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 0,
+			"y": 7
+		},
+		{
+			"artifact": "",
+			"block": "bf4d33",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 1,
+			"y": 7
+		},
+		{
+			"artifact": "",
+			"block": "bf4d33",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 2,
+			"y": 7
+		},
+		{
+			"artifact": "",
+			"block": "7a47b8",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 3,
+			"y": 7
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 4,
+			"y": 7
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 5,
+			"y": 7
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 6,
+			"y": 7
+		},
+		{
+			"artifact": "",
+			"block": "",
+			"durability": 0,
+			"obstacle": -1,
+			"soil": 0,
+			"x": 7,
+			"y": 7
+		}
+	],
+	"fragment_total": 3,
+	"fragments": 0,
+	"hint_cells": [
+		[
+			5,
+			6
+		],
+		[
+			6,
+			6
+		],
+		[
+			5,
+			7
+		],
+		[
+			6,
+			7
+		]
+	],
+	"hint_slot": 0,
+	"history": [
+		{
+			"origin": [
+				5,
+				1
+			],
+			"slot": 1
+		},
+		{
+			"origin": [
+				2,
+				3
+			],
+			"slot": 0
+		},
+		{
+			"origin": [
+				0,
+				5
+			],
+			"slot": 2
+		},
+		{
+			"origin": [
+				7,
+				1
+			],
+			"slot": 2
+		},
+		{
+			"origin": [
+				0,
+				0
+			],
+			"slot": 0
+		},
+		{
+			"origin": [
+				1,
+				6
+			],
+			"slot": 1
+		},
+		{
+			"origin": [
+				4,
+				5
+			],
+			"slot": 1
+		},
+		{
+			"origin": [
+				3,
+				4
+			],
+			"slot": 2
+		},
+		{
+			"origin": [
+				2,
+				5
+			],
+			"slot": 0
+		}
+	],
+	"moves": 9,
+	"root_threat": [
+		2,
+		1
+	],
+	"scene": "scenes/screens/game_screen_ch3_05.tscn",
+	"score": 290,
+	"tray": [
+		{
+			"cells": [
+				[
+					0,
+					0
+				],
+				[
+					1,
+					0
+				],
+				[
+					0,
+					1
+				],
+				[
+					1,
+					1
+				]
+			],
+			"color": "bf4d33",
+			"id": "square_2"
+		},
+		{
+			"cells": [
+				[
+					0,
+					0
+				],
+				[
+					0,
+					1
+				],
+				[
+					0,
+					2
+				]
+			],
+			"color": "3d8d57",
+			"id": "line_3_vertical"
+		},
+		{
+			"cells": [
+				[
+					0,
+					0
+				],
+				[
+					0,
+					1
+				],
+				[
+					0,
+					2
+				],
+				[
+					0,
+					3
+				],
+				[
+					1,
+					3
+				]
+			],
+			"color": "e07a1f",
+			"id": "large_l"
+		}
+	]
+}

@@ -1,0 +1,1176 @@
+{
+  "schemaVersion": 1,
+  "milestone": "ART V2B",
+  "status": "production_candidate_ready_for_user_review",
+  "provenance": "Generated with the available built-in ImageGen; exact underlying image model/quality tier was not exposed by the tool.",
+  "pathBase": "repository root",
+  "style": "Light Sandstone Courtyard",
+  "entries": [
+    {
+      "filename": "board_frame_v2b.png",
+      "file": "assets/art_v2b/board_frame_v2b.png",
+      "name": "board_frame",
+      "purpose": "frame",
+      "width": 1024,
+      "height": 1024,
+      "family": "sandstone",
+      "state": "frame",
+      "production": true,
+      "source": "sources/board_frame.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 1053723,
+      "detachedAlphaPixelsRemoved": 0,
+      "master": "board_frame",
+      "sourceCrop": {
+        "left": 81,
+        "top": 84,
+        "width": 1094,
+        "height": 1088
+      },
+      "sourceSlices": [
+        197,
+        197,
+        197,
+        197
+      ],
+      "contentRect": [
+        32,
+        32,
+        960,
+        960
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        153,
+        153,
+        153,
+        153
+      ],
+      "textSafeRect": null,
+      "boardGridSafeRect": {
+        "left": 131,
+        "top": 131,
+        "width": 762,
+        "height": 762
+      },
+      "alphaBounds": {
+        "left": 32,
+        "top": 32,
+        "width": 960,
+        "height": 960
+      },
+      "alphaSha256": "49b32eb7eabdc39dffef2788a00ffdffb83ba02a3b19844390257b643596a310",
+      "transparentFraction": 0.7129011154174805,
+      "sha256": "3badbd0a6b77107bda4290fa98d56e9adfe0582edc7a24a3ba6efcf6d49f606e",
+      "sourceSha256": "accd8486fbb7c27bde9b162779078773b98cab35c2847775525170723379586c",
+      "cornerScale": 0.7,
+      "alphaNote": "Generated neutral background extracted; final alpha normalized and verified",
+      "usage": "Uniformly scale square frame; align playfield to boardGridSafeRect",
+      "review": false
+    },
+    {
+      "filename": "panel_header_large_v2b.png",
+      "file": "assets/art_v2b/panel_header_large_v2b.png",
+      "name": "panel_header_large",
+      "purpose": "header",
+      "width": 768,
+      "height": 224,
+      "family": "sandstone",
+      "state": "header",
+      "production": true,
+      "source": "sources/panel_header_large.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 689378,
+      "detachedAlphaPixelsRemoved": 0,
+      "master": "panel_header_large",
+      "sourceCrop": {
+        "left": 92,
+        "top": 129,
+        "width": 1989,
+        "height": 449
+      },
+      "sourceSlices": [
+        126,
+        99,
+        126,
+        99
+      ],
+      "contentRect": [
+        24,
+        24,
+        720,
+        176
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        70,
+        60,
+        70,
+        60
+      ],
+      "textSafeRect": [
+        78,
+        68,
+        612,
+        88
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 24,
+        "top": 24,
+        "width": 720,
+        "height": 176
+      },
+      "alphaSha256": "3f5e53c912d94a21652c971eaa9738ffb412419e0075fc09307620768685c555",
+      "transparentFraction": 0.26906622023809523,
+      "sha256": "8b24d7aacaf4e60f8dfb64ea543898d6afed6d1cc05ecfaafb6b5808fdd0ca66",
+      "sourceSha256": "6124793f62d03740e843bbe101bd5656f07990c20fd022851cb44185ee42efa3",
+      "cornerScale": 1,
+      "alphaNote": "Generated neutral background extracted; final alpha normalized and verified",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "panel_header_small_v2b.png",
+      "file": "assets/art_v2b/panel_header_small_v2b.png",
+      "name": "panel_header_small",
+      "purpose": "support",
+      "width": 512,
+      "height": 160,
+      "family": "sandstone",
+      "state": "support",
+      "production": true,
+      "source": "sources/panel_header_small.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceHasAlpha": true,
+      "mattePixelsRemoved": 0,
+      "detachedAlphaPixelsRemoved": 16046,
+      "master": "panel_header_small",
+      "sourceCrop": {
+        "left": 81,
+        "top": 148,
+        "width": 2009,
+        "height": 407
+      },
+      "sourceSlices": [
+        114,
+        90,
+        114,
+        90
+      ],
+      "contentRect": [
+        16,
+        16,
+        480,
+        128
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        43,
+        38,
+        43,
+        38
+      ],
+      "textSafeRect": [
+        51,
+        46,
+        410,
+        68
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 16,
+        "top": 16,
+        "width": 480,
+        "height": 128
+      },
+      "alphaSha256": "297a96539a8d779035da9a2ce5e92bccf4591f98b7ec37d83e4575b5fbacd359",
+      "transparentFraction": 0.25452880859375,
+      "sha256": "34b0a36bcef283766353c87b3459bcc44d0a082895000371d843364ff0fd3474",
+      "sourceSha256": "41551f9e73c698ab81a0a6be33ae36c0fa591d9fa95003f33aeed66a61c5e548",
+      "cornerScale": 1,
+      "alphaNote": "Generated alpha retained for master; detached dust removed; shared state alpha where documented",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "panel_label_small_v2b.png",
+      "file": "assets/art_v2b/panel_label_small_v2b.png",
+      "name": "panel_label_small",
+      "purpose": "label",
+      "width": 384,
+      "height": 128,
+      "family": "sandstone",
+      "state": "label",
+      "production": true,
+      "source": "sources/panel_label_small.png",
+      "sourceSize": [
+        2022,
+        778
+      ],
+      "sourceHasAlpha": true,
+      "mattePixelsRemoved": 0,
+      "detachedAlphaPixelsRemoved": 7601,
+      "master": "panel_label_small",
+      "sourceCrop": {
+        "left": 175,
+        "top": 202,
+        "width": 1672,
+        "height": 351
+      },
+      "sourceSlices": [
+        98,
+        77,
+        98,
+        77
+      ],
+      "contentRect": [
+        16,
+        16,
+        352,
+        96
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        37,
+        32,
+        37,
+        32
+      ],
+      "textSafeRect": [
+        45,
+        40,
+        294,
+        48
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 16,
+        "top": 16,
+        "width": 352,
+        "height": 96
+      },
+      "alphaSha256": "f967ede02ef783ed529d9588cbf1df046040a5bd02ed1da626367f5b6c72cd37",
+      "transparentFraction": 0.3173014322916667,
+      "sha256": "ccaa4a475612ab3d048a5bb2f1e0f006a9ca9892839f410ebdccda9b729b0766",
+      "sourceSha256": "c9a5f7a5d706f813d168fc89078744e54b874e5444cecb29adb3e488f1f5f6da",
+      "cornerScale": 1,
+      "alphaNote": "Generated alpha retained for master; detached dust removed; shared state alpha where documented",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "popup_panel_v2b.png",
+      "file": "assets/art_v2b/popup_panel_v2b.png",
+      "name": "popup_panel",
+      "purpose": "modal",
+      "width": 768,
+      "height": 1024,
+      "family": "sandstone",
+      "state": "modal",
+      "production": true,
+      "source": "sources/popup_panel.png",
+      "sourceSize": [
+        1086,
+        1448
+      ],
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 300241,
+      "detachedAlphaPixelsRemoved": 0,
+      "master": "popup_panel",
+      "sourceCrop": {
+        "left": 49,
+        "top": 72,
+        "width": 987,
+        "height": 1304
+      },
+      "sourceSlices": [
+        178,
+        178,
+        178,
+        178
+      ],
+      "contentRect": [
+        32,
+        32,
+        704,
+        960
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        159,
+        159,
+        159,
+        159
+      ],
+      "textSafeRect": [
+        167,
+        167,
+        434,
+        690
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 32,
+        "top": 32,
+        "width": 704,
+        "height": 960
+      },
+      "alphaSha256": "00f4d7c9c89a45f8c4bdee4f0185fde6f7db2bb2f4f7d8d102608ac11a27ddcf",
+      "transparentFraction": 0.1473821004231771,
+      "sha256": "588344ef97a5ec4fdca2bfaf0f0b8d25fdab48cf8cb323d6edd04c873ccc3866",
+      "sourceSha256": "fa9eea5a8f1515911cf6b7ee84893cf2d8f7eca2ea368a7d4db367cf8baadc1c",
+      "cornerScale": 1,
+      "alphaNote": "Generated neutral background extracted; final alpha normalized and verified",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "button_primary_v2b.png",
+      "file": "assets/art_v2b/button_primary_v2b.png",
+      "name": "button_primary",
+      "purpose": "primary",
+      "width": 768,
+      "height": 192,
+      "family": "green",
+      "state": "primary",
+      "production": true,
+      "source": "sources/button_primary.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceHasAlpha": true,
+      "mattePixelsRemoved": 0,
+      "detachedAlphaPixelsRemoved": 15968,
+      "master": "button_primary",
+      "sourceCrop": {
+        "left": 91,
+        "top": 122,
+        "width": 1985,
+        "height": 457
+      },
+      "sourceSlices": [
+        128,
+        101,
+        128,
+        101
+      ],
+      "contentRect": [
+        24,
+        24,
+        720,
+        144
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        64,
+        56,
+        64,
+        56
+      ],
+      "textSafeRect": [
+        72,
+        64,
+        624,
+        64
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 24,
+        "top": 24,
+        "width": 720,
+        "height": 144
+      },
+      "alphaSha256": "96586cf98f11741915b0892f34321be9b1a82f18b99d69460a4e1756824603a9",
+      "transparentFraction": 0.3023817274305556,
+      "sha256": "778ad71cae08774560103b75d36a8744e98dab6fdb13363351b37c4e6afdc657",
+      "sourceSha256": "d1fc12180b333f842481539f274f3ff87b5f33b02b645cc5f5e2761d3e64e3f9",
+      "cornerScale": 1,
+      "alphaNote": "Generated alpha retained for master; detached dust removed; shared state alpha where documented",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "button_secondary_v2b.png",
+      "file": "assets/art_v2b/button_secondary_v2b.png",
+      "name": "button_secondary",
+      "purpose": "secondary",
+      "width": 768,
+      "height": 192,
+      "family": "sandstone",
+      "state": "secondary",
+      "production": true,
+      "source": "sources/button_secondary.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 673076,
+      "detachedAlphaPixelsRemoved": 0,
+      "master": "button_primary",
+      "sourceCrop": {
+        "left": 91,
+        "top": 122,
+        "width": 1985,
+        "height": 457
+      },
+      "sourceSlices": [
+        128,
+        101,
+        128,
+        101
+      ],
+      "contentRect": [
+        24,
+        24,
+        720,
+        144
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        64,
+        56,
+        64,
+        56
+      ],
+      "textSafeRect": [
+        72,
+        64,
+        624,
+        64
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 24,
+        "top": 24,
+        "width": 720,
+        "height": 144
+      },
+      "alphaSha256": "96586cf98f11741915b0892f34321be9b1a82f18b99d69460a4e1756824603a9",
+      "transparentFraction": 0.3023817274305556,
+      "sha256": "9bc07fa66651260e6d1076faecdd0f60b77a45f5d4bb25d32216f54eeb500d63",
+      "sourceSha256": "f135de04c5e8173e833eef1e7d7853c6b5413bafc1b7f2b45f4fea976b4ae029",
+      "cornerScale": 1,
+      "alphaNote": "Generated neutral background extracted; final alpha normalized and verified",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "button_disabled_v2b.png",
+      "file": "assets/art_v2b/button_disabled_v2b.png",
+      "name": "button_disabled",
+      "purpose": "disabled",
+      "width": 768,
+      "height": 192,
+      "family": "disabled",
+      "state": "disabled",
+      "production": true,
+      "source": "sources/button_disabled.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 681263,
+      "detachedAlphaPixelsRemoved": 4,
+      "master": "button_primary",
+      "sourceCrop": {
+        "left": 91,
+        "top": 122,
+        "width": 1985,
+        "height": 457
+      },
+      "sourceSlices": [
+        128,
+        101,
+        128,
+        101
+      ],
+      "contentRect": [
+        24,
+        24,
+        720,
+        144
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        64,
+        56,
+        64,
+        56
+      ],
+      "textSafeRect": [
+        72,
+        64,
+        624,
+        64
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 24,
+        "top": 24,
+        "width": 720,
+        "height": 144
+      },
+      "alphaSha256": "96586cf98f11741915b0892f34321be9b1a82f18b99d69460a4e1756824603a9",
+      "transparentFraction": 0.3023817274305556,
+      "sha256": "f0e3c03194b96503f38f25f2a374169589a6b7c73f6e9c629ab790a98bb7cfd5",
+      "sourceSha256": "94d2b78e6312b44106eeaac527e9b7f47b3194f088ab7a91e9b2689eb4719a1b",
+      "cornerScale": 1,
+      "alphaNote": "Generated neutral background extracted; final alpha normalized and verified",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "button_small_back_v2b.png",
+      "file": "assets/art_v2b/button_small_back_v2b.png",
+      "name": "button_small_back",
+      "purpose": "back_pause_base",
+      "width": 192,
+      "height": 192,
+      "family": "sandstone",
+      "state": "back_pause_base",
+      "production": true,
+      "source": "sources/button_small_back.png",
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 786884,
+      "detachedAlphaPixelsRemoved": 0,
+      "master": "button_small_back",
+      "sourceCrop": {
+        "left": 163,
+        "top": 171,
+        "width": 929,
+        "height": 875
+      },
+      "sourceSlices": [
+        167,
+        167,
+        167,
+        167
+      ],
+      "contentRect": [
+        16,
+        16,
+        160,
+        160
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        45,
+        45,
+        45,
+        45
+      ],
+      "textSafeRect": [
+        53,
+        53,
+        86,
+        86
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 16,
+        "top": 16,
+        "width": 160,
+        "height": 160
+      },
+      "alphaSha256": "0ea574366294484fc49f99e7e387791184b1359bec802202aba6604f962bb2ac",
+      "transparentFraction": 0.3215603298611111,
+      "sha256": "52ec5280ac2d377ca54088cb3c8e70ded09b65149505b18c6fdc911e677b2eba",
+      "sourceSha256": "7e9d45349b69220f0c9fd3145bba181e927756f7cc9ac5f80ef55d47c48d1fd3",
+      "cornerScale": 1,
+      "alphaNote": "Generated neutral background extracted; final alpha normalized and verified",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "button_selected_frame_v2b.png",
+      "file": "assets/art_v2b/button_selected_frame_v2b.png",
+      "name": "button_selected_frame",
+      "purpose": "selected_overlay",
+      "width": 768,
+      "height": 192,
+      "family": "gold_accent",
+      "state": "selected_overlay",
+      "production": true,
+      "source": "sources/button_selected_frame.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 1465647,
+      "detachedAlphaPixelsRemoved": 0,
+      "master": "button_primary",
+      "sourceCrop": {
+        "left": 91,
+        "top": 122,
+        "width": 1985,
+        "height": 457
+      },
+      "sourceSlices": [
+        128,
+        101,
+        128,
+        101
+      ],
+      "contentRect": [
+        24,
+        24,
+        720,
+        144
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        64,
+        56,
+        64,
+        56
+      ],
+      "textSafeRect": null,
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 24,
+        "top": 24,
+        "width": 720,
+        "height": 144
+      },
+      "alphaSha256": "47549329e2a477f65ce28e383466059cd3b5d71d6c9cd0657b09554dfdc7df6b",
+      "transparentFraction": 0.8996242947048612,
+      "sha256": "a628e223339b9c2f9e51ca3afbe4aafd1880bf4ce2b1f2a0cff73b859e5058e2",
+      "sourceSha256": "912498a1c83ccdfc1b85dafa7be4ea2af2904f28da538be0d4ea3f3fa0e7cb79",
+      "cornerScale": 1,
+      "alphaNote": "Generated neutral background extracted; final alpha normalized and verified",
+      "usage": "Overlay on same button canvas and transform; empty center",
+      "review": false
+    },
+    {
+      "filename": "piece_slot_v2b.png",
+      "file": "assets/art_v2b/piece_slot_v2b.png",
+      "name": "piece_slot",
+      "purpose": "piece_slot",
+      "width": 384,
+      "height": 320,
+      "family": "sandstone",
+      "state": "piece_slot",
+      "production": true,
+      "source": "sources/piece_slot.png",
+      "sourceSize": [
+        1374,
+        1145
+      ],
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 853530,
+      "detachedAlphaPixelsRemoved": 0,
+      "master": "piece_slot",
+      "sourceCrop": {
+        "left": 42,
+        "top": 283,
+        "width": 1290,
+        "height": 567
+      },
+      "sourceSlices": [
+        159,
+        125,
+        159,
+        125
+      ],
+      "contentRect": [
+        16,
+        16,
+        352,
+        288
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        59,
+        50,
+        59,
+        50
+      ],
+      "textSafeRect": [
+        67,
+        58,
+        250,
+        204
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 16,
+        "top": 16,
+        "width": 352,
+        "height": 288
+      },
+      "alphaSha256": "09316176ae1a090962ef92fd1598881122ecc4061fa9d835976d2ffe975c7aec",
+      "transparentFraction": 0.18002115885416667,
+      "sha256": "7bbcce770f45ca22455d586361112685bd2694376c03b6515bbb87a4b50c6a1f",
+      "sourceSha256": "0114c27bc2c92ab57e7e3e9e942736a2cbfd696ec1c8e9aae7dc13852081fc7b",
+      "cornerScale": 1,
+      "alphaNote": "Generated neutral background extracted; final alpha normalized and verified",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "chapter_card_open_v2b.png",
+      "file": "assets/art_v2b/chapter_card_open_v2b.png",
+      "name": "chapter_card_open",
+      "purpose": "open",
+      "width": 768,
+      "height": 320,
+      "family": "sandstone",
+      "state": "open",
+      "production": true,
+      "source": "sources/chapter_card_open.png",
+      "sourceSize": [
+        1942,
+        809
+      ],
+      "sourceHasAlpha": true,
+      "mattePixelsRemoved": 0,
+      "detachedAlphaPixelsRemoved": 7767,
+      "master": "chapter_card_open",
+      "sourceCrop": {
+        "left": 69,
+        "top": 127,
+        "width": 1806,
+        "height": 537
+      },
+      "sourceSlices": [
+        150,
+        118,
+        150,
+        118
+      ],
+      "contentRect": [
+        24,
+        24,
+        720,
+        272
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        84,
+        71,
+        84,
+        71
+      ],
+      "textSafeRect": [
+        92,
+        79,
+        584,
+        162
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 24,
+        "top": 24,
+        "width": 720,
+        "height": 272
+      },
+      "alphaSha256": "587b62a7326cc620b95c794dd035a084a94916fcebadf1ce22d336a7712e8eea",
+      "transparentFraction": 0.20996907552083333,
+      "sha256": "7a857e7dede117e433e635fe1c097f7ca13973c195f8974f8e02769137afd409",
+      "sourceSha256": "d9c535e7cef582af60e48b0edf9393ae965432a9731b26bff627093a522198ca",
+      "cornerScale": 1,
+      "alphaNote": "Generated alpha retained for master; detached dust removed; shared state alpha where documented",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "chapter_card_locked_v2b.png",
+      "file": "assets/art_v2b/chapter_card_locked_v2b.png",
+      "name": "chapter_card_locked",
+      "purpose": "locked",
+      "width": 768,
+      "height": 320,
+      "family": "disabled",
+      "state": "locked",
+      "production": true,
+      "source": "sources/chapter_card_locked.png",
+      "sourceSize": [
+        1944,
+        809
+      ],
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 620147,
+      "detachedAlphaPixelsRemoved": 0,
+      "master": "chapter_card_open",
+      "sourceCrop": {
+        "left": 69,
+        "top": 127,
+        "width": 1808,
+        "height": 537
+      },
+      "sourceSlices": [
+        150,
+        118,
+        150,
+        118
+      ],
+      "contentRect": [
+        24,
+        24,
+        720,
+        272
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        84,
+        71,
+        84,
+        71
+      ],
+      "textSafeRect": [
+        92,
+        79,
+        584,
+        162
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 24,
+        "top": 24,
+        "width": 720,
+        "height": 272
+      },
+      "alphaSha256": "587b62a7326cc620b95c794dd035a084a94916fcebadf1ce22d336a7712e8eea",
+      "transparentFraction": 0.20996907552083333,
+      "sha256": "8978a49aee175804efc3d18968cb30354c34a48f4522682850fe627e53fcda42",
+      "sourceSha256": "1ce6ca61decd0f0f6d42fd8f0bbbd0ba4f591db08d90bc7b06b7b0062f0f4c7a",
+      "cornerScale": 1,
+      "alphaNote": "Generated neutral background extracted; final alpha normalized and verified",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "chapter_card_completed_v2b.png",
+      "file": "assets/art_v2b/chapter_card_completed_v2b.png",
+      "name": "chapter_card_completed",
+      "purpose": "completed",
+      "width": 768,
+      "height": 320,
+      "family": "sandstone_olive_accent",
+      "state": "completed",
+      "production": true,
+      "source": "sources/chapter_card_completed.png",
+      "sourceSize": [
+        1944,
+        809
+      ],
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 614575,
+      "detachedAlphaPixelsRemoved": 0,
+      "master": "chapter_card_open",
+      "sourceCrop": {
+        "left": 69,
+        "top": 127,
+        "width": 1808,
+        "height": 537
+      },
+      "sourceSlices": [
+        150,
+        118,
+        150,
+        118
+      ],
+      "contentRect": [
+        24,
+        24,
+        720,
+        272
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        84,
+        71,
+        84,
+        71
+      ],
+      "textSafeRect": [
+        92,
+        79,
+        584,
+        162
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 24,
+        "top": 24,
+        "width": 720,
+        "height": 272
+      },
+      "alphaSha256": "587b62a7326cc620b95c794dd035a084a94916fcebadf1ce22d336a7712e8eea",
+      "transparentFraction": 0.20996907552083333,
+      "sha256": "347ab7e744b6b916fd02b7cde9a73ba909fbb9f909116cebc8139df0443a9a35",
+      "sourceSha256": "e8068d0d01f727feae7e9926162ba88d3846552026e83885fad286cf2d072dde",
+      "cornerScale": 1,
+      "alphaNote": "Generated neutral background extracted; final alpha normalized and verified",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "collection_card_known_v2b.png",
+      "file": "assets/art_v2b/collection_card_known_v2b.png",
+      "name": "collection_card_known",
+      "purpose": "known",
+      "width": 384,
+      "height": 480,
+      "family": "sandstone_gold_accent",
+      "state": "known",
+      "production": true,
+      "source": "sources/collection_card_known.png",
+      "sourceSize": [
+        1122,
+        1402
+      ],
+      "sourceHasAlpha": true,
+      "mattePixelsRemoved": 0,
+      "detachedAlphaPixelsRemoved": 10438,
+      "master": "collection_card_known",
+      "sourceCrop": {
+        "left": 63,
+        "top": 52,
+        "width": 996,
+        "height": 1269
+      },
+      "sourceSlices": [
+        179,
+        179,
+        179,
+        179
+      ],
+      "contentRect": [
+        16,
+        16,
+        352,
+        448
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        79,
+        79,
+        79,
+        79
+      ],
+      "textSafeRect": [
+        87,
+        87,
+        210,
+        306
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 16,
+        "top": 17,
+        "width": 352,
+        "height": 447
+      },
+      "alphaSha256": "da5c957c9c848124107db240721e551b7b470383e2fb915d850ef63b4bc00cc1",
+      "transparentFraction": 0.1566840277777778,
+      "sha256": "bb0fd8d1ab8d21baac72daa65f21bb4b1d8e5f596ac0f1134e22706837cda8df",
+      "sourceSha256": "f1371f4b895ec5fa9cfb567b946bac151138ed608e96d8d487818817400db183",
+      "cornerScale": 1,
+      "alphaNote": "Generated alpha retained for master; detached dust removed; shared state alpha where documented",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "collection_card_unknown_v2b.png",
+      "file": "assets/art_v2b/collection_card_unknown_v2b.png",
+      "name": "collection_card_unknown",
+      "purpose": "unknown",
+      "width": 384,
+      "height": 480,
+      "family": "disabled",
+      "state": "unknown",
+      "production": true,
+      "source": "sources/collection_card_unknown.png",
+      "sourceSize": [
+        1122,
+        1402
+      ],
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 338544,
+      "detachedAlphaPixelsRemoved": 0,
+      "master": "collection_card_known",
+      "sourceCrop": {
+        "left": 63,
+        "top": 52,
+        "width": 996,
+        "height": 1269
+      },
+      "sourceSlices": [
+        179,
+        179,
+        179,
+        179
+      ],
+      "contentRect": [
+        16,
+        16,
+        352,
+        448
+      ],
+      "resizeMode": "nine-region; uniformly scaled corners",
+      "ninePatchMargins": [
+        79,
+        79,
+        79,
+        79
+      ],
+      "textSafeRect": [
+        87,
+        87,
+        210,
+        306
+      ],
+      "boardGridSafeRect": null,
+      "alphaBounds": {
+        "left": 16,
+        "top": 17,
+        "width": 352,
+        "height": 447
+      },
+      "alphaSha256": "da5c957c9c848124107db240721e551b7b470383e2fb915d850ef63b4bc00cc1",
+      "transparentFraction": 0.1566840277777778,
+      "sha256": "e7aabe00619af1bd895327343a7c87aad5dca285665b151139b9e6a6bbd9a8e7",
+      "sourceSha256": "e5f913c6c99f748242afece74bf8750254dbf32b96e1e18fd319a9637cfa3431",
+      "cornerScale": 1,
+      "alphaNote": "Generated neutral background extracted; final alpha normalized and verified",
+      "usage": "Blank UI texture; separate real text/icon nodes above",
+      "review": false
+    },
+    {
+      "filename": "ui_family_overview.png",
+      "file": "art_review/art_v2b/ui_family_overview.png",
+      "purpose": "ui_family_overview",
+      "width": 1280,
+      "height": 1240,
+      "family": "review",
+      "state": "review_composite",
+      "alphaNote": "Opaque review background; not a production sprite",
+      "production": false,
+      "review": true,
+      "sha256": "0a2d1e09fda5bd7f82800e0f9d8bff5e5f0401bfd52935908a4904e5a6473f11"
+    },
+    {
+      "filename": "readability_48px.png",
+      "file": "art_review/art_v2b/readability_48px.png",
+      "purpose": "readability_48px",
+      "width": 1200,
+      "height": 1260,
+      "family": "review",
+      "state": "review_composite",
+      "alphaNote": "Opaque review background; not a production sprite",
+      "production": false,
+      "review": true,
+      "sha256": "9f9e2de6f8f97701cac8dcdc82569d89a6502d85b32bce80c215c1139c5066b7"
+    },
+    {
+      "filename": "grayscale_readability.png",
+      "file": "art_review/art_v2b/grayscale_readability.png",
+      "purpose": "grayscale_readability",
+      "width": 1200,
+      "height": 1260,
+      "family": "review",
+      "state": "review_composite",
+      "alphaNote": "Opaque review background; not a production sprite",
+      "production": false,
+      "review": true,
+      "sha256": "e8825a9a1bd50a5de3b27b55980e87aee0fa6228fc3cf28124fe524048cd2f48"
+    },
+    {
+      "filename": "gameplay_mockup_ui_only.png",
+      "file": "art_review/art_v2b/gameplay_mockup_ui_only.png",
+      "purpose": "gameplay_mockup_ui_only",
+      "width": 720,
+      "height": 1280,
+      "family": "review",
+      "state": "review_composite",
+      "alphaNote": "Opaque review background; not a production sprite",
+      "production": false,
+      "review": true,
+      "sha256": "b3486c84270a2b62193a9832e1c2e164037d94493034d702ced5211d64091e31"
+    },
+    {
+      "filename": "menu_mockup_ui_only.png",
+      "file": "art_review/art_v2b/menu_mockup_ui_only.png",
+      "purpose": "menu_mockup_ui_only",
+      "width": 720,
+      "height": 1280,
+      "family": "review",
+      "state": "review_composite",
+      "alphaNote": "Opaque review background; not a production sprite",
+      "production": false,
+      "review": true,
+      "sha256": "cbbc1952ffe9b2084dbd58f688ccb723e7aff7f7cd8f43054269bb115d331aea"
+    }
+  ],
+  "reviewLayout": {
+    "gameplay": {
+      "canvas": [
+        720,
+        1280
+      ],
+      "frame": {
+        "x": 24,
+        "y": 310,
+        "w": 672,
+        "h": 672
+      },
+      "board": {
+        "x": 112,
+        "y": 398,
+        "width": 496,
+        "height": 496,
+        "cellPitch": 62
+      },
+      "source": "art_review/art_v2a/stress_test_board_8x8.png",
+      "note": "Review-only fixture; separate text. V1 information order and controls retained, lighter supporting info and counters."
+    },
+    "menu": {
+      "canvas": [
+        720,
+        1280
+      ],
+      "actions": [
+        "Играть",
+        "Экспедиции",
+        "Коллекция",
+        "Настройки"
+      ],
+      "backdrop": "plain review color, no generated screen background",
+      "emblem": "Existing V2A target center crop; review motif only, not final logo",
+      "text": "Composited separately; not baked into production assets"
+    }
+  },
+  "auxiliaryReview": {
+    "file": "art_review/art_v2b/alpha_edges_review.png",
+    "size": [
+      1250,
+      730
+    ],
+    "note": "16 assets in manifest order; light then dark background pairs, supplementary edge audit"
+  },
+  "integration": {
+    "performed": false,
+    "notes": "Texture art only. Use real Godot Control nodes for persistent UI and separate labels/icons. Preserve state canvas/pivot and ninePatchMargins; frame uses boardGridSafeRect."
+  }
+}

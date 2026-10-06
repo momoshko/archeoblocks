@@ -1,0 +1,83 @@
+[
+  {
+    "name": "cell_excavated_depth0",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 29673,
+    "partial_alpha_pixels": 35134,
+    "clear_border_px": 8,
+    "bytes": 91178
+  },
+  {
+    "name": "cell_soil_depth1",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 28802,
+    "partial_alpha_pixels": 35983,
+    "clear_border_px": 8,
+    "bytes": 90356
+  },
+  {
+    "name": "cell_soil_depth2",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 29141,
+    "partial_alpha_pixels": 35663,
+    "clear_border_px": 8,
+    "bytes": 88355
+  },
+  {
+    "name": "cell_artifact_hidden_depth2",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 28766,
+    "partial_alpha_pixels": 36019,
+    "clear_border_px": 8,
+    "bytes": 89837
+  },
+  {
+    "name": "cell_artifact_hidden_depth1",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 28635,
+    "partial_alpha_pixels": 36165,
+    "clear_border_px": 8,
+    "bytes": 99740
+  },
+  {
+    "name": "cell_artifact_revealed",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 29346,
+    "partial_alpha_pixels": 35463,
+    "clear_border_px": 8,
+    "bytes": 105407
+  },
+  {
+    "name": "cell_occupied_block",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 29127,
+    "partial_alpha_pixels": 35672,
+    "clear_border_px": 8,
+    "bytes": 91120
+  },
+  {
+    "name": "preview_valid",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 26102,
+    "partial_alpha_pixels": 38166,
+    "clear_border_px": 8,
+    "bytes": 49967
+  },
+  {
+    "name": "preview_invalid",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 30425,
+    "partial_alpha_pixels": 33612,
+    "clear_border_px": 8,
+    "bytes": 49674
+  }
+]

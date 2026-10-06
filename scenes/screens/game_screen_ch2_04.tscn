@@ -5,7 +5,7 @@
 [ext_resource type="Resource" path="res://resources/chapters/ruined_shrine.tres" id="3_chapter"]
 
 [node name="GameScreenChapterTwo04" instance=ExtResource("1_game")]
-next_expedition_scene_path = "res://scenes/screens/game_screen_ch2_05.tscn"
+next_expedition_scene_path = "res://scenes/screens/game_screen_site_ruined_shrine_05.tscn"
 
 [node name="GameSession" parent="." index="8"]
 expedition_definition = ExtResource("2_expedition")

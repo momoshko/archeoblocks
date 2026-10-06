@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PieceGenerationConfig" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/piece_generation_config.gd" id="1_config"]
+[ext_resource type="Resource" path="res://resources/pieces/single.tres" id="p0_single"]
+[ext_resource type="Resource" path="res://resources/pieces/domino_horizontal.tres" id="p1_domino_horizontal"]
+[ext_resource type="Resource" path="res://resources/pieces/domino_vertical.tres" id="p2_domino_vertical"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_horizontal.tres" id="p3_line_3_horizontal"]
+[ext_resource type="Resource" path="res://resources/pieces/line_3_vertical.tres" id="p4_line_3_vertical"]
+[ext_resource type="Resource" path="res://resources/pieces/line_4_horizontal.tres" id="p5_line_4_horizontal"]
+[ext_resource type="Resource" path="res://resources/pieces/square_2.tres" id="p6_square_2"]
+[ext_resource type="Resource" path="res://resources/pieces/small_l.tres" id="p7_small_l"]
+[ext_resource type="Resource" path="res://resources/pieces/small_t.tres" id="p8_small_t"]
+[ext_resource type="Resource" path="res://resources/pieces/large_l.tres" id="p9_large_l"]
+[ext_resource type="Resource" path="res://resources/pieces/plus_5.tres" id="p10_plus_5"]
+
+[resource]
+script = ExtResource("1_config")
+pieces = Array[PieceDefinition]([ExtResource("p0_single"), ExtResource("p1_domino_horizontal"), ExtResource("p2_domino_vertical"), ExtResource("p3_line_3_horizontal"), ExtResource("p4_line_3_vertical"), ExtResource("p5_line_4_horizontal"), ExtResource("p6_square_2"), ExtResource("p7_small_l"), ExtResource("p8_small_t"), ExtResource("p9_large_l"), ExtResource("p10_plus_5")])
+weights = PackedFloat32Array(2.0, 3.0, 3.0, 3.0, 3.0, 2.5, 3.0, 3.0, 3.0, 2.0, 1.0)
+max_same_piece = 2
+fairness_attempts = 12
+fallback_piece = ExtResource("p0_single")

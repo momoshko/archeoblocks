@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=28 format=3]
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
 [ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2"]
 [ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="3"]
@@ -9,6 +9,11 @@
 [ext_resource type="Resource" path="res://resources/pieces/line_3_vertical.tres" id="8"]
 [ext_resource type="Resource" path="res://resources/pieces/small_l.tres" id="9"]
 [ext_resource type="Resource" path="res://resources/pieces/small_t.tres" id="10"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="pg_chapter"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/guardian_seal_full_v1.png" id="art_full"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/guardian_seal_fragment_a_v1.png" id="art_fragment_a"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/guardian_seal_fragment_b_v1.png" id="art_fragment_b"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/guardian_seal_fragment_c_v1.png" id="art_fragment_c"]
 [sub_resource type="Resource" id="FA"]
 script = ExtResource("2")
 id = &"guardian_seal_a"
@@ -39,9 +44,6 @@ cell = Vector2i(0,6)
 [sub_resource type="Resource" id="R6"]
 script = ExtResource("3")
 cell = Vector2i(7,6)
-[sub_resource type="Resource" id="R7"]
-script = ExtResource("3")
-cell = Vector2i(4,4)
 [sub_resource type="Resource" id="S1"]
 script = ExtResource("4")
 cell = Vector2i(2,0)
@@ -50,10 +52,6 @@ durability = 2
 script = ExtResource("4")
 cell = Vector2i(5,0)
 durability = 1
-[sub_resource type="Resource" id="S3"]
-script = ExtResource("4")
-cell = Vector2i(2,3)
-durability = 2
 [sub_resource type="Resource" id="S4"]
 script = ExtResource("4")
 cell = Vector2i(5,3)
@@ -73,15 +71,22 @@ title_ru = "Заросшие катакомбы 9 — Последний про�
 card_title_ru = "9 — Последний проход"
 debug_name = "Overgrown Catacombs 9 - Last Passage"
 artifact_id = &"guardian_seal"
+restoration_stages = Array[StringName]([&"soil", &"shards", &"patina"])
+restoration_shards = 5
 artifact_name_ru = "Печать хранителя"
 objective_ru = "Найдите три части печати хранителя"
 instruction_ru = "Сохраняйте место для крупных фигур, пока корни закрывают проходы."
 normal_soil_cells = Array[Vector2i]([Vector2i(1,1), Vector2i(6,4), Vector2i(3,7)])
-strong_soil_cells = Array[Vector2i]([Vector2i(1,1), Vector2i(6,4), Vector2i(3,7)])
+strong_soil_cells = Array[Vector2i]([Vector2i(1, 1), Vector2i(3, 7)])
 artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FA"), SubResource("FB"), SubResource("FC")])
-stone_obstacles = Array[StoneObstacleDefinition]([SubResource("S1"), SubResource("S2"), SubResource("S3"), SubResource("S4"), SubResource("S5"), SubResource("S6")])
-root_obstacles = Array[RootObstacleDefinition]([SubResource("R1"), SubResource("R2"), SubResource("R3"), SubResource("R4"), SubResource("R5"), SubResource("R6"), SubResource("R7")])
+full_artifact_texture = ExtResource("art_full")
+fragment_textures = Array[Texture2D]([ExtResource("art_fragment_a"), ExtResource("art_fragment_b"), ExtResource("art_fragment_c")])
+stone_obstacles = Array[StoneObstacleDefinition]([SubResource("S1"), SubResource("S2"), SubResource("S4"), SubResource("S5"), SubResource("S6")])
+root_obstacles = Array[RootObstacleDefinition]([SubResource("R1"), SubResource("R2"), SubResource("R3"), SubResource("R4"), SubResource("R5"), SubResource("R6")])
 opening_piece_set = Array[PieceDefinition]([ExtResource("5"), ExtResource("9"), ExtResource("8")])
-curated_piece_sequence = Array[PieceDefinition]([ExtResource("6"), ExtResource("7"), ExtResource("10"), ExtResource("5"), ExtResource("8"), ExtResource("9"), ExtResource("7"), ExtResource("6"), ExtResource("5")])
-expected_moves_min = 35
-expected_moves_max = 45
+curated_piece_sequence = Array[PieceDefinition]([ExtResource("6"), ExtResource("10"), ExtResource("8"), ExtResource("7"), ExtResource("9"), ExtResource("5")])
+expected_moves_min = 23
+expected_moves_max = 37
+hard_move_limit = 40
+game_scene_path = "res://scenes/screens/game_screen_ch3_09.tscn"
+piece_generation = ExtResource("pg_chapter")

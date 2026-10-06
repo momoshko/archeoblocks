@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/screens/chapter_detail.tscn" id="1_detail"]
 [ext_resource type="Resource" path="res://resources/chapters/ruined_shrine.tres" id="2_chapter"]
@@ -11,8 +11,16 @@
 [ext_resource type="PackedScene" path="res://scenes/screens/game_screen_ch2_06.tscn" id="9_game06"]
 [ext_resource type="PackedScene" path="res://scenes/screens/game_screen_ch2_07.tscn" id="10_game07"]
 [ext_resource type="PackedScene" path="res://scenes/screens/game_screen_ch2_08.tscn" id="11_game08"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_ruined_shrine_01.tscn" id="site_ruined_shrine_01"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_ruined_shrine_02.tscn" id="site_ruined_shrine_02"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_ruined_shrine_03.tscn" id="site_ruined_shrine_03"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_ruined_shrine_04.tscn" id="site_ruined_shrine_04"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_ruined_shrine_05.tscn" id="site_ruined_shrine_05"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_ruined_shrine_06.tscn" id="site_ruined_shrine_06"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_ruined_shrine_07.tscn" id="site_ruined_shrine_07"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_ruined_shrine_08.tscn" id="site_ruined_shrine_08"]
 
 [node name="ChapterDetailTwo" instance=ExtResource("1_detail")]
 chapter_definition = ExtResource("2_chapter")
 prerequisite_chapter = ExtResource("3_prerequisite")
-expedition_scenes = Array[PackedScene]([ExtResource("4_game01"), ExtResource("5_game02"), ExtResource("6_game03"), ExtResource("7_game04"), ExtResource("8_game05"), ExtResource("9_game06"), ExtResource("10_game07"), ExtResource("11_game08")])
+expedition_scenes = Array[PackedScene]([ExtResource("site_ruined_shrine_01"), ExtResource("4_game01"), ExtResource("site_ruined_shrine_02"), ExtResource("5_game02"), ExtResource("site_ruined_shrine_03"), ExtResource("6_game03"), ExtResource("site_ruined_shrine_04"), ExtResource("7_game04"), ExtResource("site_ruined_shrine_05"), ExtResource("8_game05"), ExtResource("site_ruined_shrine_06"), ExtResource("9_game06"), ExtResource("site_ruined_shrine_07"), ExtResource("10_game07"), ExtResource("site_ruined_shrine_08"), ExtResource("11_game08")])

@@ -60,6 +60,7 @@ func _fill_except(session: GameSession, gaps: Array[Vector2i]) -> void:
 
 
 func _run() -> void:
+	OnboardingTutorial.auto_start = false
 	_test_config_scoring()
 	await _test_no_moves_cases()
 	await _test_full_undo_and_reward_guards()
@@ -88,7 +89,7 @@ func _test_no_moves_cases() -> void:
 	var game := await _new_game()
 	var session := game.get_node("GameSession") as GameSession
 	var tray := game.get_node("ContentCenter/PortraitContent/MainLayout/PieceTray") as PieceTray
-	var popup := game.get_node("ResultPopup") as ResultPopup
+	var popup := game.get_node("ModalUI/ResultPopup") as ResultPopup
 	var square := load("res://resources/pieces/square_2.tres") as PieceDefinition
 	var line := load("res://resources/pieces/line_3_horizontal.tres") as PieceDefinition
 	var single := load("res://resources/pieces/single.tres") as PieceDefinition
@@ -295,6 +296,8 @@ func _test_score_integration() -> void:
 	await create_timer(board.clear_feedback_duration + 0.4).timeout
 	_expect(session.score == 890, "Victory should score placement, line, 8 excavation hits, fragment and artifact once")
 	_expect(session.coins_earned == 20, "Victory should calculate provisional coins")
+	_expect(session.result_popup.final_score == 890, "Victory popup should count up to the final score")
+	await create_timer(session.result_popup.score_count_seconds + 0.5).timeout
 	_expect(session.result_popup.score_label.text == "Счёт: 890", "Victory popup should show final score")
 	_expect(session.result_popup.coins_label.text == "Монеты: +20", "Victory popup should show earned coins")
 	session.restart_expedition()
@@ -309,20 +312,22 @@ func _test_pause_restart() -> void:
 	_expect(session.request_hint(), "Pause restart setup should consume free hint")
 	_expect(session.try_place_piece(0, Vector2i(0, 0)), "Pause restart setup move should place")
 	var pause_button := game.get_node("ContentCenter/PortraitContent/MainLayout/Header/PauseButton") as Button
-	session.excavation_model.dig(Vector2i(1, 1))
-	session.excavation_model.dig(Vector2i(2, 1))
+	var fragment_cell: Vector2i = session.expedition_definition.artifact_fragments[0].cells[0]
+	var original_depth := session.excavation_model.get_soil_depth(fragment_cell)
+	session.excavation_model.dig(fragment_cell, original_depth)
 	session.excavation_model.collect_newly_completed_fragments()
 	_expect(session.excavation_model.collected_fragment_count() > 0, "Pause restart setup should alter excavation and fragments")
 	pause_button.pressed.emit()
-	var restart_button := game.get_node("PausePopup/PopupCenter/PopupPanel/PopupLayout/RestartButton") as Button
+	var restart_button := game.get_node("ModalUI/PausePopup/PopupCenter/PopupPanel/PopupLayout/RestartButton") as Button
 	restart_button.pressed.emit()
 	await process_frame
 	_expect(session.board_model.occupied_count() == 0, "Pause Restart should reset board")
-	_expect(session.excavation_model.get_soil_depth(Vector2i(1, 1)) == 1, "Pause Restart should restore excavation")
+	_expect(session.excavation_model.get_soil_depth(fragment_cell) == original_depth, "Pause Restart should restore excavation")
 	_expect(session.excavation_model.collected_fragment_count() == 0, "Pause Restart should reset fragments")
 	_expect(session.moves == 0 and session.score == 0, "Pause Restart should reset moves and score")
 	_expect(session.help_state.free_hints_remaining == session.help_config.free_hints, "Pause Restart should reset HelpState")
 	_expect(not session.has_turn_snapshot() and not session.is_no_moves_state(), "Pause Restart should clear snapshot and rescue state")
-	_expect(tray.get_definition(0).id == &"small_l", "Pause Restart should reset piece sequence")
+	var expected_first: PieceDefinition = session.expedition_definition.opening_piece_set[0] if session.expedition_definition.opening_piece_set.size() == 3 else session.piece_sequence.peek_next_set()[0]
+	_expect(tray.get_definition(0).id == expected_first.id, "Pause Restart should reset the tray to the opening set")
 	_expect(not session.action_feedback.visible, "Pause Restart should clear transient feedback")
 	await _free_game(game)

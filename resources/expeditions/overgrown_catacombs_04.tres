@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=22 format=3]
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
 [ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2"]
 [ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="3"]
@@ -8,6 +8,10 @@
 [ext_resource type="Resource" path="res://resources/pieces/small_l.tres" id="7"]
 [ext_resource type="Resource" path="res://resources/pieces/small_t.tres" id="8"]
 [ext_resource type="Resource" path="res://resources/pieces/square_2.tres" id="9"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="pg_chapter"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/carved_vessel_full_v1.png" id="art_full"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/carved_vessel_fragment_a_v1.png" id="art_fragment_a"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/carved_vessel_fragment_b_v1.png" id="art_fragment_b"]
 [sub_resource type="Resource" id="FA"]
 script = ExtResource("2")
 id = &"carved_vessel_a"
@@ -55,14 +59,21 @@ title_ru = "Заросшие катакомбы 4 — Камень и корни
 card_title_ru = "4 — Камень и корни"
 debug_name = "Overgrown Catacombs 4 - Stone and Roots"
 artifact_id = &"carved_vessel"
+restoration_stages = Array[StringName]([&"soil", &"shards", &"crust", &"patina"])
+restoration_shards = 5
 artifact_name_ru = "Резной сосуд"
 objective_ru = "Найдите две части резного сосуда"
 instruction_ru = "Камни сдерживают корни, но мешают строить линии."
 normal_soil_cells = Array[Vector2i]([Vector2i(0,2), Vector2i(1,2), Vector2i(2,2), Vector2i(3,2), Vector2i(4,2), Vector2i(5,2), Vector2i(6,2), Vector2i(7,2), Vector2i(0,5), Vector2i(1,5), Vector2i(2,5), Vector2i(3,5), Vector2i(4,5), Vector2i(5,5), Vector2i(6,5), Vector2i(7,5)])
 artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FA"), SubResource("FB")])
+full_artifact_texture = ExtResource("art_full")
+fragment_textures = Array[Texture2D]([ExtResource("art_fragment_a"), ExtResource("art_fragment_b")])
 stone_obstacles = Array[StoneObstacleDefinition]([SubResource("S1"), SubResource("S2"), SubResource("S3"), SubResource("STA"), SubResource("STB")])
 root_obstacles = Array[RootObstacleDefinition]([SubResource("R1"), SubResource("R2"), SubResource("R3"), SubResource("R4")])
 opening_piece_set = Array[PieceDefinition]([ExtResource("5"), ExtResource("7"), ExtResource("9")])
 curated_piece_sequence = Array[PieceDefinition]([ExtResource("8"), ExtResource("6"), ExtResource("7"), ExtResource("5"), ExtResource("9"), ExtResource("8"), ExtResource("6"), ExtResource("5"), ExtResource("7")])
-expected_moves_min = 20
-expected_moves_max = 28
+expected_moves_min = 16
+expected_moves_max = 21
+hard_move_limit = 36
+game_scene_path = "res://scenes/screens/game_screen_ch3_04.tscn"
+piece_generation = ExtResource("pg_chapter")

@@ -67,10 +67,10 @@ func _test_block_color_mapping() -> void:
 	root.add_child(cell)
 	await process_frame
 	var cases := [
-		[Color(0.239216, 0.552941, 0.341176, 1), "block_green_v1.png"],
-		[Color(0.2, 0.443137, 0.67451, 1), "block_blue_v1.png"],
-		[Color(0.74902, 0.301961, 0.2, 1), "block_red_v1.png"],
-		[Color(0.870588, 0.631373, 0.137255, 1), "block_amber_v1.png"],
+		[Color(0.239216, 0.552941, 0.341176, 1), "block_green.png"],
+		[Color(0.2, 0.443137, 0.67451, 1), "block_blue.png"],
+		[Color(0.74902, 0.301961, 0.2, 1), "block_red.png"],
+		[Color(0.870588, 0.631373, 0.137255, 1), "block_amber.png"],
 	]
 	for test_case in cases:
 		cell.set_occupied(test_case[0])
@@ -89,7 +89,7 @@ func _test_block_color_mapping() -> void:
 
 func _test_tray_and_drag_blocks() -> void:
 	var definition := load("res://resources/pieces/small_t.tres") as PieceDefinition
-	var expected := load("res://assets/blocks/core_blocks_pack_v1/block_red_v1.png") as Texture2D
+	var expected := load("res://assets/ui_art/blocks/block_red.png") as Texture2D
 	var slot := load("res://scenes/game/piece_slot.tscn").instantiate() as PieceSlot
 	root.add_child(slot)
 	await process_frame

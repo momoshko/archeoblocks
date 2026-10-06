@@ -1,16 +1,28 @@
-[gd_resource type="Resource" script_class="ChapterDefinition" load_steps=12 format=3]
+[gd_resource type="Resource" script_class="ChapterDefinition" format=3]
 
 [ext_resource type="Script" path="res://scripts/game/chapter_definition.gd" id="1"]
 [ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_01.tres" id="2"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="2_eivji"]
 [ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_02.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_overgrown_catacombs_01.tres" id="3_ffgcv"]
 [ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_03.tres" id="4"]
 [ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_04.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_overgrown_catacombs_02.tres" id="5_htkbc"]
 [ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_05.tres" id="6"]
 [ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_06.tres" id="7"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_overgrown_catacombs_03.tres" id="7_mvexm"]
 [ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_07.tres" id="8"]
 [ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_08.tres" id="9"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_overgrown_catacombs_04.tres" id="9_pl7lh"]
 [ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_09.tres" id="10"]
 [ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_10.tres" id="11"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_overgrown_catacombs_05.tres" id="11_hn6o7"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_overgrown_catacombs_06.tres" id="13_bi7ws"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_overgrown_catacombs_07.tres" id="15_kmcxb"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_overgrown_catacombs_08.tres" id="17_ah20j"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_overgrown_catacombs_09.tres" id="19_jopiu"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_overgrown_catacombs_10.tres" id="21_x6g5b"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/backgrounds/overgrown_catacombs.jpg" id="bg_chapter"]
 
 [resource]
 script = ExtResource("1")
@@ -19,5 +31,6 @@ number_ru = "Глава III"
 title_ru = "Заросшие катакомбы"
 subtitle_ru = "Корни не ждут"
 completion_title_ru = "Заросшие катакомбы исследованы"
-expeditions = Array[ExpeditionDefinition]([ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11")])
+expeditions = Array[ExtResource("2_eivji")]([ExtResource("3_ffgcv"), ExtResource("2"), ExtResource("5_htkbc"), ExtResource("3"), ExtResource("7_mvexm"), ExtResource("4"), ExtResource("9_pl7lh"), ExtResource("5"), ExtResource("11_hn6o7"), ExtResource("6"), ExtResource("13_bi7ws"), ExtResource("7"), ExtResource("15_kmcxb"), ExtResource("8"), ExtResource("17_ah20j"), ExtResource("9"), ExtResource("19_jopiu"), ExtResource("10"), ExtResource("21_x6g5b"), ExtResource("11")])
 completion_reward_coins = 200
+background_texture = ExtResource("bg_chapter")

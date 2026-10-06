@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="ChapterDefinition" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="ChapterDefinition" load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/game/chapter_definition.gd" id="1_chapter"]
 [ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_prototype_01.tres" id="2_expedition"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/backgrounds/overgrown_catacombs.jpg" id="bg_chapter"]
 
 [resource]
 script = ExtResource("1_chapter")
@@ -11,3 +12,4 @@ title_ru = "Заросшие катакомбы"
 subtitle_ru = "Живые корни"
 expeditions = Array[ExpeditionDefinition]([ExtResource("2_expedition")])
 completion_reward_coins = 0
+background_texture = ExtResource("bg_chapter")

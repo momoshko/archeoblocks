@@ -1,0 +1,55 @@
+{
+  "generator": "built-in image_gen",
+  "generation_resolution": [
+    1254,
+    1254
+  ],
+  "export": "Whole generated image downsampled to 240x240 inside a 256x256 transparent canvas at (8,8); generated alpha preserved.",
+  "assets": [
+    {
+      "name": "cell_excavated_depth0",
+      "source_file": "exec-44b860cb-1dc5-4057-9051-975e46b730d3.png",
+      "prompt": "Use case: stylized-concept. Asset type: individual production 2D board-cell sprite for Archeoblocks mobile puzzle.\nGenerate ONLY ONE square empty excavated cell (depth 0), isolated on actual transparent alpha background. Target delivery 256x256. Straight orthographic overhead view, edges parallel to canvas, NO isometric perspective. Center square footprint about 88% of canvas, consistent transparent padding 6% on each side.\nThe square is a HOLE dug DOWN into a warm sandstone board, not a raised tile or block. Very narrow flush sandstone lip surrounding recessed darker warm brown earth/stone bottom. Strong readable inward depth: dark occlusion underneath upper/left inner edges, gently lit lower/right inner wall, subdued flat bottom. No external visible slab side, no external cast shadow, no raised rim. Bottom mostly clean, 2 or 3 broad subtle wear marks, no rubble props.\nFriendly polished casual fantasy-mobile game painting, warm archaeology, clean simplified forms, soft light from upper left, controlled contrast. Readable at 48px. Keep exterior border thin (about 5% tile width), corners gently rounded. Absolutely no text, labels, UI, sheet, background scenery, logos, debris outside the square. Transparency outside the tile must be real alpha, not painted checkerboard."
+    },
+    {
+      "name": "cell_soil_depth1",
+      "source_file": "exec-3e7aacd0-7f42-4b32-9df7-cb6436a0f74c.png",
+      "prompt": "Generate a NEW transparent PNG game sprite using attached compact-soil tile as visual reference. Output ONE cell_soil_depth1. Same square overhead perspective, sandstone perimeter, exact scale and centered position, lighting upper left, actual transparent exterior. Replace only dense dark compact earth with lighter softer matte sandy ochre-brown soil, FLUSH with board plane. Only 2 faint thin cracks instead of bold connected cracks, much smoother and simpler, minimal specks. No mound, no raised block, no inner pit walls, no treasure. Production casual archaeology game art readable at 48px. Image must have real transparent alpha outside square; do not render checkerboard. Single square PNG 256x256 target, approximately 10% transparent border all around. No text, scenery or props."
+    },
+    {
+      "name": "cell_soil_depth2",
+      "source_file": "exec-18f70ab5-86ac-4550-bf4e-825466dfd190.png",
+      "prompt": "Generate a NEW transparent PNG game sprite (not a checkerboard-background picture). Use the attached excavated cell ONLY as an art direction and square-footprint reference. One square cell of dense compact brown soil, cell_soil_depth2. Orthographic overhead camera, square aligned to canvas, light upper left. Warm archaeological casual mobile style. The thin sandstone boundary and exact centered footprint should match reference, but soil completely fills the cell to surface level. Soil plane FLUSH with board, no mound, no obstacle rock, no extrusion. Darker muted earthy brown than normal ochre soil, 3 broad interconnected cracks showing compacted earth, large readable forms. No buried artifact. No raised bevel on soil. Interior completely opaque. Exterior genuinely alpha-transparent with no checkerboard, no backdrop, no shadow outside silhouette. Square canvas, 256x256 target, 10% transparent margin on each side like reference. No text, no UI, no decorative props, only one asset."
+    },
+    {
+      "name": "cell_artifact_hidden_depth2",
+      "source_file": "exec-e1a3ab10-57f8-455d-8279-ea97d5c21356.png",
+      "prompt": "Create a transparent-background game asset: a buried-treasure variation of the attached soil tile. One single square tile only. Match this reference EXACTLY: frame, margins, top-down view, lighting, brown compact cracked soil. At the central crack add only a small muted antique-gold curved sliver, as if a mask is almost completely buried. Soil remains flat and flush. The gold occupies less than five percent of interior; not a face, not a large hole. Preserve actual transparent alpha pixels outside the sandstone square. Do not paint any background pattern. Deliver a transparent PNG cutout ready to overlay on a game board. Friendly clean mobile puzzle painting; no text, no props."
+    },
+    {
+      "name": "cell_artifact_hidden_depth1",
+      "source_file": "exec-47a1e837-1df3-4829-af1f-11c3b7d8811d.png",
+      "prompt": "Generate ONE new production transparent PNG cell_artifact_hidden_depth1. Reference1: normal soil tile for exact square silhouette, flat surface, frame, colors, texture, light and padding. Reference2: revealed mask for exact artifact form, size and position. Show the SAME golden mask PARTIALLY BURIED in the light shallow soil of reference1. Soil covers about 70% of mask: an irregular opening near center shows one eye, brow and part of the nose with a muted gold forehead arc; remaining mask is concealed. Golden visible area much smaller and dimmer than reference2. The soil is FLUSH with sandstone perimeter. NO deep cavity inner walls, NO mound, NO raised block. Preserve exact geometry and straight overhead perspective of reference1. No extra objects, no whole revealed face, no glitter rays, no UI or text. Warm clean casual mobile game art. Actual transparent alpha outside square, never painted checkerboard. Single square256x256 target."
+    },
+    {
+      "name": "cell_artifact_revealed",
+      "source_file": "exec-8b94ad7b-11fc-4350-8206-dc2d9f58f41c.png",
+      "prompt": "Generate one production transparent PNG sprite cell_artifact_revealed. Reference 1 is the canonical excavated-cell geometry: preserve its EXACT square footprint, thin sandstone boundary, recessed inner walls, upper-left light, transparent padding, and overhead camera. Reference 2 is the existing Golden Mask artifact identity; simplify it for tiny board-cell readability: only the calm gold face and forehead circle, no tiny ornaments. Place this SAME recognizable golden mask fully visible at the BOTTOM of the excavated hole, smaller than the pit opening (mask occupies about 50% of tile width and 60% height), with dark earth around it. Gold shines warmly but no sparkles outside cell, no huge halo. The mask must stay BELOW the sandstone surface, never a raised block. Friendly casual game painting with clean broad shading, not photoreal. At 48px should read as a gold face inside a recess. Actual alpha transparent outside square, no checkerboard image. One square sprite, target256x256, approximately10% margin. No labels, UI, props or scene."
+    },
+    {
+      "name": "cell_occupied_block",
+      "source_file": "exec-38fb6722-0e54-40ab-9a46-1509870dae87.png",
+      "prompt": "Create ONE transparent-background production cell_occupied_block sprite using attached board cell as exact geometric reference. SAME overhead square footprint, narrow sandstone frame, padding and upper-left light. The reference hole is now occupied by ONE colorful turquoise-blue polished square puzzle block sitting visibly ABOVE the board. Raised top slab, clean wide bevel, bright top-left bevel highlight, darker bottom-right vertical side and small local shadow onto the surrounding rim. This block is the ONLY elevated object in the set. It fills the inner opening and slightly overlaps inner rim. Saturated blue clearly separates it from warm brown earth and gold artifacts. Simple smooth top surface with at most one faint wear mark; no engraving, badge, gem, symbol or crack network. Friendly polished casual mobile block puzzle art, clear at48px. Do not show any deep cavity floor under the block. Single square transparent PNG target256x256; preserve 10% margin on all sides. No text, UI, background scene, no checkerboard."
+    },
+    {
+      "name": "preview_valid",
+      "source_file": "exec-d711fd33-c044-4455-b304-5a74fdc687f7.png",
+      "prompt": "A transparent PNG game sprite: one pale mint luminous rounded-square outline with a small ivory checkmark in its center. This is a FLAT holographic allowed-placement overlay for a mobile puzzle, not a physical tile. Real transparent background including the square interior. Only very faint translucent mint fill inside the square, so gameplay below stays visible. No visible checkerboard pattern anywhere. No stone, no soil, no solid panel, no backdrop, no text, no bevel. Straight top-down square aligned with image edges. Rounded square spans 80% of square canvas, centered with equal10% clear margins. Clean smooth outline, subtle contained glow, broad simple checkmark occupying25% square width. Friendly warm casual game style. Deliver separate square PNG with alpha transparency, target256x256."
+    },
+    {
+      "name": "preview_invalid",
+      "source_file": "exec-3bdf9ed2-ce6b-4033-9d5b-2e2eb04fbda6.png",
+      "prompt": "A transparent PNG game sprite: one restrained coral-red luminous rounded-square outline with a clear broad ivory-coral X in its center. This is a FLAT forbidden-placement overlay for a mobile puzzle, not a physical tile. Actual transparent background including square interior; only very faint translucent coral tint inside so the board underneath remains visible. No painted checkerboard. No stone, soil, solid panel, backdrop, text, letters, bevel or cast shadow. Straight top-down square aligned with image edges. Rounded-square outline spans80% of square canvas, centered with equal10% transparent margins. Thin smooth outline and restrained glow. X occupies30% square width and consists of two simple crossing diagonal strokes, clearly different from a valid checkmark even without color. Friendly clean mobile game style. Separate square PNG with real alpha transparency, target256x256."
+    }
+  ]
+}

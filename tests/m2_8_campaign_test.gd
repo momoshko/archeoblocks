@@ -49,7 +49,7 @@ func _test_campaign_resources() -> void:
 	_expect(_chapter_two.validate().is_empty(), "Chapter II resource should validate")
 	_expect(_chapter_two.number_ru == "Глава II", "Chapter II number should be resource-driven")
 	_expect(_chapter_two.title_ru == "Разрушенное святилище", "Chapter II should use the accepted location title")
-	_expect(_chapter_two.expeditions.size() == 8, "Chapter II should contain exactly eight expeditions")
+	_expect(_chapter_two.dig_expeditions().size() == 8, "Chapter II should contain exactly eight expeditions")
 	_expect(_chapter_two.completion_reward_coins == 150, "Chapter II completion reward should be 150 coins")
 	var expected_names := [
 		"Каменный оберег",
@@ -61,12 +61,13 @@ func _test_campaign_resources() -> void:
 		"Алтарный медальон",
 		"Идол святилища",
 	]
+	# M4.1: measured by tools/difficulty_probe.gd (--policy=player, middle half of the winning games).
 	var expected_ranges := [
-		Vector2i(8, 12), Vector2i(12, 18), Vector2i(15, 22), Vector2i(18, 25),
-		Vector2i(22, 30), Vector2i(25, 35), Vector2i(30, 40), Vector2i(35, 50),
+		Vector2i(14, 16), Vector2i(9, 11), Vector2i(19, 25), Vector2i(27, 34),
+		Vector2i(21, 28), Vector2i(21, 29), Vector2i(22, 31), Vector2i(34, 46),
 	]
-	for index in _chapter_two.expeditions.size():
-		var expedition := _chapter_two.expeditions[index]
+	for index in _chapter_two.dig_expeditions().size():
+		var expedition := _chapter_two.dig_expeditions()[index]
 		_expect(expedition.id == StringName("ruined_shrine_%02d" % (index + 1)), "Chapter II expedition ids should be sequential")
 		_expect(expedition.artifact_name_ru == expected_names[index], "Every Chapter II expedition should expose its artifact identity")
 		_expect(expedition.validate().is_empty(), "Chapter II expedition %d should validate" % (index + 1))
@@ -86,10 +87,10 @@ func _test_campaign_resources() -> void:
 		var second_refill := sequence.peek_next_set()
 		_expect(first_refill.size() == 3 and first_refill[0] == expedition.curated_piece_sequence[0], "Curated refill should return exactly its first resource-authored triple")
 		_expect(second_refill.size() == 3 and second_refill[0] == expedition.curated_piece_sequence[3], "Curated refill should advance deterministically to the next triple")
-	_expect(_chapter_two.expeditions[2].stone_obstacles.any(func(stone: StoneObstacleDefinition) -> bool: return stone.durability == 2), "Expedition 2-3 should introduce reinforced Stone")
-	_expect(_chapter_two.expeditions[3].stone_obstacles.any(func(stone: StoneObstacleDefinition) -> bool: return _is_artifact_cell(_chapter_two.expeditions[3], stone.cell)), "Expedition 2-4 should place artifact targets under Stone")
-	_expect(_chapter_two.expeditions[4].stone_obstacles.size() > _chapter_two.expeditions[3].stone_obstacles.size(), "Expedition 2-5 should increase corridor pressure instead of only soil depth")
-	_expect(_chapter_two.expeditions[7].artifact_fragments.size() == 3, "Finale should use three logical fragments")
+	_expect(_chapter_two.dig_expeditions()[2].stone_obstacles.any(func(stone: StoneObstacleDefinition) -> bool: return stone.durability == 2), "Expedition 2-3 should introduce reinforced Stone")
+	_expect(_chapter_two.dig_expeditions()[3].stone_obstacles.any(func(stone: StoneObstacleDefinition) -> bool: return _is_artifact_cell(_chapter_two.dig_expeditions()[3], stone.cell)), "Expedition 2-4 should place artifact targets under Stone")
+	_expect(_chapter_two.dig_expeditions()[4].stone_obstacles.size() > _chapter_two.dig_expeditions()[3].stone_obstacles.size(), "Expedition 2-5 should increase corridor pressure instead of only soil depth")
+	_expect(_chapter_two.dig_expeditions()[7].artifact_fragments.size() == 3, "Finale should use three logical fragments")
 
 
 func _test_unlock_sequence() -> void:
@@ -98,7 +99,7 @@ func _test_unlock_sequence() -> void:
 	await process_frame
 	var chapter_two_button := selector.get_node("ContentCenter/PortraitContent/Layout/ChapterList/ChapterTwoButton") as Button
 	_expect(chapter_two_button.visible and chapter_two_button.disabled, "Chapter II should be visible but locked before Ancient Courtyard is complete")
-	for expedition in _chapter_one.expeditions:
+	for expedition in _chapter_one.dig_expeditions():
 		ProgressStore.mark_expedition_completed(expedition.id)
 	selector.refresh_progress()
 	_expect(not chapter_two_button.disabled, "Ancient Courtyard completion should unlock Chapter II")
@@ -115,13 +116,13 @@ func _test_unlock_sequence() -> void:
 			var should_unlock := index <= completed_count
 			_expect(button.disabled == not should_unlock, "Only the next Chapter II expedition should unlock")
 			if index < completed_count:
-				_expect(button.text.ends_with("✓ Пройдено"), "Completed Chapter II cards should show their completed state")
+				_expect((button as FindCard).state_text() in ["Дальше: очистка", "Готово"], "Completed Chapter II cards should show their completed state")
 			elif index == completed_count:
-				_expect(button.text.ends_with("Открыто"), "The next Chapter II card should show Open")
-		ProgressStore.mark_expedition_completed(_chapter_two.expeditions[completed_count].id)
+				_expect((button as FindCard).state_text() in ["Дальше: расчистка", "Дальше: раскопка"], "The next Chapter II card should show Open")
+		ProgressStore.mark_expedition_completed(_chapter_two.dig_expeditions()[completed_count].id)
 	detail.refresh_progress()
 	for index in 8:
-		_expect(_chapter_two_button(detail, index).text.ends_with("✓ Пройдено"), "All Chapter II cards should remain replayable after completion")
+		_expect((_chapter_two_button(detail, index) as FindCard).state_text() in ["Дальше: очистка", "Готово"], "All Chapter II cards should remain replayable after completion")
 	detail.queue_free()
 	await process_frame
 
@@ -131,33 +132,36 @@ func _test_collection_and_placeholders() -> void:
 	root.add_child(collection)
 	await process_frame
 	var progress := collection.get_node("ContentCenter/PortraitContent/Layout/ChapterTwoSection/CollectionProgress") as Label
-	_expect(progress.text == "Коллекция: 0 / 8", "Fresh Chapter II Collection should show 0 / 8")
+	_expect(progress.text == "Коллекция: 0 / 8 · очищено: 0", "Fresh Chapter II Collection should show 0 / 8")
 	for index in 8:
 		var card := _chapter_two_collection_card(collection, index)
 		var preview := card.get_node("Layout/ArtifactVisual/ArtifactPreview") as TextureRect
 		var artifact_name := card.get_node("Layout/ArtifactName") as Label
 		_expect(artifact_name.text == "Неизвестная находка", "Undiscovered Chapter II entries should conceal names")
 		_expect(not preview.visible and preview.texture == null, "Missing Chapter II art should use the neutral scene placeholder")
-	for expedition in _chapter_two.expeditions:
+	for expedition in _chapter_two.dig_expeditions():
 		ProgressStore.mark_expedition_completed(expedition.id)
 	collection.refresh_collection()
-	_expect(progress.text == "Коллекция: 8 / 8", "Completed Chapter II Collection should show 8 / 8")
+	_expect(progress.text == "Коллекция: 8 / 8 · очищено: 0", "Completed Chapter II Collection should show 8 / 8")
 	for index in 8:
 		var card := _chapter_two_collection_card(collection, index)
 		var preview := card.get_node("Layout/ArtifactVisual/ArtifactPreview") as TextureRect
 		var artifact_name := card.get_node("Layout/ArtifactName") as Label
-		_expect(artifact_name.text == _chapter_two.expeditions[index].artifact_name_ru, "Discovery should reveal the resource-driven Chapter II artifact name")
-		_expect(not preview.visible and preview.texture == null, "A discovered artifact without art should keep a safe neutral placeholder")
+		_expect(artifact_name.text == _chapter_two.dig_expeditions()[index].artifact_name_ru, "Discovery should reveal the resource-driven Chapter II artifact name")
+		if _chapter_two.dig_expeditions()[index].full_artifact_texture == null:
+			_expect(not preview.visible and preview.texture == null, "A discovered artifact without art should keep a safe neutral placeholder")
+		else:
+			_expect(preview.visible and preview.texture != null, "A discovered artifact with art shows it (%s)" % _chapter_two.dig_expeditions()[index].artifact_id)
 	collection.queue_free()
 	await process_frame
 
 
 func _test_finale_reward_and_return() -> void:
-	for expedition in _chapter_one.expeditions:
+	for expedition in _chapter_one.dig_expeditions():
 		ProgressStore.mark_expedition_completed(expedition.id)
 	for index in 7:
-		ProgressStore.mark_expedition_completed(_chapter_two.expeditions[index].id)
-	var premature := ProgressStore.claim_chapter_reward(_chapter_two.id, _chapter_two.expedition_ids(), 150)
+		ProgressStore.mark_expedition_completed(_chapter_two.dig_expeditions()[index].id)
+	var premature := ProgressStore.claim_chapter_reward(_chapter_two.id, _chapter_two.dig_ids(), 150)
 	_expect(not premature.granted and ProgressStore.get_coin_balance() == 0, "Chapter II reward must not grant before the finale")
 
 	var finale := load("res://scenes/screens/game_screen_ch2_08.tscn").instantiate() as Control

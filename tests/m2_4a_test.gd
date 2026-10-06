@@ -107,7 +107,7 @@ func _test_selection_and_scene_binding(
 		await process_frame
 		var session := game.get_node("GameSession") as GameSession
 		_expect(session.expedition_definition == definitions[index], "GameScreen %d should bind the matching expedition resource" % (index + 1))
-		_expect(session.expedition_title.text == definitions[index].title_ru, "GameScreen %d should show its resource title" % (index + 1))
+		_expect(session.expedition_title.text == GameSession.short_title(definitions[index].title_ru), "GameScreen %d should show its resource title" % (index + 1))
 		_expect(session.objective_text.text == definitions[index].objective_ru and session.instruction_text.text == definitions[index].instruction_ru, "GameScreen %d should show its short resource instructions" % (index + 1))
 		await _remove_scene(game)
 

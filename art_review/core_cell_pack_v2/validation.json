@@ -1,0 +1,75 @@
+{
+  "asset_count": 7,
+  "base_alpha_identical": true,
+  "content_rect_px": [
+    8,
+    8,
+    240,
+    240
+  ],
+  "assets": [
+    {
+      "file": "cell_excavated_depth0_v2.png",
+      "width": 256,
+      "height": 256,
+      "format": "Format32bppArgb",
+      "transparent_pixels": 7954,
+      "padding_violations": 0,
+      "center_alpha": 255
+    },
+    {
+      "file": "cell_soil_depth1_v2.png",
+      "width": 256,
+      "height": 256,
+      "format": "Format32bppArgb",
+      "transparent_pixels": 7954,
+      "padding_violations": 0,
+      "center_alpha": 255
+    },
+    {
+      "file": "cell_soil_depth2_v2.png",
+      "width": 256,
+      "height": 256,
+      "format": "Format32bppArgb",
+      "transparent_pixels": 7954,
+      "padding_violations": 0,
+      "center_alpha": 255
+    },
+    {
+      "file": "artifact_hint_depth2_v2.png",
+      "width": 256,
+      "height": 256,
+      "format": "Format32bppArgb",
+      "transparent_pixels": 63932,
+      "padding_violations": 0,
+      "center_alpha": 8
+    },
+    {
+      "file": "artifact_hint_depth1_v2.png",
+      "width": 256,
+      "height": 256,
+      "format": "Format32bppArgb",
+      "transparent_pixels": 62048,
+      "padding_violations": 0,
+      "center_alpha": 0
+    },
+    {
+      "file": "preview_valid_v2.png",
+      "width": 256,
+      "height": 256,
+      "format": "Format32bppArgb",
+      "transparent_pixels": 10548,
+      "padding_violations": 0,
+      "center_alpha": 14
+    },
+    {
+      "file": "preview_invalid_v2.png",
+      "width": 256,
+      "height": 256,
+      "format": "Format32bppArgb",
+      "transparent_pixels": 11275,
+      "padding_violations": 0,
+      "center_alpha": 253
+    }
+  ]
+}

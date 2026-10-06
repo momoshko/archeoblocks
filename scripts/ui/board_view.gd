@@ -4,10 +4,17 @@ extends PanelContainer
 const BOARD_WIDTH := 8
 const BOARD_HEIGHT := 8
 
-@export_range(0.05, 1.0, 0.01) var clear_feedback_duration := 0.16
+## Whole line-clear animation, wave included (the turn waits this long).
+@export_range(0.05, 1.0, 0.01) var clear_feedback_duration := 0.22
 @export_range(0.05, 1.0, 0.01) var stone_hit_feedback_duration := 0.22
 @export_range(0.05, 1.0, 0.01) var root_hit_feedback_duration := 0.24
 @export_range(0.2, 0.4, 0.01) var root_growth_feedback_duration := 0.28
+## A full line pops as a wave from the placed piece: delay per cell of distance,
+## and the share of clear_feedback_duration the wave may take.
+@export_range(0.0, 0.06, 0.005) var clear_wave_step := 0.018
+@export_range(0.0, 0.6, 0.05) var clear_wave_share := 0.45
+## Optional particle layer (scenes/ui/board_fx.tscn) drawn above the board.
+@export var board_fx_path: NodePath
 
 @onready var grid: GridContainer = $BoardContentCenter/Grid
 
@@ -17,10 +24,13 @@ var _preview_artifact_targets: Array[Vector2i] = []
 var _hint_artifact_targets: Array[Vector2i] = []
 var _artifact_intro_played := false
 var _root_warning_cell := Vector2i(-1, -1)
+var _fx: BoardFx
 
 
 func _ready() -> void:
 	_cache_cell_views()
+	if not board_fx_path.is_empty():
+		_fx = get_node_or_null(board_fx_path) as BoardFx
 	reset_game_state()
 
 
@@ -39,10 +49,23 @@ func reset_game_state() -> void:
 	_preview_artifact_targets.clear()
 	_artifact_intro_played = false
 	_root_warning_cell = Vector2i(-1, -1)
+	if _fx != null:
+		_fx.clear()
 
 
 func is_inside(cell: Vector2i) -> bool:
 	return cell.x >= 0 and cell.x < BOARD_WIDTH and cell.y >= 0 and cell.y < BOARD_HEIGHT
+
+
+func set_cell_countdown(cell: Vector2i, moves_left: int) -> void:
+	var cell_view := get_cell_view(cell)
+	if cell_view != null:
+		cell_view.set_countdown(moves_left)
+
+
+func clear_countdowns() -> void:
+	for cell_view in _cell_views:
+		cell_view.set_countdown(-1)
 
 
 func get_cell_view(cell: Vector2i) -> CellView:
@@ -130,6 +153,16 @@ func set_cells_occupied(cells: Array[Vector2i], cosmetic_color: Color) -> void:
 			cell_view.set_occupied(cosmetic_color)
 
 
+## The piece just placed: its blocks drop in and a little dust puffs out.
+func play_landing(cells: Array[Vector2i]) -> void:
+	for cell in cells:
+		var cell_view := get_cell_view(cell)
+		if cell_view != null:
+			cell_view.play_land()
+	if _fx != null:
+		_fx.play_land(_fx_points(cells))
+
+
 func set_stone_obstacle(cell: Vector2i, durability: int) -> void:
 	var cell_view := get_cell_view(cell)
 	if cell_view != null:
@@ -158,6 +191,12 @@ func show_stone_hit_feedback(
 	damaged_cells: Array[Vector2i],
 	destroyed_cells: Array[Vector2i]
 ) -> void:
+	if _fx != null:
+		var cracked: Array[Vector2i] = []
+		for cell in damaged_cells:
+			if not destroyed_cells.has(cell):
+				cracked.append(cell)
+		_fx.play_stone_break(_fx_points(destroyed_cells), _fx_points(cracked))
 	for cell in damaged_cells:
 		var cell_view := get_cell_view(cell)
 		if cell_view != null:
@@ -231,9 +270,13 @@ func set_excavation_cell(
 	)
 	if show_feedback:
 		cell_view.play_dig_feedback()
+		if _fx != null:
+			_fx.queue_dig(get_cell_global_center(cell))
 
 
 func show_fragment_found_feedback(cells: Array[Vector2i]) -> void:
+	if _fx != null:
+		_fx.play_find(_fx_points(cells))
 	for cell in cells:
 		var cell_view := get_cell_view(cell)
 		if cell_view != null:
@@ -291,13 +334,37 @@ func clear_transient_feedback() -> void:
 		cell_view.clear_transient_feedback()
 
 
-func clear_cells_with_feedback(cells: Array[Vector2i]) -> void:
+## Full lines pop. `wave_origin` (the placed piece, in cells) starts a wave:
+## nearer blocks pop first. Every block throws gem shards of its own colour.
+func clear_cells_with_feedback(cells: Array[Vector2i], wave_origin := Vector2(-1.0, -1.0)) -> void:
+	var shards := {}
+	var wave_limit := clear_feedback_duration * clear_wave_share
 	for cell in cells:
 		var cell_view := get_cell_view(cell)
-		if cell_view != null:
-			cell_view.start_clear_feedback(clear_feedback_duration)
+		if cell_view == null:
+			continue
+		var delay := 0.0
+		if wave_origin.x >= 0.0:
+			delay = minf(Vector2(cell).distance_to(wave_origin) * clear_wave_step, wave_limit)
+		if cell_view.block_visual.visible:
+			var colour := cell_view.occupied_color
+			if not shards.has(colour):
+				shards[colour] = PackedVector2Array()
+			shards[colour].append(get_cell_global_center(cell))
+		cell_view.start_clear_feedback(clear_feedback_duration - delay, delay)
+	if _fx != null:
+		_fx.play_line_clear(_fx_points(cells))
+		_fx.play_gem_shards(shards)
 	await get_tree().create_timer(clear_feedback_duration).timeout
 	for cell in cells:
 		var cell_view := get_cell_view(cell)
 		if cell_view != null:
 			cell_view.set_empty()
+
+
+func _fx_points(cells: Array[Vector2i]) -> PackedVector2Array:
+	var points := PackedVector2Array()
+	for cell in cells:
+		if is_inside(cell):
+			points.append(get_cell_global_center(cell))
+	return points

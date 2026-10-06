@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_nltxo"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_kux7p"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/stone_comb_full_v1.png" id="3_yeda3"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="4_3bl3x"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_v7g37"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_dp2x4"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_x5m6b"]
+
+[sub_resource type="Resource" id="Resource_nltxo"]
+script = ExtResource("5_v7g37")
+cell = Vector2i(0, 6)
+
+[resource]
+script = ExtResource("6_dp2x4")
+id = &"overgrown_catacombs_01_site"
+goal = &"clear_site"
+title_ru = "Заросшие катакомбы 1 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Overgrown Catacombs 1 - Living Roots - site"
+artifact_id = &"stone_comb"
+artifact_name_ru = "Каменный гребень"
+full_artifact_texture = ExtResource("3_yeda3")
+objective_ru = "Расчистите участок: снимите весь грунт, срежьте корни"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(2, 6), Vector2i(3, 6), Vector2i(4, 6), Vector2i(5, 6)])
+root_obstacles = Array[ExtResource("5_v7g37")]([SubResource("Resource_nltxo")])
+piece_generation = ExtResource("4_3bl3x")
+expected_moves_min = 8
+expected_moves_max = 19
+hard_move_limit = 22
+game_scene_path = "res://scenes/screens/game_screen_site_overgrown_catacombs_01.tscn"

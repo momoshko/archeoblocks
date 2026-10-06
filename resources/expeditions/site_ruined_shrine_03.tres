@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_q6pml"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_d1sdl"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ruined_shrine/priest_seal_full_v1.png" id="3_3ywmm"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_2.tres" id="4_vjfv7"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_nwvsb"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_tupsw"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_50vv1"]
+
+[sub_resource type="Resource" id="Resource_q6pml"]
+script = ExtResource("7_50vv1")
+cell = Vector2i(2, 5)
+durability = 2
+
+[resource]
+script = ExtResource("6_tupsw")
+id = &"ruined_shrine_03_site"
+goal = &"clear_site"
+title_ru = "Разрушенное святилище 3 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Ruined Shrine 3 - Cracked Masonry - site"
+artifact_id = &"priest_seal"
+artifact_name_ru = "Печать жреца"
+full_artifact_texture = ExtResource("3_3ywmm")
+objective_ru = "Расчистите участок: снимите весь грунт, разбейте завалы"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(4, 5), Vector2i(5, 5), Vector2i(6, 5), Vector2i(7, 5)])
+stone_obstacles = Array[ExtResource("7_50vv1")]([SubResource("Resource_q6pml")])
+piece_generation = ExtResource("4_vjfv7")
+expected_moves_min = 11
+expected_moves_max = 22
+hard_move_limit = 13
+game_scene_path = "res://scenes/screens/game_screen_site_ruined_shrine_03.tscn"

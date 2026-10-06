@@ -43,10 +43,10 @@ func _test_progression_states() -> void:
 	var first := selector.get_node(CARD_ROOT + "Expedition01") as Button
 	var second := selector.get_node(CARD_ROOT + "Expedition02") as Button
 	var third := selector.get_node(CARD_ROOT + "Expedition03") as Button
-	_expect(not first.disabled and first.text.ends_with("Открыто"), "First expedition should start open")
-	_expect(second.disabled and second.text.ends_with("Закрыто"), "Second expedition should start locked")
-	_expect(third.disabled and third.text.ends_with("Закрыто"), "Third expedition should start locked")
-	_expect(not first.text.contains("Древний двор"), "Cards should not repeat the location name")
+	_expect(not first.disabled and (first as FindCard).state_text() == "Дальше: раскопка", "First find should start open (1-1 has no site level)")
+	_expect(second.disabled and (second as FindCard).state_text() == "Закрыто", "Second find should start locked")
+	_expect(third.disabled and (third as FindCard).state_text() == "Закрыто", "Third find should start locked")
+	_expect(not (first.get_node("%Title") as Label).text.contains("Древний двор"), "Cards should not repeat the location name")
 
 	var game := load("res://scenes/screens/game_screen.tscn").instantiate() as Control
 	root.add_child(game)
@@ -55,18 +55,21 @@ func _test_progression_states() -> void:
 	(game.get_node("GameSession") as GameSession)._finish_victory()
 	_expect(ProgressStore.is_expedition_completed(&"expedition_01"), "Victory should persist Expedition 1 completion")
 	selector.refresh_progress()
-	_expect(first.text.ends_with("✓ Пройдено"), "Completed Expedition 1 should show a checkmark")
-	_expect(not second.disabled and second.text.ends_with("Открыто"), "Completing Expedition 1 should unlock Expedition 2")
+	_expect((first as FindCard).state_text() == "Дальше: очистка", "Dug-up find 1 offers cleaning next")
+	_expect(not second.disabled and (second as FindCard).state_text() == "Дальше: расчистка", "Completing Expedition 1 should unlock find 2 at its site level")
 	_expect(third.disabled, "Expedition 3 should remain locked until Expedition 2 is complete")
 	game.queue_free()
 	await process_frame
 
 	_expect(ProgressStore.mark_expedition_completed(&"expedition_02") == OK, "Expedition 2 completion should save")
 	selector.refresh_progress()
-	_expect(not third.disabled and third.text.ends_with("Открыто"), "Completing Expedition 2 should unlock Expedition 3")
+	_expect(not third.disabled and (third as FindCard).state_text() == "Дальше: расчистка", "Completing Expedition 2 should unlock find 3")
 	_expect(ProgressStore.mark_expedition_completed(&"expedition_03") == OK, "Expedition 3 completion should save")
 	selector.refresh_progress()
-	_expect(third.text.ends_with("✓ Пройдено"), "Completed Expedition 3 should show a checkmark")
+	_expect(ProgressStore.mark_expedition_completed(&"expedition_03_site") == OK, "Site 3 completion should save")
+	ProgressStore.mark_artifact_restored(&"bronze_key")
+	selector.refresh_progress()
+	_expect((third as FindCard).state_text() == "Готово", "Find 3 with all three steps reads Done")
 	selector.queue_free()
 	await process_frame
 

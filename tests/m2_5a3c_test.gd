@@ -36,8 +36,8 @@ func _test_primary_marker_shape_and_block_coverage() -> void:
 	cell.set_occupied(Color(0.2, 0.443137, 0.67451, 1))
 	_expect(cell.artifact_target_border.visible, "Artifact target marker must remain visible over a colored block")
 	_expect(cell.artifact_target_border.z_index > cell.block_visual.z_index, "Artifact target marker must draw above blocks")
-	_expect(cell.has_node("ArtifactTargetBorder/TargetRing"), "Primary marker needs a central ring shape")
-	_expect(cell.has_node("ArtifactTargetBorder/TargetRing/TargetDiamond"), "Primary marker needs a non-color diamond cue")
+	var marker := cell.get_node_or_null("ArtifactTargetBorder/TargetMarker") as TextureRect
+	_expect(marker != null and marker.texture != null, "Primary marker needs the ring/diamond marker sprite")
 	var depth_2_alpha := cell.artifact_target_border.modulate.a
 	cell.set_excavation_state(1, true, false)
 	_expect(cell.artifact_target_border.modulate.a > depth_2_alpha, "Depth 1 marker should be brighter than depth 2")

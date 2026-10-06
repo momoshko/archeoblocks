@@ -1,0 +1,55 @@
+{
+  "status": "passed_with_documented_art_risks",
+  "images": {
+    "master_menu.png": {
+      "width": 941,
+      "height": 1672,
+      "mode": "RGB",
+      "sha256": "792d2fa9d7808e22931f5dfcb1e9f404fd6fd533bc3a1fc34c678a2eb8f6b709"
+    },
+    "master_gameplay.png": {
+      "width": 941,
+      "height": 1672,
+      "mode": "RGB",
+      "sha256": "ff6b5d2d4886c4fbe7287b2fd7c393052ae4032a46cc50d774d96c8b0dab1542"
+    },
+    "baseline_menu.png": {
+      "width": 720,
+      "height": 1280,
+      "mode": "RGBA",
+      "sha256": "0452476d271a1f6984d61a83d0e4ce3eec949eb27fb8cedb9a2dd581aad46f18"
+    },
+    "baseline_gameplay.png": {
+      "width": 720,
+      "height": 1280,
+      "mode": "RGBA",
+      "sha256": "2d683ab37c54cd8a58ca9ad062e244cf4b7420f24d1de3f8810c85201d0ece8d"
+    },
+    "baseline_gameplay_hint.png": {
+      "width": 720,
+      "height": 1280,
+      "mode": "RGBA",
+      "sha256": "3a8a7b906b5b3da2dd99efd4332f4e57c38cb53eff93b7675acc3e9cf85f7eca"
+    }
+  },
+  "state_checks": "64 unique cells; nine real placements; 290 score; three targets; legal four-cell hint; obstacle/block exclusivity; tray 4/3/5; six roots; four reinforced stones",
+  "local_html_links_checked": 18,
+  "target_token_contrast": {
+    "umber_on_parchment": 9.91,
+    "ivory_on_jade": 5.05
+  },
+  "visual_review": {
+    "native_master": "manually inspected all 64 cells against runtime screenshot and JSON",
+    "browser_360px_color": "inspected; board and controls distinct, secondary text small",
+    "browser_360px_grayscale": "inspected; marker ring and hint dash remain distinct",
+    "mobile_device_runtime_new_art": "not integrated or tested"
+  },
+  "limits": [
+    "Slot unit sizes in raster reference are not uniform; production must use shared unit scale.",
+    "Depth 1 is occluded by a stone in this real state.",
+    "New artwork is a reference only, not a pixel-perfect production contract.",
+    "Runtime capture logs a root certificate store warning; capture completed successfully."
+  ],
+  "generation_calls": 3,
+  "godot_core_changes": false
+}

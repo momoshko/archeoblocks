@@ -1,4 +1,5 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene format=3]
+
 [ext_resource type="PackedScene" path="res://scenes/screens/chapter_detail.tscn" id="1"]
 [ext_resource type="Resource" path="res://resources/chapters/overgrown_catacombs.tres" id="2"]
 [ext_resource type="Resource" path="res://resources/chapters/ruined_shrine.tres" id="3"]
@@ -12,7 +13,18 @@
 [ext_resource type="PackedScene" path="res://scenes/screens/game_screen_ch3_08.tscn" id="11_game08"]
 [ext_resource type="PackedScene" path="res://scenes/screens/game_screen_ch3_09.tscn" id="12_game09"]
 [ext_resource type="PackedScene" path="res://scenes/screens/game_screen_ch3_10.tscn" id="13_game10"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_overgrown_catacombs_01.tscn" id="site_overgrown_catacombs_01"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_overgrown_catacombs_02.tscn" id="site_overgrown_catacombs_02"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_overgrown_catacombs_03.tscn" id="site_overgrown_catacombs_03"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_overgrown_catacombs_04.tscn" id="site_overgrown_catacombs_04"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_overgrown_catacombs_05.tscn" id="site_overgrown_catacombs_05"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_overgrown_catacombs_06.tscn" id="site_overgrown_catacombs_06"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_overgrown_catacombs_07.tscn" id="site_overgrown_catacombs_07"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_overgrown_catacombs_08.tscn" id="site_overgrown_catacombs_08"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_overgrown_catacombs_09.tscn" id="site_overgrown_catacombs_09"]
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen_site_overgrown_catacombs_10.tscn" id="site_overgrown_catacombs_10"]
+
 [node name="ChapterDetailThree" instance=ExtResource("1")]
 chapter_definition = ExtResource("2")
 prerequisite_chapter = ExtResource("3")
-expedition_scenes = Array[PackedScene]([ExtResource("4_game01"), ExtResource("5_game02"), ExtResource("6_game03"), ExtResource("7_game04"), ExtResource("8_game05"), ExtResource("9_game06"), ExtResource("10_game07"), ExtResource("11_game08"), ExtResource("12_game09"), ExtResource("13_game10")])
+expedition_scenes = Array[PackedScene]([ExtResource("site_overgrown_catacombs_01"), ExtResource("4_game01"), ExtResource("site_overgrown_catacombs_02"), ExtResource("5_game02"), ExtResource("site_overgrown_catacombs_03"), ExtResource("6_game03"), ExtResource("site_overgrown_catacombs_04"), ExtResource("7_game04"), ExtResource("site_overgrown_catacombs_05"), ExtResource("8_game05"), ExtResource("site_overgrown_catacombs_06"), ExtResource("9_game06"), ExtResource("site_overgrown_catacombs_07"), ExtResource("10_game07"), ExtResource("site_overgrown_catacombs_08"), ExtResource("11_game08"), ExtResource("site_overgrown_catacombs_09"), ExtResource("12_game09"), ExtResource("site_overgrown_catacombs_10"), ExtResource("13_game10")])

@@ -124,6 +124,11 @@ func _apply_interaction_state() -> void:
 
 
 func _on_slot_drag_started(definition: PieceDefinition, pointer_position: Vector2, is_touch: bool, slot_index: int) -> void:
+	# One piece at a time: a second finger on another slot is ignored.
+	for index in _slots.size():
+		if index != slot_index and _slots[index].is_dragging():
+			_slots[slot_index].cancel_drag()
+			return
 	drag_started.emit(slot_index, definition, pointer_position, is_touch)
 
 

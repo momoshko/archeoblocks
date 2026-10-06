@@ -54,11 +54,11 @@ func _test_scene_visual_states() -> void:
 	root.add_child(view)
 	await process_frame
 	view.show_durability(2)
-	_expect(view.visible and view.intact_tint.visible, "Durability 2 should show the heavier intact treatment")
-	_expect(not view.crack_a.visible and not view.crack_b.visible, "Durability 2 should not look already cracked")
+	_expect(view.visible and view.intact_texture.visible, "Durability 2 should show the heavier intact treatment")
+	_expect(not view.cracked_texture.visible, "Durability 2 should not look already cracked")
 	view.show_durability(1)
-	_expect(not view.intact_tint.visible, "Durability 1 should remove the intact dark overlay")
-	_expect(view.crack_a.visible and view.crack_b.visible, "Durability 1 should expose the scene-authored cracks")
+	_expect(not view.intact_texture.visible, "Durability 1 should hide the intact stone")
+	_expect(view.cracked_texture.visible, "Durability 1 should show the cracked stone")
 	view.queue_free()
 	await process_frame
 
@@ -78,6 +78,6 @@ func _test_undo_restores_reinforced_stone() -> void:
 	_expect(session.request_undo(), "Undo should accept a reinforced Stone state change")
 	_expect(session.obstacle_model.get_durability(cell) == 2, "Undo should restore durability 2")
 	var stone_view := session.board_view.get_cell_view(cell).stone_obstacle as StoneObstacleView
-	_expect(stone_view.get_durability() == 2 and stone_view.intact_tint.visible, "Undo should restore the reinforced visual state")
+	_expect(stone_view.get_durability() == 2 and stone_view.intact_texture.visible, "Undo should restore the reinforced visual state")
 	game.queue_free()
 	await process_frame

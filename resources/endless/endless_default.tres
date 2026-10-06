@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="EndlessDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/endless_definition.gd" id="1_endless"]
+[ext_resource type="Script" path="res://scripts/game/endless_layer.gd" id="2_layer"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_1.tres" id="3_pieces_surface"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_2.tres" id="4_pieces_clay"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="5_pieces_catacombs"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/backgrounds/ancient_courtyard.jpg" id="6_bg_surface"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/backgrounds/ruined_shrine.jpg" id="7_bg_clay"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/backgrounds/overgrown_catacombs.jpg" id="8_bg_catacombs"]
+
+[sub_resource type="Resource" id="LayerSurface"]
+script = ExtResource("2_layer")
+title_ru = "Верхний слой"
+from_depth = 0
+piece_generation = ExtResource("3_pieces_surface")
+background_texture = ExtResource("6_bg_surface")
+
+[sub_resource type="Resource" id="LayerClay"]
+script = ExtResource("2_layer")
+title_ru = "Глина"
+from_depth = 4
+piece_generation = ExtResource("4_pieces_clay")
+stone_every_moves = 12
+stone_durability = 1
+background_texture = ExtResource("7_bg_clay")
+
+[sub_resource type="Resource" id="LayerCatacombs"]
+script = ExtResource("2_layer")
+title_ru = "Катакомбы"
+from_depth = 8
+piece_generation = ExtResource("5_pieces_catacombs")
+stone_every_moves = 12
+stone_durability = 2
+root_every_moves = 16
+max_roots = 2
+background_texture = ExtResource("8_bg_catacombs")
+
+[resource]
+script = ExtResource("1_endless")
+id = &"endless"
+title_ru = "Бесконечные раскопки"
+instruction_ru = "Собирайте линии подряд: серия умножает очки"
+layers = Array[EndlessLayer]([SubResource("LayerSurface"), SubResource("LayerClay"), SubResource("LayerCatacombs")])
+lines_per_meter = 8
+streak_grace_moves = 3
+streak_step = 0.5
+streak_max_multiplier = 4.0
+board_clear_bonus = 1000
+unlock_expedition_id = &"expedition_03"

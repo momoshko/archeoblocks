@@ -1,31 +1,99 @@
 class_name HintPlanner
 extends RefCounted
 
+## Bounded look-ahead search for the best Hint move.
+##
+## The same code runs two ways:
+## - find_best(): all at once (tests, tools, a Hint pressed before background
+##   planning finished);
+## - plan_sliced(): spread over frames, at most `slice_budget_usec` of work per
+##   frame, so the game never stalls (GameSession plans the next Hint in the
+##   background after every move; Web builds have no threads).
+## Every step that can take long awaits _checkpoint(). When nothing is sliced,
+## _checkpoint() returns at once, so the coroutines finish within the same call
+## and the sync wrappers can return their result through call().
+
 const NEGATIVE_INFINITY := -2147483648
+
+## Work per frame while planning in the background (microseconds).
+var slice_budget_usec := 4000
+## Set by the owner to abandon a background run (state changed); the run then
+## returns {} at its next loop step.
+var cancelled := false
 
 var _cached_state_key := ""
 var _cached_result: Dictionary = {}
+var _slicing := false
+var _slice_tree: SceneTree
+var _slice_started_usec := 0
 
 
 func find_best(session: GameSession) -> Dictionary:
-	var started_usec := Time.get_ticks_usec()
-	var initial_state := session._capture_hint_search_state()
-	var state_key := "%s|depth=%d|beam=%d" % [
-		session._hint_search_state_key(initial_state),
+	_slicing = false
+	return call("_plan", session)
+
+
+## Coroutine: the same result as find_best(), spread over frames.
+func plan_sliced(session: GameSession) -> Dictionary:
+	_slicing = true
+	cancelled = false
+	_slice_tree = session.get_tree()
+	_slice_started_usec = Time.get_ticks_usec()
+	var result: Dictionary = await _plan(session)
+	_slicing = false
+	return result
+
+
+func is_cached(state_key: String) -> bool:
+	return state_key == _cached_state_key and not _cached_result.is_empty()
+
+
+## Takes a finished background result so the next find_best() is instant.
+func adopt(state_key: String, result: Dictionary) -> void:
+	if result.is_empty():
+		return
+	_remember(state_key, result)
+
+
+func cache_key(session: GameSession, state: Dictionary) -> String:
+	return "%s|depth=%d|beam=%d" % [
+		session._hint_search_state_key(state),
 		session.help_config.hint_planning_depth,
 		session.help_config.hint_beam_width,
 	]
-	if state_key == _cached_state_key and not _cached_result.is_empty():
+
+
+## All legal moves of `state` simulated one step (all at once).
+static func enumerate_now(session: GameSession, state: Dictionary, simulation_limit: int = -1) -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	result.assign(HintPlanner.new().call("_enumerate", session, state, simulation_limit))
+	return result
+
+
+func _checkpoint() -> void:
+	if not _slicing or Time.get_ticks_usec() - _slice_started_usec < slice_budget_usec:
+		return
+	await _slice_tree.process_frame
+	_slice_started_usec = Time.get_ticks_usec()
+
+
+func _plan(session: GameSession) -> Dictionary:
+	var started_usec := Time.get_ticks_usec()
+	var initial_state := session._capture_hint_search_state()
+	var state_key := cache_key(session, initial_state)
+	if is_cached(state_key):
 		var cached := _cached_result.duplicate(true)
 		cached["cache_hit"] = true
 		cached["planning_time_ms"] = float(Time.get_ticks_usec() - started_usec) / 1000.0
 		return cached
-	var candidates := session._enumerate_hint_moves(initial_state)
-	if candidates.is_empty():
+	var candidates: Array[Dictionary] = await _enumerate(session, initial_state, -1)
+	if candidates.is_empty() or cancelled:
 		return {}
 	var explored_states := candidates.size()
 	var feasibility_cache: Dictionary = {}
 	for index in candidates.size():
+		if cancelled:
+			return {}
 		var candidate: Dictionary = candidates[index]
 		candidate["planner_index"] = index
 		candidate["plan_survives"] = false
@@ -41,7 +109,7 @@ func find_best(session: GameSession) -> Dictionary:
 			var feasibility_stats := {"explored": 0}
 			candidate["current_tray_possible"] = (
 				candidate.used_refill
-				or _can_complete_current_tray(
+				or await _tray_feasible(
 					session,
 					candidate.next_state,
 					int(initial_state.refill_generation) + 1,
@@ -59,13 +127,78 @@ func find_best(session: GameSession) -> Dictionary:
 		victories.sort_custom(_candidate_better)
 		return _remember(state_key, _finalize(victories[0], explored_states, started_usec))
 
-	_run_beam_search(session, candidates, explored_states)
+	await _run_beam_search(session, candidates, explored_states)
+	if cancelled:
+		return {}
 	# Beam search stores its total in each candidate so the selected result can report it.
 	for candidate in candidates:
 		explored_states = maxi(explored_states, int(candidate.get("planner_explored_states", explored_states)))
 
 	candidates.sort_custom(_candidate_better)
 	return _remember(state_key, _finalize(candidates[0], explored_states, started_usec))
+
+
+## Legal moves of `state`, each simulated one step. With a limit, only the
+## `simulation_limit` best by a cheap pre-rank are simulated.
+func _enumerate(session: GameSession, state: Dictionary, simulation_limit: int) -> Array[Dictionary]:
+	var results: Array[Dictionary] = []
+	if state.get("victory", false) or state.get("no_moves", false):
+		return results
+	var board := BoardModel.new()
+	board.restore_state(state.board_state)
+	var obstacles := ObstacleModel.new()
+	obstacles.restore_state(state.obstacle_state)
+	var excavation := ExcavationModel.new()
+	excavation.restore_state(state.excavation_state)
+	var tray: Array[PieceDefinition] = []
+	tray.assign(state.tray_state)
+	var seen_piece_ids: Dictionary = {}
+	var specifications: Array[Dictionary] = []
+	for slot_index in tray.size():
+		var definition := tray[slot_index]
+		if definition == null:
+			continue
+		# Equal definitions in different slots produce gameplay-equivalent successors.
+		# Keep the first slot so the visible recommendation remains deterministic.
+		if seen_piece_ids.has(definition.id):
+			continue
+		seen_piece_ids[definition.id] = true
+		for y in BoardModel.HEIGHT:
+			await _checkpoint()
+			for x in BoardModel.WIDTH:
+				var origin := Vector2i(x, y)
+				if not obstacles.can_place(board, definition.cells, origin):
+					continue
+				specifications.append({
+					"slot_index": slot_index,
+					"definition": definition,
+					"origin": origin,
+					"pre_rank": session._hint_move_pre_rank(board, obstacles, excavation, definition, origin),
+				})
+	if simulation_limit >= 0 and specifications.size() > simulation_limit:
+		specifications.sort_custom(func(first: Dictionary, second: Dictionary) -> bool:
+			if int(first.pre_rank) != int(second.pre_rank):
+				return int(first.pre_rank) > int(second.pre_rank)
+			if int(first.slot_index) != int(second.slot_index):
+				return int(first.slot_index) < int(second.slot_index)
+			var first_origin: Vector2i = first.origin
+			var second_origin: Vector2i = second.origin
+			return first_origin.y < second_origin.y or (
+				first_origin.y == second_origin.y and first_origin.x < second_origin.x
+			)
+		)
+		specifications.resize(simulation_limit)
+	for specification in specifications:
+		await _checkpoint()
+		var definition: PieceDefinition = specification.definition
+		var slot_index: int = specification.slot_index
+		var origin: Vector2i = specification.origin
+		var quality := session._simulate_hint_move(state, slot_index, definition, origin)
+		quality["slot_index"] = slot_index
+		quality["origin"] = origin
+		quality["cells"] = definition.translated_cells(origin)
+		results.append(quality)
+	return results
 
 
 func _remember(state_key: String, result: Dictionary) -> Dictionary:
@@ -107,17 +240,20 @@ func _run_beam_search(session: GameSession, candidates: Array[Dictionary], initi
 	frontier.assign(frontier_by_key.values())
 	var explored_states := initial_explored
 	var per_node_limit := maxi(4, int(ceili(float(beam_width) * 0.25)))
+	var discount := clampf(session.help_config.hint_future_discount, 0.5, 1.0)
 
 	for search_depth in range(2, depth_limit + 1):
 		var expanded_by_key: Dictionary = {}
 		for node in frontier:
-			var moves := session._enumerate_hint_moves(node.state, per_node_limit)
+			if cancelled:
+				return
+			var moves: Array[Dictionary] = await _enumerate(session, node.state, per_node_limit)
 			explored_states += moves.size()
 			moves.sort_custom(_move_better)
 			for move in moves:
 				if move.immediate_loss:
 					continue
-				var path_value := int(node.path_value) + int(move.value)
+				var path_value := int(node.path_value) + int(float(move.value) * pow(discount, search_depth - 1))
 				var rank := path_value
 				if move.completes_expedition:
 					_mark_plan(candidates, node.first_indices, search_depth, "victory", rank)
@@ -140,8 +276,9 @@ func _run_beam_search(session: GameSession, candidates: Array[Dictionary], initi
 		frontier = _select_diverse_frontier(expanded, beam_width)
 		if search_depth == depth_limit:
 			for node in frontier:
+				await _checkpoint()
 				var continuation_value := (
-					int(node.path_value) + session._evaluate_hint_leaf(node.state)
+					int(node.path_value) + int(float(session._evaluate_hint_leaf(node.state)) * pow(discount, search_depth))
 				)
 				_mark_plan(
 					candidates,
@@ -154,7 +291,19 @@ func _run_beam_search(session: GameSession, candidates: Array[Dictionary], initi
 		candidate["planner_explored_states"] = explored_states
 
 
+## Sync wrapper (tests): can the rest of the current tray be placed one by one?
 func _can_complete_current_tray(
+	session: GameSession,
+	state: Dictionary,
+	target_generation: int,
+	cache: Dictionary,
+	stats: Dictionary
+) -> bool:
+	_slicing = false
+	return call("_tray_feasible", session, state, target_generation, cache, stats)
+
+
+func _tray_feasible(
 	session: GameSession,
 	state: Dictionary,
 	target_generation: int,
@@ -185,6 +334,7 @@ func _can_complete_current_tray(
 				var origin := Vector2i(x, y)
 				if not obstacles.can_place(board, definition.cells, origin):
 					continue
+				await _checkpoint()
 				var move := session._simulate_hint_move(state, slot_index, definition, origin)
 				stats.explored = int(stats.explored) + 1
 				if move.immediate_loss:
@@ -192,7 +342,7 @@ func _can_complete_current_tray(
 				if (
 					move.completes_expedition
 					or int(move.next_state.refill_generation) >= target_generation
-					or _can_complete_current_tray(
+					or await _tray_feasible(
 						session,
 						move.next_state,
 						target_generation,

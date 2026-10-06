@@ -1,0 +1,580 @@
+{
+ "pack": "Archeoblocks art for Gemini (Nano Banana Pro) v1",
+ "black_pass": "Now make exactly the same image: the same object, in the same position and size, with the same lighting and details. Only replace the white background with plain pure black #000000. Do not change, move or redraw the object.",
+ "references": {
+  "finds": [
+   "references/golden_mask_on_white.png",
+   "references/courtyard_seal_on_white.png",
+   "references/stone_amulet_on_white.png"
+  ],
+  "screens": [
+   "references/screen_menu.png",
+   "references/screen_game.png",
+   "references/golden_mask_on_white.png"
+  ],
+  "buttons": [
+   "references/buttons_on_white.png",
+   "references/screen_game.png"
+  ]
+ },
+ "items": [
+  {
+   "id": "bronze_key",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Бронзовый ключ",
+   "title_en": "Bronze Key",
+   "output": "assets/artifacts/ancient_courtyard/bronze_key_full_v1.png",
+   "fragment_files": [],
+   "cut": "none",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: warm sandstone, bronze and gold, sunlit courtyard. Object: Old bronze key: round bow with three small knobs and a small turquoise inlay, straight shaft with two raised collars, bit with notched teeth; green patina only in the grooves."
+  },
+  {
+   "id": "mosaic_tablet",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Мозаичная табличка",
+   "title_en": "Mosaic Tablet",
+   "output": "assets/artifacts/ancient_courtyard/mosaic_tablet_full_v1.png",
+   "fragment_files": [
+    "mosaic_tablet_fragment_a_v1.png",
+    "mosaic_tablet_fragment_b_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: warm sandstone, bronze and gold, sunlit courtyard. Object: Rectangular sandstone tablet with rounded chipped corners, inset mosaic of small square tesserae forming an eight-petal rosette in terracotta, lapis blue, turquoise and a gold centre."
+  },
+  {
+   "id": "guardian_figurine",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Фигурка хранителя",
+   "title_en": "Guardian Figurine",
+   "output": "assets/artifacts/ancient_courtyard/guardian_figurine_full_v1.png",
+   "fragment_files": [
+    "guardian_figurine_fragment_a_v1.png",
+    "guardian_figurine_fragment_b_v1.png",
+    "guardian_figurine_fragment_c_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: warm sandstone, bronze and gold, sunlit courtyard. Object: Small standing terracotta guardian statuette with arms folded, calm stylised face, gold headband with a carnelian, gold collar, square plinth; friendly, not scary."
+  },
+  {
+   "id": "stone_charm",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Каменный оберег",
+   "title_en": "Stone Charm",
+   "output": "assets/artifacts/ruined_shrine/stone_charm_full_v1.png",
+   "fragment_files": [
+    "stone_charm_fragment_a_v1.png",
+    "stone_charm_fragment_b_v1.png"
+   ],
+   "cut": "columns",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: grey temple stone, bronze and gold, a little soot and wear. Object: Shield-shaped grey shrine-stone charm with an engraved border line, a sand-coloured eye motif and a round lapis inlay in the centre, worn edges."
+  },
+  {
+   "id": "bronze_bell",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Бронзовый колокольчик",
+   "title_en": "Bronze Bell",
+   "output": "assets/artifacts/ruined_shrine/bronze_bell_full_v1.png",
+   "fragment_files": [
+    "bronze_bell_fragment_a_v1.png",
+    "bronze_bell_fragment_b_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: grey temple stone, bronze and gold, a little soot and wear. Object: Small bronze temple bell with a hanging loop on top, two thin gold bands, a row of engraved dots, the round clapper visible under the rim, light green patina."
+  },
+  {
+   "id": "priest_seal",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Печать жреца",
+   "title_en": "Priest's Seal",
+   "output": "assets/artifacts/ruined_shrine/priest_seal_full_v1.png",
+   "fragment_files": [
+    "priest_seal_fragment_a_v1.png",
+    "priest_seal_fragment_b_v1.png"
+   ],
+   "cut": "diagonal",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: grey temple stone, bronze and gold, a little soot and wear. Object: Round seal of dark basalt set in a beaded gold rim; a carved eye under a rising sun inlaid in gold."
+  },
+  {
+   "id": "stele_fragment",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Обломок стелы",
+   "title_en": "Stele Fragment",
+   "output": "assets/artifacts/ruined_shrine/stele_fragment_full_v1.png",
+   "fragment_files": [
+    "stele_fragment_fragment_a_v1.png",
+    "stele_fragment_fragment_b_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: grey temple stone, bronze and gold, a little soot and wear. Object: Broken upper part of a grey stone stele with a jagged broken top, a sun-disc relief and four rows of simple carved geometric glyphs (no real letters)."
+  },
+  {
+   "id": "ritual_bracelet",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Ритуальный браслет",
+   "title_en": "Ritual Bracelet",
+   "output": "assets/artifacts/ruined_shrine/ritual_bracelet_full_v1.png",
+   "fragment_files": [
+    "ritual_bracelet_fragment_a_v1.png",
+    "ritual_bracelet_fragment_b_v1.png",
+    "ritual_bracelet_fragment_c_v1.png"
+   ],
+   "cut": "arcs",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: grey temple stone, bronze and gold, a little soot and wear. Object: Gold bangle seen from the front as a ring, alternating carnelian and lapis cabochons in small gold settings, one engraved line along the band."
+  },
+  {
+   "id": "incense_vessel",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Сосуд для благовоний",
+   "title_en": "Incense Vessel",
+   "output": "assets/artifacts/ruined_shrine/incense_vessel_full_v1.png",
+   "fragment_files": [
+    "incense_vessel_fragment_a_v1.png",
+    "incense_vessel_fragment_b_v1.png",
+    "incense_vessel_fragment_c_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: grey temple stone, bronze and gold, a little soot and wear. Object: Bronze censer: domed pierced lid with a knob, wide bowl with a gold band and diamond ornament, stemmed foot; light patina."
+  },
+  {
+   "id": "altar_medallion",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Алтарный медальон",
+   "title_en": "Altar Medallion",
+   "output": "assets/artifacts/ruined_shrine/altar_medallion_full_v1.png",
+   "fragment_files": [
+    "altar_medallion_fragment_a_v1.png",
+    "altar_medallion_fragment_b_v1.png",
+    "altar_medallion_fragment_c_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: grey temple stone, bronze and gold, a little soot and wear. Object: Large gold medallion with a hanging loop, raised eight-pointed star, dotted rim and a central carnelian cabochon."
+  },
+  {
+   "id": "shrine_idol",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Идол святилища",
+   "title_en": "Shrine Idol",
+   "output": "assets/artifacts/ruined_shrine/shrine_idol_full_v1.png",
+   "fragment_files": [
+    "shrine_idol_fragment_a_v1.png",
+    "shrine_idol_fragment_b_v1.png",
+    "shrine_idol_fragment_c_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: grey temple stone, bronze and gold, a little soot and wear. Object: Seated grey stone idol with a gold headdress, gold eyes, hands resting on the knees and a gold collar; weathered stone, calm expression."
+  },
+  {
+   "id": "stone_comb",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Каменный гребень",
+   "title_en": "Stone Comb",
+   "output": "assets/artifacts/overgrown_catacombs/stone_comb_full_v1.png",
+   "fragment_files": [
+    "stone_comb_fragment_a_v1.png",
+    "stone_comb_fragment_b_v1.png"
+   ],
+   "cut": "columns",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: bone, copper, terracotta, a touch of moss; the emerald idol is the most precious find of the game. Object: Sandstone comb with an arched back carved with a small turquoise-inlaid vine and a row of long even teeth; one tooth chipped."
+  },
+  {
+   "id": "copper_pendant",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Медная подвеска",
+   "title_en": "Copper Pendant",
+   "output": "assets/artifacts/overgrown_catacombs/copper_pendant_full_v1.png",
+   "fragment_files": [
+    "copper_pendant_fragment_a_v1.png",
+    "copper_pendant_fragment_b_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: bone, copper, terracotta, a touch of moss; the emerald idol is the most precious find of the game. Object: Teardrop copper pendant with a loop, embossed leaf with veins, strong green patina in the recesses."
+  },
+  {
+   "id": "burial_tablet",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Погребальная табличка",
+   "title_en": "Burial Tablet",
+   "output": "assets/artifacts/overgrown_catacombs/burial_tablet_full_v1.png",
+   "fragment_files": [
+    "burial_tablet_fragment_a_v1.png",
+    "burial_tablet_fragment_b_v1.png"
+   ],
+   "cut": "arcs",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: bone, copper, terracotta, a touch of moss; the emerald idol is the most precious find of the game. Object: Arched grey stone tablet with a six-rayed star inside a carved ring and rows of simple carved signs; green moss on the lower corners."
+  },
+  {
+   "id": "carved_vessel",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Резной сосуд",
+   "title_en": "Carved Vessel",
+   "output": "assets/artifacts/overgrown_catacombs/carved_vessel_full_v1.png",
+   "fragment_files": [
+    "carved_vessel_fragment_a_v1.png",
+    "carved_vessel_fragment_b_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: bone, copper, terracotta, a touch of moss; the emerald idol is the most precious find of the game. Object: Terracotta amphora with two loop handles and incised zigzag bands, slightly weathered."
+  },
+  {
+   "id": "vine_amulet",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Амулет лозы",
+   "title_en": "Vine Amulet",
+   "output": "assets/artifacts/overgrown_catacombs/vine_amulet_full_v1.png",
+   "fragment_files": [
+    "vine_amulet_fragment_a_v1.png",
+    "vine_amulet_fragment_b_v1.png",
+    "vine_amulet_fragment_c_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: bone, copper, terracotta, a touch of moss; the emerald idol is the most precious find of the game. Object: Round bronze amulet with a hanging loop, wreathed by a vine of small emerald leaves, rhombic emerald in the centre."
+  },
+  {
+   "id": "fresco_fragment",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Фрагмент фрески",
+   "title_en": "Fresco Fragment",
+   "output": "assets/artifacts/overgrown_catacombs/fresco_fragment_full_v1.png",
+   "fragment_files": [
+    "fresco_fragment_fragment_a_v1.png",
+    "fresco_fragment_fragment_b_v1.png",
+    "fresco_fragment_fragment_c_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: bone, copper, terracotta, a touch of moss; the emerald idol is the most precious find of the game. Object: Irregular broken plaster fragment painted with a blue bird among green leaves between a red upper border and a blue lower border, fine cracks."
+  },
+  {
+   "id": "bone_clasp",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Костяная застёжка",
+   "title_en": "Bone Clasp",
+   "output": "assets/artifacts/overgrown_catacombs/bone_clasp_full_v1.png",
+   "fragment_files": [
+    "bone_clasp_fragment_a_v1.png",
+    "bone_clasp_fragment_b_v1.png",
+    "bone_clasp_fragment_c_v1.png"
+   ],
+   "cut": "columns",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: bone, copper, terracotta, a touch of moss; the emerald idol is the most precious find of the game. Object: Ivory-coloured bone clasp: two oval plates carved with spirals, joined by a bronze pin with round ends."
+  },
+  {
+   "id": "ritual_bowl",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Ритуальная чаша",
+   "title_en": "Ritual Bowl",
+   "output": "assets/artifacts/overgrown_catacombs/ritual_bowl_full_v1.png",
+   "fragment_files": [
+    "ritual_bowl_fragment_a_v1.png",
+    "ritual_bowl_fragment_b_v1.png",
+    "ritual_bowl_fragment_c_v1.png"
+   ],
+   "cut": "columns",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: bone, copper, terracotta, a touch of moss; the emerald idol is the most precious find of the game. Object: Shallow terracotta bowl on a small foot seen from the side, black meander band under the rim and a row of cream dots."
+  },
+  {
+   "id": "guardian_seal",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Печать хранителя",
+   "title_en": "Guardian's Seal",
+   "output": "assets/artifacts/overgrown_catacombs/guardian_seal_full_v1.png",
+   "fragment_files": [
+    "guardian_seal_fragment_a_v1.png",
+    "guardian_seal_fragment_b_v1.png",
+    "guardian_seal_fragment_c_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: bone, copper, terracotta, a touch of moss; the emerald idol is the most precious find of the game. Object: Square turquoise-jade seal in a gold frame with gold corner studs, a stylised calm guardian face carved in the middle."
+  },
+  {
+   "id": "emerald_idol",
+   "group": "finds",
+   "kind": "find",
+   "title_ru": "Изумрудный идол",
+   "title_en": "Emerald Idol",
+   "output": "assets/artifacts/overgrown_catacombs/emerald_idol_full_v1.png",
+   "fragment_files": [
+    "emerald_idol_fragment_a_v1.png",
+    "emerald_idol_fragment_b_v1.png",
+    "emerald_idol_fragment_c_v1.png"
+   ],
+   "cut": "rows",
+   "canvas": 512,
+   "fit": 384,
+   "references": "finds",
+   "prompt": "Game asset for a casual mobile puzzle game about archaeology. Match the attached reference images exactly in style, rendering, detail level and lighting: painterly but crisp, polished, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean silhouette that still reads at 48 px. One single object, orthographic front view, centred, the whole object visible with empty margins around it (the object fills about 70% of the frame). Background: plain pure white #FFFFFF, perfectly flat and even, no shadow under the object, no gradient, no floor, no vignette. No text, no letters, no numbers, no frame, no plate, no border, no watermark. Square 1:1. Chapter look: bone, copper, terracotta, a touch of moss; the emerald idol is the most precious find of the game. Object: Small idol carved from deep green emerald with a gold crown and collar, a carnelian on the chest, standing on a gold base; the most precious find of the game."
+  },
+  {
+   "id": "emblem",
+   "group": "menu",
+   "kind": "find",
+   "title_ru": "Эмблема меню",
+   "output": "assets/ui_art/menu/emblem.png",
+   "canvas": 512,
+   "fit": 448,
+   "references": "finds",
+   "prompt": "Game UI asset for a casual mobile puzzle game about archaeology, same art style as the attached references: painterly but crisp, warm light from the upper left, warm sandstone palette. Centred, empty margins around it. Background: plain pure white #FFFFFF, perfectly flat, no shadow on the background, no gradient. No text, no letters, no numbers, no watermark. Square 1:1. Object: round carved sandstone medallion with a golden sun-spiral in the centre, sixteen short rays around the rim, chipped worn edges, subtle engraved dots."
+  },
+  {
+   "id": "background",
+   "group": "menu",
+   "kind": "opaque",
+   "title_ru": "Фон меню и экранов",
+   "output": "assets/ui_art/menu/background.jpg",
+   "size": [
+    1080,
+    1920
+   ],
+   "references": "screens",
+   "prompt": "Vertical 9:16 illustration for the background of a casual mobile puzzle game about archaeology, same painterly style and warm palette as the attached references: a sunlit ancient sandstone courtyard seen from the inside, weathered stone arch and walls, a few clay amphorae, olive branches at the edges, soft warm morning light from the upper left, blue sky visible through the arch. Calm, slightly desaturated. Keep the central vertical area (about 70% of the width) low in detail and even in tone, because UI panels sit on top. No people, no text, no UI, no watermark."
+  },
+  {
+   "id": "store_icon",
+   "group": "menu",
+   "kind": "opaque",
+   "title_ru": "Иконка для Яндекса",
+   "output": "build/store/icon_512.png",
+   "size": [
+    512,
+    512
+   ],
+   "references": "finds",
+   "prompt": "Square 1:1 game icon for a casual mobile puzzle game about archaeology, same art style as the attached references: the carved sandstone sun-spiral medallion in front of a few glossy mineral blocks (emerald, lapis, carnelian, amber) arranged like a block puzzle, warm sandstone background filling the whole square, strong readable silhouette at small size, no text, no watermark."
+  },
+  {
+   "id": "store_cover",
+   "group": "menu",
+   "kind": "opaque",
+   "title_ru": "Обложка для Яндекса",
+   "output": "build/store/cover_800x470.png",
+   "size": [
+    800,
+    470
+   ],
+   "references": "screens",
+   "prompt": "Wide 16:9 game cover for a casual mobile puzzle game about archaeology, same art style as the attached references: a partly excavated 8x8 stone grid in an ancient sandstone courtyard, colourful mineral blocks placed in rows, a golden mask half revealed under brown soil, warm light, a small brush and trowel at the edge, inviting casual puzzle mood. No text, no logo, no watermark."
+  },
+  {
+   "id": "icon_pause",
+   "group": "icons",
+   "kind": "find",
+   "title_ru": "Иконка: pause",
+   "output": "assets/ui_art/icons/pause.png",
+   "canvas": 128,
+   "fit": 112,
+   "references": "buttons",
+   "prompt": "Flat-ish game UI icon glyph: cream colour #F3E6C4 with a dark brown #4A3322 outline about 6% of the icon width, slight bevel, readable at 40 px, works on both a green and a sand-coloured button. Centred, empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no letters, no watermark. Square 1:1. Glyph: two vertical rounded bars."
+  },
+  {
+   "id": "icon_back",
+   "group": "icons",
+   "kind": "find",
+   "title_ru": "Иконка: back",
+   "output": "assets/ui_art/icons/back.png",
+   "canvas": 128,
+   "fit": 112,
+   "references": "buttons",
+   "prompt": "Flat-ish game UI icon glyph: cream colour #F3E6C4 with a dark brown #4A3322 outline about 6% of the icon width, slight bevel, readable at 40 px, works on both a green and a sand-coloured button. Centred, empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no letters, no watermark. Square 1:1. Glyph: arrow pointing left."
+  },
+  {
+   "id": "icon_hint",
+   "group": "icons",
+   "kind": "find",
+   "title_ru": "Иконка: hint",
+   "output": "assets/ui_art/icons/hint.png",
+   "canvas": 128,
+   "fit": 112,
+   "references": "buttons",
+   "prompt": "Flat-ish game UI icon glyph: cream colour #F3E6C4 with a dark brown #4A3322 outline about 6% of the icon width, slight bevel, readable at 40 px, works on both a green and a sand-coloured button. Centred, empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no letters, no watermark. Square 1:1. Glyph: small magnifying glass."
+  },
+  {
+   "id": "icon_undo",
+   "group": "icons",
+   "kind": "find",
+   "title_ru": "Иконка: undo",
+   "output": "assets/ui_art/icons/undo.png",
+   "canvas": 128,
+   "fit": 112,
+   "references": "buttons",
+   "prompt": "Flat-ish game UI icon glyph: cream colour #F3E6C4 with a dark brown #4A3322 outline about 6% of the icon width, slight bevel, readable at 40 px, works on both a green and a sand-coloured button. Centred, empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no letters, no watermark. Square 1:1. Glyph: curved arrow turning back to the left."
+  },
+  {
+   "id": "icon_sound_on",
+   "group": "icons",
+   "kind": "find",
+   "title_ru": "Иконка: sound_on",
+   "output": "assets/ui_art/icons/sound_on.png",
+   "canvas": 128,
+   "fit": 112,
+   "references": "buttons",
+   "prompt": "Flat-ish game UI icon glyph: cream colour #F3E6C4 with a dark brown #4A3322 outline about 6% of the icon width, slight bevel, readable at 40 px, works on both a green and a sand-coloured button. Centred, empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no letters, no watermark. Square 1:1. Glyph: loudspeaker with two sound waves."
+  },
+  {
+   "id": "icon_sound_off",
+   "group": "icons",
+   "kind": "find",
+   "title_ru": "Иконка: sound_off",
+   "output": "assets/ui_art/icons/sound_off.png",
+   "canvas": 128,
+   "fit": 112,
+   "references": "buttons",
+   "prompt": "Flat-ish game UI icon glyph: cream colour #F3E6C4 with a dark brown #4A3322 outline about 6% of the icon width, slight bevel, readable at 40 px, works on both a green and a sand-coloured button. Centred, empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no letters, no watermark. Square 1:1. Glyph: loudspeaker with a small cross."
+  },
+  {
+   "id": "icon_settings",
+   "group": "icons",
+   "kind": "find",
+   "title_ru": "Иконка: settings",
+   "output": "assets/ui_art/icons/settings.png",
+   "canvas": 128,
+   "fit": 112,
+   "references": "buttons",
+   "prompt": "Flat-ish game UI icon glyph: cream colour #F3E6C4 with a dark brown #4A3322 outline about 6% of the icon width, slight bevel, readable at 40 px, works on both a green and a sand-coloured button. Centred, empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no letters, no watermark. Square 1:1. Glyph: gear with eight teeth."
+  },
+  {
+   "id": "icon_play",
+   "group": "icons",
+   "kind": "find",
+   "title_ru": "Иконка: play",
+   "output": "assets/ui_art/icons/play.png",
+   "canvas": 128,
+   "fit": 112,
+   "references": "buttons",
+   "prompt": "Flat-ish game UI icon glyph: cream colour #F3E6C4 with a dark brown #4A3322 outline about 6% of the icon width, slight bevel, readable at 40 px, works on both a green and a sand-coloured button. Centred, empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no letters, no watermark. Square 1:1. Glyph: triangle pointing right."
+  },
+  {
+   "id": "icon_endless",
+   "group": "icons",
+   "kind": "find",
+   "title_ru": "Иконка: endless",
+   "output": "assets/ui_art/icons/endless.png",
+   "canvas": 128,
+   "fit": 112,
+   "references": "buttons",
+   "prompt": "Flat-ish game UI icon glyph: cream colour #F3E6C4 with a dark brown #4A3322 outline about 6% of the icon width, slight bevel, readable at 40 px, works on both a green and a sand-coloured button. Centred, empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no letters, no watermark. Square 1:1. Glyph: infinity sign made of a coiled rope, for the Endless Dig mode."
+  },
+  {
+   "id": "fx_dust_puff",
+   "group": "fx",
+   "kind": "find",
+   "title_ru": "Эффект: dust_puff",
+   "output": "assets/ui_art/fx/dust_puff.png",
+   "canvas": 256,
+   "fit": 224,
+   "references": "finds",
+   "prompt": "Soft game particle sprite, light and airy, painterly, warm colours, soft edges, centred with wide empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no watermark. Square 1:1. Sprite: small puff of light brown soil dust."
+  },
+  {
+   "id": "fx_sparkle",
+   "group": "fx",
+   "kind": "find",
+   "title_ru": "Эффект: sparkle",
+   "output": "assets/ui_art/fx/sparkle.png",
+   "canvas": 256,
+   "fit": 224,
+   "references": "finds",
+   "prompt": "Soft game particle sprite, light and airy, painterly, warm colours, soft edges, centred with wide empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no watermark. Square 1:1. Sprite: four-pointed golden sparkle star with a soft glow."
+  },
+  {
+   "id": "fx_glint",
+   "group": "fx",
+   "kind": "find",
+   "title_ru": "Эффект: glint",
+   "output": "assets/ui_art/fx/glint.png",
+   "canvas": 256,
+   "fit": 224,
+   "references": "finds",
+   "prompt": "Soft game particle sprite, light and airy, painterly, warm colours, soft edges, centred with wide empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no watermark. Square 1:1. Sprite: thin bright light glint streak."
+  },
+  {
+   "id": "fx_stone_chip",
+   "group": "fx",
+   "kind": "find",
+   "title_ru": "Эффект: stone_chip",
+   "output": "assets/ui_art/fx/stone_chip.png",
+   "canvas": 256,
+   "fit": 224,
+   "references": "finds",
+   "prompt": "Soft game particle sprite, light and airy, painterly, warm colours, soft edges, centred with wide empty margins. Background: plain pure white #FFFFFF, perfectly flat. No text, no watermark. Square 1:1. Sprite: small chip of grey-beige stone with a sharp broken edge."
+  }
+ ]
+}

@@ -1,0 +1,262 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/restoration_screen.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/menu/background.jpg" id="2_bg"]
+[ext_resource type="Shader" path="res://resources/shaders/restoration.gdshader" id="3_shader"]
+[ext_resource type="Resource" path="res://resources/expeditions/overgrown_catacombs_10.tres" id="4_expedition"]
+[ext_resource type="Texture2D" uid="uid://dq3efu8ys36ir" path="res://assets/ui_art/icons/brush.png" id="icon_brush"]
+[ext_resource type="Texture2D" uid="uid://cfkm2cps2y264" path="res://assets/ui_art/icons/sponge.png" id="icon_sponge"]
+[ext_resource type="Texture2D" uid="uid://dv4jo18ah027s" path="res://assets/ui_art/fx/dust_puff.png" id="fx_dust"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/icons/scalpel.png" id="icon_scalpel"]
+[ext_resource type="Texture2D" uid="uid://wrpk658dii72" path="res://assets/ui_art/icons/fragment.png" id="icon_shards"]
+
+[sub_resource type="ShaderMaterial" id="RestorationMaterial"]
+shader = ExtResource("3_shader")
+shader_parameter/soil_fade = 1.0
+shader_parameter/patina_fade = 1.0
+shader_parameter/crust_fade = 1.0
+shader_parameter/shard_id = -1
+shader_parameter/silhouette = 0.0
+shader_parameter/seams = 0.0
+shader_parameter/shine = -1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleProgressBack"]
+bg_color = Color(0.231373, 0.172549, 0.105882, 0.85)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleProgressFill"]
+bg_color = Color(0.85098, 0.662745, 0.270588, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Curve" id="DustScale"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="RestorationScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+expedition_definition = ExtResource("4_expedition")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.55, 0.53, 0.5, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ContentCenter" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PortraitContent" type="MarginContainer" parent="ContentCenter"]
+custom_minimum_size = Vector2(720, 1280)
+layout_mode = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 40
+
+[node name="Layout" type="VBoxContainer" parent="ContentCenter/PortraitContent"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Title" type="Label" parent="ContentCenter/PortraitContent/Layout"]
+theme_type_variation = &"HeaderLabel"
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 40
+text = "Реставрация"
+horizontal_alignment = 1
+
+[node name="ArtifactName" type="Label" parent="ContentCenter/PortraitContent/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760784, 0.835294, 0.611765, 1)
+theme_override_font_sizes/font_size = 26
+text = "Изумрудный идол"
+horizontal_alignment = 1
+
+[node name="StageRow" type="HBoxContainer" parent="ContentCenter/PortraitContent/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="BrushIcon" type="TextureRect" parent="ContentCenter/PortraitContent/Layout/StageRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("icon_brush")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SpongeIcon" type="TextureRect" parent="ContentCenter/PortraitContent/Layout/StageRow"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("icon_sponge")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScalpelIcon" type="TextureRect" parent="ContentCenter/PortraitContent/Layout/StageRow"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("icon_scalpel")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ShardsIcon" type="TextureRect" parent="ContentCenter/PortraitContent/Layout/StageRow"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("icon_shards")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StageLabel" type="Label" parent="ContentCenter/PortraitContent/Layout/StageRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 28
+text = "Кисть: снимите грунт"
+horizontal_alignment = 1
+
+[node name="StageSteps" type="Label" parent="ContentCenter/PortraitContent/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760784, 0.835294, 0.611765, 1)
+theme_override_font_sizes/font_size = 22
+text = "Этап 1 из 3"
+horizontal_alignment = 1
+
+[node name="StageProgress" type="ProgressBar" parent="ContentCenter/PortraitContent/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleProgressBack")
+theme_override_styles/fill = SubResource("StyleProgressFill")
+show_percentage = false
+
+[node name="ArtifactCenter" type="CenterContainer" parent="ContentCenter/PortraitContent/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ArtifactView" type="TextureRect" parent="ContentCenter/PortraitContent/Layout/ArtifactCenter"]
+unique_name_in_owner = true
+material = SubResource("RestorationMaterial")
+custom_minimum_size = Vector2(620, 620)
+layout_mode = 2
+mouse_filter = 0
+expand_mode = 1
+stretch_mode = 0
+
+[node name="HintLabel" type="Label" parent="ContentCenter/PortraitContent/Layout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760784, 0.835294, 0.611765, 1)
+theme_override_font_sizes/font_size = 24
+text = "Водите пальцем по находке"
+horizontal_alignment = 1
+
+[node name="InfoCard" type="PanelContainer" parent="ContentCenter/PortraitContent/Layout"]
+unique_name_in_owner = true
+visible = false
+theme_type_variation = &"PanelCard"
+layout_mode = 2
+
+[node name="InfoLayout" type="VBoxContainer" parent="ContentCenter/PortraitContent/Layout/InfoCard"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="InfoTitle" type="Label" parent="ContentCenter/PortraitContent/Layout/InfoCard/InfoLayout"]
+unique_name_in_owner = true
+theme_type_variation = &"HeaderLabel"
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Изумрудный идол"
+horizontal_alignment = 1
+
+[node name="InfoText" type="Label" parent="ContentCenter/PortraitContent/Layout/InfoCard/InfoLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.294118, 0.2, 0.105882, 1)
+theme_override_font_sizes/font_size = 24
+text = "Находка очищена и заняла место в коллекции."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="ContentCenter/PortraitContent/Layout"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="SkipButton" type="Button" parent="ContentCenter/PortraitContent/Layout/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 68)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Пропустить"
+
+[node name="DoneButton" type="Button" parent="ContentCenter/PortraitContent/Layout/Buttons"]
+unique_name_in_owner = true
+visible = false
+theme_type_variation = &"PrimaryButton"
+custom_minimum_size = Vector2(300, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Готово"
+
+[node name="Dust" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+amount = 24
+lifetime = 0.55
+local_coords = false
+direction = Vector2(0, 1)
+spread = 70.0
+gravity = Vector2(0, 520)
+initial_velocity_min = 60.0
+initial_velocity_max = 170.0
+scale_amount_curve = SubResource("DustScale")
+color = Color(0.55, 0.41, 0.26, 1)
+texture = ExtResource("fx_dust")
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.14
+scale_amount_max = 0.3

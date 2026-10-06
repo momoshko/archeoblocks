@@ -1,0 +1,530 @@
+[
+  {
+    "name": "cell_excavated_depth0",
+    "category": "cells",
+    "label": "Excavated / depth 0",
+    "file": "assets/art_v2a/cells/cell_excavated_depth0_v2a.png",
+    "source": "sources/cell_excavated_depth0.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 683343,
+    "sourceCrop": {
+      "left": 157,
+      "top": 165,
+      "width": 941,
+      "height": 929
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "b8493c2c3ed4dd5e4bb5c78be6df69f19dbf3993c66ae22d9407ac8c6c920f54",
+    "alphaBounds": {
+      "left": 8,
+      "top": 8,
+      "width": 240,
+      "height": 240
+    },
+    "transparentPixelFraction": 0.12127685546875,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "cell_soil_depth1",
+    "category": "cells",
+    "label": "Soil / depth 1",
+    "file": "assets/art_v2a/cells/cell_soil_depth1_v2a.png",
+    "source": "sources/cell_soil_depth1.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 681999,
+    "sourceCrop": {
+      "left": 157,
+      "top": 165,
+      "width": 941,
+      "height": 929
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "b8493c2c3ed4dd5e4bb5c78be6df69f19dbf3993c66ae22d9407ac8c6c920f54",
+    "alphaBounds": {
+      "left": 8,
+      "top": 8,
+      "width": 240,
+      "height": 240
+    },
+    "transparentPixelFraction": 0.12127685546875,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "cell_soil_depth2",
+    "category": "cells",
+    "label": "Dense soil / depth 2",
+    "file": "assets/art_v2a/cells/cell_soil_depth2_v2a.png",
+    "source": "sources/cell_soil_depth2.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 682850,
+    "sourceCrop": {
+      "left": 157,
+      "top": 165,
+      "width": 941,
+      "height": 929
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "b8493c2c3ed4dd5e4bb5c78be6df69f19dbf3993c66ae22d9407ac8c6c920f54",
+    "alphaBounds": {
+      "left": 8,
+      "top": 8,
+      "width": 240,
+      "height": 240
+    },
+    "transparentPixelFraction": 0.12127685546875,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "block_green",
+    "category": "blocks",
+    "label": "green",
+    "file": "assets/art_v2a/blocks/block_green_v2a.png",
+    "source": "sources/block_green.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 514946,
+    "sourceCrop": {
+      "left": 105,
+      "top": 109,
+      "width": 1044,
+      "height": 1031
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+    "alphaBounds": {
+      "left": 18,
+      "top": 18,
+      "width": 220,
+      "height": 220
+    },
+    "transparentPixelFraction": 0.271392822265625,
+    "colorNormalization": "RGB power curve exponent 1.20 for grayscale value separation",
+    "production": true
+  },
+  {
+    "name": "block_blue",
+    "category": "blocks",
+    "label": "blue",
+    "file": "assets/art_v2a/blocks/block_blue_v2a.png",
+    "source": "sources/block_blue.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 513993,
+    "sourceCrop": {
+      "left": 105,
+      "top": 109,
+      "width": 1044,
+      "height": 1031
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+    "alphaBounds": {
+      "left": 18,
+      "top": 18,
+      "width": 220,
+      "height": 220
+    },
+    "transparentPixelFraction": 0.271392822265625,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "block_red",
+    "category": "blocks",
+    "label": "red",
+    "file": "assets/art_v2a/blocks/block_red_v2a.png",
+    "source": "sources/block_red.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 514528,
+    "sourceCrop": {
+      "left": 105,
+      "top": 109,
+      "width": 1044,
+      "height": 1031
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+    "alphaBounds": {
+      "left": 18,
+      "top": 18,
+      "width": 220,
+      "height": 220
+    },
+    "transparentPixelFraction": 0.271392822265625,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "block_amber",
+    "category": "blocks",
+    "label": "amber",
+    "file": "assets/art_v2a/blocks/block_amber_v2a.png",
+    "source": "sources/block_amber.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 513787,
+    "sourceCrop": {
+      "left": 105,
+      "top": 109,
+      "width": 1044,
+      "height": 1031
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+    "alphaBounds": {
+      "left": 18,
+      "top": 18,
+      "width": 220,
+      "height": 220
+    },
+    "transparentPixelFraction": 0.271392822265625,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "block_purple",
+    "category": "blocks",
+    "label": "purple",
+    "file": "assets/art_v2a/blocks/block_purple_v2a.png",
+    "source": "sources/block_purple.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 515076,
+    "sourceCrop": {
+      "left": 105,
+      "top": 109,
+      "width": 1044,
+      "height": 1031
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+    "alphaBounds": {
+      "left": 18,
+      "top": 18,
+      "width": 220,
+      "height": 220
+    },
+    "transparentPixelFraction": 0.271392822265625,
+    "colorNormalization": "RGB power curve exponent 0.65 for grayscale value separation",
+    "production": true
+  },
+  {
+    "name": "block_turquoise",
+    "category": "blocks",
+    "label": "turquoise",
+    "file": "assets/art_v2a/blocks/block_turquoise_v2a.png",
+    "source": "sources/block_turquoise.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 515118,
+    "sourceCrop": {
+      "left": 105,
+      "top": 109,
+      "width": 1044,
+      "height": 1031
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+    "alphaBounds": {
+      "left": 18,
+      "top": 18,
+      "width": 220,
+      "height": 220
+    },
+    "transparentPixelFraction": 0.271392822265625,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "stone_intact",
+    "category": "obstacles",
+    "label": "Stone / 2 hits",
+    "file": "assets/art_v2a/obstacles/stone_intact_v2a.png",
+    "source": "sources/stone_intact.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 610918,
+    "sourceCrop": {
+      "left": 50,
+      "top": 55,
+      "width": 1153,
+      "height": 1145
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "c9115a3970db597a4c72373841adf902391440b903f2b32bd8c416498d31609c",
+    "alphaBounds": {
+      "left": 18,
+      "top": 18,
+      "width": 220,
+      "height": 220
+    },
+    "transparentPixelFraction": 0.4469757080078125,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "stone_cracked",
+    "category": "obstacles",
+    "label": "Stone / 1 hit",
+    "file": "assets/art_v2a/obstacles/stone_cracked_v2a.png",
+    "source": "sources/stone_cracked.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 610032,
+    "sourceCrop": {
+      "left": 50,
+      "top": 55,
+      "width": 1153,
+      "height": 1145
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "8f8cf9e3df8503bbcb3ec99ad6bc7ae4e813a0781c278169519f83926030ace6",
+    "alphaBounds": {
+      "left": 18,
+      "top": 18,
+      "width": 220,
+      "height": 220
+    },
+    "transparentPixelFraction": 0.4461212158203125,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "root_obstacle",
+    "category": "obstacles",
+    "label": "Root",
+    "file": "assets/art_v2a/obstacles/root_obstacle_v2a.png",
+    "source": "sources/root_obstacle.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 1030873,
+    "sourceCrop": {
+      "left": 117,
+      "top": 66,
+      "width": 1055,
+      "height": 1120
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "1310e0b557a48d3b007684c8d33cdf0048aec88d89375f55376768fab4b874c9",
+    "alphaBounds": {
+      "left": 18,
+      "top": 18,
+      "width": 220,
+      "height": 220
+    },
+    "transparentPixelFraction": 0.6262054443359375,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "root_growth_warning",
+    "category": "obstacles",
+    "label": "Root warning",
+    "file": "assets/art_v2a/obstacles/root_growth_warning_v2a.png",
+    "source": "sources/root_growth_warning.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 1169413,
+    "sourceCrop": {
+      "left": 67,
+      "top": 27,
+      "width": 1120,
+      "height": 1159
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "c2bd8bb685395e76b8f816077d72d9acdd370c9b4d6a0ab2955f1d3d8cd14977",
+    "alphaBounds": {
+      "left": 8,
+      "top": 8,
+      "width": 240,
+      "height": 240
+    },
+    "transparentPixelFraction": 0.6857452392578125,
+    "colorNormalization": "HSL hue 85 degrees, saturation min(0.42, original*0.55), lightness original+0.07*sin(pi*original)",
+    "production": true
+  },
+  {
+    "name": "artifact_target_marker",
+    "category": "overlays",
+    "label": "Artifact target",
+    "file": "assets/art_v2a/overlays/artifact_target_marker_v2a.png",
+    "source": "sources/artifact_target_marker.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 1469187,
+    "sourceCrop": {
+      "left": 110,
+      "top": 106,
+      "width": 1034,
+      "height": 1021
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "bd5af3578051df1df39edc4f5df1b6f4e78afd6cf1f99e08fa1f1e9c21a973da",
+    "alphaBounds": {
+      "left": 8,
+      "top": 8,
+      "width": 240,
+      "height": 240
+    },
+    "transparentPixelFraction": 0.893524169921875,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "preview_valid",
+    "category": "overlays",
+    "label": "Valid preview",
+    "file": "assets/art_v2a/overlays/preview_valid_v2a.png",
+    "source": "sources/preview_valid.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 1443595,
+    "sourceCrop": {
+      "left": 105,
+      "top": 106,
+      "width": 1047,
+      "height": 1016
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "b11ab9486262c256b8002bf64b5230868c6f2018f691034d136b8104dcfa1308",
+    "alphaBounds": {
+      "left": 8,
+      "top": 8,
+      "width": 240,
+      "height": 240
+    },
+    "transparentPixelFraction": 0.863739013671875,
+    "colorNormalization": "none",
+    "production": true
+  },
+  {
+    "name": "preview_invalid",
+    "category": "overlays",
+    "label": "Invalid preview",
+    "file": "assets/art_v2a/overlays/preview_invalid_v2a.png",
+    "source": "sources/preview_invalid.png",
+    "sourceHasAlpha": false,
+    "mattePixelsRemoved": 1433050,
+    "sourceCrop": {
+      "left": 105,
+      "top": 106,
+      "width": 1047,
+      "height": 1016
+    },
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "targetSize": [
+      256,
+      256
+    ],
+    "alphaSha256": "440aff3dd9e9b2a79db53a928bc8c00852c0cfca2ea1d1300f7883a65ef92d63",
+    "alphaBounds": {
+      "left": 8,
+      "top": 8,
+      "width": 240,
+      "height": 240
+    },
+    "transparentPixelFraction": 0.8563079833984375,
+    "colorNormalization": "none",
+    "production": true
+  }
+]

@@ -42,6 +42,7 @@ func _expedition(
 
 
 func _run() -> void:
+	OnboardingTutorial.auto_start = false
 	var game := load("res://scenes/screens/game_screen.tscn").instantiate() as Control
 	root.add_child(game)
 	current_scene = game

@@ -1,0 +1,824 @@
+{
+  "schemaVersion": 1,
+  "milestone": "ART V2A",
+  "status": "accepted_offline_art_review",
+  "provenance": "Generated with the available built-in ImageGen; exact underlying image model/quality tier was not exposed by the tool.",
+  "pathBase": "repository root",
+  "style": "ART V1 Light Sandstone Courtyard",
+  "geometry": {
+    "canvas": [
+      256,
+      256
+    ],
+    "pivot": [
+      128,
+      128
+    ],
+    "terrainRect": [
+      8,
+      8,
+      240,
+      240
+    ],
+    "blockRect": [
+      18,
+      18,
+      220,
+      220
+    ],
+    "reviewSourceRect": [
+      8,
+      8,
+      240,
+      240
+    ],
+    "reviewCellPx": 48,
+    "boardSpritePx": 47,
+    "boardSeparatorPx": 1,
+    "light": "upper-left"
+  },
+  "hint": {
+    "reuse": "real block texture",
+    "alpha": 0.52,
+    "contrast": 0.72,
+    "formula": "RGB = meanRGB + (RGB - meanRGB)*0.72; alpha = originalAlpha*0.52",
+    "mean": "Per-channel mean over alpha>200 pixels after sampling"
+  },
+  "layerOrder": [
+    "terrain",
+    "buried clue (unused)",
+    "obstacle",
+    "block",
+    "hint OR placement",
+    "artifact marker",
+    "root warning"
+  ],
+  "entries": [
+    {
+      "name": "cell_excavated_depth0",
+      "category": "cells",
+      "label": "Excavated / depth 0",
+      "file": "assets/art_v2a/cells/cell_excavated_depth0_v2a.png",
+      "source": "sources/cell_excavated_depth0.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 683343,
+      "sourceCrop": {
+        "left": 157,
+        "top": 165,
+        "width": 941,
+        "height": 929
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "b8493c2c3ed4dd5e4bb5c78be6df69f19dbf3993c66ae22d9407ac8c6c920f54",
+      "alphaBounds": {
+        "left": 8,
+        "top": 8,
+        "width": 240,
+        "height": 240
+      },
+      "transparentPixelFraction": 0.12127685546875,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "Excavated / depth 0",
+      "review": false,
+      "sha256": "a490900f29eabf6d46db199b5f794b2647cd1fb4adeda46a88ae732eab6e34da",
+      "usage": "Base cell material",
+      "notes": "none",
+      "sourceSha256": "07df8b5abe67200f7b5c0e1259fb8f03b3b8333e19b37258ba603a4b447a733b"
+    },
+    {
+      "name": "cell_soil_depth1",
+      "category": "cells",
+      "label": "Soil / depth 1",
+      "file": "assets/art_v2a/cells/cell_soil_depth1_v2a.png",
+      "source": "sources/cell_soil_depth1.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 681999,
+      "sourceCrop": {
+        "left": 157,
+        "top": 165,
+        "width": 941,
+        "height": 929
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "b8493c2c3ed4dd5e4bb5c78be6df69f19dbf3993c66ae22d9407ac8c6c920f54",
+      "alphaBounds": {
+        "left": 8,
+        "top": 8,
+        "width": 240,
+        "height": 240
+      },
+      "transparentPixelFraction": 0.12127685546875,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "Soil / depth 1",
+      "review": false,
+      "sha256": "81b3bcd31320015bc8c94ab6fc4c6cc69cfa02aaa130e44537a21a5c2075a423",
+      "usage": "Base cell material",
+      "notes": "none",
+      "sourceSha256": "58270c1f3fecfb873f8c291742d91ef72d735aa7b0a34800306e29a27e4dd90c"
+    },
+    {
+      "name": "cell_soil_depth2",
+      "category": "cells",
+      "label": "Dense soil / depth 2",
+      "file": "assets/art_v2a/cells/cell_soil_depth2_v2a.png",
+      "source": "sources/cell_soil_depth2.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 682850,
+      "sourceCrop": {
+        "left": 157,
+        "top": 165,
+        "width": 941,
+        "height": 929
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "b8493c2c3ed4dd5e4bb5c78be6df69f19dbf3993c66ae22d9407ac8c6c920f54",
+      "alphaBounds": {
+        "left": 8,
+        "top": 8,
+        "width": 240,
+        "height": 240
+      },
+      "transparentPixelFraction": 0.12127685546875,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "Dense soil / depth 2",
+      "review": false,
+      "sha256": "8480ae35f42e69a4a212181d74789078680232e3abc9b396d810d56ca7a2c346",
+      "usage": "Base cell material",
+      "notes": "none",
+      "sourceSha256": "109146e02eaa8918dd7fd426c3902c247a0b3856f3b21d9f5edaea5bd6594594"
+    },
+    {
+      "name": "block_green",
+      "category": "blocks",
+      "label": "green",
+      "file": "assets/art_v2a/blocks/block_green_v2a.png",
+      "source": "sources/block_green.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 514946,
+      "sourceCrop": {
+        "left": 105,
+        "top": 109,
+        "width": 1044,
+        "height": 1031
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+      "alphaBounds": {
+        "left": 18,
+        "top": 18,
+        "width": 220,
+        "height": 220
+      },
+      "transparentPixelFraction": 0.271392822265625,
+      "colorNormalization": "RGB power curve exponent 1.20 for grayscale value separation",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "green",
+      "review": false,
+      "sha256": "241f29015d83fed79f3c6b644086b2446d96ec0fdbf61a54da1a2de4ca8e93f8",
+      "usage": "Placed block; same file reused for hint",
+      "notes": "RGB power curve exponent 1.20 for grayscale value separation",
+      "sourceSha256": "76e62c6a320bc63a90ba1c2b6795d874fd98a8dbfd077b1681d5292b13def08c"
+    },
+    {
+      "name": "block_blue",
+      "category": "blocks",
+      "label": "blue",
+      "file": "assets/art_v2a/blocks/block_blue_v2a.png",
+      "source": "sources/block_blue.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 513993,
+      "sourceCrop": {
+        "left": 105,
+        "top": 109,
+        "width": 1044,
+        "height": 1031
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+      "alphaBounds": {
+        "left": 18,
+        "top": 18,
+        "width": 220,
+        "height": 220
+      },
+      "transparentPixelFraction": 0.271392822265625,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "blue",
+      "review": false,
+      "sha256": "bb7300d77b79100758ef5613a99fcb6ae346ef897c96595e3514a52f2674717d",
+      "usage": "Placed block; same file reused for hint",
+      "notes": "none",
+      "sourceSha256": "81ecf15b8d681789ab2ee3604844a52595340de03154673ed601fed15918659d"
+    },
+    {
+      "name": "block_red",
+      "category": "blocks",
+      "label": "red",
+      "file": "assets/art_v2a/blocks/block_red_v2a.png",
+      "source": "sources/block_red.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 514528,
+      "sourceCrop": {
+        "left": 105,
+        "top": 109,
+        "width": 1044,
+        "height": 1031
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+      "alphaBounds": {
+        "left": 18,
+        "top": 18,
+        "width": 220,
+        "height": 220
+      },
+      "transparentPixelFraction": 0.271392822265625,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "red",
+      "review": false,
+      "sha256": "cbefb138183ca2cd5d7256de9e13d8801699d805a3187d3a4c28ad069fa4f789",
+      "usage": "Placed block; same file reused for hint",
+      "notes": "none",
+      "sourceSha256": "0a411d5abe5f65f9cbc2e42ab9cc54aad2b94dff84f7b654f93147d4bcd6772c"
+    },
+    {
+      "name": "block_amber",
+      "category": "blocks",
+      "label": "amber",
+      "file": "assets/art_v2a/blocks/block_amber_v2a.png",
+      "source": "sources/block_amber.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 513787,
+      "sourceCrop": {
+        "left": 105,
+        "top": 109,
+        "width": 1044,
+        "height": 1031
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+      "alphaBounds": {
+        "left": 18,
+        "top": 18,
+        "width": 220,
+        "height": 220
+      },
+      "transparentPixelFraction": 0.271392822265625,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "amber",
+      "review": false,
+      "sha256": "869cc3b255d8ebe5c5ebb53d7e33927580386da85addd78a30365bcd91741358",
+      "usage": "Placed block; same file reused for hint",
+      "notes": "none",
+      "sourceSha256": "66a1153ff080c7e28b8d37f56a2fc846ebec52c8ef2e72279f48215af3041d66"
+    },
+    {
+      "name": "block_purple",
+      "category": "blocks",
+      "label": "purple",
+      "file": "assets/art_v2a/blocks/block_purple_v2a.png",
+      "source": "sources/block_purple.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 515076,
+      "sourceCrop": {
+        "left": 105,
+        "top": 109,
+        "width": 1044,
+        "height": 1031
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+      "alphaBounds": {
+        "left": 18,
+        "top": 18,
+        "width": 220,
+        "height": 220
+      },
+      "transparentPixelFraction": 0.271392822265625,
+      "colorNormalization": "RGB power curve exponent 0.65 for grayscale value separation",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "purple",
+      "review": false,
+      "sha256": "4f563bfed516db39b2201aec372b02149e779db81fbb9844edef355e2c86f695",
+      "usage": "Placed block; same file reused for hint",
+      "notes": "RGB power curve exponent 0.65 for grayscale value separation",
+      "sourceSha256": "43be9b1db83bf077f48f41f0603bab6857054776ea5083b08cf30ab4106c6f9f"
+    },
+    {
+      "name": "block_turquoise",
+      "category": "blocks",
+      "label": "turquoise",
+      "file": "assets/art_v2a/blocks/block_turquoise_v2a.png",
+      "source": "sources/block_turquoise.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 515118,
+      "sourceCrop": {
+        "left": 105,
+        "top": 109,
+        "width": 1044,
+        "height": 1031
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+      "alphaBounds": {
+        "left": 18,
+        "top": 18,
+        "width": 220,
+        "height": 220
+      },
+      "transparentPixelFraction": 0.271392822265625,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "turquoise",
+      "review": false,
+      "sha256": "9eb261d957bb0155b327961bc53e0d40f131b2972748dc639c443ae79938cffb",
+      "usage": "Placed block; same file reused for hint",
+      "notes": "none",
+      "sourceSha256": "c02c1f6076f2c1905b7fc910a50c1c97a529e819f424711287d0a045c4217dc2"
+    },
+    {
+      "name": "stone_intact",
+      "category": "obstacles",
+      "label": "Stone / 2 hits",
+      "file": "assets/art_v2a/obstacles/stone_intact_v2a.png",
+      "source": "sources/stone_intact.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 610918,
+      "sourceCrop": {
+        "left": 50,
+        "top": 55,
+        "width": 1153,
+        "height": 1145
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "c9115a3970db597a4c72373841adf902391440b903f2b32bd8c416498d31609c",
+      "alphaBounds": {
+        "left": 18,
+        "top": 18,
+        "width": 220,
+        "height": 220
+      },
+      "transparentPixelFraction": 0.4469757080078125,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "Stone / 2 hits",
+      "review": false,
+      "sha256": "11ee144f1534ceac0bbde2f85af3220f36a694f0f9c5789e248af273da3e57fe",
+      "usage": "Obstacle above terrain",
+      "notes": "none",
+      "sourceSha256": "2814bc80c241b3f04e32f425acb39346d8de4ef44ef68592bcdc1d75b23b55a6"
+    },
+    {
+      "name": "stone_cracked",
+      "category": "obstacles",
+      "label": "Stone / 1 hit",
+      "file": "assets/art_v2a/obstacles/stone_cracked_v2a.png",
+      "source": "sources/stone_cracked.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 610032,
+      "sourceCrop": {
+        "left": 50,
+        "top": 55,
+        "width": 1153,
+        "height": 1145
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "8f8cf9e3df8503bbcb3ec99ad6bc7ae4e813a0781c278169519f83926030ace6",
+      "alphaBounds": {
+        "left": 18,
+        "top": 18,
+        "width": 220,
+        "height": 220
+      },
+      "transparentPixelFraction": 0.4461212158203125,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "Stone / 1 hit",
+      "review": false,
+      "sha256": "f243799051cefbac0122d9b374232b216f17974c0a20560cef8679dcd1f81b39",
+      "usage": "Obstacle above terrain",
+      "notes": "none",
+      "sourceSha256": "13f24b0ca2682515ec3a7f537ce750f6fe87f1e685eb9037a22dac9a3c5068d9"
+    },
+    {
+      "name": "root_obstacle",
+      "category": "obstacles",
+      "label": "Root",
+      "file": "assets/art_v2a/obstacles/root_obstacle_v2a.png",
+      "source": "sources/root_obstacle.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 1030873,
+      "sourceCrop": {
+        "left": 117,
+        "top": 66,
+        "width": 1055,
+        "height": 1120
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "1310e0b557a48d3b007684c8d33cdf0048aec88d89375f55376768fab4b874c9",
+      "alphaBounds": {
+        "left": 18,
+        "top": 18,
+        "width": 220,
+        "height": 220
+      },
+      "transparentPixelFraction": 0.6262054443359375,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "Root",
+      "review": false,
+      "sha256": "ebf992fe10e0a6543731350f6399e8ee57cce2be45d6c301cc625a6c7342e1fa",
+      "usage": "Obstacle above terrain",
+      "notes": "none",
+      "sourceSha256": "b18359ff81174fb55cdfc0bacc59375a78f5ce479a1191a3a9b7e6c297f219ac"
+    },
+    {
+      "name": "root_growth_warning",
+      "category": "obstacles",
+      "label": "Root warning",
+      "file": "assets/art_v2a/obstacles/root_growth_warning_v2a.png",
+      "source": "sources/root_growth_warning.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 1169413,
+      "sourceCrop": {
+        "left": 67,
+        "top": 27,
+        "width": 1120,
+        "height": 1159
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "c2bd8bb685395e76b8f816077d72d9acdd370c9b4d6a0ab2955f1d3d8cd14977",
+      "alphaBounds": {
+        "left": 8,
+        "top": 8,
+        "width": 240,
+        "height": 240
+      },
+      "transparentPixelFraction": 0.6857452392578125,
+      "colorNormalization": "HSL hue 85 degrees, saturation min(0.42, original*0.55), lightness original+0.07*sin(pi*original)",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "Root warning",
+      "review": false,
+      "sha256": "2e34580ff81e01e4b8447a852df51cf01f19e11109c9173808c5ea4370f05e32",
+      "usage": "Threatened destination signal; top layer",
+      "notes": "HSL hue 85 degrees, saturation min(0.42, original*0.55), lightness original+0.07*sin(pi*original)",
+      "sourceSha256": "720dc037d16ca84f3e41a0b8bc2f7321dd4a57b7df20fbaa86c61e452447a57b"
+    },
+    {
+      "name": "artifact_target_marker",
+      "category": "overlays",
+      "label": "Artifact target",
+      "file": "assets/art_v2a/overlays/artifact_target_marker_v2a.png",
+      "source": "sources/artifact_target_marker.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 1469187,
+      "sourceCrop": {
+        "left": 110,
+        "top": 106,
+        "width": 1034,
+        "height": 1021
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "bd5af3578051df1df39edc4f5df1b6f4e78afd6cf1f99e08fa1f1e9c21a973da",
+      "alphaBounds": {
+        "left": 8,
+        "top": 8,
+        "width": 240,
+        "height": 240
+      },
+      "transparentPixelFraction": 0.893524169921875,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "Artifact target",
+      "review": false,
+      "sha256": "da724eb2c1b4d846328cbe2fb3c1031c7f30bfacd0a0bbf352fcb0d00f80feec",
+      "usage": "Transparent board signal",
+      "notes": "none",
+      "sourceSha256": "cf737db14bd993644cacfda21cdb4c120a0e9a46a4d1b7ca7a73e2106acb6f7c"
+    },
+    {
+      "name": "preview_valid",
+      "category": "overlays",
+      "label": "Valid preview",
+      "file": "assets/art_v2a/overlays/preview_valid_v2a.png",
+      "source": "sources/preview_valid.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 1443595,
+      "sourceCrop": {
+        "left": 105,
+        "top": 106,
+        "width": 1047,
+        "height": 1016
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "b11ab9486262c256b8002bf64b5230868c6f2018f691034d136b8104dcfa1308",
+      "alphaBounds": {
+        "left": 8,
+        "top": 8,
+        "width": 240,
+        "height": 240
+      },
+      "transparentPixelFraction": 0.863739013671875,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "Valid preview",
+      "review": false,
+      "sha256": "2725a56cd1d98e9f56baa3f658a4eeb34316a0dc1d63741f06e506394ac453e4",
+      "usage": "Transparent board signal",
+      "notes": "none",
+      "sourceSha256": "8c92a137dcfc3c4c57c8bb7342f2cc8d35079de4941f1cc1f55456abaf22e306"
+    },
+    {
+      "name": "preview_invalid",
+      "category": "overlays",
+      "label": "Invalid preview",
+      "file": "assets/art_v2a/overlays/preview_invalid_v2a.png",
+      "source": "sources/preview_invalid.png",
+      "sourceHasAlpha": false,
+      "mattePixelsRemoved": 1433050,
+      "sourceCrop": {
+        "left": 105,
+        "top": 106,
+        "width": 1047,
+        "height": 1016
+      },
+      "sourceSize": [
+        1254,
+        1254
+      ],
+      "targetSize": [
+        256,
+        256
+      ],
+      "alphaSha256": "440aff3dd9e9b2a79db53a928bc8c00852c0cfca2ea1d1300f7883a65ef92d63",
+      "alphaBounds": {
+        "left": 8,
+        "top": 8,
+        "width": 240,
+        "height": 240
+      },
+      "transparentPixelFraction": 0.8563079833984375,
+      "colorNormalization": "none",
+      "production": true,
+      "size": [
+        256,
+        256
+      ],
+      "role": "Invalid preview",
+      "review": false,
+      "sha256": "de9c3f9bebe13226586c7780d050d91b7f6e02d09e7263fcc3f6b5e40597aab1",
+      "usage": "Transparent board signal",
+      "notes": "none",
+      "sourceSha256": "45a693eb9eda5afae80a4a525eadbae312f446252c3d415f2f022bbfc6a7cc4d"
+    },
+    {
+      "file": "art_review/art_v2a/gameplay_material_sheet.png",
+      "category": "review",
+      "role": "gameplay_material_sheet",
+      "size": [
+        1090,
+        980
+      ],
+      "production": false,
+      "review": true,
+      "sha256": "9b872643d5202acfff1600d0cd469f4908f93970523ae039a28cae0792fe2942",
+      "usage": "Grouped128px art overview"
+    },
+    {
+      "file": "art_review/art_v2a/readability_48px.png",
+      "category": "review",
+      "role": "readability_48px",
+      "size": [
+        1040,
+        800
+      ],
+      "production": false,
+      "review": true,
+      "sha256": "518177d4124448c8e14e14f64a67a2b99d6a75e7f55153af2ea0a0d15fe55347",
+      "usage": "Native48px matrix; view at 100%"
+    },
+    {
+      "file": "art_review/art_v2a/grayscale_readability_48px.png",
+      "category": "review",
+      "role": "grayscale_readability_48px",
+      "size": [
+        1040,
+        800
+      ],
+      "production": false,
+      "review": true,
+      "sha256": "fa0485cf8a335ba9054f7ffd3bcfb3a7f3f5666e42b31ecf2457b34c5b06b79a",
+      "usage": "Native48px matrix; view at 100%"
+    },
+    {
+      "file": "art_review/art_v2a/stress_test_board_8x8.png",
+      "category": "review",
+      "role": "stress_test_board_8x8",
+      "size": [
+        384,
+        384
+      ],
+      "production": false,
+      "review": true,
+      "sha256": "a80f2260bea65492f1fd0aad396cf4b2fa4ba02fad0a895877cef7625df551d2",
+      "usage": "8x8 board at48px pitch,47px content +1px separator"
+    },
+    {
+      "file": "art_review/art_v2a/stress_test_hint_valid.png",
+      "category": "review",
+      "role": "stress_test_hint_valid",
+      "size": [
+        384,
+        384
+      ],
+      "production": false,
+      "review": true,
+      "sha256": "5e7746d9bd267fc3ef7fdc81178610caf4c9fcb7a064561f8867bdda2acd0ee4",
+      "usage": "8x8 board at48px pitch,47px content +1px separator"
+    },
+    {
+      "file": "art_review/art_v2a/stress_test_invalid.png",
+      "category": "review",
+      "role": "stress_test_invalid",
+      "size": [
+        384,
+        384
+      ],
+      "production": false,
+      "review": true,
+      "sha256": "8cf7a6e116d8880541b989530035135c2d151766250c1a60eb0beeb0be21d248",
+      "usage": "8x8 board at48px pitch,47px content +1px separator"
+    }
+  ]
+}

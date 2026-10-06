@@ -19,7 +19,11 @@ var _consumed_requests: Dictionary = {}
 
 
 func _ready() -> void:
-	if OS.is_debug_build():
+	# Platform is looked up at runtime: class_name scripts must compile without autoloads.
+	var platform := get_node_or_null("/root/Platform")
+	if platform != null and platform.is_available():
+		set_provider(YandexRewardProvider.new())
+	elif OS.is_debug_build():
 		var mock := MockRewardProvider.new()
 		mock.should_succeed = debug_mock_succeeds
 		set_provider(mock)

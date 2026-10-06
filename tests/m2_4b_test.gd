@@ -42,6 +42,8 @@ func _run() -> void:
 	session.coins_earned = 20
 	session._finish_victory()
 	await process_frame
+	# The victory score counts up; wait until it lands on the final value.
+	await create_timer((game.get_node("ModalUI/ResultPopup") as ResultPopup).score_count_seconds + 0.5).timeout
 
 	var popup := game.get_node("ModalUI/ResultPopup") as ResultPopup
 	var content_path := "PopupCenter/PopupPanel/Content/"
@@ -59,7 +61,8 @@ func _run() -> void:
 	)
 	_expect(artifact_name.text == "Золотая маска", "Victory popup should keep the artifact name")
 	_expect(score.visible and score.text == "Счёт: 1234", "Victory popup should keep the score readable")
-	_expect(coins.visible and coins.text == "Монеты: +20", "Victory popup should keep the coin reward readable")
+	_expect(coins.text == "Монеты: +20", "Victory popup should keep the coin reward text")
+	_expect(coins.visible == FeatureFlags.SHOW_COINS, "Coin line follows the SHOW_COINS flag")
 	_expect(buttons.visible, "Victory popup buttons should remain visible")
 	_expect(panel.size.x <= 720.0 and panel.size.y <= 1280.0, "Victory popup should fit the portrait viewport")
 	_expect(popup.get_node_or_null(content_path + "ArtifactPlaceholder") == null, "Flat artifact placeholder should be removed")

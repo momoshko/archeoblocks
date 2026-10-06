@@ -8,6 +8,8 @@ extends Resource
 @export var completion_title_ru: String
 @export var expeditions: Array[ExpeditionDefinition] = []
 @export_range(0, 10000, 1) var completion_reward_coins := 0
+## Picture behind the board and the chapter screen. Empty: the common menu background.
+@export var background_texture: Texture2D
 
 
 func validate() -> PackedStringArray:
@@ -25,6 +27,23 @@ func validate() -> PackedStringArray:
 			errors.append("duplicate chapter expedition id: %s" % expedition.id)
 		ids[expedition.id] = true
 	return errors
+
+
+## Excavations only (one per find); site preparation levels are left out.
+func dig_expeditions() -> Array[ExpeditionDefinition]:
+	var result: Array[ExpeditionDefinition] = []
+	for expedition in expeditions:
+		if expedition != null and not expedition.is_site_preparation():
+			result.append(expedition)
+	return result
+
+
+## Ids of the excavations: the chapter is finished when all of them are done.
+func dig_ids() -> Array[StringName]:
+	var result: Array[StringName] = []
+	for expedition in dig_expeditions():
+		result.append(expedition.id)
+	return result
 
 
 func expedition_ids() -> Array[StringName]:

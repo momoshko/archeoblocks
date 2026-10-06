@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_yr3x4"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_jnq1u"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/copper_pendant_full_v1.png" id="3_enw74"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="4_adjpq"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_ain7p"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_4676s"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_eqxoe"]
+
+[sub_resource type="Resource" id="Resource_yr3x4"]
+script = ExtResource("5_ain7p")
+cell = Vector2i(0, 1)
+
+[sub_resource type="Resource" id="Resource_jnq1u"]
+script = ExtResource("5_ain7p")
+cell = Vector2i(7, 1)
+
+[resource]
+script = ExtResource("6_4676s")
+id = &"overgrown_catacombs_02_site"
+goal = &"clear_site"
+title_ru = "Заросшие катакомбы 2 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Overgrown Catacombs 2 - First Nest - site"
+artifact_id = &"copper_pendant"
+artifact_name_ru = "Медная подвеска"
+full_artifact_texture = ExtResource("3_enw74")
+objective_ru = "Расчистите участок: снимите весь грунт, срежьте корни"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1)])
+root_obstacles = Array[ExtResource("5_ain7p")]([SubResource("Resource_yr3x4"), SubResource("Resource_jnq1u")])
+piece_generation = ExtResource("4_adjpq")
+expected_moves_min = 10
+expected_moves_max = 16
+hard_move_limit = 25
+game_scene_path = "res://scenes/screens/game_screen_site_overgrown_catacombs_02.tscn"

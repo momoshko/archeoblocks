@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_help")
-debug_unlimited_hints = true
+debug_unlimited_hints = false
 hint_expedition_victory_bonus = 1000000
 hint_fragment_completed_weight = 50000
 hint_artifact_excavation_weight = 5000

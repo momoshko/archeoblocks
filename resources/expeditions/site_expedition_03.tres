@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_ia5uo"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_3inna"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ancient_courtyard/bronze_key_full_v1.png" id="3_ba8vv"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_1.tres" id="4_c22lj"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_t4cw1"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_p3axq"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_cj4c7"]
+
+[resource]
+script = ExtResource("6_p3axq")
+id = &"expedition_03_site"
+goal = &"clear_site"
+title_ru = "Древний двор 3 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Ancient Courtyard 3 - Crossroads - site"
+artifact_id = &"bronze_key"
+artifact_name_ru = "Бронзовый ключ"
+full_artifact_texture = ExtResource("3_ba8vv")
+objective_ru = "Расчистите участок: снимите весь грунт"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(1, 3), Vector2i(2, 3), Vector2i(1, 4), Vector2i(2, 4), Vector2i(5, 3), Vector2i(6, 3), Vector2i(5, 4), Vector2i(6, 4)])
+piece_generation = ExtResource("4_c22lj")
+expected_moves_min = 11
+expected_moves_max = 16
+hard_move_limit = 21
+game_scene_path = "res://scenes/screens/game_screen_site_expedition_03.tscn"

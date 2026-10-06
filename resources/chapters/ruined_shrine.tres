@@ -1,14 +1,24 @@
-[gd_resource type="Resource" script_class="ChapterDefinition" load_steps=10 format=3]
+[gd_resource type="Resource" script_class="ChapterDefinition" format=3]
 
 [ext_resource type="Script" path="res://scripts/game/chapter_definition.gd" id="1_chapter"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="2_eo87n"]
 [ext_resource type="Resource" path="res://resources/expeditions/ruined_shrine_01.tres" id="2_exp01"]
 [ext_resource type="Resource" path="res://resources/expeditions/ruined_shrine_02.tres" id="3_exp02"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_ruined_shrine_01.tres" id="3_hhb2x"]
 [ext_resource type="Resource" path="res://resources/expeditions/ruined_shrine_03.tres" id="4_exp03"]
 [ext_resource type="Resource" path="res://resources/expeditions/ruined_shrine_04.tres" id="5_exp04"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_ruined_shrine_02.tres" id="5_pvyio"]
 [ext_resource type="Resource" path="res://resources/expeditions/ruined_shrine_05.tres" id="6_exp05"]
 [ext_resource type="Resource" path="res://resources/expeditions/ruined_shrine_06.tres" id="7_exp06"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_ruined_shrine_03.tres" id="7_kqmyu"]
 [ext_resource type="Resource" path="res://resources/expeditions/ruined_shrine_07.tres" id="8_exp07"]
 [ext_resource type="Resource" path="res://resources/expeditions/ruined_shrine_08.tres" id="9_exp08"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_ruined_shrine_04.tres" id="9_qq1nr"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_ruined_shrine_05.tres" id="11_36gum"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_ruined_shrine_06.tres" id="13_5b701"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_ruined_shrine_07.tres" id="15_gs6sf"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_ruined_shrine_08.tres" id="17_nnmrh"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/backgrounds/ruined_shrine.jpg" id="bg_chapter"]
 
 [resource]
 script = ExtResource("1_chapter")
@@ -17,5 +27,6 @@ number_ru = "Глава II"
 title_ru = "Разрушенное святилище"
 subtitle_ru = "Камни помнят удары"
 completion_title_ru = "Разрушенное святилище исследовано"
-expeditions = Array[ExpeditionDefinition]([ExtResource("2_exp01"), ExtResource("3_exp02"), ExtResource("4_exp03"), ExtResource("5_exp04"), ExtResource("6_exp05"), ExtResource("7_exp06"), ExtResource("8_exp07"), ExtResource("9_exp08")])
+expeditions = Array[ExtResource("2_eo87n")]([ExtResource("3_hhb2x"), ExtResource("2_exp01"), ExtResource("5_pvyio"), ExtResource("3_exp02"), ExtResource("7_kqmyu"), ExtResource("4_exp03"), ExtResource("9_qq1nr"), ExtResource("5_exp04"), ExtResource("11_36gum"), ExtResource("6_exp05"), ExtResource("13_5b701"), ExtResource("7_exp06"), ExtResource("15_gs6sf"), ExtResource("8_exp07"), ExtResource("17_nnmrh"), ExtResource("9_exp08")])
 completion_reward_coins = 150
+background_texture = ExtResource("bg_chapter")

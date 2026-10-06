@@ -15,6 +15,7 @@ func _expect(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	OnboardingTutorial.auto_start = false
 	var game := load("res://scenes/screens/game_screen.tscn").instantiate() as Control
 	root.add_child(game)
 	current_scene = game
@@ -56,6 +57,7 @@ func _test_repeated_hint_replaces_presentation(
 	tray: PieceTray,
 	feedback: ActionFeedback
 ) -> void:
+	session.help_config.debug_unlimited_hints = true
 	var node_count_before := game.find_children("*", "", true, false).size()
 	for invocation in 20:
 		_expect(session.request_hint(), "Hint invocation %d should succeed in unlimited debug mode" % (invocation + 1))

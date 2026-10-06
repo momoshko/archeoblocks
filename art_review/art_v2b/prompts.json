@@ -1,0 +1,250 @@
+{
+  "status": "final_exports_verified_production_candidate",
+  "generator": "available built-in ImageGen",
+  "underlyingModel": "not exposed by tool",
+  "qualityTier": "not exposed by tool",
+  "attempts": [
+    {
+      "asset": "panel_header_large_v2b.png",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: stylized-concept. Asset type: one blank production UI sprite, sandstone panel master for Archeoblocks ART V2B. Input images: 1 approved menu STYLE reference, 2 approved gameplay STYLE reference, 3 accepted gameplay material sheet for compatibility. Do not reproduce any screen or text. Create ONE isolated wide horizontal header plate on a truly TRANSPARENT RGBA canvas; no painted checkerboard, no scene, no backdrop. Soft hand-painted light warm sandstone, pale cream face, subdued tan bevel, upper-left sunlight, short soft shadow contained well inside canvas. Orthographic straight front view, no perspective skew. 3:1 width-to-height object, centered with 8% clear margin. Consistent small softly clipped corners, simple 5% edge bevel, two or three broad restrained edge chips, almost smooth blank central 80% text area, very low contrast grain. Quieter and cleaner than the reference plates. No emblem, no scroll, no inner ornamental outline, no gold, no lettering, no numbers, no symbols. This is the sandstone anchor from which headers, buttons, frame and cards will be derived; prioritize simple repeatable geometry and readable mobile-scale edge construction. No cropped shadow. Render only this one blank sandstone header plate.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v1/master_menu.png",
+          "C:/dev/archeoblocks/art_review/art_v1/master_gameplay.png",
+          "C:/dev/archeoblocks/art_review/art_v2a/gameplay_material_sheet.png"
+        ]
+      },
+      "source": "sources/panel_header_large.png",
+      "generatedSource": "C:/Users/AKNATE/.codex/generated_images/01a0a4de-dc8f-7011-9ccf-cb285d4827d3/exec-303930de-857f-49dc-b999-a1b55a7dac58.png"
+    },
+    {
+      "asset": "board_frame_v2b.png",
+      "parent": "panel_header_large",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Archeoblocks ART V2B blank production UI asset. Input is the sandstone family master, preserve its warm cream sandstone material, soft hand-painted bevel and small softly clipped corners, upper-left lighting and restrained broad edge wear. One isolated asset, orthographic front view, centered with safe clear margin, truly transparent RGBA background (no painted checkerboard), no scene. No text, numbers, icons, labels or emblems. Clean nearly uniform central text area, no ornament, no gritty noise, no gold unless explicitly requested. Derive a SQUARE BOARD FRAME: a continuous thick sandstone ring, perfectly straight horizontal/vertical sides, 1:1 outer width and height. Large clean square TRANSPARENT INNER OPENING with softly clipped corners, opening80% of outer width. Frame thickness10% per side. Pale bevel, restrained warm-brown inner shadow built into inner bevel only; no floor, cells, blocks or backing inside opening. No seams between dozens of stone bricks; one calm frame with just a few subtle edge chips. Frame must contain an8x8 playfield without covering its corners. 6% outer transparent padding.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/panel_header_large.png"
+        ]
+      },
+      "source": "sources/board_frame.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-6171b50a-58d5-4848-9081-fa4aefe0d26b.png"
+    },
+    {
+      "asset": "button_primary_v2b.png",
+      "parent": "panel_header_large",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Archeoblocks ART V2B blank production UI asset. Input is the sandstone family master, preserve its warm cream sandstone material, soft hand-painted bevel and small softly clipped corners, upper-left lighting and restrained broad edge wear. One isolated asset, orthographic front view, centered with safe clear margin, truly transparent RGBA background (no painted checkerboard), no scene. No text, numbers, icons, labels or emblems. Clean nearly uniform central text area, no ornament, no gritty noise, no gold unless explicitly requested. Derive one PRIMARY ACTION BUTTON, object aspect5:1. Keep edge construction, change material to dark jade-green carved stone (#326C51 family) matching menu primary CTA; brighter sage upper-left bevel, deep muted green lower-right bevel. Strong clean raised pressable silhouette, broad uninterrupted dark-green blank face for cream text. Not a glowing gem, no gold. Stronger volume than a header plate. Preserve master corner language. 7% clear margin.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/panel_header_large.png"
+        ]
+      },
+      "source": "sources/button_primary.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-64a29f09-36b8-48d3-9457-cfa021dddbd8.png"
+    },
+    {
+      "asset": "panel_header_small_v2b.png",
+      "parent": "panel_header_large",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Archeoblocks ART V2B blank production UI asset. Input is the sandstone family master, preserve its warm cream sandstone material, soft hand-painted bevel and small softly clipped corners, upper-left lighting and restrained broad edge wear. One isolated asset, orthographic front view, centered with safe clear margin, truly transparent RGBA background (no painted checkerboard), no scene. No text, numbers, icons, labels or emblems. Clean nearly uniform central text area, no ornament, no gritty noise, no gold unless explicitly requested. Derive a lighter SUPPORTING INFO PLATE, horizontal aspect4.1:1. Shallower narrower bevel than master, quieter nearly smooth pale sandstone surface; compact clean form with minimal chips. Do not create a heavy thick slab. Blank.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/panel_header_large.png"
+        ]
+      },
+      "source": "sources/panel_header_small.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-bb59aa7e-841b-4da7-94ae-c6eae61fd470.png"
+    },
+    {
+      "asset": "panel_label_small_v2b.png",
+      "parent": "panel_header_large",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Archeoblocks ART V2B blank production UI asset. Input is the sandstone family master, preserve its warm cream sandstone material, soft hand-painted bevel and small softly clipped corners, upper-left lighting and restrained broad edge wear. One isolated asset, orthographic front view, centered with safe clear margin, truly transparent RGBA background (no painted checkerboard), no scene. No text, numbers, icons, labels or emblems. Clean nearly uniform central text area, no ornament, no gritty noise, no gold unless explicitly requested. Derive a SMALL LABEL PLATE, horizontal aspect4.2:1. Very shallow cream sandstone lip, smallest quietest member of this family; clean blank face, soft clipped corners, only one subtle edge nick. No extra feet, banner tails or decorative tips.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/panel_header_large.png"
+        ]
+      },
+      "source": "sources/panel_label_small.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-9aac27cb-1bea-4b04-8d09-512822a26882.png"
+    },
+    {
+      "asset": "popup_panel_v2b.png",
+      "parent": "panel_header_large",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Archeoblocks ART V2B blank production UI asset. Input is the sandstone family master, preserve its warm cream sandstone material, soft hand-painted bevel and small softly clipped corners, upper-left lighting and restrained broad edge wear. One isolated asset, orthographic front view, centered with safe clear margin, truly transparent RGBA background (no painted checkerboard), no scene. No text, numbers, icons, labels or emblems. Clean nearly uniform central text area, no ornament, no gritty noise, no gold unless explicitly requested. Derive a large PORTRAIT MODAL PANEL, aspect3:4. Broad light sandstone face occupying90% of panel, generous blank space for title, several lines of text and buttons later. Same softly clipped corners; moderate8% bevel around perimeter, short integrated lower edge shadow. No internal dividers or button sockets. No transparent hole in this panel. Simplify texture in central region.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/panel_header_large.png"
+        ]
+      },
+      "source": "sources/popup_panel.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-27989b1f-2095-497b-add0-2974c360382d.png"
+    },
+    {
+      "asset": "button_secondary_v2b.png",
+      "parent": "button_primary",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Edit supplied blank green button into its SECONDARY sandstone state for Archeoblocks ART V2B. Preserve EXACT outer silhouette, proportions, placement, scale, bevel geometry, upper-left illumination, edge chips and shadow. Change only green material to pale warm cream sandstone, restrained tan lower bevel and pale cream top bevel. Blank high-readability face for dark-brown UI text. No gold, no label or icon, no extra ornaments. Same canvas and genuine transparent exterior. No painted checkerboard.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/button_primary.png"
+        ]
+      },
+      "source": "sources/button_secondary.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-226b234d-3710-4a1b-92b5-dae8974f2731.png"
+    },
+    {
+      "asset": "button_disabled_v2b.png",
+      "parent": "button_secondary",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Edit supplied sandstone button into DISABLED state for Archeoblocks ART V2B. Preserve EXACT canvas, silhouette, position, proportions, bevel and chip locations. Only change material shading: muted medium gray-beige desaturated sandstone, noticeably lower contrast, flatter dim bevel, no bright top highlight, matte surface. Inactive state must be identifiable without hue: darker and less raised than pale secondary, much less punchy than green primary. No label, icon, gold, text or added mark. Same true transparent exterior, no checkerboard.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/button_secondary.png"
+        ]
+      },
+      "source": "sources/button_disabled.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-328e2693-bb14-4260-88e6-28d963462ea1.png"
+    },
+    {
+      "asset": "button_small_back_v2b.png",
+      "parent": "button_secondary",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Archeoblocks ART V2B blank production UI asset. Input is the sandstone family master, preserve its warm cream sandstone material, soft hand-painted bevel and small softly clipped corners, upper-left lighting and restrained broad edge wear. One isolated asset, orthographic front view, centered with safe clear margin, truly transparent RGBA background (no painted checkerboard), no scene. No text, numbers, icons, labels or emblems. Clean nearly uniform central text area, no ornament, no gritty noise, no gold unless explicitly requested. Input is secondary button from this family. Derive a COMPACT SQUARE BACK/PAUSE BUTTON BASE, 1:1 aspect. Same pale sandstone face and corner language, quiet but pressable bevel. Large blank central area for a separate back or pause icon later; do not draw any icon. 10% transparent padding, no cropped shadow.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/button_secondary.png"
+        ]
+      },
+      "source": "sources/button_small_back.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-0d24758b-3e8e-45fa-b4e4-f4211efb6b33.png"
+    },
+    {
+      "asset": "button_selected_frame_v2b.png",
+      "parent": "button_secondary",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Derive a SELECTION OVERLAY from this blank sandstone button for Archeoblocks ART V2B. Same canvas, exact button outline, corner radius, position and proportions. Remove ALL solid face and stone body; retain only a slender warm muted gold double-keyed contour just inside perimeter, about2% of button height in thickness, with dark-brown keyline for contrast. Entire central region and exterior are truly transparent. No solid plate, no ornament, no symbols or text, no glow. This is only a restrained selected-state outline to layer on the matching button. No painted checkerboard.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/button_secondary.png"
+        ]
+      },
+      "source": "sources/button_selected_frame.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-52a20cde-9afe-448a-9666-1328f776f193.png"
+    },
+    {
+      "asset": "piece_slot_v2b.png",
+      "parent": "panel_header_large",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Archeoblocks ART V2B blank production UI asset. Input is the sandstone family master, preserve its warm cream sandstone material, soft hand-painted bevel and small softly clipped corners, upper-left lighting and restrained broad edge wear. One isolated asset, orthographic front view, centered with safe clear margin, truly transparent RGBA background (no painted checkerboard), no scene. No text, numbers, icons, labels or emblems. Clean nearly uniform central text area, no ornament, no gritty noise, no gold unless explicitly requested. Derive ONE spacious PIECE TRAY SLOT CARD, aspect1.2:1 landscape. Cream sandstone rim with a very shallow recessed sand-beige central flat plane for colorful mineral pieces. Quiet shallow edge, thin inner shadow suggesting a tray, no grid, no objects or text. Center80% visually empty, soft clipped corners and material from master. Do not make a dark excavated terrain cell.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/panel_header_large.png"
+        ]
+      },
+      "source": "sources/piece_slot.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-45deb517-4588-4021-aaa0-871a6bddc558.png"
+    },
+    {
+      "asset": "chapter_card_open_v2b.png",
+      "parent": "piece_slot",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Archeoblocks ART V2B blank production UI asset. Input is the sandstone family master, preserve its warm cream sandstone material, soft hand-painted bevel and small softly clipped corners, upper-left lighting and restrained broad edge wear. One isolated asset, orthographic front view, centered with safe clear margin, truly transparent RGBA background (no painted checkerboard), no scene. No text, numbers, icons, labels or emblems. Clean nearly uniform central text area, no ornament, no gritty noise, no gold unless explicitly requested. Input is sibling tray card. Derive an OPEN PLAYABLE CHAPTER CARD, wide aspect2.4:1. Light warm cream sandstone face with quiet shallow raised edge, central85% blank for later text and separate art. Same corner language, restrained tiny edge wear. No slots inside, no lock or map or badge or text. It must feel available and calm, lower emphasis than primary action.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/piece_slot.png"
+        ]
+      },
+      "source": "sources/chapter_card_open.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-3ed48b91-8345-420a-8d88-e9f85373b4eb.png"
+    },
+    {
+      "asset": "collection_card_known_v2b.png",
+      "parent": "piece_slot",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Archeoblocks ART V2B blank production UI asset. Input is the sandstone family master, preserve its warm cream sandstone material, soft hand-painted bevel and small softly clipped corners, upper-left lighting and restrained broad edge wear. One isolated asset, orthographic front view, centered with safe clear margin, truly transparent RGBA background (no painted checkerboard), no scene. No text, numbers, icons, labels or emblems. Clean nearly uniform central text area, no ornament, no gritty noise, no gold unless explicitly requested. Input is sibling tray card. Derive one DISCOVERED ARTIFACT COLLECTION CARD, portrait aspect4:5. Light sandstone face, quiet shallow rim and spacious clean central exhibition area; subtly warmer cream inner plane with fine muted gold inner keyline indicating a known discovery. Same clipped corners and material. Empty card, NO artifact, icon, label, emblem or text. No separate inset disks or slots.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/piece_slot.png"
+        ]
+      },
+      "source": "sources/collection_card_known.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-e55b0be7-246c-4697-a275-6d8b4231af31.png"
+    },
+    {
+      "asset": "chapter_card_locked_v2b.png",
+      "parent": "chapter_card_open",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Make LOCKED state of supplied chapter card. Preserve EXACT silhouette, canvas, scale, position, corners and bevel geometry. Change only face/material to muted gray-beige, medium value, flatter lower-contrast edge lighting. Broad blank face. This is an inactive card state, no lock glyph, question mark, text or new decorative plaque; actual state icon will be separate in UI. Truly transparent exterior. No checkerboard.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/chapter_card_open.png"
+        ]
+      },
+      "source": "sources/chapter_card_locked.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-5fa56145-5e51-4145-b570-e1b4da228328.png"
+    },
+    {
+      "asset": "chapter_card_completed_v2b.png",
+      "parent": "chapter_card_open",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Make COMPLETED state of supplied chapter card. Preserve EXACT silhouette, canvas, placement, corners, face and bevel geometry. Keep pale cream sandstone face; add only a narrow muted olive-green inset perimeter line with a tiny warm gold upper-left corner accent, restrained achievement emphasis, no large gold fill. Blank center unchanged. No checkmark, words, icons or decorative objects. True transparent exterior, no checkerboard.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/chapter_card_open.png"
+        ]
+      },
+      "source": "sources/chapter_card_completed.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-91a1efd4-5a38-42dd-9808-ca5e6918f4f3.png"
+    },
+    {
+      "asset": "collection_card_unknown_v2b.png",
+      "parent": "collection_card_known",
+      "status": "succeeded",
+      "toolArguments": {
+        "prompt": "Use case: precise-object-edit. Derive UNKNOWN collection card from supplied known card. Preserve EXACT canvas, position, silhouette, corner and rim geometry. Remove fine gold inner keyline, replace with low-contrast gray-beige inset line. Change material to muted medium gray-beige with flatter shading, central area quiet and blank. No question mark, lock, silhouette, icon, artifact or text. Truly transparent exterior, no painted checkerboard.",
+        "referenced_image_paths": [
+          "C:/dev/archeoblocks/art_review/art_v2b/sources/collection_card_known.png"
+        ]
+      },
+      "source": "sources/collection_card_unknown.png",
+      "generatedSource": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-5eb60a30-b63b-4263-984e-a364664cd66c.png"
+    }
+  ],
+  "provenance": "Generated with the available built-in ImageGen; exact underlying image model/quality tier was not exposed by the tool.",
+  "postprocessing": {
+    "script": "export_pack.cjs",
+    "sourcesPreserved": true,
+    "generatedAlphaSources": [
+      "panel_header_small",
+      "panel_label_small",
+      "button_primary",
+      "chapter_card_open",
+      "collection_card_known"
+    ],
+    "neutralMatteExtractedFor": [
+      "board_frame",
+      "panel_header_large",
+      "popup_panel",
+      "button_secondary",
+      "button_disabled",
+      "button_small_back",
+      "button_selected_frame",
+      "piece_slot",
+      "chapter_card_locked",
+      "chapter_card_completed",
+      "collection_card_unknown"
+    ],
+    "steps": [
+      "Preserve generated master alpha; remove detached alpha dust",
+      "Flood neutral exterior and board/selection center when source lacks alpha; one-source-pixel contraction",
+      "Nine-region aspect normalization with uniformly scaled corners; board corner scale0.70 for calmer border",
+      "Exact shared alpha for three button states, three chapter states, two collection states",
+      "RGBA8 sRGB ICC PNG with transparent margins; no new drawn material illustration"
+    ],
+    "paletteCorrection": "none"
+  }
+}

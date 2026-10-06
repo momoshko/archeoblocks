@@ -42,8 +42,8 @@ func _test_root_and_details() -> void:
 	_expect(chapter_one_button.visible and chapter_two_button.visible, "Chapters root should show exactly the two real chapter entries")
 	_expect(chapter_one_button.text.contains("Глава I") and chapter_one_button.text.contains("Древний двор"), "Chapter I root card should identify its chapter")
 	_expect(chapter_two_button.text.contains("Глава II") and chapter_two_button.text.contains("Разрушенное святилище"), "Chapter II root card should identify its chapter")
-	_expect(chapter_one_button.text.contains("0 / 6") and chapter_one_button.text.contains("+100"), "Chapter I root card should show progress and reward")
-	_expect(chapter_two_button.text.contains("0 / 8") and chapter_two_button.text.contains("+150"), "Chapter II root card should show progress and reward")
+	_expect(chapter_one_button.text.contains("0 / 6") and chapter_one_button.text.contains("+100") == FeatureFlags.SHOW_COINS, "Chapter I root card should show progress; reward only when coins are shown")
+	_expect(chapter_two_button.text.contains("0 / 8") and chapter_two_button.text.contains("+150") == FeatureFlags.SHOW_COINS, "Chapter II root card should show progress; reward only when coins are shown")
 	_expect(not chapter_one_button.disabled and chapter_two_button.disabled, "Chapter II should remain locked until Chapter I completion")
 	root_screen.queue_free()
 	await process_frame
@@ -67,7 +67,7 @@ func _test_root_and_details() -> void:
 	await process_frame
 
 	var chapter_one := load("res://resources/chapters/ancient_courtyard.tres") as ChapterDefinition
-	for expedition in chapter_one.expeditions:
+	for expedition in chapter_one.dig_expeditions():
 		ProgressStore.mark_expedition_completed(expedition.id)
 	root_screen = load("res://scenes/screens/expedition_select.tscn").instantiate() as Control
 	root.add_child(root_screen)
@@ -80,12 +80,12 @@ func _test_root_and_details() -> void:
 	detail_two = load("res://scenes/screens/chapter_detail_02.tscn").instantiate() as Control
 	root.add_child(detail_two)
 	await process_frame
-	_expect(not _detail_button(detail_two, 0).disabled and _detail_button(detail_two, 0).text.ends_with("Открыто"), "Unlocked Chapter II detail should open Expedition 2-1")
-	_expect(_detail_button(detail_two, 1).disabled and _detail_button(detail_two, 1).text.ends_with("Закрыто"), "Expedition 2-2 should wait for 2-1")
+	_expect(not _detail_button(detail_two, 0).disabled and (_detail_button(detail_two, 0) as FindCard).state_text() in ["Дальше: расчистка", "Дальше: раскопка"], "Unlocked Chapter II detail should open Expedition 2-1")
+	_expect(_detail_button(detail_two, 1).disabled and (_detail_button(detail_two, 1) as FindCard).state_text() == "Закрыто", "Expedition 2-2 should wait for 2-1")
 	ProgressStore.mark_expedition_completed(&"ruined_shrine_01")
 	detail_two.refresh_progress()
-	_expect(_detail_button(detail_two, 0).text.ends_with("✓ Пройдено"), "Completed expedition should keep its checkmark state")
-	_expect(not _detail_button(detail_two, 1).disabled and _detail_button(detail_two, 1).text.ends_with("Открыто"), "Completing 2-1 should unlock 2-2")
+	_expect((_detail_button(detail_two, 0) as FindCard).state_text() in ["Дальше: очистка", "Готово"], "Completed expedition should keep its checkmark state")
+	_expect(not _detail_button(detail_two, 1).disabled and (_detail_button(detail_two, 1) as FindCard).state_text() in ["Дальше: расчистка", "Дальше: раскопка"], "Completing 2-1 should unlock 2-2")
 	detail_two.queue_free()
 	await process_frame
 

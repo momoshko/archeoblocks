@@ -60,3 +60,4 @@ opening_piece_set = Array[PieceDefinition]([ExtResource("5_line_h"), ExtResource
 curated_piece_sequence = Array[PieceDefinition]([ExtResource("10_domino_h"), ExtResource("6_line_v"), ExtResource("8_small_t"), ExtResource("12_line4"), ExtResource("11_domino_v"), ExtResource("7_small_l"), ExtResource("13_large_l"), ExtResource("5_line_h"), ExtResource("10_domino_h"), ExtResource("14_plus"), ExtResource("6_line_v"), ExtResource("9_square"), ExtResource("8_small_t"), ExtResource("12_line4"), ExtResource("11_domino_v"), ExtResource("13_large_l"), ExtResource("10_domino_h"), ExtResource("5_line_h")])
 expected_moves_min = 15
 expected_moves_max = 25
+game_scene_path = "res://scenes/screens/game_screen_ch3_prototype_01.tscn"

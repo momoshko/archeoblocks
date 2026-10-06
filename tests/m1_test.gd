@@ -28,6 +28,7 @@ func _fill_column(model: BoardModel, x: int) -> void:
 
 
 func _run() -> void:
+	OnboardingTutorial.auto_start = false
 	_test_board_model()
 	await _test_tray_and_session()
 	await _test_session_line_clear()
@@ -104,7 +105,11 @@ func _test_tray_and_session() -> void:
 	_expect(session.try_place_piece(1, Vector2i(3, 0)), "Second tray piece should place in any order")
 	_expect(session.try_place_piece(2, Vector2i(0, 4)), "Third tray piece should place")
 	_expect(not tray.all_empty(), "Tray should refill after the third piece")
-	_expect(tray.get_definition(0).id == &"square_2", "Tray should advance to deterministic set 2")
+	var expected_refill := session.piece_sequence.set_at(0, session.board_model, session.obstacle_model)
+	_expect(
+		tray.get_definition(0) == expected_refill[0] and tray.get_definition(2) == expected_refill[2],
+		"After the opening set the tray continues with the expedition's first seeded set"
+	)
 	_expect(session.moves == 3, "Moves should count successful placements")
 	var single: Array[Vector2i] = [Vector2i.ZERO]
 	for y in BoardModel.HEIGHT:
@@ -171,7 +176,9 @@ func _test_pointer_input() -> void:
 	mouse_press.position = mouse_slot.get_global_rect().get_center()
 	mouse_press.global_position = mouse_press.position
 	mouse_slot._gui_input(mouse_press)
-	var mouse_target := board.get_cell_global_center(Vector2i(0, 0)) + Vector2(0.0, session.mouse_drag_lift)
+	# Aim so the piece origin lands on an empty interior cell whatever the opening pieces are.
+	var mouse_anchor := Vector2i(1, 0) + mouse_slot.get_definition().get_anchor_cell()
+	var mouse_target := board.get_cell_global_center(mouse_anchor) + Vector2(0.0, session.mouse_drag_lift)
 	var mouse_motion := InputEventMouseMotion.new()
 	mouse_motion.position = mouse_target
 	mouse_slot._input(mouse_motion)
@@ -188,7 +195,8 @@ func _test_pointer_input() -> void:
 	touch_press.pressed = true
 	touch_press.position = touch_slot.get_global_rect().get_center()
 	touch_slot._gui_input(touch_press)
-	var touch_target := board.get_cell_global_center(Vector2i(4, 3)) + Vector2(0.0, session.touch_drag_lift)
+	var touch_anchor := Vector2i(1, 5) + touch_slot.get_definition().get_anchor_cell()
+	var touch_target := board.get_cell_global_center(touch_anchor) + Vector2(0.0, session.touch_drag_lift)
 	var touch_motion := InputEventScreenDrag.new()
 	touch_motion.index = 7
 	touch_motion.position = touch_target

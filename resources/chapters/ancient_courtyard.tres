@@ -1,18 +1,25 @@
-[gd_resource type="Resource" script_class="ChapterDefinition" load_steps=8 format=3]
+[gd_resource type="Resource" script_class="ChapterDefinition" format=3]
 
 [ext_resource type="Script" path="res://scripts/game/chapter_definition.gd" id="1_chapter"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="2_40ltv"]
 [ext_resource type="Resource" path="res://resources/expeditions/expedition_01.tres" id="2_exp01"]
 [ext_resource type="Resource" path="res://resources/expeditions/expedition_02.tres" id="3_exp02"]
 [ext_resource type="Resource" path="res://resources/expeditions/expedition_03.tres" id="4_exp03"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_expedition_02.tres" id="4_ok867"]
 [ext_resource type="Resource" path="res://resources/expeditions/expedition_04.tres" id="5_exp04"]
 [ext_resource type="Resource" path="res://resources/expeditions/expedition_05.tres" id="6_exp05"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_expedition_03.tres" id="6_ux3mt"]
 [ext_resource type="Resource" path="res://resources/expeditions/expedition_06.tres" id="7_exp06"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_expedition_04.tres" id="8_nsmp1"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_expedition_05.tres" id="10_i1m5r"]
+[ext_resource type="Resource" path="res://resources/expeditions/site_expedition_06.tres" id="12_5c7dc"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/backgrounds/ancient_courtyard.jpg" id="bg_chapter"]
 
 [resource]
 script = ExtResource("1_chapter")
 id = &"ancient_courtyard"
-number_ru = "Глава I"
 title_ru = "Древний двор"
 subtitle_ru = "Первые раскопки"
-expeditions = Array[ExpeditionDefinition]([ExtResource("2_exp01"), ExtResource("3_exp02"), ExtResource("4_exp03"), ExtResource("5_exp04"), ExtResource("6_exp05"), ExtResource("7_exp06")])
+expeditions = Array[ExtResource("2_40ltv")]([ExtResource("2_exp01"), ExtResource("4_ok867"), ExtResource("3_exp02"), ExtResource("6_ux3mt"), ExtResource("4_exp03"), ExtResource("8_nsmp1"), ExtResource("5_exp04"), ExtResource("10_i1m5r"), ExtResource("6_exp05"), ExtResource("12_5c7dc"), ExtResource("7_exp06")])
 completion_reward_coins = 100
+background_texture = ExtResource("bg_chapter")

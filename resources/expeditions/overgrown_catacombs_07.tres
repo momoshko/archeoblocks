@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=24 format=3]
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
 [ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2"]
 [ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="3"]
@@ -8,6 +8,13 @@
 [ext_resource type="Resource" path="res://resources/pieces/plus_5.tres" id="7"]
 [ext_resource type="Resource" path="res://resources/pieces/line_3_vertical.tres" id="8"]
 [ext_resource type="Resource" path="res://resources/pieces/small_l.tres" id="9"]
+[ext_resource type="Resource" path="res://resources/pieces/square_2.tres" id="piece_square_2"]
+[ext_resource type="Resource" path="res://resources/pieces/small_t.tres" id="piece_small_t"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="pg_chapter"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/bone_clasp_full_v1.png" id="art_full"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/bone_clasp_fragment_a_v1.png" id="art_fragment_a"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/bone_clasp_fragment_b_v1.png" id="art_fragment_b"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/bone_clasp_fragment_c_v1.png" id="art_fragment_c"]
 [sub_resource type="Resource" id="FA"]
 script = ExtResource("2")
 id = &"bone_clasp_a"
@@ -29,9 +36,6 @@ cell = Vector2i(1,2)
 [sub_resource type="Resource" id="R3"]
 script = ExtResource("3")
 cell = Vector2i(3,0)
-[sub_resource type="Resource" id="R4"]
-script = ExtResource("3")
-cell = Vector2i(4,4)
 [sub_resource type="Resource" id="R5"]
 script = ExtResource("3")
 cell = Vector2i(6,6)
@@ -64,15 +68,22 @@ title_ru = "Заросшие катакомбы 7 — Зарастающий з�
 card_title_ru = "7 — Зарастающий зал"
 debug_name = "Overgrown Catacombs 7 - Closing Hall"
 artifact_id = &"bone_clasp"
+restoration_stages = Array[StringName]([&"soil", &"crust", &"patina"])
 artifact_name_ru = "Костяная застёжка"
 objective_ru = "Откройте три части застёжки"
 instruction_ru = "Не отдавайте корням крупные свободные области."
 normal_soil_cells = Array[Vector2i]([Vector2i(1,1), Vector2i(6,4), Vector2i(2,7)])
 strong_soil_cells = Array[Vector2i]([Vector2i(6,4), Vector2i(2,7)])
 artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FA"), SubResource("FB"), SubResource("FC")])
+full_artifact_texture = ExtResource("art_full")
+fragment_textures = Array[Texture2D]([ExtResource("art_fragment_a"), ExtResource("art_fragment_b"), ExtResource("art_fragment_c")])
 stone_obstacles = Array[StoneObstacleDefinition]([SubResource("S1"), SubResource("S2"), SubResource("S3"), SubResource("S4")])
-root_obstacles = Array[RootObstacleDefinition]([SubResource("R1"), SubResource("R2"), SubResource("R3"), SubResource("R4"), SubResource("R5"), SubResource("R6"), SubResource("R7")])
+root_obstacles = Array[RootObstacleDefinition]([SubResource("R1"), SubResource("R2"), SubResource("R3"), SubResource("R5"), SubResource("R6"), SubResource("R7")])
 opening_piece_set = Array[PieceDefinition]([ExtResource("5"), ExtResource("9"), ExtResource("8")])
-curated_piece_sequence = Array[PieceDefinition]([ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("5"), ExtResource("9"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("5")])
-expected_moves_min = 30
-expected_moves_max = 40
+curated_piece_sequence = Array[PieceDefinition]([ExtResource("6"), ExtResource("8"), ExtResource("9"), ExtResource("piece_square_2"), ExtResource("5"), ExtResource("piece_small_t")])
+expected_moves_min = 23
+expected_moves_max = 28
+hard_move_limit = 30
+game_scene_path = "res://scenes/screens/game_screen_ch3_07.tscn"
+piece_generation = ExtResource("pg_chapter")
+piece_seed = 23757

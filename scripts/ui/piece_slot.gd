@@ -5,12 +5,11 @@ signal drag_started(definition: PieceDefinition, pointer_position: Vector2, is_t
 signal drag_moved(pointer_position: Vector2)
 signal drag_ended(pointer_position: Vector2)
 
-@export_range(12.0, 40.0, 1.0) var preview_cell_size := 26.0
+@export_range(12.0, 40.0, 1.0) var preview_cell_size := 30.0
 @export_range(0.0, 12.0, 1.0) var preview_gap := 2.0
 @export_range(0.0, 24.0, 1.0) var preview_padding := 5.0
 @export var block_texture_set: BlockTextureSet
 
-@onready var piece_name: Label = $SlotLayout/PieceName
 @onready var piece_canvas: Control = $SlotLayout/PieceCanvas
 @onready var hint_highlight: Panel = $HintHighlight
 
@@ -54,6 +53,10 @@ func set_interaction_enabled(enabled: bool) -> void:
 		cancel_drag()
 
 
+func is_dragging() -> bool:
+	return _dragging
+
+
 func cancel_drag() -> void:
 	_dragging = false
 	_touch_drag = false
@@ -70,12 +73,10 @@ func _refresh_visual() -> void:
 	for piece_cell in _piece_cells:
 		piece_cell.hide()
 	if _definition == null:
-		piece_name.text = "Использовано"
 		modulate = Color(1.0, 1.0, 1.0, 0.45)
 		_update_mouse_filter()
 		return
 
-	piece_name.text = _definition.display_name
 	modulate = Color.WHITE
 	_layout_piece_preview()
 	_update_mouse_filter()
@@ -134,7 +135,10 @@ func _gui_input(event: InputEvent) -> void:
 	if not _available or not _interaction_enabled or _dragging:
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		_begin_drag(event.global_position, false, -1)
+		# On phones Godot sends a mouse press emulated from the finger (device -1)
+		# before the ScreenTouch itself; it is still a finger, so use the touch lift.
+		var from_touch: bool = event.device == InputEvent.DEVICE_ID_EMULATION
+		_begin_drag(event.global_position, from_touch, -1)
 		accept_event()
 	elif event is InputEventScreenTouch and event.pressed:
 		_begin_drag(event.position, true, event.index)
@@ -156,9 +160,11 @@ func _input(event: InputEvent) -> void:
 			_end_drag(event.position)
 
 
+## is_touch picks the lift; touch_index >= 0 means the drag follows ScreenDrag
+## events of that finger, otherwise it follows (possibly emulated) mouse events.
 func _begin_drag(pointer_position: Vector2, is_touch: bool, touch_index: int) -> void:
 	_dragging = true
-	_touch_drag = is_touch
+	_touch_drag = touch_index >= 0
 	_touch_index = touch_index
 	drag_started.emit(_definition, pointer_position, is_touch)
 

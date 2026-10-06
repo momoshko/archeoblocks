@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_qwaiy"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_ejiem"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/fresco_fragment_full_v1.png" id="3_piows"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="4_mygkm"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_0uc3f"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_urcf7"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_uopvs"]
+
+[sub_resource type="Resource" id="Resource_qwaiy"]
+script = ExtResource("5_0uc3f")
+cell = Vector2i(0, 3)
+
+[resource]
+script = ExtResource("6_urcf7")
+id = &"overgrown_catacombs_06_site"
+goal = &"clear_site"
+title_ru = "Заросшие катакомбы 6 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Overgrown Catacombs 6 - Two Fronts - site"
+artifact_id = &"fresco_fragment"
+artifact_name_ru = "Фрагмент фрески"
+full_artifact_texture = ExtResource("3_piows")
+objective_ru = "Расчистите участок: снимите весь грунт, срежьте корни"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4), Vector2i(5, 4)])
+root_obstacles = Array[ExtResource("5_0uc3f")]([SubResource("Resource_qwaiy")])
+piece_generation = ExtResource("4_mygkm")
+expected_moves_min = 19
+expected_moves_max = 23
+hard_move_limit = 22
+game_scene_path = "res://scenes/screens/game_screen_site_overgrown_catacombs_06.tscn"

@@ -50,3 +50,4 @@ normal_soil_cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2,
 artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FragmentReliefA"), SubResource("FragmentReliefB")])
 stone_obstacles = Array[StoneObstacleDefinition]([SubResource("StoneA"), SubResource("StoneB"), SubResource("StoneC"), SubResource("StoneD")])
 opening_piece_set = Array[PieceDefinition]([ExtResource("4_line"), ExtResource("4_line"), ExtResource("5_single")])
+game_scene_path = "res://scenes/screens/game_screen_stone_prototype.tscn"

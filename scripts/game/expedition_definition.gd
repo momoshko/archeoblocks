@@ -3,8 +3,15 @@ extends Resource
 
 const BOARD_WIDTH := 8
 const BOARD_HEIGHT := 8
+## Dig up the find (all artifact fragments).
+const GOAL_FIND := &"find"
+## Prepare the site: remove all soil and break every stone / cut every root.
+## The find fields (artifact_id, name, picture) name the find this site leads to.
+const GOAL_CLEAR_SITE := &"clear_site"
 
 @export var id: StringName
+## GOAL_FIND (excavation) or GOAL_CLEAR_SITE (site preparation before it).
+@export var goal: StringName = GOAL_FIND
 @export var title_ru: String
 @export var card_title_ru: String
 @export var debug_name: String
@@ -20,9 +27,28 @@ const BOARD_HEIGHT := 8
 @export var stone_obstacles: Array[StoneObstacleDefinition] = []
 @export var root_obstacles: Array[RootObstacleDefinition] = []
 @export var opening_piece_set: Array[PieceDefinition] = []
+## Scripted start: these triples come first (once when piece_generation is set).
 @export var curated_piece_sequence: Array[PieceDefinition] = []
+## Weighted random refills after the scripted start (chapter config). Empty =
+## the old fixed loop.
+@export var piece_generation: PieceGenerationConfig
+## Seed for the refills; 0 = derived from the expedition id.
+@export var piece_seed := 0
+## Same pieces on every attempt (the onboarding level shows exact moves).
+## Other expeditions draw new pieces each attempt (GameSession.random_campaign_pieces).
+@export var fixed_pieces := false
 @export_range(0, 100, 1) var expected_moves_min := 0
 @export_range(0, 100, 1) var expected_moves_max := 0
+## Restoration stages of this find, in order: &"shards", &"soil", &"crust",
+## &"patina" (empty = soil and patina). Chosen by material, see RESTORATION_RU.md.
+@export var restoration_stages: Array[StringName] = []
+## Number of shards for the "shards" stage (0 = 4).
+@export_range(0, 6, 1) var restoration_shards := 0
+## Move limit on Hard (0 = Difficulty.move_limit formula from expected_moves_max).
+## Written by tools/difficulty_probe.gd --hard --write-limits.
+@export_range(0, 200, 1) var hard_move_limit := 0
+## Game screen that plays this expedition. Used by "Play" to continue the campaign.
+@export_file("*.tscn") var game_scene_path := ""
 
 
 func validate() -> PackedStringArray:
@@ -41,6 +67,8 @@ func validate() -> PackedStringArray:
 	for piece in curated_piece_sequence:
 		if piece == null:
 			errors.append("curated_piece_sequence contains a null entry")
+	if piece_generation != null:
+		errors.append_array(piece_generation.validate())
 	var obstacle_cells: Dictionary = {}
 	for obstacle in stone_obstacles:
 		if obstacle == null:
@@ -67,7 +95,14 @@ func validate() -> PackedStringArray:
 
 	var fragment_ids: Dictionary = {}
 	var cell_owners: Dictionary = {}
-	if artifact_fragments.is_empty():
+	if is_site_preparation():
+		if not artifact_fragments.is_empty():
+			errors.append("a clear_site expedition has no artifact_fragments")
+		if normal_soil_cells.is_empty() and strong_soil_cells.is_empty() and stone_obstacles.is_empty() and root_obstacles.is_empty():
+			errors.append("a clear_site expedition needs soil or obstacles to clear")
+	elif goal != GOAL_FIND:
+		errors.append("unknown goal: %s" % goal)
+	elif artifact_fragments.is_empty():
 		errors.append("artifact_fragments must contain at least one fragment")
 	for fragment in artifact_fragments:
 		if fragment == null:
@@ -125,3 +160,12 @@ func _validate_cells(cells: Array[Vector2i], field_name: String, errors: PackedS
 
 func _is_inside(cell: Vector2i) -> bool:
 	return cell.x >= 0 and cell.x < BOARD_WIDTH and cell.y >= 0 and cell.y < BOARD_HEIGHT
+
+
+## Seed used by PieceSequence for this expedition's refills.
+func is_site_preparation() -> bool:
+	return goal == GOAL_CLEAR_SITE
+
+
+func resolved_piece_seed() -> int:
+	return piece_seed if piece_seed != 0 else PieceSequence.seed_for(String(id))

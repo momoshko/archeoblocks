@@ -1,0 +1,117 @@
+{
+  "production_count": 6,
+  "assembly_pixel_mismatch": 0,
+  "results": [
+    {
+      "name": "courtyard_seal_full_v1",
+      "source_has_alpha": true,
+      "background_pixels_removed": 0
+    },
+    {
+      "name": "stone_amulet_full_v1",
+      "source_has_alpha": false,
+      "background_pixels_removed": 979250
+    },
+    {
+      "name": "golden_mask_full_v1",
+      "source_has_alpha": false,
+      "background_pixels_removed": 685290
+    },
+    {
+      "name": "courtyard_seal_full_v1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "channels": 4,
+      "transparent_pixels": 146775,
+      "opaque_pixels": 729,
+      "alpha_bounds": {
+        "left": 67,
+        "top": 64,
+        "width": 378,
+        "height": 384
+      }
+    },
+    {
+      "name": "stone_amulet_full_v1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "channels": 4,
+      "transparent_pixels": 199663,
+      "opaque_pixels": 59243,
+      "alpha_bounds": {
+        "left": 123,
+        "top": 64,
+        "width": 266,
+        "height": 384
+      }
+    },
+    {
+      "name": "golden_mask_full_v1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "channels": 4,
+      "transparent_pixels": 163029,
+      "opaque_pixels": 95113,
+      "alpha_bounds": {
+        "left": 64,
+        "top": 73,
+        "width": 384,
+        "height": 366
+      }
+    },
+    {
+      "name": "golden_mask_fragment_a_v1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "channels": 4,
+      "transparent_pixels": 228176,
+      "opaque_pixels": 32315,
+      "alpha_bounds": {
+        "left": 79,
+        "top": 173,
+        "width": 353,
+        "height": 165
+      }
+    },
+    {
+      "name": "golden_mask_fragment_b_v1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "channels": 4,
+      "transparent_pixels": 231467,
+      "opaque_pixels": 30283,
+      "alpha_bounds": {
+        "left": 79,
+        "top": 190,
+        "width": 354,
+        "height": 131
+      }
+    },
+    {
+      "name": "golden_mask_fragment_c_v1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "channels": 4,
+      "transparent_pixels": 227674,
+      "opaque_pixels": 32515,
+      "alpha_bounds": {
+        "left": 64,
+        "top": 173,
+        "width": 384,
+        "height": 166
+      }
+    }
+  ]
+}

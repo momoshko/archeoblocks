@@ -4,7 +4,7 @@
 [ext_resource type="Resource" path="res://resources/expeditions/expedition_03.tres" id="2_expedition"]
 
 [node name="GameScreen03" instance=ExtResource("1_game")]
-next_expedition_scene_path = "res://scenes/screens/game_screen_04.tscn"
+next_expedition_scene_path = "res://scenes/screens/game_screen_site_expedition_04.tscn"
 
 [node name="GameSession" parent="." index="8"]
 expedition_definition = ExtResource("2_expedition")

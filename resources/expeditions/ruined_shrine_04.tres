@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=19 format=3]
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
 
 [ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1_expedition"]
 [ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2_fragment"]
@@ -10,6 +10,10 @@
 [ext_resource type="Resource" path="res://resources/pieces/small_t.tres" id="8_t"]
 [ext_resource type="Resource" path="res://resources/pieces/domino_vertical.tres" id="9_domino"]
 [ext_resource type="Resource" path="res://resources/pieces/square_2.tres" id="10_square"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_2.tres" id="pg_chapter"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ruined_shrine/stele_fragment_full_v1.png" id="art_full"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ruined_shrine/stele_fragment_fragment_a_v1.png" id="art_fragment_a"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ruined_shrine/stele_fragment_fragment_b_v1.png" id="art_fragment_b"]
 
 [sub_resource type="Resource" id="FragmentA"]
 script = ExtResource("2_fragment")
@@ -53,14 +57,20 @@ title_ru = "Разрушенное святилище 4 — Под завало�
 card_title_ru = "4 — Под завалом"
 debug_name = "Ruined Shrine 4 - Buried Below"
 artifact_id = &"stele_fragment"
+restoration_stages = Array[StringName]([&"soil", &"crust", &"patina"])
 artifact_name_ru = "Обломок стелы"
 objective_ru = "Освободите и раскопайте два фрагмента стелы"
 instruction_ru = "Сначала уберите завал, затем очищайте грунт под ним"
 normal_soil_cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1), Vector2i(7, 1), Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2), Vector2i(5, 2), Vector2i(6, 2), Vector2i(7, 2), Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(6, 3), Vector2i(7, 3), Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4), Vector2i(5, 4), Vector2i(6, 4), Vector2i(7, 4), Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5), Vector2i(4, 5), Vector2i(5, 5), Vector2i(6, 5), Vector2i(7, 5), Vector2i(0, 6), Vector2i(1, 6), Vector2i(2, 6), Vector2i(3, 6), Vector2i(4, 6), Vector2i(5, 6), Vector2i(6, 6), Vector2i(7, 6), Vector2i(0, 7), Vector2i(1, 7), Vector2i(2, 7), Vector2i(3, 7), Vector2i(4, 7), Vector2i(5, 7), Vector2i(6, 7), Vector2i(7, 7)])
 strong_soil_cells = Array[Vector2i]([Vector2i(6, 5), Vector2i(4, 3)])
 artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FragmentA"), SubResource("FragmentB")])
+full_artifact_texture = ExtResource("art_full")
+fragment_textures = Array[Texture2D]([ExtResource("art_fragment_a"), ExtResource("art_fragment_b")])
 stone_obstacles = Array[StoneObstacleDefinition]([SubResource("StoneA"), SubResource("StoneB"), SubResource("StoneC"), SubResource("StoneD"), SubResource("StoneE")])
 opening_piece_set = Array[PieceDefinition]([ExtResource("7_l"), ExtResource("4_line_h"), ExtResource("9_domino")])
 curated_piece_sequence = Array[PieceDefinition]([ExtResource("6_line4"), ExtResource("8_t"), ExtResource("5_line_v"), ExtResource("10_square"), ExtResource("7_l"), ExtResource("4_line_h"), ExtResource("9_domino"), ExtResource("6_line4"), ExtResource("8_t")])
-expected_moves_min = 18
-expected_moves_max = 25
+expected_moves_min = 27
+expected_moves_max = 34
+hard_move_limit = 45
+game_scene_path = "res://scenes/screens/game_screen_ch2_04.tscn"
+piece_generation = ExtResource("pg_chapter")

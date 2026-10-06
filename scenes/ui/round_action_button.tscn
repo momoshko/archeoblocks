@@ -1,0 +1,59 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/round_action_button.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://c4f0pijaobnc4" path="res://assets/ui_art/ui/badge.png" id="2_badge"]
+[ext_resource type="Texture2D" uid="uid://bfsthi3q343m1" path="res://assets/ui_art/icons/video_ad.png" id="3_video"]
+
+[node name="RoundActionButton" type="Button"]
+theme_type_variation = &"RoundButton"
+custom_minimum_size = Vector2(112, 112)
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_script")
+
+[node name="Badge" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -44.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 44.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("2_badge")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CountLabel" type="Label" parent="Badge"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.96, 0.86, 1)
+theme_override_colors/font_outline_color = Color(0.25, 0.12, 0.04, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 26
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AdIcon" type="TextureRect" parent="Badge"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_video")
+expand_mode = 1
+stretch_mode = 5

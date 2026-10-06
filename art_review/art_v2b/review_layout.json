@@ -1,0 +1,38 @@
+{
+  "gameplay": {
+    "canvas": [
+      720,
+      1280
+    ],
+    "frame": {
+      "x": 24,
+      "y": 310,
+      "w": 672,
+      "h": 672
+    },
+    "board": {
+      "x": 112,
+      "y": 398,
+      "width": 496,
+      "height": 496,
+      "cellPitch": 62
+    },
+    "source": "art_review/art_v2a/stress_test_board_8x8.png",
+    "note": "Review-only fixture; separate text. V1 information order and controls retained, lighter supporting info and counters."
+  },
+  "menu": {
+    "canvas": [
+      720,
+      1280
+    ],
+    "actions": [
+      "Играть",
+      "Экспедиции",
+      "Коллекция",
+      "Настройки"
+    ],
+    "backdrop": "plain review color, no generated screen background",
+    "emblem": "Existing V2A target center crop; review motif only, not final logo",
+    "text": "Composited separately; not baked into production assets"
+  }
+}

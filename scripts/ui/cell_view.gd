@@ -20,11 +20,20 @@ extends Control
 @onready var hint_ghost: TextureRect = $HintGhost
 @onready var selection_highlight: Panel = $SelectionHighlight
 @onready var root_growth_warning: Control = $RootGrowthWarning
+@onready var countdown: Label = $Countdown
 
 @export_range(0.05, 1.0, 0.01) var dig_feedback_duration := 0.18
 @export_range(0.2, 1.0, 0.05) var artifact_intro_pulse_duration := 0.45
 @export_range(1.0, 1.2, 0.01) var artifact_intro_pulse_scale := 1.08
 @export_range(0.45, 0.6, 0.01) var hint_ghost_alpha := 0.52
+## Placed piece "lands": the block starts this much bigger and settles.
+@export_range(1.0, 1.3, 0.01) var land_scale := 1.12
+@export_range(0.04, 0.3, 0.01) var land_duration := 0.1
+## A cleared block swells to this size while it fades (it "pops").
+@export_range(1.0, 1.6, 0.01) var clear_pop_scale := 1.25
+
+## Colour of the block standing here (for gem shards when the line pops).
+var occupied_color := Color.WHITE
 
 var _artifact_target_depth := 0
 var _artifact_target_emphasized := false
@@ -32,6 +41,7 @@ var _dig_feedback_tween: Tween
 var _fragment_feedback_tween: Tween
 var _clear_feedback_tween: Tween
 var _artifact_intro_tween: Tween
+var _land_tween: Tween
 
 
 func reset_visual_state() -> void:
@@ -47,15 +57,18 @@ func reset_visual_state() -> void:
 	dig_flash.hide()
 	block_visual.hide()
 	block_visual.modulate = Color.WHITE
+	block_visual.scale = Vector2.ONE
 	stone_obstacle.reset_visual()
 	root_obstacle.reset_visual()
 	hint_ghost.hide()
 	root_growth_warning.hide()
+	countdown.hide()
 
 
 func set_empty() -> void:
 	block_visual.hide()
 	block_visual.modulate = Color.WHITE
+	block_visual.scale = Vector2.ONE
 	clear_preview()
 
 
@@ -63,10 +76,25 @@ func set_occupied(color: Color) -> void:
 	var resolved_texture := BlockTextureResolver.texture_for_color(block_texture_set, color)
 	if resolved_texture != null:
 		block_visual.texture = resolved_texture
+	occupied_color = color
 	block_visual.modulate = Color.WHITE
+	block_visual.scale = Vector2.ONE
 	block_visual.show()
 	hint_ghost.hide()
 	clear_preview()
+
+
+## Endless dig spot: moves left before the soil caves in (< 0 hides it).
+## The last three moves turn the number red.
+func set_countdown(moves_left: int) -> void:
+	countdown.visible = moves_left >= 0
+	if moves_left < 0:
+		return
+	countdown.text = str(moves_left)
+	countdown.add_theme_color_override(
+		"font_color",
+		Color(1, 0.45, 0.35) if moves_left <= 3 else Color(1, 0.94, 0.78)
+	)
 
 
 func set_stone_obstacle(durability: int) -> void:
@@ -261,13 +289,31 @@ func clear_preview() -> void:
 	selection_highlight.hide()
 
 
-func start_clear_feedback(duration: float) -> void:
+## The block of a full line pops: after `delay` (the wave from the placed
+## piece reaches this cell) it swells a little and fades out.
+func start_clear_feedback(duration: float, delay := 0.0) -> void:
 	if not block_visual.visible:
 		return
 	if _clear_feedback_tween != null:
 		_clear_feedback_tween.kill()
-	_clear_feedback_tween = create_tween()
-	_clear_feedback_tween.tween_property(block_visual, "modulate:a", 0.1, duration)
+	if _land_tween != null:
+		_land_tween.kill()
+	block_visual.pivot_offset = block_visual.size * 0.5
+	_clear_feedback_tween = create_tween().set_parallel(true)
+	_clear_feedback_tween.tween_property(block_visual, "scale", Vector2.ONE * clear_pop_scale, duration).set_delay(delay).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	_clear_feedback_tween.tween_property(block_visual, "modulate:a", 0.0, duration).set_delay(delay).set_ease(Tween.EASE_IN)
+
+
+## A piece was just put here: the block drops in slightly bigger and settles.
+func play_land(delay := 0.0) -> void:
+	if not block_visual.visible:
+		return
+	if _land_tween != null:
+		_land_tween.kill()
+	block_visual.pivot_offset = block_visual.size * 0.5
+	block_visual.scale = Vector2.ONE * land_scale
+	_land_tween = create_tween()
+	_land_tween.tween_property(block_visual, "scale", Vector2.ONE, land_duration).set_delay(delay).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
 func clear_transient_feedback() -> void:
@@ -281,6 +327,10 @@ func clear_transient_feedback() -> void:
 	if _clear_feedback_tween != null:
 		_clear_feedback_tween.kill()
 		_clear_feedback_tween = null
+	if _land_tween != null:
+		_land_tween.kill()
+		_land_tween = null
+	block_visual.scale = Vector2.ONE
 	dig_flash.hide()
 	dig_flash.modulate = Color.WHITE
 	selection_highlight.hide()

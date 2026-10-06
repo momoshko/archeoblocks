@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3]
 
-[ext_resource type="Script" path="res://scripts/simple_back_screen.gd" id="1_script"]
+[ext_resource type="Script" path="res://scripts/settings_screen.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/menu/background.jpg" id="bg_wall"]
+[ext_resource type="Texture2D" uid="uid://bdbehwvn3k3oj" path="res://assets/ui_art/icons/back.png" id="icon_back"]
+[ext_resource type="Texture2D" uid="uid://15aw1l5204fa" path="res://assets/ui_art/icons/music.png" id="icon_music"]
+[ext_resource type="Texture2D" uid="uid://dfjv7gabr8cq8" path="res://assets/ui_art/icons/sound_on.png" id="icon_sound_on"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -11,14 +15,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.5, 0.48, 0.45, 1)
+texture = ExtResource("bg_wall")
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.211765, 0.152941, 0.0901961, 1)
 
 [node name="ContentCenter" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -45,12 +53,16 @@ custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
 [node name="BackButton" type="Button" parent="ContentCenter/PortraitContent/Layout/Header"]
+theme_type_variation = &"SmallButton"
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 66)
 layout_mode = 2
-text = "Назад"
+tooltip_text = "Назад"
+icon = ExtResource("icon_back")
+icon_alignment = 1
+custom_minimum_size = Vector2(96, 66)
 
 [node name="Title" type="Label" parent="ContentCenter/PortraitContent/Layout/Header"]
+theme_type_variation = &"HeaderLabel"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
@@ -69,38 +81,87 @@ theme_override_constants/separation = 24
 [node name="MusicRow" type="HBoxContainer" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows"]
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MusicIcon" type="TextureRect" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/MusicRow"]
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("icon_music")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="MusicLabel" type="Label" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/MusicRow"]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 27
 text = "Музыка"
 vertical_alignment = 1
 
-[node name="MusicToggle" type="CheckButton" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/MusicRow"]
-custom_minimum_size = Vector2(150, 64)
+[node name="MusicSlider" type="HSlider" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/MusicRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 56)
 layout_mode = 2
-button_pressed = true
-text = "Вкл."
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 100.0
+step = 5.0
+value = 80.0
+
+[node name="MusicValue" type="Label" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/MusicRow"]
+unique_name_in_owner = true
+auto_translate_mode = 2
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "80%"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="SoundRow" type="HBoxContainer" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows"]
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SoundIcon" type="TextureRect" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/SoundRow"]
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("icon_sound_on")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="SoundLabel" type="Label" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/SoundRow"]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 27
 text = "Звуки"
 vertical_alignment = 1
 
-[node name="SoundToggle" type="CheckButton" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/SoundRow"]
-custom_minimum_size = Vector2(150, 64)
+[node name="SoundSlider" type="HSlider" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/SoundRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 56)
 layout_mode = 2
-button_pressed = true
-text = "Вкл."
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 100.0
+step = 5.0
+value = 80.0
+
+[node name="SoundValue" type="Label" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/SoundRow"]
+unique_name_in_owner = true
+auto_translate_mode = 2
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "80%"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="LanguageRow" type="HBoxContainer" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 
@@ -112,6 +173,8 @@ text = "Язык"
 vertical_alignment = 1
 
 [node name="LanguageOption" type="OptionButton" parent="ContentCenter/PortraitContent/Layout/SettingsPanel/SettingsRows/LanguageRow"]
+unique_name_in_owner = true
+auto_translate_mode = 2
 custom_minimum_size = Vector2(220, 64)
 layout_mode = 2
 item_count = 2
@@ -122,9 +185,19 @@ popup/item_1/text = "English"
 popup/item_1/id = 1
 
 [node name="Note" type="Label" parent="ContentCenter/PortraitContent/Layout"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
 text = "В M0 настройки служат редактируемым визуальным примером."
 horizontal_alignment = 1
 autowrap_mode = 2
 
+
+[node name="Credits" type="Label" parent="ContentCenter/PortraitContent/Layout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0.756863, 0.572549, 1)
+theme_override_font_sizes/font_size = 18
+text = "Звуки: UI Sound Effects by lolurio (CC BY 4.0), Kenney (CC0)"
+horizontal_alignment = 1
+autowrap_mode = 3

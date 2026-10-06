@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_1j3ic"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_78ee3"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/emerald_idol_full_v1.png" id="3_5i5ij"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="4_lr68t"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_fi3kl"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_8od1p"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_hvx1c"]
+
+[sub_resource type="Resource" id="Resource_1j3ic"]
+script = ExtResource("5_fi3kl")
+cell = Vector2i(7, 4)
+
+[sub_resource type="Resource" id="Resource_78ee3"]
+script = ExtResource("7_hvx1c")
+cell = Vector2i(0, 3)
+durability = 2
+
+[resource]
+script = ExtResource("6_8od1p")
+id = &"overgrown_catacombs_10_site"
+goal = &"clear_site"
+title_ru = "Заросшие катакомбы 10 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Overgrown Catacombs 10 - Heart of the Catacombs - site"
+artifact_id = &"emerald_idol"
+artifact_name_ru = "Изумрудный идол"
+full_artifact_texture = ExtResource("3_5i5ij")
+objective_ru = "Расчистите участок: снимите весь грунт, разбейте завалы, срежьте корни"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(1, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(6, 3), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4), Vector2i(5, 4), Vector2i(6, 4)])
+strong_soil_cells = Array[Vector2i]([Vector2i(2, 3)])
+stone_obstacles = Array[ExtResource("7_hvx1c")]([SubResource("Resource_78ee3")])
+root_obstacles = Array[ExtResource("5_fi3kl")]([SubResource("Resource_1j3ic")])
+piece_generation = ExtResource("4_lr68t")
+expected_moves_min = 19
+expected_moves_max = 25
+hard_move_limit = 31
+game_scene_path = "res://scenes/screens/game_screen_site_overgrown_catacombs_10.tscn"

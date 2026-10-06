@@ -1,22 +1,12 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/pause_popup.gd" id="1_script"]
-
-[sub_resource type="StyleBoxFlat" id="StylePopup"]
-bg_color = Color(0.847059, 0.74902, 0.560784, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.294118, 0.2, 0.105882, 1)
-corner_radius_top_left = 22
-corner_radius_top_right = 22
-corner_radius_bottom_right = 22
-corner_radius_bottom_left = 22
-content_margin_left = 34.0
-content_margin_top = 30.0
-content_margin_right = 34.0
-content_margin_bottom = 30.0
+[ext_resource type="Texture2D" uid="uid://dvu3kt752eafr" path="res://assets/ui_art/icons/play.png" id="icon_play"]
+[ext_resource type="Texture2D" uid="uid://dkw7h6hi8ff2h" path="res://assets/ui_art/icons/restart.png" id="icon_restart"]
+[ext_resource type="Texture2D" uid="uid://dfjv7gabr8cq8" path="res://assets/ui_art/icons/sound_on.png" id="icon_sound_on"]
+[ext_resource type="Texture2D" uid="uid://37suoky4b0uh" path="res://assets/ui_art/icons/sound_off.png" id="icon_sound_off"]
+[ext_resource type="Texture2D" uid="uid://ckbfabcfm4ait" path="res://assets/ui_art/icons/home.png" id="icon_home"]
+[ext_resource type="Script" path="res://scripts/ui/pop_in_motion.gd" id="pop_in"]
 
 [node name="PausePopup" type="Control"]
 unique_name_in_owner = true
@@ -28,6 +18,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
+sound_on_icon = ExtResource("icon_sound_on")
+sound_off_icon = ExtResource("icon_sound_off")
 
 [node name="Dimmer" type="ColorRect" parent="."]
 layout_mode = 1
@@ -49,32 +41,47 @@ grow_vertical = 2
 [node name="PopupPanel" type="PanelContainer" parent="PopupCenter"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StylePopup")
 
 [node name="PopupLayout" type="VBoxContainer" parent="PopupCenter/PopupPanel"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="PopupCenter/PopupPanel/PopupLayout"]
+theme_type_variation = &"HeaderLabel"
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Пауза"
 horizontal_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="PopupCenter/PopupPanel/PopupLayout"]
+theme_type_variation = &"PrimaryButton"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 68)
 layout_mode = 2
 text = "Продолжить"
+icon = ExtResource("icon_play")
 
 [node name="RestartButton" type="Button" parent="PopupCenter/PopupPanel/PopupLayout"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 68)
 layout_mode = 2
 text = "Начать заново"
+icon = ExtResource("icon_restart")
+
+[node name="SoundButton" type="Button" parent="PopupCenter/PopupPanel/PopupLayout"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+text = "Звук: вкл."
+icon = ExtResource("icon_sound_on")
 
 [node name="MenuButton" type="Button" parent="PopupCenter/PopupPanel/PopupLayout"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 68)
 layout_mode = 2
 text = "В меню"
+icon = ExtResource("icon_home")
+
+[node name="PopInMotion" type="Node" parent="."]
+script = ExtResource("pop_in")
+panel_path = NodePath("../PopupCenter/PopupPanel")

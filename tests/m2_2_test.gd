@@ -15,6 +15,7 @@ func _expect(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	OnboardingTutorial.auto_start = false
 	await _test_piece_slot_centering()
 	await _test_single_game_screen_scenario()
 	if _failures.is_empty():
@@ -42,10 +43,10 @@ func _test_piece_slot_centering() -> void:
 		var bounds := slot.get_piece_visual_bounds()
 		_expect(bounds.has_area(), "%s preview should have bounds" % definition.id)
 		_expect(bounds.get_center().is_equal_approx(slot.piece_canvas.size * 0.5), "%s preview should be centered on both axes" % definition.id)
-		visual_cell_sizes.append((slot._piece_cells[0] as ColorRect).size.x)
+		visual_cell_sizes.append((slot._piece_cells[0] as Control).size.x)
 	_expect(is_equal_approx(visual_cell_sizes[0], visual_cell_sizes[1]) and is_equal_approx(visual_cell_sizes[1], visual_cell_sizes[2]), "Sample pieces should use one visual scale")
 	slot.set_definition(null)
-	_expect(slot.piece_name.text == "Использовано" and not (slot._piece_cells[0] as ColorRect).visible, "Used slot should clear its old preview")
+	_expect(slot.modulate.a < 0.9 and not (slot._piece_cells[0] as Control).visible, "Used slot should clear its old preview")
 	slot.queue_free()
 	await process_frame
 
@@ -62,6 +63,19 @@ func _test_single_game_screen_scenario() -> void:
 	var single := load("res://resources/pieces/single.tres") as PieceDefinition
 	var square := load("res://resources/pieces/square_2.tres") as PieceDefinition
 
+	# Fixture: an unfinished artifact at (1, 1) under a soil row, independent of Expedition 1 data.
+	var fragment := ArtifactFragmentDefinition.new()
+	fragment.id = &"row_one"
+	fragment.cells.assign([Vector2i(1, 1)])
+	var fixture := ExpeditionDefinition.new()
+	fixture.id = &"m2_2_fixture"
+	fixture.title_ru = "Тест M2.2"
+	fixture.artifact_name_ru = "Тест"
+	for x in 8:
+		fixture.normal_soil_cells.append(Vector2i(x, 1))
+	fixture.artifact_fragments = [fragment] as Array[ArtifactFragmentDefinition]
+	session.expedition_definition = fixture
+	session.restart_expedition()
 	var hint_set: Array[PieceDefinition] = [single, single, null]
 	tray.load_set(hint_set)
 	var single_shape: Array[Vector2i] = [Vector2i.ZERO]
@@ -86,11 +100,11 @@ func _test_single_game_screen_scenario() -> void:
 
 	var artifact_cell := board.get_cell_view(Vector2i(1, 1))
 	artifact_cell.set_excavation_state(2, true, false)
-	var depth_2_alpha := artifact_cell.artifact_hint.modulate.a
+	_expect(artifact_cell.burial_depth_2.visible and not artifact_cell.burial_depth_1.visible, "Depth 2 artifact shows the deep burial art")
 	artifact_cell.set_excavation_state(1, true, false)
-	_expect(artifact_cell.artifact_hint.modulate.a > depth_2_alpha, "Artifact hint should become clearer from depth 2 to depth 1")
+	_expect(artifact_cell.burial_depth_1.visible and not artifact_cell.burial_depth_2.visible, "Depth 1 artifact shows the shallow burial art")
 	artifact_cell.set_excavation_state(0, true, true)
-	_expect(not artifact_cell.artifact_target_border.visible and artifact_cell.artifact_hint.visible, "Completed fragment should remain visible without unfinished-target border")
+	_expect(not artifact_cell.artifact_target_border.visible, "Completed fragment should drop the unfinished-target border")
 
 	session.action_feedback.clear()
 	session.board_model.reset()

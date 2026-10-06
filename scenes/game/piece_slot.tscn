@@ -1,24 +1,24 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/piece_slot.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://assets/blocks/core_blocks_pack_v1/block_green_v1.png" id="2_green"]
-[ext_resource type="Resource" path="res://resources/visuals/core_block_textures_v1.tres" id="3_blocks"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/blocks/block_green.png" id="2_green"]
+[ext_resource type="Resource" path="res://resources/visuals/block_textures_v2a.tres" id="3_blocks"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/ui/piece_slot.png" id="4_slot"]
 
-[sub_resource type="StyleBoxFlat" id="StyleSlot"]
-bg_color = Color(0.882353, 0.8, 0.627451, 0.95)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.384314, 0.286275, 0.160784, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-content_margin_left = 10.0
-content_margin_top = 8.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
+[sub_resource type="StyleBoxTexture" id="StyleSlot"]
+content_margin_left = 8.0
+content_margin_top = 10.0
+content_margin_right = 8.0
+content_margin_bottom = 12.0
+texture = ExtResource("4_slot")
+texture_margin_left = 30.0
+texture_margin_top = 25.0
+texture_margin_right = 30.0
+texture_margin_bottom = 25.0
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxFlat" id="StyleHint"]
 bg_color = Color(1, 0.85098, 0.286275, 0.12)
@@ -44,13 +44,6 @@ block_texture_set = ExtResource("3_blocks")
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 4
-
-[node name="PieceName" type="Label" parent="SlotLayout"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_font_sizes/font_size = 17
-text = "L"
-horizontal_alignment = 1
 
 [node name="PieceCanvas" type="Control" parent="SlotLayout"]
 custom_minimum_size = Vector2(150, 92)

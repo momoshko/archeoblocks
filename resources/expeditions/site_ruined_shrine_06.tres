@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_yc0e3"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_ery7p"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ruined_shrine/incense_vessel_full_v1.png" id="3_e7atj"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_2.tres" id="4_uggwr"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_qw887"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_q1787"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_4h5v4"]
+
+[sub_resource type="Resource" id="Resource_yc0e3"]
+script = ExtResource("7_4h5v4")
+cell = Vector2i(3, 0)
+durability = 2
+
+[sub_resource type="Resource" id="Resource_ery7p"]
+script = ExtResource("7_4h5v4")
+cell = Vector2i(3, 3)
+
+[resource]
+script = ExtResource("6_q1787")
+id = &"ruined_shrine_06_site"
+goal = &"clear_site"
+title_ru = "Разрушенное святилище 6 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Ruined Shrine 6 - Two Paths - site"
+artifact_id = &"incense_vessel"
+artifact_name_ru = "Сосуд для благовоний"
+full_artifact_texture = ExtResource("3_e7atj")
+objective_ru = "Расчистите участок: снимите весь грунт, разбейте завалы"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(0, 7), Vector2i(1, 7), Vector2i(2, 7), Vector2i(3, 7), Vector2i(4, 7), Vector2i(5, 7), Vector2i(6, 7), Vector2i(7, 7)])
+stone_obstacles = Array[ExtResource("7_4h5v4")]([SubResource("Resource_yc0e3"), SubResource("Resource_ery7p")])
+piece_generation = ExtResource("4_uggwr")
+expected_moves_min = 22
+expected_moves_max = 23
+hard_move_limit = 25
+game_scene_path = "res://scenes/screens/game_screen_site_ruined_shrine_06.tscn"

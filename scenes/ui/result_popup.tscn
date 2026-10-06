@@ -1,22 +1,25 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/result_popup.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dkw7h6hi8ff2h" path="res://assets/ui_art/icons/restart.png" id="icon_restart"]
+[ext_resource type="Texture2D" uid="uid://dvu3kt752eafr" path="res://assets/ui_art/icons/play.png" id="icon_play"]
+[ext_resource type="Texture2D" uid="uid://ckbfabcfm4ait" path="res://assets/ui_art/icons/home.png" id="icon_home"]
+[ext_resource type="Texture2D" uid="uid://41neqncvbgsu" path="res://assets/ui_art/icons/undo.png" id="icon_undo"]
+[ext_resource type="Texture2D" uid="uid://dq3efu8ys36ir" path="res://assets/ui_art/icons/brush.png" id="icon_brush"]
+[ext_resource type="PackedScene" path="res://scenes/ui/find_glow.tscn" id="find_glow"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/ui/ribbon.png" id="ribbon"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/fx/confetti_atlas.png" id="confetti"]
+[ext_resource type="Script" path="res://scripts/ui/pop_in_motion.gd" id="pop_in"]
 
-[sub_resource type="StyleBoxFlat" id="StyleResult"]
-bg_color = Color(0.890196, 0.803922, 0.619608, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.639216, 0.466667, 0.164706, 1)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
-content_margin_left = 36.0
-content_margin_top = 32.0
-content_margin_right = 36.0
-content_margin_bottom = 32.0
+[sub_resource type="CanvasItemMaterial" id="ConfettiFrames"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="ConfettiFade"]
+offsets = PackedFloat32Array(0, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleChapterComplete"]
 bg_color = Color(0.411765, 0.294118, 0.12549, 0.18)
@@ -43,6 +46,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
+next_icon = ExtResource("icon_play")
+menu_icon = ExtResource("icon_home")
 
 [node name="Dimmer" type="ColorRect" parent="."]
 layout_mode = 1
@@ -52,6 +57,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.054902, 0.0392157, 0.0235294, 0.72)
+
+[node name="Confetti" type="CPUParticles2D" parent="."]
+material = SubResource("ConfettiFrames")
+position = Vector2(360, -30)
+emitting = false
+amount = 28
+lifetime = 2.4
+one_shot = true
+explosiveness = 0.7
+randomness = 0.4
+texture = ExtResource("confetti")
+emission_shape = 3
+emission_rect_extents = Vector2(360, 10)
+direction = Vector2(0, 1)
+spread = 25.0
+gravity = Vector2(0, 260)
+initial_velocity_min = 60.0
+initial_velocity_max = 200.0
+angular_velocity_min = -240.0
+angular_velocity_max = 240.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.22
+scale_amount_max = 0.38
+color_ramp = SubResource("ConfettiFade")
+anim_offset_max = 1.0
 
 [node name="PopupCenter" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -64,22 +95,45 @@ grow_vertical = 2
 [node name="PopupPanel" type="PanelContainer" parent="PopupCenter"]
 custom_minimum_size = Vector2(560, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleResult")
 
 [node name="Content" type="VBoxContainer" parent="PopupCenter/PopupPanel"]
 layout_mode = 2
 theme_override_constants/separation = 14
 
 [node name="Title" type="Label" parent="PopupCenter/PopupPanel/Content"]
+theme_type_variation = &"HeaderLabel"
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 theme_override_font_sizes/font_size = 34
 text = "Экспедиция завершена!"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ribbon" type="NinePatchRect" parent="PopupCenter/PopupPanel/Content/Title"]
+unique_name_in_owner = true
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -78.0
+offset_top = -34.0
+offset_right = 78.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("ribbon")
+region_rect = Rect2(6, 167, 500, 177)
+patch_margin_left = 120
+patch_margin_right = 120
 
 [node name="Subtitle" type="Label" parent="PopupCenter/PopupPanel/Content"]
 layout_mode = 2
 text = "Находка восстановлена"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="ArtifactName" type="Label" parent="PopupCenter/PopupPanel/Content"]
 layout_mode = 2
@@ -94,22 +148,27 @@ mouse_filter = 2
 expand_mode = 1
 stretch_mode = 5
 
+[node name="FindGlow" parent="PopupCenter/PopupPanel/Content/ArtifactPreview" instance=ExtResource("find_glow")]
+show_behind_parent = true
+layout_mode = 1
+scale = Vector2(0.8, 0.8)
+
 [node name="Progress" type="Label" parent="PopupCenter/PopupPanel/Content"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 27
 text = "Фрагменты: 0 / 3"
 horizontal_alignment = 1
 
 [node name="Score" type="Label" parent="PopupCenter/PopupPanel/Content"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 27
 text = "Счёт: 0"
 horizontal_alignment = 1
 
 [node name="Coins" type="Label" parent="PopupCenter/PopupPanel/Content"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 26
 text = "Монеты: +20"
 horizontal_alignment = 1
 
@@ -124,7 +183,7 @@ theme_override_constants/separation = 4
 
 [node name="ChapterTitle" type="Label" parent="PopupCenter/PopupPanel/Content/ChapterComplete/Layout"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 26
 text = "Древний двор исследован"
 horizontal_alignment = 1
 
@@ -136,7 +195,7 @@ horizontal_alignment = 1
 [node name="ChapterReward" type="Label" parent="PopupCenter/PopupPanel/Content/ChapterComplete/Layout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.545098, 0.333333, 0.0470588, 1)
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 23
 text = "Награда главы: +100 монет"
 horizontal_alignment = 1
 
@@ -145,6 +204,15 @@ visible = false
 custom_minimum_size = Vector2(0, 62)
 layout_mode = 2
 text = "Отменить ход · бесплатно"
+icon = ExtResource("icon_undo")
+
+[node name="CleanButton" type="Button" parent="PopupCenter/PopupPanel/Content"]
+visible = false
+theme_type_variation = &"PrimaryButton"
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "Очистить находку"
+icon = ExtResource("icon_brush")
 
 [node name="Buttons" type="HBoxContainer" parent="PopupCenter/PopupPanel/Content"]
 layout_mode = 2
@@ -155,8 +223,15 @@ alignment = 1
 custom_minimum_size = Vector2(210, 66)
 layout_mode = 2
 text = "Повторить"
+icon = ExtResource("icon_restart")
 
 [node name="NextButton" type="Button" parent="PopupCenter/PopupPanel/Content/Buttons"]
+theme_type_variation = &"PrimaryButton"
 custom_minimum_size = Vector2(210, 66)
 layout_mode = 2
 text = "Дальше"
+icon = ExtResource("icon_play")
+
+[node name="PopInMotion" type="Node" parent="."]
+script = ExtResource("pop_in")
+panel_path = NodePath("../PopupCenter/PopupPanel")

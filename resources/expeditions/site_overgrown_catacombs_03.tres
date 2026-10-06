@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_y0l1x"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_jt51a"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/burial_tablet_full_v1.png" id="3_lbesn"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="4_q04ng"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_fc1uo"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_1x24d"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_8yt5d"]
+
+[sub_resource type="Resource" id="Resource_y0l1x"]
+script = ExtResource("5_fc1uo")
+cell = Vector2i(6, 4)
+
+[resource]
+script = ExtResource("6_1x24d")
+id = &"overgrown_catacombs_03_site"
+goal = &"clear_site"
+title_ru = "Заросшие катакомбы 3 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Overgrown Catacombs 3 - Roots by the Find - site"
+artifact_id = &"burial_tablet"
+artifact_name_ru = "Погребальная табличка"
+full_artifact_texture = ExtResource("3_lbesn")
+objective_ru = "Расчистите участок: снимите весь грунт, срежьте корни"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5)])
+root_obstacles = Array[ExtResource("5_fc1uo")]([SubResource("Resource_y0l1x")])
+piece_generation = ExtResource("4_q04ng")
+expected_moves_min = 11
+expected_moves_max = 20
+hard_move_limit = 26
+game_scene_path = "res://scenes/screens/game_screen_site_overgrown_catacombs_03.tscn"

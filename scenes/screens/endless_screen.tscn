@@ -1,0 +1,109 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/screens/game_screen.tscn" id="1_game"]
+[ext_resource type="Script" path="res://scripts/endless_screen.gd" id="2_script"]
+[ext_resource type="Resource" path="res://resources/endless/endless_default.tres" id="3_endless"]
+[ext_resource type="PackedScene" path="res://scenes/ui/endless_lobby.tscn" id="4_lobby"]
+
+[node name="EndlessScreen" instance=ExtResource("1_game")]
+script = ExtResource("2_script")
+next_expedition_scene_path = ""
+
+[node name="ExpeditionTitle" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText" index="0"]
+text = "Бесконечные раскопки"
+
+[node name="FragmentRow" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText" index="1"]
+visible = false
+
+[node name="ObjectiveText" parent="ContentCenter/PortraitContent/MainLayout" index="1"]
+text = "Собирайте линии подряд: серия умножает очки"
+
+[node name="ObjectiveSecondary" parent="ContentCenter/PortraitContent/MainLayout" index="2"]
+visible = false
+
+[node name="EndlessHud" type="HBoxContainer" parent="ContentCenter/PortraitContent/MainLayout" index="3"]
+custom_minimum_size = Vector2(0, 124)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ScoreColumn" type="VBoxContainer" parent="ContentCenter/PortraitContent/MainLayout/EndlessHud"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="ScoreCaption" type="Label" parent="ContentCenter/PortraitContent/MainLayout/EndlessHud/ScoreColumn"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760784, 0.835294, 0.611765, 1)
+theme_override_font_sizes/font_size = 22
+text = "Очки"
+
+[node name="ScoreValue" type="Label" parent="ContentCenter/PortraitContent/MainLayout/EndlessHud/ScoreColumn"]
+unique_name_in_owner = true
+theme_type_variation = &"HeaderLabel"
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 48
+text = "0"
+
+[node name="InfoColumn" type="VBoxContainer" parent="ContentCenter/PortraitContent/MainLayout/EndlessHud"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="RecordLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout/EndlessHud/InfoColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
+theme_override_font_sizes/font_size = 24
+text = "Рекорд: 0"
+horizontal_alignment = 2
+
+[node name="DepthLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout/EndlessHud/InfoColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760784, 0.835294, 0.611765, 1)
+theme_override_font_sizes/font_size = 22
+text = "Глубина: 0 м · Верхний слой"
+horizontal_alignment = 2
+
+[node name="StreakLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout/EndlessHud/InfoColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.764706, 0.345098, 1)
+theme_override_font_sizes/font_size = 22
+text = "Серия: соберите линию"
+horizontal_alignment = 2
+
+[node name="FindsLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout/EndlessHud/InfoColumn"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94902, 0.85, 0.6, 1)
+theme_override_font_sizes/font_size = 22
+text = "Находки: 0"
+horizontal_alignment = 2
+
+[node name="MovesLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout/EndlessHud/InfoColumn"]
+visible = false
+layout_mode = 2
+text = "Ходы: 0"
+
+[node name="Actions" parent="ContentCenter/PortraitContent/MainLayout" index="7"]
+visible = false
+
+[node name="ScoreBox" parent="ContentCenter/PortraitContent/MainLayout/Header" index="2"]
+visible = false
+
+[node name="GameSession" parent="." index="8"]
+expedition_definition = null
+chapter_definition = null
+endless_definition = ExtResource("3_endless")
+score_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/EndlessHud/ScoreColumn/ScoreValue")
+moves_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/EndlessHud/InfoColumn/MovesLabel")
+record_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/EndlessHud/InfoColumn/RecordLabel")
+depth_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/EndlessHud/InfoColumn/DepthLabel")
+streak_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/EndlessHud/InfoColumn/StreakLabel")
+finds_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/EndlessHud/InfoColumn/FindsLabel")
+
+[node name="EndlessLobby" parent="ModalUI" instance=ExtResource("4_lobby")]

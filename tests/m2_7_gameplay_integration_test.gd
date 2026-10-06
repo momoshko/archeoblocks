@@ -17,6 +17,7 @@ func _expect(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	OnboardingTutorial.auto_start = false
 	ProgressStore.storage_path = ProjectSettings.globalize_path(TEST_PROGRESS_PATH)
 	_delete_progress()
 	var game := load("res://scenes/screens/game_screen_stone_prototype.tscn").instantiate() as Control

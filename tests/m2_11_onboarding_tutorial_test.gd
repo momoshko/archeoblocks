@@ -20,7 +20,7 @@ func _run() -> void:
 	ProgressStore.storage_path = ProjectSettings.globalize_path(TEST_PROGRESS_PATH)
 	_delete_test_progress()
 	await _test_guided_first_run()
-	await _test_completed_replay_starts_tutorial_and_can_skip()
+	await _test_completed_replay_goes_straight_to_play()
 	await _test_other_expeditions_use_resource_driven_intro()
 	_delete_test_progress()
 	ProgressStore.storage_path = ProgressStore.DEFAULT_STORAGE_PATH
@@ -78,7 +78,9 @@ func _test_guided_first_run() -> void:
 	current_scene = null
 
 
-func _test_completed_replay_starts_tutorial_and_can_skip() -> void:
+## Replays of a finished expedition skip the objective card (M3.0):
+## the objective stays readable in the game header.
+func _test_completed_replay_goes_straight_to_play() -> void:
 	var game := load("res://scenes/screens/game_screen.tscn").instantiate() as Control
 	root.add_child(game)
 	await process_frame
@@ -86,12 +88,12 @@ func _test_completed_replay_starts_tutorial_and_can_skip() -> void:
 	await process_frame
 	var session := game.get_node("GameSession") as GameSession
 	var tutorial := game.get_node("TutorialUI/OnboardingTutorial") as OnboardingTutorial
-	_expect(tutorial.visible and session._tutorial_active, "Play should start Expedition 1 onboarding even after an earlier completion")
-	_expect(tutorial.skip_button.visible, "Onboarding should provide an explicit skip button")
+	_expect(not tutorial.visible and not tutorial._guided_mode, "Replaying a completed Expedition 1 should go straight to play")
+	_expect(not session._tutorial_active and session.piece_tray._required_slot == -1, "Replay must not lock pieces to guided moves")
 	_expect(tutorial.skip_button.anchor_left == 1.0 and tutorial.skip_button.anchor_right == 1.0, "Skip should be anchored in the screen corner instead of the speech bubble")
-	tutorial.skip_button.pressed.emit()
-	_expect(not tutorial.visible, "Skip should close the onboarding overlay")
-	_expect(not session._tutorial_active and session.piece_tray._required_slot == -1, "Skip should immediately restore ordinary piece input")
+	session.restart_expedition()
+	await process_frame
+	_expect(not tutorial.visible, "Restart should not show the objective card again in the same visit")
 	await _remove_scene(game)
 
 

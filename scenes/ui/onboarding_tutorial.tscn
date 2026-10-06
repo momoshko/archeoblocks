@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/onboarding_tutorial.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://c5w6quu3tbrf6" path="res://assets/ui_art/icons/close.png" id="icon_close"]
+[ext_resource type="Script" path="res://scripts/ui/pop_in_motion.gd" id="pop_in"]
 
 [sub_resource type="StyleBoxFlat" id="StyleSpotlight"]
 bg_color = Color(1, 0.819608, 0.25098, 0.08)
@@ -13,24 +15,6 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBubble"]
-content_margin_left = 24.0
-content_margin_top = 20.0
-content_margin_right = 24.0
-content_margin_bottom = 20.0
-bg_color = Color(0.952941, 0.862745, 0.67451, 0.98)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.447059, 0.305882, 0.145098, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-shadow_color = Color(0, 0, 0, 0.45)
-shadow_size = 10
 
 [node name="OnboardingTutorial" type="Control"]
 layout_mode = 3
@@ -73,6 +57,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleSpotlight")
 
 [node name="SpeechBubble" type="PanelContainer" parent="."]
+theme_type_variation = &"PanelCard"
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -83,7 +68,6 @@ offset_right = 280.0
 offset_bottom = 330.0
 grow_horizontal = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBubble")
 
 [node name="BubbleLayout" type="VBoxContainer" parent="SpeechBubble"]
 layout_mode = 2
@@ -96,13 +80,14 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/font_color = Color(0.235294, 0.145098, 0.0588235, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 27
 text = "Главная цель — раскопать артефакт."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="ContinueButton" type="Button" parent="SpeechBubble/BubbleLayout"]
+theme_type_variation = &"PrimaryButton"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(220, 54)
 layout_mode = 2
@@ -110,6 +95,7 @@ size_flags_horizontal = 4
 text = "Понятно"
 
 [node name="SkipButton" type="Button" parent="."]
+theme_type_variation = &"SmallButton"
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -121,3 +107,8 @@ offset_right = -24.0
 offset_bottom = 74.0
 grow_horizontal = 0
 text = "Пропустить"
+icon = ExtResource("icon_close")
+
+[node name="PopInMotion" type="Node" parent="."]
+script = ExtResource("pop_in")
+panel_path = NodePath("../SpeechBubble")

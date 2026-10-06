@@ -1,18 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://dnwyxibgs1ve4"]
+[gd_scene format=3 uid="uid://dnwyxibgs1ve4"]
 
 [ext_resource type="Script" path="res://scripts/ui/cell_view.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/cell_excavated_depth0_v2.png" id="2_excavated"]
-[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/cell_soil_depth1_v2.png" id="3_soil"]
-[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/cell_soil_depth2_v2.png" id="4_strong"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/cells/cell_excavated_depth0.png" id="2_excavated"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/cells/cell_soil_depth1.png" id="3_soil"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/cells/cell_soil_depth2.png" id="4_strong"]
 [ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/artifact_hint_depth2_v2.png" id="5_hint2"]
 [ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/artifact_hint_depth1_v2.png" id="6_hint1"]
-[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/preview_valid_v2.png" id="7_valid"]
-[ext_resource type="Texture2D" path="res://assets/cells/core_cell_pack_v2/preview_invalid_v2.png" id="8_invalid"]
-[ext_resource type="Texture2D" path="res://assets/blocks/core_blocks_pack_v1/block_green_v1.png" id="9_green"]
-[ext_resource type="Resource" path="res://resources/visuals/core_block_textures_v1.tres" id="10_blocks"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/overlays/preview_valid.png" id="7_valid"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/overlays/preview_invalid.png" id="8_invalid"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/blocks/block_green.png" id="9_green"]
+[ext_resource type="Resource" path="res://resources/visuals/block_textures_v2a.tres" id="10_blocks"]
 [ext_resource type="PackedScene" path="res://scenes/game/stone_obstacle_view.tscn" id="11_stone"]
 [ext_resource type="PackedScene" path="res://scenes/game/root_obstacle_view.tscn" id="12_root"]
 [ext_resource type="PackedScene" path="res://scenes/game/root_growth_warning.tscn" id="13_root_warning"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/overlays/artifact_target_marker.png" id="14_marker"]
 
 [sub_resource type="StyleBoxFlat" id="StyleSelection"]
 bg_color = Color(0, 0, 0, 0)
@@ -26,17 +27,7 @@ corner_radius_top_right = 7
 corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 
-[sub_resource type="StyleBoxFlat" id="StyleArtifactTarget"]
-bg_color = Color(0, 0, 0, 0)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(1, 0.792157, 0.25098, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxEmpty" id="StyleArtifactTarget"]
 
 [sub_resource type="StyleBoxFlat" id="StyleArtifactTargetEmphasis"]
 bg_color = Color(1, 0.815686, 0.321569, 0.08)
@@ -50,20 +41,8 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleArtifactTargetRing"]
-bg_color = Color(0.196078, 0.113725, 0.0352941, 0.72)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(1, 0.847059, 0.352941, 1)
-corner_radius_top_left = 9
-corner_radius_top_right = 9
-corner_radius_bottom_right = 9
-corner_radius_bottom_left = 9
-
 [node name="CellView" type="Control" unique_id=1062485386]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(63, 63)
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
@@ -186,6 +165,27 @@ layout_mode = 1
 [node name="RootObstacle" parent="." instance=ExtResource("12_root")]
 layout_mode = 1
 
+[node name="Countdown" type="Label" parent="."]
+visible = false
+z_index = 6
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = -6.0
+offset_right = 4.0
+offset_bottom = 26.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.78, 1)
+theme_override_colors/font_outline_color = Color(0.32, 0.16, 0.05, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ArtifactTargetBorder" type="Panel" parent="."]
 visible = false
 z_index = 4
@@ -213,39 +213,22 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleArtifactTargetEmphasis")
 
-[node name="TargetRing" type="Panel" parent="ArtifactTargetBorder"]
+[node name="TargetMarker" type="TextureRect" parent="ArtifactTargetBorder"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -9.0
-offset_top = -9.0
-offset_right = 9.0
-offset_bottom = 9.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleArtifactTargetRing")
-
-[node name="TargetDiamond" type="ColorRect" parent="ArtifactTargetBorder/TargetRing"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -3.0
-offset_top = -3.0
-offset_right = 3.0
-offset_bottom = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 0.785398
-pivot_offset = Vector2(3, 3)
-mouse_filter = 2
-color = Color(1, 0.886275, 0.486275, 1)
+texture_filter = 2
+texture = ExtResource("14_marker")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="ValidPreview" type="TextureRect" parent="."]
 visible = false

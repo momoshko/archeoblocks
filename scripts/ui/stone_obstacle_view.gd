@@ -1,10 +1,10 @@
 class_name StoneObstacleView
 extends Control
 
-@onready var body: Panel = $Body
-@onready var intact_tint: ColorRect = $Body/IntactTint
-@onready var crack_a: ColorRect = $Body/CrackA
-@onready var crack_b: ColorRect = $Body/CrackB
+## Durability 2 shows the intact stone, durability 1 the cracked one (one hit left).
+@onready var body: Control = $Body
+@onready var intact_texture: TextureRect = $Body/IntactTexture
+@onready var cracked_texture: TextureRect = $Body/CrackedTexture
 
 var _durability := 0
 var _feedback_tween: Tween
@@ -53,9 +53,8 @@ func get_durability() -> int:
 
 func _update_durability_visual() -> void:
 	var reinforced := _durability >= 2
-	intact_tint.visible = reinforced
-	crack_a.visible = not reinforced
-	crack_b.visible = not reinforced
+	intact_texture.visible = reinforced
+	cracked_texture.visible = not reinforced
 
 
 func _finish_feedback() -> void:

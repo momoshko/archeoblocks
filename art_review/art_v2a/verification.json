@@ -1,0 +1,738 @@
+{
+  "milestone": "ART V2A",
+  "status": "PASS_OFFLINE_ART_ACCEPTANCE",
+  "provenance": "Generated with the available built-in ImageGen; exact underlying image model/quality tier was not exposed by the tool.",
+  "automated": {
+    "passed": 56,
+    "total": 56,
+    "checks": [
+      {
+        "name": "exactly_16_production_pngs",
+        "pass": true,
+        "evidence": 16
+      },
+      {
+        "name": "cell_excavated_depth0_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "cell_excavated_depth0_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "b8493c2c3ed4dd5e4bb5c78be6df69f19dbf3993c66ae22d9407ac8c6c920f54",
+          "transparentFraction": 0.12127685546875
+        }
+      },
+      {
+        "name": "cell_soil_depth1_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "cell_soil_depth1_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "b8493c2c3ed4dd5e4bb5c78be6df69f19dbf3993c66ae22d9407ac8c6c920f54",
+          "transparentFraction": 0.12127685546875
+        }
+      },
+      {
+        "name": "cell_soil_depth2_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "cell_soil_depth2_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "b8493c2c3ed4dd5e4bb5c78be6df69f19dbf3993c66ae22d9407ac8c6c920f54",
+          "transparentFraction": 0.12127685546875
+        }
+      },
+      {
+        "name": "block_green_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "block_green_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+          "transparentFraction": 0.271392822265625
+        }
+      },
+      {
+        "name": "block_blue_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "block_blue_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+          "transparentFraction": 0.271392822265625
+        }
+      },
+      {
+        "name": "block_red_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "block_red_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+          "transparentFraction": 0.271392822265625
+        }
+      },
+      {
+        "name": "block_amber_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "block_amber_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+          "transparentFraction": 0.271392822265625
+        }
+      },
+      {
+        "name": "block_purple_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "block_purple_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+          "transparentFraction": 0.271392822265625
+        }
+      },
+      {
+        "name": "block_turquoise_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "block_turquoise_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "890dec8d2ebefaf4ddb47d1f116ab47665f9cea7cde03655d7ea929d49d9d626",
+          "transparentFraction": 0.271392822265625
+        }
+      },
+      {
+        "name": "stone_intact_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "stone_intact_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "c9115a3970db597a4c72373841adf902391440b903f2b32bd8c416498d31609c",
+          "transparentFraction": 0.4469757080078125
+        }
+      },
+      {
+        "name": "stone_cracked_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "stone_cracked_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "8f8cf9e3df8503bbcb3ec99ad6bc7ae4e813a0781c278169519f83926030ace6",
+          "transparentFraction": 0.4461212158203125
+        }
+      },
+      {
+        "name": "root_obstacle_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "root_obstacle_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "1310e0b557a48d3b007684c8d33cdf0048aec88d89375f55376768fab4b874c9",
+          "transparentFraction": 0.6262054443359375
+        }
+      },
+      {
+        "name": "root_growth_warning_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "root_growth_warning_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "c2bd8bb685395e76b8f816077d72d9acdd370c9b4d6a0ab2955f1d3d8cd14977",
+          "transparentFraction": 0.6857452392578125
+        }
+      },
+      {
+        "name": "root_growth_warning_empty_center",
+        "pass": true,
+        "evidence": {
+          "centerRect": [
+            80,
+            80,
+            96,
+            96
+          ],
+          "alphaSum": 0
+        }
+      },
+      {
+        "name": "artifact_target_marker_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "artifact_target_marker_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "bd5af3578051df1df39edc4f5df1b6f4e78afd6cf1f99e08fa1f1e9c21a973da",
+          "transparentFraction": 0.893524169921875
+        }
+      },
+      {
+        "name": "preview_valid_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "preview_valid_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "b11ab9486262c256b8002bf64b5230868c6f2018f691034d136b8104dcfa1308",
+          "transparentFraction": 0.863739013671875
+        }
+      },
+      {
+        "name": "preview_valid_empty_center",
+        "pass": true,
+        "evidence": {
+          "centerRect": [
+            80,
+            80,
+            96,
+            96
+          ],
+          "alphaSum": 0
+        }
+      },
+      {
+        "name": "preview_invalid_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            256,
+            256
+          ],
+          "channels": 4,
+          "depth": "uchar",
+          "space": "srgb",
+          "icc": true
+        }
+      },
+      {
+        "name": "preview_invalid_alpha",
+        "pass": true,
+        "evidence": {
+          "padding8Transparent": true,
+          "alphaSha256": "440aff3dd9e9b2a79db53a928bc8c00852c0cfca2ea1d1300f7883a65ef92d63",
+          "transparentFraction": 0.8563079833984375
+        }
+      },
+      {
+        "name": "preview_invalid_empty_center",
+        "pass": true,
+        "evidence": {
+          "centerRect": [
+            80,
+            80,
+            96,
+            96
+          ],
+          "alphaSum": 0
+        }
+      },
+      {
+        "name": "cells_shared_alpha",
+        "pass": true,
+        "evidence": "Exact byte-identical alpha planes within family"
+      },
+      {
+        "name": "blocks_shared_alpha",
+        "pass": true,
+        "evidence": "Exact byte-identical alpha planes within family"
+      },
+      {
+        "name": "cells_shared_transform",
+        "pass": true,
+        "evidence": "Same source crop and output transform"
+      },
+      {
+        "name": "blocks_shared_transform",
+        "pass": true,
+        "evidence": "Same source crop and output transform"
+      },
+      {
+        "name": "preview_shared_transform",
+        "pass": true,
+        "evidence": "Both use preview_valid_master source rect"
+      },
+      {
+        "name": "block_grayscale_value_separation",
+        "pass": true,
+        "evidence": {
+          "method": "Sharp grayscale, central128x128, 8-bit mean; supporting metric, not a perception guarantee",
+          "ordered": [
+            {
+              "name": "block_blue",
+              "value": 67.06
+            },
+            {
+              "name": "block_red",
+              "value": 89.28
+            },
+            {
+              "name": "block_green",
+              "value": 121.3
+            },
+            {
+              "name": "block_amber",
+              "value": 136.25
+            },
+            {
+              "name": "block_purple",
+              "value": 160.68
+            },
+            {
+              "name": "block_turquoise",
+              "value": 188.93
+            }
+          ],
+          "adjacentGaps": [
+            22.22,
+            32.02,
+            14.95,
+            24.43,
+            28.25
+          ]
+        }
+      },
+      {
+        "name": "warning_signal_area",
+        "pass": true,
+        "evidence": {
+          "warning": 17886.36470588235,
+          "marker": 5632.701960784314,
+          "note": "Area supports visual review; prominence also depends on underlay."
+        }
+      },
+      {
+        "name": "gameplay_material_sheet_size",
+        "pass": true,
+        "evidence": [
+          1090,
+          980
+        ]
+      },
+      {
+        "name": "readability_48px_size",
+        "pass": true,
+        "evidence": [
+          1040,
+          800
+        ]
+      },
+      {
+        "name": "grayscale_readability_48px_size",
+        "pass": true,
+        "evidence": [
+          1040,
+          800
+        ]
+      },
+      {
+        "name": "stress_test_board_8x8_size",
+        "pass": true,
+        "evidence": [
+          384,
+          384
+        ]
+      },
+      {
+        "name": "stress_test_hint_valid_size",
+        "pass": true,
+        "evidence": [
+          384,
+          384
+        ]
+      },
+      {
+        "name": "stress_test_invalid_size",
+        "pass": true,
+        "evidence": [
+          384,
+          384
+        ]
+      },
+      {
+        "name": "grayscale_has_no_chroma",
+        "pass": true,
+        "evidence": "All RGB triples equal"
+      },
+      {
+        "name": "board_no_block_obstacle_overlap",
+        "pass": true,
+        "evidence": 28
+      },
+      {
+        "name": "hint_and_valid_legal",
+        "pass": true,
+        "evidence": "All demonstration cells free"
+      },
+      {
+        "name": "invalid_conflicts_with_block_and_obstacle",
+        "pass": true,
+        "evidence": [
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            7,
+            3
+          ]
+        ]
+      },
+      {
+        "name": "warning_free_and_root_adjacent",
+        "pass": true,
+        "evidence": [
+          4,
+          2
+        ]
+      },
+      {
+        "name": "generation_lineage",
+        "pass": true,
+        "evidence": {
+          "successfulSourceCount": 17,
+          "productionCount": 16,
+          "intermediate": "preview_valid_master"
+        }
+      },
+      {
+        "name": "integration_guard",
+        "pass": true,
+        "evidence": "Both asset and review directories excluded from Godot import"
+      }
+    ]
+  },
+  "visualReview": {
+    "reviewer": "Codex agent",
+    "method": "Direct inspection of all6 generated review images, including native48px and grayscale matrices",
+    "gates": [
+      {
+        "gate": "terrain",
+        "status": "PASS",
+        "evidence": "Shared warm earth family: dark recessed depth0, light regular depth1, denser cracked depth2; quiet repeated surface."
+      },
+      {
+        "gate": "blocks",
+        "status": "PASS",
+        "evidence": "Consistent mineral bevel, upper-left light and lower-right shadow; strongest material accents. Value separation checked in actual grayscale conversion."
+      },
+      {
+        "gate": "stone",
+        "status": "PASS",
+        "evidence": "Matte chipped rubble; damaged version has major Y fractures visible at48px; no metallic crate cues or durability UI."
+      },
+      {
+        "gate": "roots",
+        "status": "PASS",
+        "evidence": "Open branching silhouette with transparent gaps; warning is a four-corner olive root signal rather than a token."
+      },
+      {
+        "gate": "marker",
+        "status": "PASS",
+        "evidence": "Gold ring with keyed edge remains readable on all12 tested underlays:3 terrain,6 blocks,2 stones,1 root."
+      },
+      {
+        "gate": "warning",
+        "status": "PASS",
+        "evidence": "Larger corner silhouette remains visible above hint and marker on all3 terrains; visually stronger temporary signal."
+      },
+      {
+        "gate": "placement",
+        "status": "PASS",
+        "evidence": "Thin contours and check/X retain underlying terrain, block and roots. No opaque backing or terrain replacement."
+      },
+      {
+        "gate": "hint",
+        "status": "PASS",
+        "evidence": "Real block art at0.52 alpha with0.72 contrast factor is visibly flatter and translucent; marker and warning remain visible."
+      },
+      {
+        "gate": "stress_boards",
+        "status": "PASS",
+        "evidence": "All6 colors, mixed depths and obstacles read at48px pitch; invalid example conflicts with placed block and roots."
+      }
+    ]
+  },
+  "metrics": {
+    "cell_excavated_depth0": {
+      "grayMean": 74.58,
+      "alphaArea": 57568.43137254902
+    },
+    "cell_soil_depth1": {
+      "grayMean": 157.96,
+      "alphaArea": 57568.43137254902
+    },
+    "cell_soil_depth2": {
+      "grayMean": 86.33,
+      "alphaArea": 57568.43137254902
+    },
+    "block_green": {
+      "grayMean": 121.3,
+      "alphaArea": 47553.839215686276
+    },
+    "block_blue": {
+      "grayMean": 67.06,
+      "alphaArea": 47553.839215686276
+    },
+    "block_red": {
+      "grayMean": 89.28,
+      "alphaArea": 47553.839215686276
+    },
+    "block_amber": {
+      "grayMean": 136.25,
+      "alphaArea": 47553.839215686276
+    },
+    "block_purple": {
+      "grayMean": 160.68,
+      "alphaArea": 47553.839215686276
+    },
+    "block_turquoise": {
+      "grayMean": 188.93,
+      "alphaArea": 47553.839215686276
+    },
+    "stone_intact": {
+      "grayMean": 151.92,
+      "alphaArea": 35253.13333333333
+    },
+    "stone_cracked": {
+      "grayMean": 126.16,
+      "alphaArea": 35284.56470588235
+    },
+    "root_obstacle": {
+      "grayMean": 73.44,
+      "alphaArea": 22186.811764705883
+    },
+    "root_growth_warning": {
+      "grayMean": 0.35,
+      "alphaArea": 17886.36470588235
+    },
+    "artifact_target_marker": {
+      "grayMean": 26.39,
+      "alphaArea": 5632.701960784314
+    },
+    "preview_valid": {
+      "grayMean": 0,
+      "alphaArea": 6977.247058823529
+    },
+    "preview_invalid": {
+      "grayMean": 0.9,
+      "alphaArea": 7508.913725490196
+    }
+  },
+  "limitations": [
+    "Static agent visual review at48px and grayscale; not a player study or a complete color-vision accessibility certification.",
+    "Runtime filtering, scaling, animation and compression were not tested because integration is outside ART V2A.",
+    "Source images contained a painted neutral checkerboard; true alpha was extracted and normalized during export. Retain sources and scripts for audit.",
+    "Depth0 and depth2 also depend on recessed-edge versus broad-crack form, not brightness alone.",
+    "Hint and valid footprints coexist only in the comparative fixture on separate cells. Runtime chooses hint OR placement."
+  ],
+  "integration": {
+    "godotRun": false,
+    "gameplayOrScenesEdited": false,
+    "trackedPreexistingEdits": [
+      "AGENTS.md",
+      "EDITOR_GUIDE_RU.md",
+      "YANDEX_RELEASE_CHECKLIST.md"
+    ],
+    "scope": "Only assets/art_v2a and art_review/art_v2a created or edited"
+  }
+}

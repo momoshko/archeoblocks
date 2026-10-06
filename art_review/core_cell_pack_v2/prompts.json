@@ -1,0 +1,51 @@
+{
+  "tool": "built-in image_gen",
+  "original_size_px": [
+    1254,
+    1254
+  ],
+  "export": [
+    "Bases: common source crop (216,216,824,824), resampled into (8,8,240,240), common rounded-square alpha cutline; terrain RGB preserved.",
+    "Depth2 clue: source crop (340,540,560,260) fitted into (80,105,96,46).",
+    "Depth1 opening: source crop (170,170,920,920) fitted into (56,56,144,144).",
+    "Previews: source crop (178,202,900,850) fitted into (8,8,240,240), generated alpha retained.",
+    "All PNGs have an 8px transparent border. Review boards sample the content region to avoid showing atlas padding as a wide gutter."
+  ],
+  "assets": [
+    {
+      "name": "cell_excavated_depth0_v2",
+      "source_filename": "exec-f542d559-f77d-47b7-8b41-aaedf31a5106.png",
+      "prompt": "Transparent background PNG game asset. Create the EMPTY EXCAVATED depth0 state of the attached flat soil square. Preserve its exact square footprint, small rounded corners, centered size, camera straight overhead, upper-left light, warm casual painted archaeological materials. The soil has been dug DOWN: dark brown bottom inside a shallow square depression. Shadow tucked under the upper/left inner edges, softly lit lower/right inner wall, quiet dark smooth earth/stone bottom. Internal walls thin, about7% of tile width. No golden stone frame, no bright perimeter, no raised rim, no exterior slab sides, no external drop shadow. The depression boundary is just the cut into the same brown board surface. No rocks, pebbles, treasure, mask, decorations, text or UI. Friendly mobile puzzle tile, clean broad shading, visibly concave, not a solid block. Single square actual-alpha PNG sprite with transparent exterior and matching reference padding."
+    },
+    {
+      "name": "cell_soil_depth1_v2",
+      "source_filename": "exec-d962f28c-cda2-4c0f-9b15-6d8f190f0bcf.png",
+      "prompt": "Transparent background PNG game asset. A single square patch of warm light brown SOIL, seen straight from above. No stone border or frame. Earth extends to all four square edges, with very small rounded corners. Only a fine dark hairline at the outer boundary, no bevel, no raised side, no cast shadow. Soil is flat and flush with the board. Casual hand-painted archaeological mobile game texture, soft upper-left light. Quiet smooth matte earth with two thin short shallow cracks and very restrained broad texture. No pebbles, decorations or treasure. Designed to be calm repeated in an8x8 board. Centered square tile with clear transparent padding around it. Actual PNG transparency, not a picture of checkerboard. Square canvas, target256x256."
+    },
+    {
+      "name": "cell_soil_depth2_v2",
+      "source_filename": "exec-8c0215cf-6c5b-4b4d-bfd3-8edb4a6b0160.png",
+      "prompt": "Create a transparent-background game tile, same shape and rendering as the reference. A square patch of dark compact brown SOIL viewed straight from overhead. Earth reaches the square edge, no frame. Flat soil surface, no raised sides. A simple shallow Y-shaped crack crosses the middle, with one short branch; very quiet fine matte earth texture. Upper left light, clean casual mobile archaeology painting. Keep the reference square footprint, tiny rounded corners and centered position. Do not include any backdrop, checkerboard, stones, ornaments, artifact or labels. Deliver the isolated soil patch as a PNG with genuinely transparent alpha surrounding the square."
+    },
+    {
+      "name": "artifact_hint_depth2_v2",
+      "source_filename": "exec-4b36ba1e-9ab4-44b9-b8ed-db988e6bdead.png",
+      "prompt": "Transparent PNG game OVERLAY asset, NOT a cell tile and NOT an artifact illustration. One small buried-treasure clue centered in an otherwise fully transparent square canvas. A simple irregular short golden arc / curved metallic edge, partly occluded by two tiny flat dark-brown earth lips. Gold arc chunky and readable, occupies about30% of canvas width and15% height. Generic abstract metal sliver only: no mask, face, coin, medallion, engraving or identifiable object. Muted warm gold brighter than soil but restrained, clear silhouette instead of glow, NO halo, NO sparkles. Top-down perspective, soft upper-left light, warm casual mobile archaeology painted style. This will be overlaid on dark soil without covering the terrain. No background rectangle, no frame, no full soil patch, no UI. Entire exterior and empty areas actual alpha transparency. Single256x256 target PNG."
+    },
+    {
+      "name": "artifact_hint_depth1_v2",
+      "source_filename": "exec-7c373e45-19cb-4ee6-9ae2-fcf709ca2460.png",
+      "prompt": "Transparent PNG game overlay asset, artifact_hint_depth1_v2. Draw ONLY the thin irregular earth edges of a small excavation opening. The CENTRAL OPENING IS COMPLETELY TRANSPARENT, as is the entire background outside the narrow earth edges. NO artifact is pictured. The actual treasure image will be separately placed underneath by the engine. A roughly oval irregular opening centered in the square canvas, about50% canvas width and55% height. The edge consists of four broken arcs of flat warm light-brown soil, modest thickness about5% of canvas, inward dark shadow along upper-left inner lip and soft light lower-right cut surface. Sparse muted golden flecks at two edge points to hint treasure, not an ornate gold ring. Calm casual painted archaeology style, same soft top-left light as attached terrain reference. No thick rocks, no raised mound, no full background tile, no rectangle, no mask, face, coin, medallion or recognizable artifact. Thin irregular soil rim ONLY, transparent window through center, transparent outside. Square PNG RGBA target256x256, generous padding."
+    },
+    {
+      "name": "preview_valid_v2",
+      "source_filename": "exec-634801bb-eabd-4672-b731-4feeb3190b17.png",
+      "prompt": "Transparent PNG game overlay sprite. A fine pale mint-white rounded SQUARE OUTLINE, thin line (about2% square width), with four slightly brighter corner brackets and a SMALL simple white checkmark in the center. Completely flat allowed-placement ghost, not a button, not a tile. Barely visible translucent mint fill, alpha approximately8-12%; background and most interior genuinely transparent. Underlying soil must remain clearly visible. No broad glow, no halo, no texture, no bevel, no raised sides, no drop shadow. Straight overhead square shape with tiny rounded corners (radius3%); centered about85% of square canvas, matching mobile board cells. Checkmark only20% square width, sharp readable strokes. Clean restrained casual game art. No text, terrain, artifact, frame of stone or scenery. Actual transparent PNG RGBA, no checkerboard pattern. Target256x256."
+    },
+    {
+      "name": "preview_invalid_v2",
+      "source_filename": "exec-a6605789-fe0b-420b-8c21-1e10c2aac6b8.png",
+      "prompt": "Transparent PNG game overlay sprite. A fine terracotta-coral rounded SQUARE OUTLINE, thin line about2% square width, with four subtly brighter corner brackets and a clear SMALL ivory/coral X in the center. This is a flat forbidden-placement projection over terrain. Faint translucent terracotta fill alpha8-12%, most interior truly transparent. X consists of two simple straight diagonal strokes about23% of square width, recognizable even in grayscale. Almost no glow, no solid button, no bevel, no shadow, no raised volume. Straight overhead square with small rounded corners radius3%, centered about75% of square canvas with equal padding. Clean casual mobile puzzle style matching the attached valid overlay. NO terrain, artifact, full background, text or checkerboard. Actual RGBA transparent PNG, target256x256. Keep the same simple edge scale and lighting language as reference, change checkmark to X and mint to terracotta."
+    }
+  ]
+}

@@ -81,8 +81,21 @@ func set_obstacle(cell: Vector2i, durability: int, kind: int = Kind.STONE) -> bo
 	return true
 
 
+func clear_obstacle(cell: Vector2i) -> void:
+	_durability_by_cell.erase(cell)
+	_kind_by_cell.erase(cell)
+
+
 func set_root(cell: Vector2i) -> bool:
 	return set_obstacle(cell, ROOT_DURABILITY, Kind.ROOT)
+
+
+func get_stone_cells() -> Array[Vector2i]:
+	var cells: Array[Vector2i] = []
+	for cell: Vector2i in _durability_by_cell:
+		if get_kind(cell) == Kind.STONE:
+			cells.append(cell)
+	return cells
 
 
 func root_count() -> int:

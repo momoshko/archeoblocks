@@ -1,0 +1,55 @@
+{
+  "milestone": "M2.5B",
+  "mode": "built_in_imagegen",
+  "prompts": [
+    {
+      "asset": "golden_mask_full_v1",
+      "prompt": "Use case: stylized-concept. Production transparent game artifact sprite for Archeoblocks, Ancient Courtyard. Image 1 is STYLE AND IDENTITY reference only for the Golden Mask. Image 2 is material/palette reference only, do not include its square tile.\nGenerate ONE FULL RESTORED GOLDEN MASK, front-facing orthographic relief view, centered on square canvas with 12% transparent margin on every side. Warm archaeological casual premium mobile puzzle art, clean painterly gold relief, upper-left light, dark lower-right material edges, calm friendly sculpted face, strong closed almond eye shapes, broad nose, mouth and rounded chin. Preserve the reference's overall recognizable mask design with broad forehead band, circular central forehead boss, geometric temple strips and round ear ornaments but simplify microtexture and tiny engraving. Warm yellow gold, rich bronze shadows, clear readable planes. NOT photorealistic, not horror, not shiny glass.\nThe mask must have a coherent design that can later divide into three substantial horizontal sections: forehead/crown; eyes/nose/upper cheeks; mouth/chin/lower cheeks. Render it restored WHOLE here, no exploded parts or seams. No labels, no letters, no UI, no gameplay target markers, no frame, no backdrop, no distant shadow, no glow cloud. Actual transparent alpha background, not a painted checkerboard. Request master 512x512 PNG RGBA (larger native square output acceptable for mechanical downsample).",
+      "source": "exec-1d4bd5dc-fc16-4a3d-9a80-bed8d772b66d.png"
+    },
+    {
+      "asset": "golden_mask_alpha_attempt",
+      "prompt": "Use case: background-extraction. Input image is the edit target. Preserve this exact golden mask without repainting its face, colors, geometry, scale, composition or detail. Remove the ENTIRE gray checkerboard background and give a genuinely transparent PNG with alpha=0 outside the mask. Do NOT paint a checkerboard. The mask is opaque gold. If your output format cannot encode alpha, use a single exact solid magenta RGB(255,0,255) background instead so the output can be keyed in production. Do not put magenta on the object. No drop shadows or glow outside silhouette. One unchanged complete mask cutout, no words, no UI.",
+      "source": "exec-85e14023-63f0-4c90-97e6-46898588a48c.png",
+      "status": "rejected_checkerboard_still_opaque"
+    },
+    {
+      "asset": "courtyard_seal_full_v1",
+      "prompt": "Use case: stylized-concept. ONE production artifact sprite: COURTYARD SEAL, small ancient ceremonial stone seal medallion for Archeoblocks Ancient Courtyard. Style reference input is the game's recessed terrain tile ONLY to match warm painterly archaeological materials; DO NOT include a tile or frame.\nCompact thick warm sandstone circular seal with a slightly irregular octagonal outer silhouette, visibly carved inward spiral/sun insignia, restrained bronze rim accents integrated into the object, no lettering. Distinct tactile relic with shallow relief thickness visible at bottom edge. Front facing orthographic view (same presentation as a frontal mask). Upper-left soft golden light and lower-right warm shadows. Clean hand-painted casual mobile game collectible, bold broad shapes, limited fine details, rich terracotta recesses, light sandy faces. Smaller humbler reward than a jeweled amulet. Entire object centered, 15% margin on a square canvas. Opaque object, no glass.\nActual transparent background PNG RGBA preferred; absolutely NO drawn checkerboard. If alpha is unavailable use perfectly uniform solid magenta #FF00FF as a removable matte, with no other background pattern or floor. No UI, no text, no markers, no outer UI frame, no cast shadow outside silhouette.",
+      "source": "exec-618374f7-e530-4212-810a-f926a0f31d3d.png"
+    },
+    {
+      "asset": "stone_amulet_full_v1",
+      "prompt": "Use case: stylized-concept. Generate one production STONE AMULET artifact for Archeoblocks Ancient Courtyard. Input 1 is a STYLE REFERENCE of the earlier reward Courtyard Seal; preserve its warm sculpted painterly stone/bronze language and upper-left lighting, but create a DIFFERENT and more valuable pendant object.\nFront-facing orthographic relic relief, centered standalone teardrop / shield-shaped carved cream limestone amulet with a small integrated stone loop on top, no necklace string. Bold layered bevels, warm stone body, one inset opaque muted turquoise mineral cabochon in the middle, two restrained bronze inlays. Simple ancient architectural grooves, stronger elongated silhouette distinct from the round seal, thick tactile object. Warm premium casual game painting, not photorealistic, no tiny inscriptions, no grime, friendly. Upper-left highlights, lower-right warm shadows. Generous 14% padding on square canvas. The amulet is mostly STONE; gem is small and solid, not glass. No extra objects.\nGenuine transparent alpha PNG background. No checkerboard rendered in image. No floor or cast shadow cloud, no UI frames, no text, no target markers. Preferred 512x512 RGBA; larger native output acceptable.",
+      "source": "exec-ded3e398-9250-45ce-a634-81cc5dce22f7.png"
+    },
+    {
+      "asset": "golden_mask_fragment_a_reference",
+      "prompt": "Use case: precise-object-edit. Input image: source Golden Mask, preserve its identity and original front-facing view. Produce ONLY ONE broken fragment A, the upper FOREHEAD AND CROWN portion of this exact mask. It must include the complete domed forehead, the broad engraved band, central circular gold boss and the uppermost brow edges. REMOVE everything below the eyebrows: no eyes, no nose, no mouth, no chin, no round ear ornaments. At the bottom it has a substantial jagged irregular archaeological fracture going below the central medallion but above the eyes, with short angled chips and a narrow visible bronze broken edge. This is an irregular piece of a gold mask, NOT a separate crown with clean manufactured edge. Preserve matching warm golden painted material, broad shapes, upper-left light from reference. Center the single wide fragment in a square canvas with 14% transparent margins, no other pieces. Standalone reward/progress sprite with true transparent PNG RGBA background. No checkerboard, no floor, no UI, no letters, no target icon.",
+      "source": "exec-1b3b7e96-801f-40b4-b34b-d4a9f6fed3ed.png"
+    },
+    {
+      "asset": "golden_mask_fragment_b_reference",
+      "prompt": "Use case: precise-object-edit. Image 1 is the exact source full Golden Mask. Image 2 is the already produced upper crown fragment A, showing the matching broken-edge style. Produce ONE distinct fragment B, ONLY the middle facial section of image 1: both dark almond eyes, nose, upper and middle cheeks, and ear-side rectangular plates. REMOVE forehead/crown/central forehead boss above, REMOVE mouth/chin below and remove circular earring disks (those belong to lower fragment C). Jagged uneven archaeological fracture top just above eyes; bottom just below nose, preserving recognizable complete nose and meaningful cheek width. The top edge should conceptually meet fragment A's irregular lower edge. This is a substantial middle third of the SAME mask, not a whole smaller mask. Keep original eye/nose geometry, warm gold/bronze and upper-left lighting, clean casual hand-painted relief. Center wide fragment in square canvas with generous padding. Genuine transparent background PNG alpha, no painted checkerboard, no ground, no UI, no text, no extra objects.",
+      "source": "exec-c5ef3dd1-a574-4208-9c4f-300165f12537.png",
+      "status": "reference_only_geometry_drift"
+    },
+    {
+      "asset": "golden_mask_fragment_c_reference",
+      "prompt": "Use case: precise-object-edit. Input 1: exact source full Golden Mask. Input 2: fragment B middle eyes/nose section for identity and fracture style. Generate ONLY fragment C, the LOWER MOUTH / CHIN / LOWER CHEEKS section of the same full mask. Include the recognizable shaped lips, rounded lower chin, lower cheek geometry and the round golden ear ornament disks connected at left and right. Upper edge is a jagged irregular ancient fracture running just BELOW the nose; no eyes, no nose, no forehead, no crown. Broad substantial single connected meaningful fragment, not thin slivers, archaeological broken bronze/gold edge, not toy puzzle tabs. Keep original mask facial geometry, same warm gold finish, front-facing orthographic relief, upper-left light. Center on square canvas with generous transparent margins. Genuine transparent alpha PNG background, NO checkerboard drawn, no floor, no UI, no words, no other objects.",
+      "source": "exec-84d2643b-58ef-4d4b-a555-7140fad4c978.png",
+      "status": "reference_only_nose_duplicates_fragment_b"
+    },
+    {
+      "asset": "golden_mask_alpha_attempt_2",
+      "prompt": "Extract the Golden Mask from image 1 as a transparent PNG cutout. Image 2 is an example of an actual transparent PNG artifact cutout. Return the mask using the same genuinely transparent file format as image 2. Keep the gold mask exactly, remove all background outside it. Preserve the mask's gold face and ear ornaments. Center in a square frame. NO visual checkerboard or background graphic. Output image with ALPHA CHANNEL, outside mask must be transparent pixels.",
+      "source": "exec-d9cd9cd0-fcf5-4e08-b7c4-967bae97ed71.png",
+      "status": "rejected_checkerboard_still_opaque"
+    }
+  ],
+  "export": {
+    "full_artifacts": "Three built-in generated images; preserve native seal alpha, remove achromatic connected matte from mask and amulet; alpha-bound fit into 384px area centered in 512 canvas.",
+    "fragments": "Three complementary irregular partitions of the same normalized full-mask master. Generated separate fragments were reference experiments only and are not production assets.",
+    "script": "build_pack.cjs"
+  }
+}

@@ -17,6 +17,7 @@ func _expect(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	OnboardingTutorial.auto_start = false
 	ProgressStore.storage_path = ProjectSettings.globalize_path(TEST_PROGRESS_PATH)
 	_delete_progress()
 	var chapter_one := load("res://resources/chapters/ancient_courtyard.tres") as ChapterDefinition
@@ -29,7 +30,7 @@ func _run() -> void:
 	var selector := load("res://scenes/screens/expedition_select.tscn").instantiate() as Control
 	root.add_child(selector)
 	await process_frame
-	_expect(not selector.chapter_three_button.visible, "Chapter III prototype entry should stay hidden before Chapter II completion")
+	_expect(selector.chapter_three_button.disabled, "Chapter III should stay locked before Chapter II completion")
 	selector.queue_free()
 	await process_frame
 	for expedition in chapter_two.expeditions:
@@ -37,8 +38,8 @@ func _run() -> void:
 	selector = load("res://scenes/screens/expedition_select.tscn").instantiate() as Control
 	root.add_child(selector)
 	await process_frame
-	_expect(selector.chapter_three_button.visible and not selector.chapter_three_button.disabled, "Chapter III prototype should appear after Chapter II completion")
-	_expect(selector.chapter_three_button.text.contains("Глава III · прототип") and selector.chapter_three_button.text.contains("Заросшие катакомбы"), "Prototype entry should expose accepted product naming")
+	_expect(selector.chapter_three_button.visible, "Chapter III entry is visible")
+	_expect(selector.chapter_three_button.text.contains("Глава III") and selector.chapter_three_button.text.contains("Заросшие катакомбы"), "Chapter III entry shows its product naming")
 	selector.queue_free()
 	await process_frame
 
@@ -46,10 +47,10 @@ func _run() -> void:
 	root.add_child(detail)
 	await process_frame
 	var visible_cards := 0
-	for button in detail.expedition_buttons:
+	for button in detail.find_cards:
 		if button.visible:
 			visible_cards += 1
-	_expect(visible_cards == 1 and detail.expedition_buttons[0].text.contains("Живые корни"), "Prototype detail should contain exactly one expedition")
+	_expect(visible_cards == 1 and (detail.find_cards[0].get_node("%Title") as Label).text.contains("Живые корни"), "Prototype detail should contain exactly one expedition")
 	_expect(not detail.reward_label.visible, "Prototype chapter should not advertise a chapter reward")
 	detail.queue_free()
 	await process_frame

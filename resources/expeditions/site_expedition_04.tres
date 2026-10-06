@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_kvqna"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_8mjqa"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ancient_courtyard/mosaic_tablet_full_v1.png" id="3_ebngo"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_1.tres" id="4_vcnv8"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_g6tk5"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_pxpxh"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_vhask"]
+
+[resource]
+script = ExtResource("6_pxpxh")
+id = &"expedition_04_site"
+goal = &"clear_site"
+title_ru = "Древний двор 4 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Ancient Courtyard 4 - Two Finds - site"
+artifact_id = &"mosaic_tablet"
+artifact_name_ru = "Мозаичная табличка"
+full_artifact_texture = ExtResource("3_ebngo")
+objective_ru = "Расчистите участок: снимите весь грунт"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(5, 3), Vector2i(6, 3), Vector2i(7, 3)])
+strong_soil_cells = Array[Vector2i]([Vector2i(4, 3)])
+piece_generation = ExtResource("4_vcnv8")
+expected_moves_min = 11
+expected_moves_max = 13
+hard_move_limit = 16
+game_scene_path = "res://scenes/screens/game_screen_site_expedition_04.tscn"

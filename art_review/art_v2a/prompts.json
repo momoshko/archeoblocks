@@ -1,0 +1,295 @@
+{
+  "provenance": "Generated with the available built-in ImageGen; exact underlying image model/quality tier was not exposed by the tool.",
+  "status": "final_exports_verified",
+  "generations": [
+    {
+      "name": "cell_soil_depth1",
+      "prompt": "Use case: stylized-concept. Production game sprite for Archeoblocks ART V2A, Light Sandstone Courtyard. Input images are STYLE REFERENCES ONLY, never edit or reproduce a full screen. One single isolated sprite, square canvas, orthographic straight top-down view, no perspective tilt. Soft hand-painted premium casual volume, stable upper-left illumination, restrained texture, broad readable forms at 48px. No text, numbers, UI, gold, sparkle, lens effects, props or floor outside the sprite. Truly TRANSPARENT RGBA background, no painted checkerboard or solid background, no disconnected cast shadow outside silhouette. Centered, ample clear margin around the sprite. Create the MASTER TERRAIN material: one regular SOIL DEPTH1 square patch. Warm light ochre-brown clay (#AF8050 family), calm flat surface with one or two broad shallow irregular seams and sparse low-contrast grain. Almost straight square outer cutline, very slightly softened corners, no thick lip or beveled rim. No raised platform, no rock slab, no decorative borders, no grid of cells. A quiet earth surface occupying roughly 88% of the square canvas. This is the original material to later derive depth0 and depth2; preserve future tiling calmness. No bright outline. Material should be slightly lighter than the dark earth in style reference, much quieter than colored blocks.",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v1/master_gameplay.png",
+        "C:/dev/archeoblocks/art_review/art_v1/master_menu.png"
+      ],
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "block_green",
+      "prompt": "Use case: stylized-concept. Production game sprite for Archeoblocks ART V2A, Light Sandstone Courtyard. Input images are STYLE REFERENCES ONLY, never edit or reproduce a full screen. One single isolated sprite, square canvas, orthographic straight top-down view, no perspective tilt. Soft hand-painted premium casual volume, stable upper-left illumination, restrained texture, broad readable forms at 48px. No text, numbers, UI, gold, sparkle, lens effects, props or floor outside the sprite. Truly TRANSPARENT RGBA background, no painted checkerboard or solid background, no disconnected cast shadow outside silhouette. Centered, ample clear margin around the sprite. Create ONE master JADE GREEN colored puzzle BLOCK, polished mineral rather than plastic. Rounded square with small clipped/beveled corners, identical width and height, raised soft bevel 8% of body width, broad clean front plane, subtle internal cloudy mineral variation with at most one faint vein. Rich jade green midtone #448366 family, pale mint upper-left bevel and dark forest lower-right bevel, no white overexposure. Shape occupies 84% of canvas, perfectly centered, no surrounding terrain or socket. The foreground block must stand out from earth by volume and value. Flat top plane square to camera. No lettering or tiny cracks, no gold or framing metal. The master will be recolored to all other blocks; prioritize reproducible geometric symmetry and stable simple alpha silhouette.",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v1/master_gameplay.png",
+        "C:/dev/archeoblocks/art_review/art_v1/master_menu.png"
+      ],
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "stone_intact",
+      "prompt": "Use case: stylized-concept. Production game sprite for Archeoblocks ART V2A, Light Sandstone Courtyard. Input images are STYLE REFERENCES ONLY, never edit or reproduce a full screen. One single isolated sprite, square canvas, orthographic straight top-down view, no perspective tilt. Soft hand-painted premium casual volume, stable upper-left illumination, restrained texture, broad readable forms at 48px. No text, numbers, UI, gold, sparkle, lens effects, props or floor outside the sprite. Truly TRANSPARENT RGBA background, no painted checkerboard or solid background, no disconnected cast shadow outside silhouette. Centered, ample clear margin around the sprite. Create ONE INTACT reinforced STONE obstacle, a heavy squat piece of archaeological limestone/basalt rubble. Cold grey-brown matte rock, a broad rough top plane and chunky irregular chipped polygon edges, several large natural facets, dark coarse broken side thickness. Not rectangular or symmetrical: irregular 6-sided lump broadly filling a square cell (around 80% canvas), large enough to be a solid blocker. Read distinctly as natural heavy STONE. A small natural fissure is okay but no major break in the intact form. NO metallic shine, no manufactured bevel, no rounded-square sci-fi tile, no crate, no bars, stripes, numbers or screws. The source gameplay screenshot stone icons are NOT authoritative for the shape: replace that placeholder mechanical look with actual carved/chipped stone material. Broad bright cool-grey upper-left plane, deep grey side, readable against dark earth without looking like pale gold UI.",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v1/master_gameplay.png",
+        "C:/dev/archeoblocks/art_review/art_v1/master_menu.png"
+      ],
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "root_obstacle",
+      "prompt": "Use case: stylized-concept. Production game sprite for Archeoblocks ART V2A, Light Sandstone Courtyard. Input images are STYLE REFERENCES ONLY, never edit or reproduce a full screen. One single isolated sprite, square canvas, orthographic straight top-down view, no perspective tilt. Soft hand-painted premium casual volume, stable upper-left illumination, restrained texture, broad readable forms at 48px. No text, numbers, UI, gold, sparkle, lens effects, props or floor outside the sprite. Truly TRANSPARENT RGBA background, no painted checkerboard or solid background, no disconnected cast shadow outside silhouette. Centered, ample clear margin around the sprite. Create ONE organic ROOT obstacle occupying a square cell: one thick dark olive-brown woody root runs diagonally lower-left to upper-right and divides into 3 broad irregular tapering branches, two smaller overlapping offshoots. Clearly living creeping roots/vines, warm bark planes with olive living surfaces. Visible TRANSPARENT gaps between the branches, no soil or backing disk. Strong asymmetrical forked silhouette, 80% square canvas, centered and contained. Broad upper-left highlights ensure visibility on dark soil, muted olive tan crest and deep brown creases. NO circular coil, medallion, token, face, eyes, roots wound around a round stone, straight outline box, moss carpet, leafy bush or dozens of fine tendrils. Match the organic branch-like Roots in the accepted gameplay reference, with fewer clearer branches.",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v1/master_gameplay.png",
+        "C:/dev/archeoblocks/art_review/art_v1/master_menu.png"
+      ],
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "cell_excavated_depth0",
+      "parent": "cell_soil_depth1",
+      "prompt": "Use case: precise-object-edit. Derive EXCAVATED DEPTH0 from the supplied master soil cell for Archeoblocks ART V2A. Keep the exact outer square cutline, footprint, position, scale and upper-left light. Change only material depth: the central 90% is dark warm excavated earth (#49392A family), a shallow recessed bottom with broad low-contrast scraped soil, no pebbles. Subtle inner shadow at top/left and a very thin dim earth lip lower/right, not a raised rim. No gold/orange bright border, no decorative box, no stone walls, no inset inner square border. The 8x8 board must look like one calm excavation surface. Preserve same master material family; darken and excavate it, do not invent a different tile. One square sprite, no text. Transparent exterior, not a painted checkerboard. Output same square composition as input.",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v2a/sources/cell_soil_depth1.png"
+      ],
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "cell_soil_depth2",
+      "parent": "cell_soil_depth1",
+      "prompt": "Use case: precise-object-edit. Derive SOIL DEPTH2 from supplied master soil cell for Archeoblocks ART V2A. Keep exact outer square cutline, pixel position, scale, perspective, upper-left lighting and edge shape. Change only soil density: noticeably darker compact earth (#795236), slightly crusted, broad dark forked crack near center and a few large compressed clay plates. Keep contrast LOW, no bright pale seams. Same warm soil material; not grey stone or raised slab. Remove little loose pebbles; no decorative rim. Calm repeatable surface at 48px, clearly darker and more resistant than light depth1. No text, no icon. Truly transparent exterior not checkerboard. Output same square composition as input.",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v2a/sources/cell_soil_depth1.png"
+      ],
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "stone_cracked",
+      "parent": "stone_intact",
+      "prompt": "Use case: precise-object-edit. Derive DAMAGED STONE / durability1 from the supplied INTACT stone master for Archeoblocks ART V2A. Keep the exact camera, overall outer silhouette, scale, placement, matte grey-brown stone palette and upper-left illumination. Make damage obvious at 48px: one broad deep dark Y-shaped fracture crossing through the main face, dividing it into THREE large chunks still in their original positions; a clearly broken triangular chip at the upper-right face inside the existing outer bounds. Fracture thickness about 5% of rock width, dark cavity with a restrained light broken edge, no glowing seam. Reduce tiny grain/detail so major breaks lead. NOT metal, NO bars/numbers/strokes/screws/UI. No separate rocks scattered outside the original silhouette. No ground or drop shadow outside the rock. Actual transparent background, no painted checkerboard. Same square canvas and outer pose as original.",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v2a/sources/stone_intact.png"
+      ],
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "block_blue",
+      "parent": "block_green",
+      "prompt": "Use case: precise-object-edit. Recolor ONLY the provided green mineral block to DEEP LAPIS BLUE for Archeoblocks ART V2A. Preserve exactly the same silhouette, alpha shape, position, size, upper-left lighting, bevel geometry and all visible mineral texture structures. Do not redraw, rotate or restyle the block. Change color to strong deep blue, top surface medium-dark #315C99 family, pale muted blue bevel rather than white. Target perceptual surface brightness distinctly LOWER than green, approximate grayscale sRGB 85 vs green 130. Keep broad front face opaque and readable against dark soil. One exact same square sprite with true transparent exterior, no checkerboard or scene. No text, no extra borders, no gold.",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v2a/sources/block_green.png"
+      ],
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "block_red",
+      "parent": "block_green",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v2a/sources/block_green.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Recolor ONLY this master green mineral puzzle block for Archeoblocks ART V2A to warm brick/ruby RED #B55341. Preserve exact same silhouette, alpha cutline, scale, canvas placement, upper-left light, bevel dimensions and mineral texture structure. Same raised square opaque mineral. Target surface grayscale around 105; lower brightness than green but higher than deep blue. Keep upper-left highlight gently colored, never white blown out. Color edits may adjust value for grayscale separation but MUST NOT change bevel or shape, add markings or change pattern layout. Truly transparent exterior, no checkerboard or background. No text, numbers, gold border or extra props. One single block, same square image as input.",
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "block_amber",
+      "parent": "block_green",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v2a/sources/block_green.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Recolor ONLY this master green mineral puzzle block for Archeoblocks ART V2A to copper-orange AMBER #C58B42, not yellow or gold. Preserve exact same silhouette, alpha cutline, scale, canvas placement, upper-left light, bevel dimensions and mineral texture structure. Same raised square opaque mineral. Target surface grayscale around 170; lighter than green, warm honey orange, no metallic yellow. Keep upper-left highlight gently colored, never white blown out. Color edits may adjust value for grayscale separation but MUST NOT change bevel or shape, add markings or change pattern layout. Truly transparent exterior, no checkerboard or background. No text, numbers, gold border or extra props. One single block, same square image as input.",
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "block_purple",
+      "parent": "block_green",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v2a/sources/block_green.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Recolor ONLY this master green mineral puzzle block for Archeoblocks ART V2A to soft AMETHYST PURPLE #AB81BD. Preserve exact same silhouette, alpha cutline, scale, canvas placement, upper-left light, bevel dimensions and mineral texture structure. Same raised square opaque mineral. Target surface grayscale around 150; visibly lighter than green, lower than amber. Keep upper-left highlight gently colored, never white blown out. Color edits may adjust value for grayscale separation but MUST NOT change bevel or shape, add markings or change pattern layout. Truly transparent exterior, no checkerboard or background. No text, numbers, gold border or extra props. One single block, same square image as input.",
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "block_turquoise",
+      "parent": "block_green",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v2a/sources/block_green.png"
+      ],
+      "prompt": "Use case: precise-object-edit. Recolor ONLY this master green mineral puzzle block for Archeoblocks ART V2A to light TURQUOISE / pale cyan mineral #71C4CA. Preserve exact same silhouette, alpha cutline, scale, canvas placement, upper-left light, bevel dimensions and mineral texture structure. Same raised square opaque mineral. Target surface grayscale around 195; lightest block color, opaque mineral not transparent glass. Keep upper-left highlight gently colored, never white blown out. Color edits may adjust value for grayscale separation but MUST NOT change bevel or shape, add markings or change pattern layout. Truly transparent exterior, no checkerboard or background. No text, numbers, gold border or extra props. One single block, same square image as input.",
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "root_growth_warning",
+      "parent": "root_obstacle",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v2a/sources/root_obstacle.png"
+      ],
+      "prompt": "Use case: stylized-concept. Using this organic root material as REFERENCE, create ONE transparent GAMEPLAY WARNING OVERLAY for Archeoblocks ART V2A. Square canvas. Not another root mass. Four thick angular root-like corner brackets form the corners of one square cell, olive-green with pale cream-olive crest and dark brown keyed edge. Each bracket ends in a simple triangular thorn pointing INWARD. Upper-left small short branching twig joins its two arms. Mostly empty TRANSPARENT interior (at least 75% of the central area empty), no center icon, no soil, no backing tile. Strong simple warning silhouette readable at 48px: broad contour equivalent to 3px at 48px, stronger than a thin gold target ring; contrast supplied by pale olive highlights AND dark edge. This is a high-priority threatened destination signal ABOVE hint and marker. Flat overlay, NO realistic ground, no wooden square box, no medallion, no gold, no text. Uniform four corners aligned to square, no soft floating glow or drop shadow. Outer design centered roughly 86% of canvas; transparent outside AND inside. Stable upper-left light. Actual alpha background, never checkerboard.",
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "artifact_target_marker",
+      "parent": null,
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v1/master_gameplay.png"
+      ],
+      "prompt": "Use case: stylized-concept. Create ONE sparse transparent artifact-target OVERLAY for a 256x256 game cell, Archeoblocks ART V2A. Input screen is style reference only; do not reproduce screen or background. Square canvas with genuinely transparent exterior AND interior. At cell center: a SMALL precious warm GOLD RING with one simple gold diamond inside; ring outside diameter about 24% of cell width, dark brown outline/understroke so it reads on any material. Diamond clear and simple. Four very thin disconnected GOLD CORNER L-marks near cell perimeter, slender compared to central ring, no connecting full box, no decorative details. Overall design width86% canvas, centered, huge transparent open areas between lines. Warm muted gold #C8973F and small pale-gold top-left edge #F0CF78; no glow, no noise, no sparkle. Flat orthographic UI signal, no disk behind ring, no soil, no solid square backing, no item illustration, no text/numbers. Much lighter visual weight than the root warning; precious signal with broad dark keyline for contrast. All empty areas must be transparent alpha, not a painted checkerboard or white background.",
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "preview_valid_master",
+      "parent": null,
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v1/master_gameplay.png"
+      ],
+      "prompt": "Use case: stylized-concept. One sparse VALID PLACEMENT OVERLAY for Archeoblocks ART V2A, square transparent sprite. Screen input only style reference. Thin MINT/TEAL broken outline tracing a square with softly clipped corners, width86% canvas; short deliberate gaps at side centers to show temporary feedback, no solid fill. At LOWER RIGHT INSIDE the frame, one readable simple MINT CHECKMARK with dark desaturated teal under-stroke, width24% canvas, located around x73%,y73% so the CENTER remains EMPTY for artifact marker. Rounded clean stroke, equivalent to 2px at48. No center medallion. Foreground only; transparent empty interior/exterior, no tile, ground, socket or drop shadow. Calm flat gameplay signal, not a colored block, no stone volume, no bright gold. Actual transparency, NOT checkerboard. No words, letters or numbers. Surface underneath must remain visible over 85% of cell.",
+      "status": "succeeded",
+      "selectedForProduction": false,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "preview_valid",
+      "prompt": "Use case: precise-object-edit. Color refinement of supplied VALID preview overlay. Preserve pixel-identical outline geometry, gaps, position, scale and lower-right checkmark. Change ONLY vivid neon teal to muted pale mineral MINT (#7CBAB0 with softly lighter #ACD2C6 stroke center and dark teal-brown keyline). Remove fluorescent glow and pure green/cyan saturation. This temporary outline sits BELOW artifact marker and root warning and should be quieter than a placed mineral block. All interior and exterior space truly transparent, no checkerboard. No solid fill, no tile or backing, no extra symbol. Same square sprite.",
+      "parent": "preview_valid_master",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v2a/sources/preview_valid_master.png"
+      ],
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    },
+    {
+      "name": "preview_invalid",
+      "prompt": "Use case: precise-object-edit. Derive INVALID PLACEMENT from this supplied valid preview master for Archeoblocks ART V2A. Preserve exactly the broken square outline, gaps, rounded corners, canvas scale and placement, stroke thickness. Replace only lower-right CHECKMARK with a simple X of the same visual weight in the exact same lower-right area. Change mint to muted warm TERRACOTTA RED #BF6255, softly lighter red stroke with deep red-brown keyline. No neon and no bright glowing red. Keep center fully empty, no fill. Absolutely no soil, stone, new terrain, trap tile or solid square backing. All empty areas genuinely transparent, not a checkerboard. One reusable temporary rejection overlay; the blocking material must remain visible underneath. Same square composition.",
+      "parent": "preview_valid_master",
+      "refs": [
+        "C:/dev/archeoblocks/art_review/art_v2a/sources/preview_valid_master.png"
+      ],
+      "status": "succeeded",
+      "selectedForProduction": true,
+      "tool": "available built-in ImageGen"
+    }
+  ],
+  "sources": {
+    "cell_soil_depth1": {
+      "source": "sources/cell_soil_depth1.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-dcde2327-16b4-4f70-b0b1-a006c67e2a84.png"
+    },
+    "block_green": {
+      "source": "sources/block_green.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-939fb0dc-3313-4c5d-92ce-70f5f03637c3.png"
+    },
+    "stone_intact": {
+      "source": "sources/stone_intact.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-16c9493c-4ef2-406f-9675-b5a054bba54e.png"
+    },
+    "root_obstacle": {
+      "source": "sources/root_obstacle.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-75f36e32-ee94-4e6b-ac3c-ab6f58df8929.png"
+    },
+    "cell_excavated_depth0": {
+      "source": "sources/cell_excavated_depth0.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-fc3e58af-e0cc-48b7-8380-f48b653aaaca.png"
+    },
+    "cell_soil_depth2": {
+      "source": "sources/cell_soil_depth2.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-bd8f9122-8b91-41e2-8bc7-2a20b69c0c23.png"
+    },
+    "stone_cracked": {
+      "source": "sources/stone_cracked.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-9aa0d826-e051-4fa3-b4de-b97c939cc68c.png"
+    },
+    "block_blue": {
+      "source": "sources/block_blue.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-a661746b-b609-4d56-b0f3-bc72a57c2352.png"
+    },
+    "block_red": {
+      "source": "sources/block_red.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-afa0ece4-4bfe-43ba-a29a-001e6b884345.png"
+    },
+    "block_amber": {
+      "source": "sources/block_amber.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-7cf2b11f-1634-4f75-b88f-4c3aa6540b9e.png"
+    },
+    "block_purple": {
+      "source": "sources/block_purple.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-5db19e98-0256-48dc-90b1-bd5bb21113fb.png"
+    },
+    "block_turquoise": {
+      "source": "sources/block_turquoise.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-ed9398b4-706f-493d-8f5d-394762f5ceb3.png"
+    },
+    "root_growth_warning": {
+      "source": "sources/root_growth_warning.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-edc99d80-a0a3-4d26-81cc-da3e0928071b.png"
+    },
+    "artifact_target_marker": {
+      "source": "sources/artifact_target_marker.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-3c729baf-1904-4873-bb5a-32f775ffa98e.png"
+    },
+    "preview_valid_master": {
+      "source": "sources/preview_valid_master.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-6bcc30d6-456a-4777-9470-20b9575f81c5.png"
+    },
+    "preview_valid": {
+      "source": "sources/preview_valid.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-92de1da3-d07e-4e5f-8d46-f34c709acb2b.png"
+    },
+    "preview_invalid": {
+      "source": "sources/preview_invalid.png",
+      "generated_source": "C:\\Users\\AKNATE\\.codex\\generated_images\\01a0a4de-dc8f-7011-9ccf-cb285d4827d3\\exec-7217f8b5-df62-444b-bc32-511a5d9f9601.png"
+    }
+  },
+  "postprocessing": {
+    "script": "export_pack.cjs",
+    "sourceAlpha": "All17 stored source PNGs are RGB with a neutral generated checkerboard; alpha repaired at export.",
+    "steps": [
+      "Remove edge-connected neutral matte; remove neutral internal gaps for roots and overlays; one source-pixel contraction",
+      "Shared family source crops; Lanczos3 downsample; shared terrain cutline and exact green-master alpha for all6 blocks",
+      "sRGB RGBA8 PNG,256x256, transparent padding"
+    ],
+    "paletteNormalization": [
+      {
+        "name": "block_green",
+        "operation": "RGB power curve exponent 1.20 for grayscale value separation"
+      },
+      {
+        "name": "block_purple",
+        "operation": "RGB power curve exponent 0.65 for grayscale value separation"
+      },
+      {
+        "name": "root_growth_warning",
+        "operation": "HSL hue 85 degrees, saturation min(0.42, original*0.55), lightness original+0.07*sin(pi*original)"
+      }
+    ],
+    "failedOptionalRefinements": {
+      "count": 2,
+      "targets": [
+        "block_purple",
+        "root_growth_warning"
+      ],
+      "result": "usage_limit_reached; no images produced or selected",
+      "resolution": "Numeric palette normalization of existing generated sources; no alternate generator used"
+    }
+  }
+}

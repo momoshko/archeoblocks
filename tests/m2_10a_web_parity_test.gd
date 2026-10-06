@@ -18,6 +18,7 @@ func _expect(condition: bool, message: String) -> void:
 
 
 func _run() -> void:
+	OnboardingTutorial.auto_start = false
 	ProgressStore.storage_path = ProjectSettings.globalize_path(TEST_PROGRESS_PATH)
 	_delete_progress()
 	await _test_export_safe_chapter_two_launch()
@@ -37,24 +38,24 @@ func _test_export_safe_chapter_two_launch() -> void:
 	var chapter_one := load("res://resources/chapters/ancient_courtyard.tres") as ChapterDefinition
 	for expedition in chapter_one.expeditions:
 		_expect(ProgressStore.mark_expedition_completed(expedition.id) == OK, "Chapter I test progress should save")
-	_expect(ProgressStore.completed_expeditions().size() == 6, "Saved Chapter I progress should be immediately readable")
+	_expect(ProgressStore.completed_expeditions().size() == chapter_one.expeditions.size(), "Saved Chapter I progress should be immediately readable")
 
 	var detail := load("res://scenes/screens/chapter_detail_02.tscn").instantiate() as Control
 	root.add_child(detail)
 	current_scene = detail
 	await process_frame
-	_expect(detail.expedition_scenes.size() == 8, "Chapter II must retain all PackedScene references")
+	_expect(detail.expedition_scenes.size() == 16, "Chapter II must retain all PackedScene references (8 sites + 8 digs)")
 	for expedition_scene in detail.expedition_scenes:
 		_expect(expedition_scene != null, "Every Chapter II expedition must have an export-safe PackedScene")
 	var first_button := detail.get_node(DETAIL_GRID + "Expedition01") as Button
-	_expect(not first_button.disabled and first_button.text.ends_with("Открыто"), "Chapter II 2-1 must be actionable whenever it reads Open")
+	_expect(not first_button.disabled and (first_button as FindCard).state_text() == "Дальше: расчистка", "Chapter II find 1 must be actionable and start at its site")
 	_expect(first_button.pressed.get_connections().size() == 1, "Chapter II 2-1 must have one launch action")
 	first_button.pressed.emit()
 	await process_frame
 	await process_frame
 	var session := current_scene.get_node_or_null("GameSession") as GameSession if current_scene != null else null
 	_expect(session != null, "Pressing Chapter II 2-1 must change to a gameplay scene")
-	_expect(session != null and session.expedition_definition.id == &"ruined_shrine_01", "Chapter II 2-1 must load the intended expedition")
+	_expect(session != null and session.expedition_definition.id == &"ruined_shrine_01_site", "Chapter II find 1 must load its site level first")
 	if current_scene != null:
 		current_scene.queue_free()
 	current_scene = null

@@ -1,0 +1,223 @@
+{
+ "board_frame": {
+  "size": [
+   256,
+   256
+  ],
+  "texture_margins": [
+   38,
+   38,
+   38,
+   38
+  ],
+  "transparent_padding": 8
+ },
+ "panel_header_large": {
+  "size": [
+   384,
+   112
+  ],
+  "texture_margins": [
+   35,
+   30,
+   35,
+   30
+  ],
+  "transparent_padding": 12
+ },
+ "panel_header_small": {
+  "size": [
+   256,
+   80
+  ],
+  "texture_margins": [
+   22,
+   19,
+   22,
+   19
+  ],
+  "transparent_padding": 8
+ },
+ "panel_label_small": {
+  "size": [
+   192,
+   64
+  ],
+  "texture_margins": [
+   18,
+   16,
+   18,
+   16
+  ],
+  "transparent_padding": 8
+ },
+ "popup_panel": {
+  "size": [
+   384,
+   512
+  ],
+  "texture_margins": [
+   80,
+   80,
+   80,
+   80
+  ],
+  "transparent_padding": 16
+ },
+ "popup_panel_small": {
+  "size": [
+   230,
+   307
+  ],
+  "texture_margins": [
+   48,
+   48,
+   48,
+   48
+  ],
+  "transparent_padding": 10
+ },
+ "button_primary": {
+  "size": [
+   276,
+   69
+  ],
+  "texture_margins": [
+   23,
+   20,
+   23,
+   20
+  ],
+  "transparent_padding": 9
+ },
+ "button_secondary": {
+  "size": [
+   276,
+   69
+  ],
+  "texture_margins": [
+   23,
+   20,
+   23,
+   20
+  ],
+  "transparent_padding": 9
+ },
+ "button_disabled": {
+  "size": [
+   276,
+   69
+  ],
+  "texture_margins": [
+   23,
+   20,
+   23,
+   20
+  ],
+  "transparent_padding": 9
+ },
+ "button_selected_frame": {
+  "size": [
+   276,
+   69
+  ],
+  "texture_margins": [
+   23,
+   20,
+   23,
+   20
+  ],
+  "transparent_padding": 9
+ },
+ "button_small_back": {
+  "size": [
+   69,
+   69
+  ],
+  "texture_margins": [
+   16,
+   16,
+   16,
+   16
+  ],
+  "transparent_padding": 6
+ },
+ "piece_slot": {
+  "size": [
+   192,
+   160
+  ],
+  "texture_margins": [
+   30,
+   25,
+   30,
+   25
+  ],
+  "transparent_padding": 8
+ },
+ "chapter_card_open": {
+  "size": [
+   384,
+   160
+  ],
+  "texture_margins": [
+   42,
+   36,
+   42,
+   36
+  ],
+  "transparent_padding": 12
+ },
+ "chapter_card_locked": {
+  "size": [
+   384,
+   160
+  ],
+  "texture_margins": [
+   42,
+   36,
+   42,
+   36
+  ],
+  "transparent_padding": 12
+ },
+ "chapter_card_completed": {
+  "size": [
+   384,
+   160
+  ],
+  "texture_margins": [
+   42,
+   36,
+   42,
+   36
+  ],
+  "transparent_padding": 12
+ },
+ "collection_card_known": {
+  "size": [
+   192,
+   240
+  ],
+  "texture_margins": [
+   40,
+   40,
+   40,
+   40
+  ],
+  "transparent_padding": 8
+ },
+ "collection_card_unknown": {
+  "size": [
+   192,
+   240
+  ],
+  "texture_margins": [
+   40,
+   40,
+   40,
+   40
+  ],
+  "transparent_padding": 8
+ }
+}

@@ -110,7 +110,7 @@ func _test_expedition_six_return_keeps_cards_visible() -> void:
 		for index in 6:
 			var button := selector.get_node(CARD_ROOT + "Expedition%02d" % (index + 1)) as Button
 			_expect(button.visible and button.is_visible_in_tree(), "Completed onboarding card should remain visible")
-			_expect(button.text.ends_with("✓ Пройдено"), "Returned card should show completed state")
+			_expect((button as FindCard).state_text() == "Дальше: очистка", "Returned card should show the dug-up state (next: cleaning)")
 			_expect(button.get_global_rect().intersects(scroll.get_global_rect()), "Returned card should be inside the visible scroll viewport")
 	selector.queue_free()
 	current_scene = null
@@ -170,13 +170,12 @@ func _hint_cells_overlap_hud(game: Control, board: BoardView) -> bool:
 	var hud_paths := [
 		"ContentCenter/PortraitContent/MainLayout/Header/PauseButton",
 		"ContentCenter/PortraitContent/MainLayout/Header/HeaderText/ExpeditionTitle",
-		"ContentCenter/PortraitContent/MainLayout/Header/HeaderText/FragmentProgress",
+		"ContentCenter/PortraitContent/MainLayout/Header/HeaderText/FragmentRow",
 		"ContentCenter/PortraitContent/MainLayout/ObjectiveText",
-		"ContentCenter/PortraitContent/MainLayout/ObjectiveSecondary",
 		"ContentCenter/PortraitContent/MainLayout/Actions/UndoButton",
 		"ContentCenter/PortraitContent/MainLayout/Actions/HintButton",
-		"ContentCenter/PortraitContent/MainLayout/Stats/MovesLabel",
-		"ContentCenter/PortraitContent/MainLayout/Stats/ScoreLabel",
+		"ContentCenter/PortraitContent/MainLayout/Header/ScoreBox/MovesLabel",
+		"ContentCenter/PortraitContent/MainLayout/Header/ScoreBox/ScoreLabel",
 	]
 	for y in BoardModel.HEIGHT:
 		for x in BoardModel.WIDTH:

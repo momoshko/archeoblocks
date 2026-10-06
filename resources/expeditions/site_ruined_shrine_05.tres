@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_la23v"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_fhmds"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ruined_shrine/ritual_bracelet_full_v1.png" id="3_j804g"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_2.tres" id="4_aajcc"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_paoml"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_k7vcu"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_58poe"]
+
+[sub_resource type="Resource" id="Resource_la23v"]
+script = ExtResource("7_58poe")
+cell = Vector2i(0, 3)
+
+[sub_resource type="Resource" id="Resource_fhmds"]
+script = ExtResource("7_58poe")
+cell = Vector2i(5, 6)
+
+[resource]
+script = ExtResource("6_k7vcu")
+id = &"ruined_shrine_05_site"
+goal = &"clear_site"
+title_ru = "Разрушенное святилище 5 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Ruined Shrine 5 - Narrow Passages - site"
+artifact_id = &"ritual_bracelet"
+artifact_name_ru = "Ритуальный браслет"
+full_artifact_texture = ExtResource("3_j804g")
+objective_ru = "Расчистите участок: снимите весь грунт, разбейте завалы"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(6, 3)])
+stone_obstacles = Array[ExtResource("7_58poe")]([SubResource("Resource_la23v"), SubResource("Resource_fhmds")])
+piece_generation = ExtResource("4_aajcc")
+expected_moves_min = 8
+expected_moves_max = 11
+hard_move_limit = 13
+game_scene_path = "res://scenes/screens/game_screen_site_ruined_shrine_05.tscn"

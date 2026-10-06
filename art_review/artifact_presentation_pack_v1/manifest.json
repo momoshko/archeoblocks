@@ -1,0 +1,697 @@
+{
+  "pack": "ancient_courtyard_artifact_presentation_v1",
+  "milestone": "M2.5B",
+  "status": "production_export_for_visual_review",
+  "scene_integration": false,
+  "format": "PNG RGBA8 sRGB",
+  "lighting": "upper_left",
+  "camera": "front_facing_orthographic_relief",
+  "canvas_size": [
+    512,
+    512
+  ],
+  "minimum_padding_px": 64,
+  "production_assets": [
+    {
+      "name": "courtyard_seal_full_v1",
+      "file": "artifacts/courtyard_seal_full_v1.png",
+      "type": "full_artifact",
+      "canvas_size": [
+        512,
+        512
+      ],
+      "transparent_background": true,
+      "material": "sandstone and bronze",
+      "recommended_usage": "First expedition reward, collection, full-artifact reveal",
+      "alpha_bounds_px": {
+        "left": 67,
+        "top": 64,
+        "width": 378,
+        "height": 384
+      }
+    },
+    {
+      "name": "stone_amulet_full_v1",
+      "file": "artifacts/stone_amulet_full_v1.png",
+      "type": "full_artifact",
+      "canvas_size": [
+        512,
+        512
+      ],
+      "transparent_background": true,
+      "material": "carved warm limestone, bronze, opaque turquoise",
+      "recommended_usage": "Second expedition reward, collection, full-artifact reveal",
+      "alpha_bounds_px": {
+        "left": 123,
+        "top": 64,
+        "width": 266,
+        "height": 384
+      }
+    },
+    {
+      "name": "golden_mask_full_v1",
+      "file": "artifacts/golden_mask_full_v1.png",
+      "type": "full_artifact",
+      "canvas_size": [
+        512,
+        512
+      ],
+      "transparent_background": true,
+      "material": "warm gold relief",
+      "recommended_usage": "Third expedition victory reward and collection",
+      "alpha_bounds_px": {
+        "left": 64,
+        "top": 73,
+        "width": 384,
+        "height": 366
+      }
+    },
+    {
+      "name": "golden_mask_fragment_a_v1",
+      "file": "artifacts/golden_mask_fragment_a_v1.png",
+      "type": "fragment",
+      "canvas_size": [
+        512,
+        512
+      ],
+      "transparent_background": true,
+      "description": "forehead, crown band and central boss",
+      "parent": "golden_mask_full_v1",
+      "scale_relative_to_full": 1,
+      "assembly_translation_px": [
+        0,
+        -100
+      ],
+      "assembly_source_rect_px": {
+        "left": 79,
+        "top": 73,
+        "width": 353,
+        "height": 165
+      },
+      "centered_sprite_rect_px": {
+        "left": 79,
+        "top": 173,
+        "width": 353,
+        "height": 165
+      },
+      "recommended_usage": "Fragment reveal, collection progress. Centered sprite for display; apply assembly translation to restore full-mask coordinates.",
+      "alpha_bounds_px": {
+        "left": 79,
+        "top": 173,
+        "width": 353,
+        "height": 165
+      }
+    },
+    {
+      "name": "golden_mask_fragment_b_v1",
+      "file": "artifacts/golden_mask_fragment_b_v1.png",
+      "type": "fragment",
+      "canvas_size": [
+        512,
+        512
+      ],
+      "transparent_background": true,
+      "description": "eyes, nose and upper cheeks",
+      "parent": "golden_mask_full_v1",
+      "scale_relative_to_full": 1,
+      "assembly_translation_px": [
+        0,
+        10
+      ],
+      "assembly_source_rect_px": {
+        "left": 79,
+        "top": 200,
+        "width": 354,
+        "height": 131
+      },
+      "centered_sprite_rect_px": {
+        "left": 79,
+        "top": 190,
+        "width": 354,
+        "height": 131
+      },
+      "recommended_usage": "Fragment reveal, collection progress. Centered sprite for display; apply assembly translation to restore full-mask coordinates.",
+      "alpha_bounds_px": {
+        "left": 79,
+        "top": 190,
+        "width": 354,
+        "height": 131
+      }
+    },
+    {
+      "name": "golden_mask_fragment_c_v1",
+      "file": "artifacts/golden_mask_fragment_c_v1.png",
+      "type": "fragment",
+      "canvas_size": [
+        512,
+        512
+      ],
+      "transparent_background": true,
+      "description": "mouth, chin, lower cheeks and round ear ornaments",
+      "parent": "golden_mask_full_v1",
+      "scale_relative_to_full": 1,
+      "assembly_translation_px": [
+        0,
+        100
+      ],
+      "assembly_source_rect_px": {
+        "left": 64,
+        "top": 273,
+        "width": 384,
+        "height": 166
+      },
+      "centered_sprite_rect_px": {
+        "left": 64,
+        "top": 173,
+        "width": 384,
+        "height": 166
+      },
+      "recommended_usage": "Fragment reveal, collection progress. Centered sprite for display; apply assembly translation to restore full-mask coordinates.",
+      "alpha_bounds_px": {
+        "left": 64,
+        "top": 173,
+        "width": 384,
+        "height": 166
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "file": "review/artifact_pack_overview.png",
+      "type": "review",
+      "canvas_size": [
+        1200,
+        725
+      ],
+      "transparent_background": false,
+      "recommended_usage": "Readability / reconstruction review only"
+    },
+    {
+      "file": "review/golden_mask_fragments_assembly.png",
+      "type": "review",
+      "canvas_size": [
+        1600,
+        684
+      ],
+      "transparent_background": false,
+      "recommended_usage": "Readability / reconstruction review only"
+    },
+    {
+      "file": "review/readability_48px.png",
+      "type": "review",
+      "canvas_size": [
+        984,
+        446
+      ],
+      "transparent_background": false,
+      "recommended_usage": "Readability / reconstruction review only"
+    },
+    {
+      "file": "review/depth0_cell_mockups.png",
+      "type": "review",
+      "canvas_size": [
+        984,
+        385
+      ],
+      "transparent_background": false,
+      "recommended_usage": "Readability / reconstruction review only"
+    },
+    {
+      "file": "review/golden_mask_reconstructed.png",
+      "type": "review",
+      "canvas_size": [
+        512,
+        512
+      ],
+      "transparent_background": true,
+      "recommended_usage": "Readability / reconstruction review only"
+    }
+  ],
+  "mask_assembly": {
+    "method": "Complementary irregular alpha partitions of one normalized generated master, centered by integer translation only.",
+    "seams_master_px": [
+      [
+        [
+          0,
+          209.61977748200297
+        ],
+        [
+          8,
+          208.9199767278818
+        ],
+        [
+          15,
+          211.50528887007385
+        ],
+        [
+          23,
+          206.3948905010087
+        ],
+        [
+          33,
+          213.4715223070234
+        ],
+        [
+          43,
+          213.03429655839378
+        ],
+        [
+          53,
+          209.62225146622708
+        ],
+        [
+          67,
+          211.41183437236273
+        ],
+        [
+          72,
+          213.07189938426018
+        ],
+        [
+          84,
+          211.29802121268585
+        ],
+        [
+          89,
+          216.78145561584583
+        ],
+        [
+          97,
+          213.02948378891634
+        ],
+        [
+          102,
+          214.77331677147825
+        ],
+        [
+          116,
+          205.75080296838655
+        ],
+        [
+          130,
+          199.01457894649357
+        ],
+        [
+          142,
+          199.59181148214265
+        ],
+        [
+          156,
+          211.6210298486054
+        ],
+        [
+          169,
+          208.8645003205724
+        ],
+        [
+          174,
+          217.40489983443172
+        ],
+        [
+          182,
+          213.88121145030485
+        ],
+        [
+          192,
+          211.84497931115328
+        ],
+        [
+          203,
+          209.28419360676781
+        ],
+        [
+          210,
+          212.0585213629529
+        ],
+        [
+          224,
+          212.40885668871925
+        ],
+        [
+          232,
+          213.51873442679644
+        ],
+        [
+          242,
+          222.24518102410195
+        ],
+        [
+          250,
+          237.56162469247903
+        ],
+        [
+          259,
+          237.54960436818445
+        ],
+        [
+          264,
+          233.5526661681121
+        ],
+        [
+          278,
+          210.28789131313235
+        ],
+        [
+          287,
+          203.08997544725068
+        ],
+        [
+          299,
+          201.02671315302499
+        ],
+        [
+          308,
+          199.68180374499588
+        ],
+        [
+          316,
+          204.789232015898
+        ],
+        [
+          324,
+          208.30752054588604
+        ],
+        [
+          332,
+          216.58849275737757
+        ],
+        [
+          343,
+          214.52375704673645
+        ],
+        [
+          351,
+          218.82458899447695
+        ],
+        [
+          362,
+          214.47173196148128
+        ],
+        [
+          368,
+          211.7404331305437
+        ],
+        [
+          373,
+          207.90522969424725
+        ],
+        [
+          379,
+          206.97224191593006
+        ],
+        [
+          392,
+          206.64461143840106
+        ],
+        [
+          400,
+          205.60462233191356
+        ],
+        [
+          405,
+          207.89779436242367
+        ],
+        [
+          410,
+          207.62358505937405
+        ],
+        [
+          424,
+          205.45128247474454
+        ],
+        [
+          432,
+          211.49357119475357
+        ],
+        [
+          446,
+          212.42232447809405
+        ],
+        [
+          451,
+          204.19177249280204
+        ],
+        [
+          460,
+          207.50867765064217
+        ],
+        [
+          470,
+          204.05787013610825
+        ],
+        [
+          480,
+          207.18053132535093
+        ],
+        [
+          488,
+          204.09588845998846
+        ],
+        [
+          495,
+          204.8812863961128
+        ],
+        [
+          508,
+          210.05771720416047
+        ],
+        [
+          512,
+          207
+        ]
+      ],
+      [
+        [
+          0,
+          279.86742348293774
+        ],
+        [
+          12,
+          274.8652294196654
+        ],
+        [
+          25,
+          274.28347758366726
+        ],
+        [
+          34,
+          280.15047079348005
+        ],
+        [
+          44,
+          273.13424255955033
+        ],
+        [
+          55,
+          272.82956918445416
+        ],
+        [
+          61,
+          278.9719990750309
+        ],
+        [
+          70,
+          278.4271658679936
+        ],
+        [
+          75,
+          276.68744103307836
+        ],
+        [
+          88,
+          276.9683331802953
+        ],
+        [
+          93,
+          280.8964553603437
+        ],
+        [
+          101,
+          272.7818582097534
+        ],
+        [
+          107,
+          274.63256585481577
+        ],
+        [
+          115,
+          273.9607530508656
+        ],
+        [
+          124,
+          280.44399942931096
+        ],
+        [
+          134,
+          278.537283287306
+        ],
+        [
+          148,
+          289.9894311233451
+        ],
+        [
+          161,
+          299.63218732321235
+        ],
+        [
+          171,
+          307.6109180374492
+        ],
+        [
+          183,
+          306.90349417138316
+        ],
+        [
+          197,
+          314.0177205062127
+        ],
+        [
+          210,
+          315.6301816756105
+        ],
+        [
+          222,
+          322.0299262176405
+        ],
+        [
+          236,
+          329.7556565183845
+        ],
+        [
+          250,
+          325.12213995998417
+        ],
+        [
+          262,
+          330.68683872922946
+        ],
+        [
+          270,
+          323.61178251997836
+        ],
+        [
+          284,
+          314.56649266646923
+        ],
+        [
+          291,
+          316.74090281486593
+        ],
+        [
+          296,
+          313.4371943333059
+        ],
+        [
+          303,
+          311.86985243088566
+        ],
+        [
+          312,
+          309.1280334507835
+        ],
+        [
+          321,
+          305.79531983491455
+        ],
+        [
+          327,
+          310.49694962612057
+        ],
+        [
+          338,
+          300.2284455648991
+        ],
+        [
+          343,
+          303.4123516202733
+        ],
+        [
+          349,
+          294.1865052590248
+        ],
+        [
+          359,
+          286.985468309403
+        ],
+        [
+          372,
+          282.4359164438109
+        ],
+        [
+          385,
+          275.5358668943037
+        ],
+        [
+          397,
+          277.9185214608442
+        ],
+        [
+          409,
+          276.04434771393426
+        ],
+        [
+          419,
+          281.34189530997537
+        ],
+        [
+          426,
+          273.5550909230951
+        ],
+        [
+          434,
+          276.6654465335887
+        ],
+        [
+          439,
+          273.2905217234511
+        ],
+        [
+          444,
+          275.60803599632345
+        ],
+        [
+          457,
+          274.22421022341587
+        ],
+        [
+          463,
+          274.1012053794693
+        ],
+        [
+          475,
+          274.33137829531915
+        ],
+        [
+          485,
+          274.2579882161226
+        ],
+        [
+          492,
+          274.75546451681294
+        ],
+        [
+          498,
+          281.45988498884253
+        ],
+        [
+          503,
+          272.9444156747777
+        ],
+        [
+          512,
+          277
+        ]
+      ]
+    ],
+    "pixel_mismatch_visible_rgba": 0,
+    "shared_scale": 1,
+    "broken_edge_note": "Irregular cut silhouettes; face artwork is unchanged. No independently invented faces or duplicated features."
+  },
+  "generation": "built_in_imagegen",
+  "technical_export": "Alpha matte cleanup where generated RGB had a checkerboard; resize and integer-centered complementary mask partitions. No game changes.",
+  "readability_notes": [
+    "At 48 px, silhouette and broad relief survive; tiny engraving is decorative.",
+    "Fit alpha bounds for standalone fragment icons; use recorded translation without independent resizing for reconstruction.",
+    "In-cell artwork uses 70% of cell size and is review support only."
+  ]
+}

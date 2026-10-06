@@ -31,6 +31,9 @@ extends Control
 @onready var continue_button: Button = %ContinueButton
 @onready var skip_button: Button = %SkipButton
 
+## Automated tests that drive the board directly switch the overlay off.
+static var auto_start := true
+
 var _session: GameSession
 var _board: BoardView
 var _tray: PieceTray
@@ -40,6 +43,7 @@ var _placement_committed := false
 var _pulse_tween: Tween
 var _guided_mode := false
 var _spotlight_target := SpotlightTarget.NONE
+var _intro_shown_for: StringName = &""
 
 enum SpotlightTarget {
 	NONE,
@@ -77,10 +81,26 @@ func _setup() -> void:
 
 
 func _start_if_needed() -> void:
-	if _session.expedition_definition.artifact_fragments.is_empty():
+	if (
+		not auto_start
+		or _session.is_endless()
+		or _session.expedition_definition == null
+		or (
+			_session.expedition_definition.artifact_fragments.is_empty()
+			and not _session.expedition_definition.is_site_preparation()
+		)
+	):
 		_finish()
 		return
-	_guided_mode = _session.expedition_definition.id == tutorial_expedition_id
+	var expedition_id := _session.expedition_definition.id
+	var already_completed := ProgressStore.is_expedition_completed_any(expedition_id)
+	_guided_mode = expedition_id == tutorial_expedition_id and not already_completed
+	if not _guided_mode and (already_completed or _intro_shown_for == expedition_id):
+		# Replays of finished expeditions and restarts within one visit go straight
+		# to play; the objective stays readable in the game header.
+		_finish()
+		return
+	_intro_shown_for = _session.expedition_definition.id
 	_placement_index = 0
 	_waiting_for_placement = false
 	_placement_committed = false
@@ -89,15 +109,15 @@ func _start_if_needed() -> void:
 	_tray.clear_hint()
 	if _guided_mode:
 		_session.set_tutorial_placement(required_slots[0], required_origins[0])
-		tutorial_text.text = goal_text
-		continue_button.text = "Понятно"
+		tutorial_text.text = tr(goal_text)
+		continue_button.text = tr("Понятно")
 	else:
 		_session.finish_tutorial()
 		tutorial_text.text = "%s\n%s" % [
-			_session.expedition_definition.objective_ru,
-			_session.expedition_definition.instruction_ru,
+			tr(_session.expedition_definition.objective_ru),
+			tr(_session.expedition_definition.instruction_ru),
 		]
-		continue_button.text = "Начать"
+		continue_button.text = tr("Начать")
 	continue_button.show()
 	_set_spotlight_target(SpotlightTarget.ARTIFACT)
 
@@ -117,7 +137,7 @@ func _show_take_step() -> void:
 	var slot_index := required_slots[_placement_index]
 	_session.set_tutorial_placement(slot_index, required_origins[_placement_index])
 	_tray.set_hint_slot(slot_index)
-	tutorial_text.text = take_texts[_placement_index]
+	tutorial_text.text = tr(take_texts[_placement_index])
 	continue_button.hide()
 	_set_spotlight_target(SpotlightTarget.TRAY_SLOT)
 
@@ -135,7 +155,7 @@ func _on_drag_started(
 	_waiting_for_placement = true
 	_placement_committed = false
 	_tray.clear_hint()
-	tutorial_text.text = place_texts[_placement_index]
+	tutorial_text.text = tr(place_texts[_placement_index])
 	_set_spotlight_target(SpotlightTarget.PLACEMENT)
 
 
@@ -149,7 +169,11 @@ func _on_drag_ended(slot_index: int, _pointer_position: Vector2) -> void:
 
 
 func _restore_take_step_if_needed(attempted_index: int) -> void:
+	if not is_inside_tree():
+		return
 	await get_tree().process_frame
+	if not is_inside_tree():
+		return
 	if (
 		visible
 		and _placement_index == attempted_index
@@ -175,7 +199,7 @@ func _on_piece_placed(slot_index: int, origin: Vector2i) -> void:
 
 func _show_excavation_step() -> void:
 	_tray.clear_hint()
-	tutorial_text.text = excavation_text
+	tutorial_text.text = tr(excavation_text)
 	continue_button.hide()
 	_set_spotlight_target(SpotlightTarget.ARTIFACT)
 
@@ -231,6 +255,15 @@ func _refresh_spotlight() -> void:
 
 
 func _artifact_target_rect() -> Rect2:
+	if _session.expedition_definition.is_site_preparation():
+		# Site levels: frame the rubble that has to go.
+		var cells: Array[Vector2i] = []
+		for y in ExcavationModel.HEIGHT:
+			for x in ExcavationModel.WIDTH:
+				var cell := Vector2i(x, y)
+				if _session.excavation_model.get_soil_depth(cell) > 0 or _session.obstacle_model.has_obstacle(cell):
+					cells.append(cell)
+		return _cells_global_rect(cells)
 	for fragment in _session.expedition_definition.artifact_fragments:
 		if not _session.excavation_model.is_fragment_collected(fragment.id):
 			return _cells_global_rect(fragment.cells)

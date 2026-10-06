@@ -1,45 +1,13 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/expedition_select.gd" id="1_script"]
 [ext_resource type="Resource" path="res://resources/chapters/ancient_courtyard.tres" id="2_chapter_one"]
 [ext_resource type="Resource" path="res://resources/chapters/ruined_shrine.tres" id="3_chapter_two"]
 [ext_resource type="Resource" path="res://resources/chapters/overgrown_catacombs.tres" id="4_chapter_three"]
-
-[sub_resource type="StyleBoxFlat" id="StyleChapterOne"]
-bg_color = Color(0.764706, 0.658824, 0.482353, 0.96)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.352941, 0.243137, 0.12549, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-
-[sub_resource type="StyleBoxFlat" id="StyleChapterTwo"]
-bg_color = Color(0.321569, 0.298039, 0.266667, 0.98)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.568627, 0.505882, 0.403922, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-
-[sub_resource type="StyleBoxFlat" id="StyleChapterThree"]
-bg_color = Color(0.247059, 0.321569, 0.160784, 0.98)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.505882, 0.603922, 0.298039, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
+[ext_resource type="Texture2D" path="res://assets/ui_art/menu/background.jpg" id="bg_wall"]
+[ext_resource type="Texture2D" uid="uid://bdbehwvn3k3oj" path="res://assets/ui_art/icons/back.png" id="icon_back"]
+[ext_resource type="Texture2D" uid="uid://mv74f567ipdn" path="res://assets/ui_art/icons/lock.png" id="icon_lock"]
+[ext_resource type="PackedScene" path="res://scenes/ui/difficulty_picker.tscn" id="difficulty_picker"]
 
 [node name="ExpeditionSelect" type="Control"]
 layout_mode = 3
@@ -53,15 +21,18 @@ chapter_one_definition = ExtResource("2_chapter_one")
 chapter_two_definition = ExtResource("3_chapter_two")
 chapter_three_definition = ExtResource("4_chapter_three")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.5, 0.48, 0.45, 1)
+texture = ExtResource("bg_wall")
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-color = Color(0.211765, 0.152941, 0.0901961, 1)
 
 [node name="ContentCenter" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -90,12 +61,16 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="BackButton" type="Button" parent="ContentCenter/PortraitContent/Layout/Header"]
+theme_type_variation = &"SmallButton"
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 66)
 layout_mode = 2
-text = "Назад"
+tooltip_text = "Назад"
+icon = ExtResource("icon_back")
+icon_alignment = 1
+custom_minimum_size = Vector2(96, 66)
 
 [node name="Title" type="Label" parent="ContentCenter/PortraitContent/Layout/Header"]
+theme_type_variation = &"HeaderLabel"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
@@ -107,9 +82,13 @@ vertical_alignment = 1
 [node name="Instruction" type="Label" parent="ContentCenter/PortraitContent/Layout"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85098, 0.756863, 0.572549, 1)
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 24
 text = "Выберите главу"
 horizontal_alignment = 1
+
+[node name="DifficultyPicker" parent="ContentCenter/PortraitContent/Layout" instance=ExtResource("difficulty_picker")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="ChapterList" type="VBoxContainer" parent="ContentCenter/PortraitContent/Layout"]
 layout_mode = 2
@@ -118,27 +97,75 @@ theme_override_constants/separation = 22
 alignment = 1
 
 [node name="ChapterOneButton" type="Button" parent="ContentCenter/PortraitContent/Layout/ChapterList"]
+theme_type_variation = &"ChapterCard"
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 260)
+custom_minimum_size = Vector2(0, 230)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleChapterOne")
+theme_override_font_sizes/font_size = 26
 text = "Глава I\nДревний двор\nПрогресс: 0 / 6\nНаграда: +100 монет\nОткрыто"
 
+[node name="LockIcon" type="TextureRect" parent="ContentCenter/PortraitContent/Layout/ChapterList/ChapterOneButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 58.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("icon_lock")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="ChapterTwoButton" type="Button" parent="ContentCenter/PortraitContent/Layout/ChapterList"]
+theme_type_variation = &"ChapterCard"
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 260)
+custom_minimum_size = Vector2(0, 230)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleChapterTwo")
+theme_override_font_sizes/font_size = 26
 disabled = true
 text = "Глава II\nРазрушенное святилище\nПрогресс: 0 / 8\nНаграда: +150 монет\nЗакрыто"
 
+[node name="LockIcon" type="TextureRect" parent="ContentCenter/PortraitContent/Layout/ChapterList/ChapterTwoButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 58.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("icon_lock")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="ChapterThreeButton" type="Button" parent="ContentCenter/PortraitContent/Layout/ChapterList"]
+theme_type_variation = &"ChapterCard"
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 260)
+custom_minimum_size = Vector2(0, 230)
 layout_mode = 2
-theme_override_font_sizes/font_size = 23
-theme_override_styles/normal = SubResource("StyleChapterThree")
+theme_override_font_sizes/font_size = 26
 disabled = true
 text = "Глава III\nЗаросшие катакомбы\nПрогресс: 0 / 10\nНаграда: +200 монет\nЗакрыто"
+
+[node name="LockIcon" type="TextureRect" parent="ContentCenter/PortraitContent/Layout/ChapterList/ChapterThreeButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 58.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("icon_lock")
+expand_mode = 1
+stretch_mode = 5

@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "asset_count": 6,
+  "identical_alpha": true,
+  "minimum_clear_padding_px": 16,
+  "checks": [
+    "256x256",
+    "PNG color type6 bit depth8",
+    "transparent padding",
+    "pixel-identical alpha and origin",
+    "opaque stone center"
+  ],
+  "assets": [
+    {
+      "file": "block_green_v1.png",
+      "size": [
+        256,
+        256
+      ],
+      "format": "PNG_RGBA8",
+      "alpha_sha256": "8c0041335801bc2fb77dc3d5ad0617aa4d1e27af4f0394afb7d2ebb6c67acacf",
+      "bounds_inclusive": [
+        18,
+        18,
+        237,
+        237
+      ],
+      "transparent_pixels": 17447,
+      "partial_pixels": 778,
+      "opaque_pixels": 47311,
+      "opaque_center": true
+    },
+    {
+      "file": "block_blue_v1.png",
+      "size": [
+        256,
+        256
+      ],
+      "format": "PNG_RGBA8",
+      "alpha_sha256": "8c0041335801bc2fb77dc3d5ad0617aa4d1e27af4f0394afb7d2ebb6c67acacf",
+      "bounds_inclusive": [
+        18,
+        18,
+        237,
+        237
+      ],
+      "transparent_pixels": 17447,
+      "partial_pixels": 778,
+      "opaque_pixels": 47311,
+      "opaque_center": true
+    },
+    {
+      "file": "block_red_v1.png",
+      "size": [
+        256,
+        256
+      ],
+      "format": "PNG_RGBA8",
+      "alpha_sha256": "8c0041335801bc2fb77dc3d5ad0617aa4d1e27af4f0394afb7d2ebb6c67acacf",
+      "bounds_inclusive": [
+        18,
+        18,
+        237,
+        237
+      ],
+      "transparent_pixels": 17447,
+      "partial_pixels": 778,
+      "opaque_pixels": 47311,
+      "opaque_center": true
+    },
+    {
+      "file": "block_amber_v1.png",
+      "size": [
+        256,
+        256
+      ],
+      "format": "PNG_RGBA8",
+      "alpha_sha256": "8c0041335801bc2fb77dc3d5ad0617aa4d1e27af4f0394afb7d2ebb6c67acacf",
+      "bounds_inclusive": [
+        18,
+        18,
+        237,
+        237
+      ],
+      "transparent_pixels": 17447,
+      "partial_pixels": 778,
+      "opaque_pixels": 47311,
+      "opaque_center": true
+    },
+    {
+      "file": "block_purple_v1.png",
+      "size": [
+        256,
+        256
+      ],
+      "format": "PNG_RGBA8",
+      "alpha_sha256": "8c0041335801bc2fb77dc3d5ad0617aa4d1e27af4f0394afb7d2ebb6c67acacf",
+      "bounds_inclusive": [
+        18,
+        18,
+        237,
+        237
+      ],
+      "transparent_pixels": 17447,
+      "partial_pixels": 778,
+      "opaque_pixels": 47311,
+      "opaque_center": true
+    },
+    {
+      "file": "block_turquoise_v1.png",
+      "size": [
+        256,
+        256
+      ],
+      "format": "PNG_RGBA8",
+      "alpha_sha256": "8c0041335801bc2fb77dc3d5ad0617aa4d1e27af4f0394afb7d2ebb6c67acacf",
+      "bounds_inclusive": [
+        18,
+        18,
+        237,
+        237
+      ],
+      "transparent_pixels": 17447,
+      "partial_pixels": 778,
+      "opaque_pixels": 47311,
+      "opaque_center": true
+    }
+  ]
+}

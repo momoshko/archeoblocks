@@ -52,6 +52,8 @@ func _run() -> void:
 		_expect(target_view.artifact_target_prediction.visible, "Useful artifact target emphasis should remain visible")
 		_expect(target_view.artifact_target_border.z_index > target_view.hint_ghost.z_index, "Artifact marker must render above the Hint ghost")
 
+	# Repeated presentation is exercised with the debug-only unlimited allowance.
+	session.help_config.debug_unlimited_hints = true
 	for invocation in 20:
 		_expect(session.request_hint(), "Repeated Hint %d should safely replace the current presentation" % (invocation + 1))
 	await process_frame

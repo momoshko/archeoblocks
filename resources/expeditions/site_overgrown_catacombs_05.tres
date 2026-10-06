@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_7kb1u"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_ry4dv"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/vine_amulet_full_v1.png" id="3_yemff"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="4_bam5q"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_s5gv4"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_m8mw6"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_4vwro"]
+
+[sub_resource type="Resource" id="Resource_7kb1u"]
+script = ExtResource("5_s5gv4")
+cell = Vector2i(0, 7)
+
+[sub_resource type="Resource" id="Resource_ry4dv"]
+script = ExtResource("7_4vwro")
+cell = Vector2i(5, 7)
+durability = 2
+
+[resource]
+script = ExtResource("6_m8mw6")
+id = &"overgrown_catacombs_05_site"
+goal = &"clear_site"
+title_ru = "Заросшие катакомбы 5 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Overgrown Catacombs 5 - Overgrown Passage - site"
+artifact_id = &"vine_amulet"
+artifact_name_ru = "Амулет лозы"
+full_artifact_texture = ExtResource("3_yemff")
+objective_ru = "Расчистите участок: снимите весь грунт, разбейте завалы, срежьте корни"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(1, 7), Vector2i(2, 7), Vector2i(3, 7), Vector2i(4, 7)])
+stone_obstacles = Array[ExtResource("7_4vwro")]([SubResource("Resource_ry4dv")])
+root_obstacles = Array[ExtResource("5_s5gv4")]([SubResource("Resource_7kb1u")])
+piece_generation = ExtResource("4_bam5q")
+expected_moves_min = 19
+expected_moves_max = 34
+hard_move_limit = 25
+game_scene_path = "res://scenes/screens/game_screen_site_overgrown_catacombs_05.tscn"

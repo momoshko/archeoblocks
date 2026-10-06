@@ -33,3 +33,6 @@ extends Resource
 @export_range(1, 500, 1) var hint_leaf_connected_region_weight := 18
 @export_range(1, 1000, 10) var hint_leaf_large_piece_space_weight := 120
 @export_range(1, 10000, 50) var hint_leaf_artifact_depth_weight := 800
+## Value of a gain one move later relative to now. Below 1.0 the Hint prefers
+## doing useful work (artifact digs, line clears) immediately instead of later.
+@export_range(0.5, 1.0, 0.01) var hint_future_discount := 0.85

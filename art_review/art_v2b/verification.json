@@ -1,0 +1,1061 @@
+{
+  "status": "PASS_OFFLINE_PRODUCTION_CANDIDATE",
+  "provenance": "Generated with the available built-in ImageGen; exact underlying image model/quality tier was not exposed by the tool.",
+  "automated": {
+    "passed": 99,
+    "total": 99,
+    "checks": [
+      {
+        "name": "exact_16_pngs",
+        "pass": true,
+        "evidence": 16
+      },
+      {
+        "name": "board_frame_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "board_frame_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "49b32eb7eabdc39dffef2788a00ffdffb83ba02a3b19844390257b643596a310"
+        }
+      },
+      {
+        "name": "board_frame_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "board_frame_ascii",
+        "pass": true,
+        "evidence": "board_frame_v2b.png"
+      },
+      {
+        "name": "board_frame_open_center",
+        "pass": true,
+        "evidence": {
+          "rect": {
+            "left": 131,
+            "top": 131,
+            "width": 762,
+            "height": 762
+          },
+          "maxAlpha": 0
+        }
+      },
+      {
+        "name": "panel_header_large_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            768,
+            224
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "panel_header_large_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "3f5e53c912d94a21652c971eaa9738ffb412419e0075fc09307620768685c555"
+        }
+      },
+      {
+        "name": "panel_header_large_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "panel_header_large_ascii",
+        "pass": true,
+        "evidence": "panel_header_large_v2b.png"
+      },
+      {
+        "name": "panel_header_large_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            78,
+            68,
+            612,
+            88
+          ],
+          "minAlpha": 255
+        }
+      },
+      {
+        "name": "panel_header_small_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            512,
+            160
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "panel_header_small_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "297a96539a8d779035da9a2ce5e92bccf4591f98b7ec37d83e4575b5fbacd359"
+        }
+      },
+      {
+        "name": "panel_header_small_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "panel_header_small_ascii",
+        "pass": true,
+        "evidence": "panel_header_small_v2b.png"
+      },
+      {
+        "name": "panel_header_small_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            51,
+            46,
+            410,
+            68
+          ],
+          "minAlpha": 252
+        }
+      },
+      {
+        "name": "panel_label_small_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            384,
+            128
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "panel_label_small_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "f967ede02ef783ed529d9588cbf1df046040a5bd02ed1da626367f5b6c72cd37"
+        }
+      },
+      {
+        "name": "panel_label_small_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "panel_label_small_ascii",
+        "pass": true,
+        "evidence": "panel_label_small_v2b.png"
+      },
+      {
+        "name": "panel_label_small_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            45,
+            40,
+            294,
+            48
+          ],
+          "minAlpha": 252
+        }
+      },
+      {
+        "name": "popup_panel_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            768,
+            1024
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "popup_panel_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "00f4d7c9c89a45f8c4bdee4f0185fde6f7db2bb2f4f7d8d102608ac11a27ddcf"
+        }
+      },
+      {
+        "name": "popup_panel_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "popup_panel_ascii",
+        "pass": true,
+        "evidence": "popup_panel_v2b.png"
+      },
+      {
+        "name": "popup_panel_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            167,
+            167,
+            434,
+            690
+          ],
+          "minAlpha": 255
+        }
+      },
+      {
+        "name": "button_primary_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            768,
+            192
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "button_primary_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "96586cf98f11741915b0892f34321be9b1a82f18b99d69460a4e1756824603a9"
+        }
+      },
+      {
+        "name": "button_primary_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "button_primary_ascii",
+        "pass": true,
+        "evidence": "button_primary_v2b.png"
+      },
+      {
+        "name": "button_primary_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            72,
+            64,
+            624,
+            64
+          ],
+          "minAlpha": 252
+        }
+      },
+      {
+        "name": "button_secondary_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            768,
+            192
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "button_secondary_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "96586cf98f11741915b0892f34321be9b1a82f18b99d69460a4e1756824603a9"
+        }
+      },
+      {
+        "name": "button_secondary_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "button_secondary_ascii",
+        "pass": true,
+        "evidence": "button_secondary_v2b.png"
+      },
+      {
+        "name": "button_secondary_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            72,
+            64,
+            624,
+            64
+          ],
+          "minAlpha": 252
+        }
+      },
+      {
+        "name": "button_disabled_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            768,
+            192
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "button_disabled_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "96586cf98f11741915b0892f34321be9b1a82f18b99d69460a4e1756824603a9"
+        }
+      },
+      {
+        "name": "button_disabled_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "button_disabled_ascii",
+        "pass": true,
+        "evidence": "button_disabled_v2b.png"
+      },
+      {
+        "name": "button_disabled_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            72,
+            64,
+            624,
+            64
+          ],
+          "minAlpha": 252
+        }
+      },
+      {
+        "name": "button_small_back_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            192,
+            192
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "button_small_back_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "0ea574366294484fc49f99e7e387791184b1359bec802202aba6604f962bb2ac"
+        }
+      },
+      {
+        "name": "button_small_back_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "button_small_back_ascii",
+        "pass": true,
+        "evidence": "button_small_back_v2b.png"
+      },
+      {
+        "name": "button_small_back_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            53,
+            53,
+            86,
+            86
+          ],
+          "minAlpha": 255
+        }
+      },
+      {
+        "name": "button_selected_frame_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            768,
+            192
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "button_selected_frame_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "47549329e2a477f65ce28e383466059cd3b5d71d6c9cd0657b09554dfdc7df6b"
+        }
+      },
+      {
+        "name": "button_selected_frame_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "button_selected_frame_ascii",
+        "pass": true,
+        "evidence": "button_selected_frame_v2b.png"
+      },
+      {
+        "name": "button_selected_frame_open_center",
+        "pass": true,
+        "evidence": {
+          "rect": {
+            "left": 128,
+            "top": 48,
+            "width": 512,
+            "height": 96
+          },
+          "maxAlpha": 0
+        }
+      },
+      {
+        "name": "piece_slot_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            384,
+            320
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "piece_slot_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "09316176ae1a090962ef92fd1598881122ecc4061fa9d835976d2ffe975c7aec"
+        }
+      },
+      {
+        "name": "piece_slot_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "piece_slot_ascii",
+        "pass": true,
+        "evidence": "piece_slot_v2b.png"
+      },
+      {
+        "name": "piece_slot_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            67,
+            58,
+            250,
+            204
+          ],
+          "minAlpha": 255
+        }
+      },
+      {
+        "name": "chapter_card_open_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            768,
+            320
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "chapter_card_open_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "587b62a7326cc620b95c794dd035a084a94916fcebadf1ce22d336a7712e8eea"
+        }
+      },
+      {
+        "name": "chapter_card_open_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "chapter_card_open_ascii",
+        "pass": true,
+        "evidence": "chapter_card_open_v2b.png"
+      },
+      {
+        "name": "chapter_card_open_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            92,
+            79,
+            584,
+            162
+          ],
+          "minAlpha": 251
+        }
+      },
+      {
+        "name": "chapter_card_locked_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            768,
+            320
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "chapter_card_locked_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "587b62a7326cc620b95c794dd035a084a94916fcebadf1ce22d336a7712e8eea"
+        }
+      },
+      {
+        "name": "chapter_card_locked_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "chapter_card_locked_ascii",
+        "pass": true,
+        "evidence": "chapter_card_locked_v2b.png"
+      },
+      {
+        "name": "chapter_card_locked_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            92,
+            79,
+            584,
+            162
+          ],
+          "minAlpha": 251
+        }
+      },
+      {
+        "name": "chapter_card_completed_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            768,
+            320
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "chapter_card_completed_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "587b62a7326cc620b95c794dd035a084a94916fcebadf1ce22d336a7712e8eea"
+        }
+      },
+      {
+        "name": "chapter_card_completed_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "chapter_card_completed_ascii",
+        "pass": true,
+        "evidence": "chapter_card_completed_v2b.png"
+      },
+      {
+        "name": "chapter_card_completed_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            92,
+            79,
+            584,
+            162
+          ],
+          "minAlpha": 251
+        }
+      },
+      {
+        "name": "collection_card_known_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            384,
+            480
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "collection_card_known_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "da5c957c9c848124107db240721e551b7b470383e2fb915d850ef63b4bc00cc1"
+        }
+      },
+      {
+        "name": "collection_card_known_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "collection_card_known_ascii",
+        "pass": true,
+        "evidence": "collection_card_known_v2b.png"
+      },
+      {
+        "name": "collection_card_known_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            87,
+            87,
+            210,
+            306
+          ],
+          "minAlpha": 251
+        }
+      },
+      {
+        "name": "collection_card_unknown_format",
+        "pass": true,
+        "evidence": {
+          "size": [
+            384,
+            480
+          ],
+          "mode": "RGBA8",
+          "profile": true
+        }
+      },
+      {
+        "name": "collection_card_unknown_alpha",
+        "pass": true,
+        "evidence": {
+          "outer8pxTransparent": true,
+          "transparentRGBZero": true,
+          "alphaSha256": "da5c957c9c848124107db240721e551b7b470383e2fb915d850ef63b4bc00cc1"
+        }
+      },
+      {
+        "name": "collection_card_unknown_integrity",
+        "pass": true,
+        "evidence": "Output and source SHA-256 match export report"
+      },
+      {
+        "name": "collection_card_unknown_ascii",
+        "pass": true,
+        "evidence": "collection_card_unknown_v2b.png"
+      },
+      {
+        "name": "collection_card_unknown_text_safe",
+        "pass": true,
+        "evidence": {
+          "rect": [
+            87,
+            87,
+            210,
+            306
+          ],
+          "minAlpha": 251
+        }
+      },
+      {
+        "name": "button_secondary_shared_state_alpha",
+        "pass": true,
+        "evidence": "button_primary"
+      },
+      {
+        "name": "button_disabled_shared_state_alpha",
+        "pass": true,
+        "evidence": "button_primary"
+      },
+      {
+        "name": "chapter_card_locked_shared_state_alpha",
+        "pass": true,
+        "evidence": "chapter_card_open"
+      },
+      {
+        "name": "chapter_card_completed_shared_state_alpha",
+        "pass": true,
+        "evidence": "chapter_card_open"
+      },
+      {
+        "name": "collection_card_unknown_shared_state_alpha",
+        "pass": true,
+        "evidence": "collection_card_known"
+      },
+      {
+        "name": "button_grayscale_states",
+        "pass": true,
+        "evidence": {
+          "primary": 90.07,
+          "disabled": 158.76,
+          "secondary": 213.59,
+          "minimumGap": 54.83000000000001
+        }
+      },
+      {
+        "name": "primary_secondary_text_contrast",
+        "pass": true,
+        "evidence": {
+          "primary": 6.3,
+          "secondary": 9.37
+        }
+      },
+      {
+        "name": "board_pitch_mobile",
+        "pass": true,
+        "evidence": 62
+      },
+      {
+        "name": "menu_structure",
+        "pass": true,
+        "evidence": [
+          "Играть",
+          "Экспедиции",
+          "Коллекция",
+          "Настройки"
+        ]
+      },
+      {
+        "name": "prompts_complete",
+        "pass": true,
+        "evidence": 16
+      },
+      {
+        "name": "v2a_assets_and_reviews_unchanged",
+        "pass": true,
+        "evidence": "22 accepted V2A hashes unchanged"
+      },
+      {
+        "name": "ui_family_overview_size",
+        "pass": true,
+        "evidence": [
+          1280,
+          1240
+        ]
+      },
+      {
+        "name": "readability_48px_size",
+        "pass": true,
+        "evidence": [
+          1200,
+          1260
+        ]
+      },
+      {
+        "name": "grayscale_readability_size",
+        "pass": true,
+        "evidence": [
+          1200,
+          1260
+        ]
+      },
+      {
+        "name": "gameplay_mockup_ui_only_size",
+        "pass": true,
+        "evidence": [
+          720,
+          1280
+        ]
+      },
+      {
+        "name": "menu_mockup_ui_only_size",
+        "pass": true,
+        "evidence": [
+          720,
+          1280
+        ]
+      },
+      {
+        "name": "grayscale_neutral",
+        "pass": true,
+        "evidence": "All RGB channels equal"
+      },
+      {
+        "name": "integration_guard",
+        "pass": true,
+        "evidence": "Production and review directories excluded from Godot import"
+      }
+    ]
+  },
+  "metrics": {
+    "board_frame": {
+      "grayMean": 0,
+      "grayStd": 0,
+      "meanTextContrast": 1.54,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "panel_header_large": {
+      "grayMean": 211.03,
+      "grayStd": 1.91,
+      "meanTextContrast": 9.13,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "panel_header_small": {
+      "grayMean": 220.81,
+      "grayStd": 1.31,
+      "meanTextContrast": 10.06,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "panel_label_small": {
+      "grayMean": 211.43,
+      "grayStd": 1.61,
+      "meanTextContrast": 9.16,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "popup_panel": {
+      "grayMean": 214.67,
+      "grayStd": 1.88,
+      "meanTextContrast": 9.47,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "button_primary": {
+      "grayMean": 90.07,
+      "grayStd": 2.73,
+      "meanTextContrast": 6.3,
+      "textRGB": [
+        255,
+        244,
+        218
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "button_secondary": {
+      "grayMean": 213.59,
+      "grayStd": 3.56,
+      "meanTextContrast": 9.37,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "button_disabled": {
+      "grayMean": 158.76,
+      "grayStd": 4.77,
+      "meanTextContrast": 5.15,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "button_small_back": {
+      "grayMean": 216.44,
+      "grayStd": 2.64,
+      "meanTextContrast": 9.64,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "button_selected_frame": {
+      "grayMean": 0,
+      "grayStd": 0,
+      "meanTextContrast": 1.54,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "piece_slot": {
+      "grayMean": 212.21,
+      "grayStd": 2.9,
+      "meanTextContrast": 9.24,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "chapter_card_open": {
+      "grayMean": 211.87,
+      "grayStd": 2.33,
+      "meanTextContrast": 9.21,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "chapter_card_locked": {
+      "grayMean": 173.32,
+      "grayStd": 3.01,
+      "meanTextContrast": 6.12,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "chapter_card_completed": {
+      "grayMean": 212.44,
+      "grayStd": 2.28,
+      "meanTextContrast": 9.26,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "collection_card_known": {
+      "grayMean": 216.16,
+      "grayStd": 3.05,
+      "meanTextContrast": 9.61,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    },
+    "collection_card_unknown": {
+      "grayMean": 198.11,
+      "grayStd": 2.43,
+      "meanTextContrast": 8.02,
+      "textRGB": [
+        57,
+        43,
+        27
+      ],
+      "note": "Mean face metric supports visual inspection; not a worst-pixel or accessibility certification."
+    }
+  },
+  "visualReview": {
+    "reviewer": "Codex agent",
+    "gates": [
+      {
+        "gate": "style",
+        "status": "PASS",
+        "evidence": "One reference-derived warm sandstone family, restrained chips, clipped corners and upper-left illumination."
+      },
+      {
+        "gate": "frame",
+        "status": "PASS",
+        "evidence": "Clean continuous ring, reduced border via nine-region normalization, no ornament or blocked board corners."
+      },
+      {
+        "gate": "button_states",
+        "status": "PASS",
+        "evidence": "Dark green primary, pale sandstone secondary and medium gray-beige disabled remain distinct in grayscale and at48/64px visible body height."
+      },
+      {
+        "gate": "card_siblings",
+        "status": "PASS",
+        "evidence": "Tray, chapter and collection share recessed rim language. State accents supplement separate runtime labels/icons."
+      },
+      {
+        "gate": "text_areas",
+        "status": "PASS",
+        "evidence": "Blank production faces; separate Russian review text remains readable with generous center space."
+      },
+      {
+        "gate": "composites",
+        "status": "PASS",
+        "evidence": "V1 menu action order and gameplay control/information structure retained; no background generation, lighter helper text and counters."
+      }
+    ]
+  },
+  "limitations": [
+    "Static agent art review, not user testing or runtime Godot verification.",
+    "Nine-region resizing is demonstrated offline; actual engine filtering, theme states and minimum layout sizes need verification during integration.",
+    "Known/unknown and open/completed card material signals should be supplemented by separate labels/icons for accessibility; no such glyphs are baked into these sprites.",
+    "Menu discovery motif reuses the V2A target center for review; it is not a new approved logo or production background."
+  ],
+  "integration": {
+    "godotRun": false,
+    "gameplayOrScenesEdited": false,
+    "v2aHashesUnchanged": true
+  }
+}

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/ui/artifact_discovery_feedback.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/ui/find_glow.tscn" id="find_glow"]
 
 [sub_resource type="StyleBoxFlat" id="StyleDiscovery"]
 bg_color = Color(0.109804, 0.0705882, 0.0313725, 0.96)
@@ -30,6 +31,12 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_script")
 
+[node name="FindGlow" parent="." instance=ExtResource("find_glow")]
+layout_mode = 1
+offset_top = -100.0
+offset_bottom = -100.0
+loop = false
+
 [node name="Center" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -56,7 +63,7 @@ theme_override_constants/separation = 8
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/font_color = Color(1, 0.92549, 0.65098, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 28
 text = "ФРАГМЕНТ НАЙДЕН!"
 horizontal_alignment = 1
 
@@ -95,6 +102,6 @@ stretch_mode = 5
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 26
 text = "Золотая маска"
 horizontal_alignment = 1

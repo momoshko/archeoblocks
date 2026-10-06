@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_hby1h"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_bvhsg"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ruined_shrine/altar_medallion_full_v1.png" id="3_mq0qo"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_2.tres" id="4_7we5n"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_lsoi2"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_tqlva"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_3fo7e"]
+
+[sub_resource type="Resource" id="Resource_hby1h"]
+script = ExtResource("7_3fo7e")
+cell = Vector2i(0, 3)
+
+[resource]
+script = ExtResource("6_tqlva")
+id = &"ruined_shrine_07_site"
+goal = &"clear_site"
+title_ru = "Разрушенное святилище 7 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Ruined Shrine 7 - Collapsed Hall - site"
+artifact_id = &"altar_medallion"
+artifact_name_ru = "Алтарный медальон"
+full_artifact_texture = ExtResource("3_mq0qo")
+objective_ru = "Расчистите участок: снимите весь грунт, разбейте завалы"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(6, 0), Vector2i(7, 0), Vector2i(6, 1), Vector2i(7, 1)])
+stone_obstacles = Array[ExtResource("7_3fo7e")]([SubResource("Resource_hby1h")])
+piece_generation = ExtResource("4_7we5n")
+expected_moves_min = 13
+expected_moves_max = 16
+hard_move_limit = 15
+game_scene_path = "res://scenes/screens/game_screen_site_ruined_shrine_07.tscn"

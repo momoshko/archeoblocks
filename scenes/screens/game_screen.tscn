@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://depvk2coryhsp"]
+[gd_scene format=3 uid="uid://depvk2coryhsp"]
 
 [ext_resource type="Script" uid="uid://iepascnjhthy" path="res://scripts/game_screen.gd" id="1_script"]
 [ext_resource type="PackedScene" path="res://scenes/game/board_view.tscn" id="2_board"]
@@ -16,22 +16,30 @@
 [ext_resource type="PackedScene" path="res://scenes/ui/artifact_discovery_feedback.tscn" id="14_artifact_feedback"]
 [ext_resource type="Resource" path="res://resources/chapters/ancient_courtyard.tres" id="15_chapter"]
 [ext_resource type="PackedScene" path="res://scenes/ui/onboarding_tutorial.tscn" id="16_tutorial"]
+[ext_resource type="Script" path="res://scripts/audio/game_sfx.gd" id="17_sfx"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/ui/board_frame.png" id="18_frame"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/menu/background.jpg" id="bg_wall"]
+[ext_resource type="Texture2D" uid="uid://bwoq00j4lict0" path="res://assets/ui_art/icons/pause.png" id="icon_pause"]
+[ext_resource type="Texture2D" uid="uid://41neqncvbgsu" path="res://assets/ui_art/icons/undo.png" id="icon_undo"]
+[ext_resource type="Texture2D" uid="uid://ciba7tnc8co4p" path="res://assets/ui_art/icons/hint.png" id="icon_hint"]
+[ext_resource type="PackedScene" path="res://scenes/ui/board_fx.tscn" id="19_board_fx"]
+[ext_resource type="PackedScene" path="res://scenes/ui/round_action_button.tscn" id="20_round"]
+[ext_resource type="Texture2D" uid="uid://wrpk658dii72" path="res://assets/ui_art/icons/fragment.png" id="icon_fragment"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoardFrame"]
-content_margin_left = 15.0
-content_margin_top = 15.0
-content_margin_right = 15.0
-content_margin_bottom = 15.0
-bg_color = Color(0.690196, 0.545098, 0.321569, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.254902, 0.164706, 0.0823529, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+[sub_resource type="StyleBoxTexture" id="StyleBoardFrame"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+texture = ExtResource("18_frame")
+texture_margin_left = 38.0
+texture_margin_top = 38.0
+texture_margin_right = 38.0
+texture_margin_bottom = 38.0
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
 
 [node name="GameScreen" type="Control" unique_id=671056095]
 layout_mode = 3
@@ -41,17 +49,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_script")
-next_expedition_scene_path = "res://scenes/screens/game_screen_02.tscn"
+next_expedition_scene_path = "res://scenes/screens/game_screen_site_expedition_02.tscn"
 
-[node name="Background" type="ColorRect" parent="." unique_id=751414390]
+[node name="Background" type="TextureRect" parent="." unique_id=751414390]
+modulate = Color(0.55, 0.53, 0.5, 1)
+texture = ExtResource("bg_wall")
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-color = Color(0.203922, 0.14902, 0.0901961, 1)
 
 [node name="SideDecorLeft" type="ColorRect" parent="." unique_id=1737892408]
 layout_mode = 1
@@ -103,47 +114,103 @@ layout_mode = 2
 theme_override_constants/separation = 14
 
 [node name="PauseButton" type="Button" parent="ContentCenter/PortraitContent/MainLayout/Header" unique_id=1051682394]
+size_flags_vertical = 4
+theme_type_variation = &"SmallButton"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(92, 68)
 layout_mode = 2
-text = "Пауза"
+tooltip_text = "Пауза"
+icon = ExtResource("icon_pause")
+icon_alignment = 1
 
 [node name="HeaderText" type="VBoxContainer" parent="ContentCenter/PortraitContent/MainLayout/Header" unique_id=903109608]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 4
+theme_override_constants/separation = 2
+alignment = 1
 
 [node name="ExpeditionTitle" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText" unique_id=1654553847]
+theme_type_variation = &"HeaderLabel"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
-theme_override_font_sizes/font_size = 30
-text = "Древний двор 1 — Первая линия"
-horizontal_alignment = 2
+theme_override_font_sizes/font_size = 28
+text = "Древний двор 1"
 vertical_alignment = 1
-autowrap_mode = 2
+text_overrun_behavior = 3
 
-[node name="FragmentProgress" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText" unique_id=705776830]
+[node name="FragmentRow" type="HBoxContainer" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Fragment1" type="TextureRect" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText/FragmentRow"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("icon_fragment")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Fragment2" type="TextureRect" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText/FragmentRow"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("icon_fragment")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Fragment3" type="TextureRect" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText/FragmentRow"]
+custom_minimum_size = Vector2(46, 46)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("icon_fragment")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FragmentProgress" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Header/HeaderText/FragmentRow" unique_id=705776830]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.760784, 0.835294, 0.611765, 1)
+theme_override_font_sizes/font_size = 24
+text = "0 / 3"
+vertical_alignment = 1
+
+[node name="ScoreBox" type="VBoxContainer" parent="ContentCenter/PortraitContent/MainLayout/Header"]
+custom_minimum_size = Vector2(118, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Header/ScoreBox" unique_id=958632143]
+theme_type_variation = &"HeaderLabel"
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.86, 0.5, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+
+[node name="MovesLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Header/ScoreBox" unique_id=903683038]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.760784, 0.835294, 0.611765, 1)
 theme_override_font_sizes/font_size = 22
-text = "Фрагменты: 0 / 3"
+text = "Ходы: 0"
 horizontal_alignment = 2
 
 [node name="ObjectiveText" type="Label" parent="ContentCenter/PortraitContent/MainLayout" unique_id=1160356646]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 26
 text = "Откройте печать под грунтом"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="ObjectiveSecondary" type="Label" parent="ContentCenter/PortraitContent/MainLayout"]
+visible = false
 custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.760784, 0.835294, 0.611765, 1)
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 22
 text = "Заполните строку или столбец — линия снимет грунт"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -155,6 +222,7 @@ size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoardFrame")
 
 [node name="Board" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame" unique_id=1859167373 instance=ExtResource("2_board")]
+board_fx_path = NodePath("../../../../../FeedbackUI/BoardFx")
 
 [node name="ArtifactHint" parent="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell01" index="1"]
 anchors_preset = -1
@@ -357,45 +425,28 @@ horizontal_alignment = 1
 [node name="PieceTray" parent="ContentCenter/PortraitContent/MainLayout" unique_id=1840694966 instance=ExtResource("3_tray")]
 
 [node name="Actions" type="HBoxContainer" parent="ContentCenter/PortraitContent/MainLayout" unique_id=2092121438]
-custom_minimum_size = Vector2(0, 66)
+custom_minimum_size = Vector2(0, 116)
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 72
 alignment = 1
 
-[node name="UndoButton" type="Button" parent="ContentCenter/PortraitContent/MainLayout/Actions" unique_id=1979767949]
-custom_minimum_size = Vector2(210, 64)
+[node name="UndoButton" parent="ContentCenter/PortraitContent/MainLayout/Actions" unique_id=1979767949 instance=ExtResource("20_round")]
 layout_mode = 2
-text = "Отменить"
+tooltip_text = "Отменить"
+icon = ExtResource("icon_undo")
 
-[node name="HintButton" type="Button" parent="ContentCenter/PortraitContent/MainLayout/Actions" unique_id=1661159885]
-custom_minimum_size = Vector2(210, 64)
+[node name="HintButton" parent="ContentCenter/PortraitContent/MainLayout/Actions" unique_id=1661159885 instance=ExtResource("20_round")]
 layout_mode = 2
-text = "Подсказка"
+tooltip_text = "Подсказка"
+icon = ExtResource("icon_hint")
 
 [node name="NoMovesLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout"]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.956863, 0.47451, 0.352941, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "NO_MOVES — нет доступных ходов"
 horizontal_alignment = 1
-
-[node name="Stats" type="HBoxContainer" parent="ContentCenter/PortraitContent/MainLayout" unique_id=589944491]
-layout_mode = 2
-alignment = 1
-
-[node name="MovesLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Stats" unique_id=903683038]
-custom_minimum_size = Vector2(260, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
-text = "Ходы: 0"
-
-[node name="ScoreLabel" type="Label" parent="ContentCenter/PortraitContent/MainLayout/Stats" unique_id=958632143]
-custom_minimum_size = Vector2(260, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.968627, 0.901961, 0.741176, 1)
-text = "Счёт: 0"
-horizontal_alignment = 2
 
 [node name="ModalUI" type="CanvasLayer" parent="."]
 layer = 10
@@ -408,6 +459,8 @@ layout_mode = 1
 
 [node name="FeedbackUI" type="CanvasLayer" parent="."]
 layer = 5
+
+[node name="BoardFx" parent="FeedbackUI" instance=ExtResource("19_board_fx")]
 
 [node name="ActionFeedback" parent="FeedbackUI" instance=ExtResource("12_feedback")]
 layout_mode = 1
@@ -428,9 +481,9 @@ economy_config = ExtResource("11_economy")
 board_view_path = NodePath("../ContentCenter/PortraitContent/MainLayout/BoardFrame/Board")
 piece_tray_path = NodePath("../ContentCenter/PortraitContent/MainLayout/PieceTray")
 drag_preview_path = NodePath("../DragPreview")
-moves_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Stats/MovesLabel")
-score_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Stats/ScoreLabel")
-fragment_progress_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Header/HeaderText/FragmentProgress")
+moves_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Header/ScoreBox/MovesLabel")
+score_label_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Header/ScoreBox/ScoreLabel")
+fragment_progress_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Header/HeaderText/FragmentRow/FragmentProgress")
 expedition_title_path = NodePath("../ContentCenter/PortraitContent/MainLayout/Header/HeaderText/ExpeditionTitle")
 objective_text_path = NodePath("../ContentCenter/PortraitContent/MainLayout/ObjectiveText")
 instruction_text_path = NodePath("../ContentCenter/PortraitContent/MainLayout/ObjectiveSecondary")
@@ -452,6 +505,10 @@ layer = 8
 [node name="OnboardingTutorial" parent="TutorialUI" instance=ExtResource("16_tutorial")]
 game_session_path = NodePath("../../GameSession")
 layout_mode = 1
+
+[node name="GameSfx" type="Node" parent="."]
+script = ExtResource("17_sfx")
+game_session_path = NodePath("../GameSession")
 
 [editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board"]
 [editable path="ContentCenter/PortraitContent/MainLayout/BoardFrame/Board/BoardContentCenter/Grid/Cell01"]

@@ -21,3 +21,12 @@ Thumbs.db
 # IDE
 .idea/
 .vscode/
+
+# Test logs
+.test_logs/
+tests/.*.cfg
+# Codex scratch
+.codex_tmp/
+
+# Sound/music review material: raw pack files may not be redistributed
+audio_review/

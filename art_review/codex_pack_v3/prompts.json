@@ -1,0 +1,302 @@
+{
+ "pack": "Archeoblocks artifacts v3 (for Codex imagegen)",
+ "style_prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard.",
+ "reference_images": [
+  "assets/artifacts/ancient_courtyard/golden_mask_full_v1.png",
+  "assets/artifacts/ancient_courtyard/courtyard_seal_full_v1.png",
+  "assets/artifacts/ancient_courtyard/stone_amulet_full_v1.png"
+ ],
+ "canvas": {
+  "size": [
+   512,
+   512
+  ],
+  "format": "PNG RGBA8 sRGB",
+  "fit_long_side_px": 384,
+  "min_margin_px": 64
+ },
+ "fragments": "Cut from the same master along irregular complementary boundaries (no jigsaw tabs), roughly equal visible area, each fragment keeps its position on its own 512x512 canvas (same as golden_mask_fragment_*_v1.png).",
+ "items": [
+  {
+   "id": "bronze_key",
+   "folder": "assets/artifacts/ancient_courtyard/",
+   "full": "bronze_key_full_v1.png",
+   "fragment_files": [],
+   "title_ru": "Бронзовый ключ",
+   "title_en": "Bronze Key",
+   "split": "-",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Old bronze key: round bow with three small knobs and a small turquoise inlay, straight shaft with two raised collars, bit with notched teeth; green patina only in the grooves."
+  },
+  {
+   "id": "mosaic_tablet",
+   "folder": "assets/artifacts/ancient_courtyard/",
+   "full": "mosaic_tablet_full_v1.png",
+   "fragment_files": [
+    "mosaic_tablet_fragment_a_v1.png",
+    "mosaic_tablet_fragment_b_v1.png"
+   ],
+   "title_ru": "Мозаичная табличка",
+   "title_en": "Mosaic Tablet",
+   "split": "horizontal (top / bottom)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Rectangular sandstone tablet with rounded chipped corners, inset mosaic of small square tesserae forming an eight-petal rosette in terracotta, lapis blue, turquoise and a gold centre."
+  },
+  {
+   "id": "guardian_figurine",
+   "folder": "assets/artifacts/ancient_courtyard/",
+   "full": "guardian_figurine_full_v1.png",
+   "fragment_files": [
+    "guardian_figurine_fragment_a_v1.png",
+    "guardian_figurine_fragment_b_v1.png",
+    "guardian_figurine_fragment_c_v1.png"
+   ],
+   "title_ru": "Фигурка хранителя",
+   "title_en": "Guardian Figurine",
+   "split": "horizontal (head / torso / legs and plinth)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Small standing terracotta guardian statuette with arms folded, calm stylised face, gold headband with a carnelian, gold collar, square plinth; friendly, not scary."
+  },
+  {
+   "id": "stone_charm",
+   "folder": "assets/artifacts/ruined_shrine/",
+   "full": "stone_charm_full_v1.png",
+   "fragment_files": [
+    "stone_charm_fragment_a_v1.png",
+    "stone_charm_fragment_b_v1.png"
+   ],
+   "title_ru": "Каменный оберег",
+   "title_en": "Stone Charm",
+   "split": "vertical (left / right)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Shield-shaped grey shrine-stone charm with an engraved border line, a sand-coloured eye motif and a round lapis inlay in the centre, worn edges."
+  },
+  {
+   "id": "bronze_bell",
+   "folder": "assets/artifacts/ruined_shrine/",
+   "full": "bronze_bell_full_v1.png",
+   "fragment_files": [
+    "bronze_bell_fragment_a_v1.png",
+    "bronze_bell_fragment_b_v1.png"
+   ],
+   "title_ru": "Бронзовый колокольчик",
+   "title_en": "Bronze Bell",
+   "split": "horizontal (top with loop / lower rim)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Small bronze temple bell with a hanging loop on top, two thin gold bands, a row of engraved dots, the round clapper visible under the rim, light green patina."
+  },
+  {
+   "id": "priest_seal",
+   "folder": "assets/artifacts/ruined_shrine/",
+   "full": "priest_seal_full_v1.png",
+   "fragment_files": [
+    "priest_seal_fragment_a_v1.png",
+    "priest_seal_fragment_b_v1.png"
+   ],
+   "title_ru": "Печать жреца",
+   "title_en": "Priest's Seal",
+   "split": "diagonal or vertical",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Round seal of dark basalt set in a beaded gold rim; a carved eye under a rising sun inlaid in gold."
+  },
+  {
+   "id": "stele_fragment",
+   "folder": "assets/artifacts/ruined_shrine/",
+   "full": "stele_fragment_full_v1.png",
+   "fragment_files": [
+    "stele_fragment_fragment_a_v1.png",
+    "stele_fragment_fragment_b_v1.png"
+   ],
+   "title_ru": "Обломок стелы",
+   "title_en": "Stele Fragment",
+   "split": "horizontal (relief / glyphs)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Broken upper part of a grey stone stele with a jagged broken top, a sun-disc relief and four rows of simple carved geometric glyphs (no real letters)."
+  },
+  {
+   "id": "ritual_bracelet",
+   "folder": "assets/artifacts/ruined_shrine/",
+   "full": "ritual_bracelet_full_v1.png",
+   "fragment_files": [
+    "ritual_bracelet_fragment_a_v1.png",
+    "ritual_bracelet_fragment_b_v1.png",
+    "ritual_bracelet_fragment_c_v1.png"
+   ],
+   "title_ru": "Ритуальный браслет",
+   "title_en": "Ritual Bracelet",
+   "split": "three arcs of the ring",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Gold bangle seen from the front as a ring, alternating carnelian and lapis cabochons in small gold settings, one engraved line along the band."
+  },
+  {
+   "id": "incense_vessel",
+   "folder": "assets/artifacts/ruined_shrine/",
+   "full": "incense_vessel_full_v1.png",
+   "fragment_files": [
+    "incense_vessel_fragment_a_v1.png",
+    "incense_vessel_fragment_b_v1.png",
+    "incense_vessel_fragment_c_v1.png"
+   ],
+   "title_ru": "Сосуд для благовоний",
+   "title_en": "Incense Vessel",
+   "split": "horizontal (lid / bowl / foot)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Bronze censer: domed pierced lid with a knob, wide bowl with a gold band and diamond ornament, stemmed foot; light patina."
+  },
+  {
+   "id": "altar_medallion",
+   "folder": "assets/artifacts/ruined_shrine/",
+   "full": "altar_medallion_full_v1.png",
+   "fragment_files": [
+    "altar_medallion_fragment_a_v1.png",
+    "altar_medallion_fragment_b_v1.png",
+    "altar_medallion_fragment_c_v1.png"
+   ],
+   "title_ru": "Алтарный медальон",
+   "title_en": "Altar Medallion",
+   "split": "horizontal thirds",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Large gold medallion with a hanging loop, raised eight-pointed star, dotted rim and a central carnelian cabochon."
+  },
+  {
+   "id": "shrine_idol",
+   "folder": "assets/artifacts/ruined_shrine/",
+   "full": "shrine_idol_full_v1.png",
+   "fragment_files": [
+    "shrine_idol_fragment_a_v1.png",
+    "shrine_idol_fragment_b_v1.png",
+    "shrine_idol_fragment_c_v1.png"
+   ],
+   "title_ru": "Идол святилища",
+   "title_en": "Shrine Idol",
+   "split": "horizontal (head / torso / legs and base)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Seated grey stone idol with a gold headdress, gold eyes, hands resting on the knees and a gold collar; weathered stone, calm expression."
+  },
+  {
+   "id": "stone_comb",
+   "folder": "assets/artifacts/overgrown_catacombs/",
+   "full": "stone_comb_full_v1.png",
+   "fragment_files": [
+    "stone_comb_fragment_a_v1.png",
+    "stone_comb_fragment_b_v1.png"
+   ],
+   "title_ru": "Каменный гребень",
+   "title_en": "Stone Comb",
+   "split": "vertical (left / right)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Sandstone comb with an arched back carved with a small turquoise-inlaid vine and a row of long even teeth; one tooth chipped."
+  },
+  {
+   "id": "copper_pendant",
+   "folder": "assets/artifacts/overgrown_catacombs/",
+   "full": "copper_pendant_full_v1.png",
+   "fragment_files": [
+    "copper_pendant_fragment_a_v1.png",
+    "copper_pendant_fragment_b_v1.png"
+   ],
+   "title_ru": "Медная подвеска",
+   "title_en": "Copper Pendant",
+   "split": "horizontal (top / bottom)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Teardrop copper pendant with a loop, embossed leaf with veins, strong green patina in the recesses."
+  },
+  {
+   "id": "burial_tablet",
+   "folder": "assets/artifacts/overgrown_catacombs/",
+   "full": "burial_tablet_full_v1.png",
+   "fragment_files": [
+    "burial_tablet_fragment_a_v1.png",
+    "burial_tablet_fragment_b_v1.png"
+   ],
+   "title_ru": "Погребальная табличка",
+   "title_en": "Burial Tablet",
+   "split": "horizontal (arch / text rows)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Arched grey stone tablet with a six-rayed star inside a carved ring and rows of simple carved signs; green moss on the lower corners."
+  },
+  {
+   "id": "carved_vessel",
+   "folder": "assets/artifacts/overgrown_catacombs/",
+   "full": "carved_vessel_full_v1.png",
+   "fragment_files": [
+    "carved_vessel_fragment_a_v1.png",
+    "carved_vessel_fragment_b_v1.png"
+   ],
+   "title_ru": "Резной сосуд",
+   "title_en": "Carved Vessel",
+   "split": "horizontal (neck / body)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Terracotta amphora with two loop handles and incised zigzag bands, slightly weathered."
+  },
+  {
+   "id": "vine_amulet",
+   "folder": "assets/artifacts/overgrown_catacombs/",
+   "full": "vine_amulet_full_v1.png",
+   "fragment_files": [
+    "vine_amulet_fragment_a_v1.png",
+    "vine_amulet_fragment_b_v1.png",
+    "vine_amulet_fragment_c_v1.png"
+   ],
+   "title_ru": "Амулет лозы",
+   "title_en": "Vine Amulet",
+   "split": "horizontal thirds",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Round bronze amulet with a hanging loop, wreathed by a vine of small emerald leaves, rhombic emerald in the centre."
+  },
+  {
+   "id": "fresco_fragment",
+   "folder": "assets/artifacts/overgrown_catacombs/",
+   "full": "fresco_fragment_full_v1.png",
+   "fragment_files": [
+    "fresco_fragment_fragment_a_v1.png",
+    "fresco_fragment_fragment_b_v1.png",
+    "fresco_fragment_fragment_c_v1.png"
+   ],
+   "title_ru": "Фрагмент фрески",
+   "title_en": "Fresco Fragment",
+   "split": "along existing cracks",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Irregular broken plaster fragment painted with a blue bird among green leaves between a red upper border and a blue lower border, fine cracks."
+  },
+  {
+   "id": "bone_clasp",
+   "folder": "assets/artifacts/overgrown_catacombs/",
+   "full": "bone_clasp_full_v1.png",
+   "fragment_files": [
+    "bone_clasp_fragment_a_v1.png",
+    "bone_clasp_fragment_b_v1.png",
+    "bone_clasp_fragment_c_v1.png"
+   ],
+   "title_ru": "Костяная застёжка",
+   "title_en": "Bone Clasp",
+   "split": "left plate / pin / right plate",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Ivory-coloured bone clasp: two oval plates carved with spirals, joined by a bronze pin with round ends."
+  },
+  {
+   "id": "ritual_bowl",
+   "folder": "assets/artifacts/overgrown_catacombs/",
+   "full": "ritual_bowl_full_v1.png",
+   "fragment_files": [
+    "ritual_bowl_fragment_a_v1.png",
+    "ritual_bowl_fragment_b_v1.png",
+    "ritual_bowl_fragment_c_v1.png"
+   ],
+   "title_ru": "Ритуальная чаша",
+   "title_en": "Ritual Bowl",
+   "split": "vertical thirds",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Shallow terracotta bowl on a small foot seen from the side, black meander band under the rim and a row of cream dots."
+  },
+  {
+   "id": "guardian_seal",
+   "folder": "assets/artifacts/overgrown_catacombs/",
+   "full": "guardian_seal_full_v1.png",
+   "fragment_files": [
+    "guardian_seal_fragment_a_v1.png",
+    "guardian_seal_fragment_b_v1.png",
+    "guardian_seal_fragment_c_v1.png"
+   ],
+   "title_ru": "Печать хранителя",
+   "title_en": "Guardian's Seal",
+   "split": "horizontal thirds",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Square turquoise-jade seal in a gold frame with gold corner studs, a stylised calm guardian face carved in the middle."
+  },
+  {
+   "id": "emerald_idol",
+   "folder": "assets/artifacts/overgrown_catacombs/",
+   "full": "emerald_idol_full_v1.png",
+   "fragment_files": [
+    "emerald_idol_fragment_a_v1.png",
+    "emerald_idol_fragment_b_v1.png",
+    "emerald_idol_fragment_c_v1.png"
+   ],
+   "title_ru": "Изумрудный идол",
+   "title_en": "Emerald Idol",
+   "split": "horizontal (crown and head / body / base)",
+   "prompt": "Single ancient archaeological find shown frontally as a carved relief object, orthographic front view, polished casual mobile puzzle game art matching the reference images (golden mask, courtyard seal, stone amulet): painterly but crisp, warm light from the upper left, soft ambient occlusion in carved grooves, rich natural colours (not neon), clean readable silhouette at 48 px, centred, whole object visible. Transparent background, no text, no letters or numbers, no frame, no plate, no cast shadow, no checkerboard. Object: Small idol carved from deep green emerald with a gold crown and collar, a carnelian on the chest, standing on a gold base; the most precious find of the game."
+  }
+ ]
+}

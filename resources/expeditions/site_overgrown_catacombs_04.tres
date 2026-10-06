@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_7kaot"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_8btdb"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/carved_vessel_full_v1.png" id="3_4kx7l"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="4_qxv3i"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_1ld5x"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_st25i"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_72f1j"]
+
+[sub_resource type="Resource" id="Resource_7kaot"]
+script = ExtResource("5_1ld5x")
+cell = Vector2i(1, 1)
+
+[sub_resource type="Resource" id="Resource_8btdb"]
+script = ExtResource("7_72f1j")
+cell = Vector2i(4, 4)
+
+[resource]
+script = ExtResource("6_st25i")
+id = &"overgrown_catacombs_04_site"
+goal = &"clear_site"
+title_ru = "Заросшие катакомбы 4 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Overgrown Catacombs 4 - Stone and Roots - site"
+artifact_id = &"carved_vessel"
+artifact_name_ru = "Резной сосуд"
+full_artifact_texture = ExtResource("3_4kx7l")
+objective_ru = "Расчистите участок: снимите весь грунт, разбейте завалы, срежьте корни"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1), Vector2i(7, 1)])
+stone_obstacles = Array[ExtResource("7_72f1j")]([SubResource("Resource_8btdb")])
+root_obstacles = Array[ExtResource("5_1ld5x")]([SubResource("Resource_7kaot")])
+piece_generation = ExtResource("4_qxv3i")
+expected_moves_min = 22
+expected_moves_max = 24
+hard_move_limit = 40
+game_scene_path = "res://scenes/screens/game_screen_site_overgrown_catacombs_04.tscn"

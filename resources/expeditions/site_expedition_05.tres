@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
+
+[ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="1_otja2"]
+[ext_resource type="Script" path="res://scripts/game/piece_definition.gd" id="2_1ywco"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/ancient_courtyard/guardian_figurine_full_v1.png" id="3_ph6ji"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_1.tres" id="4_4d7w8"]
+[ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="5_5dr6y"]
+[ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="6_wwtdt"]
+[ext_resource type="Script" path="res://scripts/game/stone_obstacle_definition.gd" id="7_uiv3f"]
+
+[resource]
+script = ExtResource("6_wwtdt")
+id = &"expedition_05_site"
+goal = &"clear_site"
+title_ru = "Древний двор 5 — Расчистка участка"
+card_title_ru = "Расчистка"
+debug_name = "Ancient Courtyard 5 - Tight Dig - site"
+artifact_id = &"guardian_figurine"
+artifact_name_ru = "Фигурка хранителя"
+full_artifact_texture = ExtResource("3_ph6ji")
+objective_ru = "Расчистите участок: снимите весь грунт"
+instruction_ru = "Собирайте линии через грунт и завалы — потом здесь начнутся раскопки."
+normal_soil_cells = Array[Vector2i]([Vector2i(2, 2), Vector2i(4, 2), Vector2i(5, 2), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3)])
+strong_soil_cells = Array[Vector2i]([Vector2i(3, 2)])
+piece_generation = ExtResource("4_4d7w8")
+expected_moves_min = 17
+expected_moves_max = 19
+hard_move_limit = 23
+game_scene_path = "res://scenes/screens/game_screen_site_expedition_05.tscn"

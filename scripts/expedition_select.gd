@@ -14,10 +14,12 @@ const CHAPTER_THREE_DETAIL := "res://scenes/screens/chapter_detail_03.tscn"
 
 
 func _ready() -> void:
+	AudioManager.play_music_track(&"menu")
 	%BackButton.pressed.connect(_back_to_menu)
 	chapter_one_button.pressed.connect(_open_chapter.bind(CHAPTER_ONE_DETAIL))
 	chapter_two_button.pressed.connect(_open_chapter.bind(CHAPTER_TWO_DETAIL))
 	chapter_three_button.pressed.connect(_open_chapter.bind(CHAPTER_THREE_DETAIL))
+	%DifficultyPicker.difficulty_changed.connect(func(_level: int) -> void: refresh_progress())
 	refresh_progress()
 
 
@@ -39,39 +41,51 @@ func _configure_chapter_button(
 	is_available: bool
 ) -> void:
 	var completed := _completed_count(chapter)
-	var total := chapter.expeditions.size()
-	var state := "Закрыто"
+	var total := chapter.dig_expeditions().size()
+	var state := tr("Закрыто")
 	if completed == total and total > 0:
-		state = "✓ Пройдено"
+		state = tr("Пройдено")
 	elif is_available:
-		state = "Открыто"
-	var reward_line := "\nНаграда: +%d монет" % chapter.completion_reward_coins if chapter.completion_reward_coins > 0 else ""
-	button.text = "%s\n%s\nПрогресс: %d / %d%s\n%s" % [
-		chapter.number_ru,
-		chapter.title_ru,
-		completed,
-		total,
+		state = tr("Открыто")
+	var reward_line := (
+		"\n" + tr("Награда: +%d монет") % chapter.completion_reward_coins
+		if FeatureFlags.SHOW_COINS and chapter.completion_reward_coins > 0
+		else ""
+	)
+	button.text = "%s\n%s\n%s%s\n%s" % [
+		tr(chapter.number_ru),
+		tr(chapter.title_ru),
+		tr("Находки: %d / %d") % [completed, total],
 		reward_line,
 		state,
 	]
 	button.disabled = not is_available
+	# The padlock badge (LockIcon) lives in the scene, inside every card.
+	var lock := button.get_node_or_null("LockIcon") as CanvasItem
+	if lock != null:
+		lock.visible = not is_available
+	# Completed chapters use the olive-accent card (theme variation).
+	button.theme_type_variation = &"ChapterCardDone" if completed == total and total > 0 else &"ChapterCard"
 
 
+## Finds dug up (site levels are steps on the way, not counted).
 func _completed_count(chapter: ChapterDefinition) -> int:
+	var completed := ProgressStore.completed_expeditions()
 	var count := 0
-	for expedition in chapter.expeditions:
-		if expedition != null and ProgressStore.is_expedition_completed(expedition.id):
+	for expedition in chapter.dig_expeditions():
+		if completed.has(expedition.id):
 			count += 1
 	return count
 
 
 func _is_chapter_complete(chapter: ChapterDefinition) -> bool:
-	return not chapter.expeditions.is_empty() and _completed_count(chapter) == chapter.expeditions.size()
+	var finds := chapter.dig_expeditions()
+	return not finds.is_empty() and _completed_count(chapter) == finds.size()
 
 
 func _back_to_menu() -> void:
-	get_tree().change_scene_to_file("res://scenes/app/main.tscn")
+	ScreenCache.change_to(get_tree(), "res://scenes/app/main.tscn")
 
 
 func _open_chapter(scene_path: String) -> void:
-	get_tree().change_scene_to_file(scene_path)
+	ScreenCache.change_to(get_tree(), scene_path)

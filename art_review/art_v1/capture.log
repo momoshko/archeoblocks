@@ -1,0 +1,5 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+OpenGL API 3.3.0 Core Profile Context 26.5.2.260413 - Compatibility - Using Device: ATI Technologies Inc. - Radeon RX 580 Series
+
+HINT piece=square_2 origin=(5, 6) class=PLAN_SURVIVES victory=false survives=true immediate_loss=false tray_complete=true depth=5 terminal=horizon continuation=123887 explored=194 planning_ms=330.23 cache=false refill=false fragments=0 artifact_hits=0 artifact_cells=0 excavation_hits=0 obstacle_hits=4 obstacles_destroyed=4 roots_hit=4 roots_destroyed=4 growth_prevented=false root_grew=false blocked=0 viability=12 lines=1 value=8569
+ART_V1_CAPTURE_OK moves=9 score=290

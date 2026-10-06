@@ -1,0 +1,105 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/difficulty_picker.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://mv74f567ipdn" path="res://assets/ui_art/icons/lock.png" id="icon_lock"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/medals/medal_bronze.png" id="medal_bronze"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/medals/medal_silver.png" id="medal_silver"]
+[ext_resource type="Texture2D" path="res://assets/ui_art/medals/medal_gold.png" id="medal_gold"]
+
+[node name="DifficultyPicker" type="VBoxContainer"]
+theme_override_constants/separation = 8
+script = ExtResource("1_script")
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Easy" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(0, 78)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"ChapterCard"
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Лёгкая"
+icon = ExtResource("medal_bronze")
+expand_icon = false
+
+[node name="LockIcon" type="TextureRect" parent="Buttons/Easy"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 34.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("icon_lock")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Medium" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(0, 78)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"ChapterCard"
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Средняя"
+icon = ExtResource("medal_silver")
+expand_icon = false
+
+[node name="LockIcon" type="TextureRect" parent="Buttons/Medium"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 34.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("icon_lock")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Hard" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(0, 78)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"ChapterCard"
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Сложная"
+icon = ExtResource("medal_gold")
+expand_icon = false
+
+[node name="LockIcon" type="TextureRect" parent="Buttons/Hard"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 34.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("icon_lock")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Description" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0.756863, 0.572549, 1)
+theme_override_font_sizes/font_size = 21
+text = "3 подсказки и отмены, тонкий грунт"
+horizontal_alignment = 1
+autowrap_mode = 3

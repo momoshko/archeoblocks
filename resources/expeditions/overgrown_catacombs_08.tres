@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ExpeditionDefinition" load_steps=24 format=3]
+[gd_resource type="Resource" script_class="ExpeditionDefinition" format=3]
 [ext_resource type="Script" path="res://scripts/game/expedition_definition.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/game/artifact_fragment_definition.gd" id="2"]
 [ext_resource type="Script" path="res://scripts/game/root_obstacle_definition.gd" id="3"]
@@ -9,6 +9,11 @@
 [ext_resource type="Resource" path="res://resources/pieces/large_l.tres" id="8"]
 [ext_resource type="Resource" path="res://resources/pieces/plus_5.tres" id="9"]
 [ext_resource type="Resource" path="res://resources/pieces/square_2.tres" id="10"]
+[ext_resource type="Resource" path="res://resources/config/pieces_chapter_3.tres" id="pg_chapter"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/ritual_bowl_full_v1.png" id="art_full"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/ritual_bowl_fragment_a_v1.png" id="art_fragment_a"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/ritual_bowl_fragment_b_v1.png" id="art_fragment_b"]
+[ext_resource type="Texture2D" path="res://assets/artifacts/overgrown_catacombs/ritual_bowl_fragment_c_v1.png" id="art_fragment_c"]
 [sub_resource type="Resource" id="FA"]
 script = ExtResource("2")
 id = &"ritual_bowl_a"
@@ -47,14 +52,10 @@ durability = 2
 script = ExtResource("4")
 cell = Vector2i(5,0)
 durability = 1
-[sub_resource type="Resource" id="S3"]
-script = ExtResource("4")
-cell = Vector2i(2,5)
-durability = 2
 [sub_resource type="Resource" id="S4"]
 script = ExtResource("4")
 cell = Vector2i(5,7)
-durability = 2
+durability = 1
 [resource]
 script = ExtResource("1")
 id = &"overgrown_catacombs_08"
@@ -62,15 +63,22 @@ title_ru = "Заросшие катакомбы 8 — Раскопки под к
 card_title_ru = "8 — Раскопки под корнями"
 debug_name = "Overgrown Catacombs 8 - Digging under Roots"
 artifact_id = &"ritual_bowl"
+restoration_stages = Array[StringName]([&"soil", &"shards", &"crust", &"patina"])
+restoration_shards = 5
 artifact_name_ru = "Ритуальная чаша"
 objective_ru = "Освободите три части ритуальной чаши"
 instruction_ru = "Сначала снимайте препятствие, затем удар линии дойдёт до грунта."
 normal_soil_cells = Array[Vector2i]([Vector2i(1,2), Vector2i(6,3), Vector2i(3,6)])
-strong_soil_cells = Array[Vector2i]([Vector2i(1,2), Vector2i(6,3), Vector2i(3,6)])
+strong_soil_cells = Array[Vector2i]([Vector2i(1, 2), Vector2i(6, 3)])
 artifact_fragments = Array[ArtifactFragmentDefinition]([SubResource("FA"), SubResource("FB"), SubResource("FC")])
-stone_obstacles = Array[StoneObstacleDefinition]([SubResource("S1"), SubResource("S2"), SubResource("S3"), SubResource("S4")])
+full_artifact_texture = ExtResource("art_full")
+fragment_textures = Array[Texture2D]([ExtResource("art_fragment_a"), ExtResource("art_fragment_b"), ExtResource("art_fragment_c")])
+stone_obstacles = Array[StoneObstacleDefinition]([SubResource("S1"), SubResource("S2"), SubResource("S4")])
 root_obstacles = Array[RootObstacleDefinition]([SubResource("R1"), SubResource("R2"), SubResource("R3"), SubResource("R4"), SubResource("R5"), SubResource("R6")])
 opening_piece_set = Array[PieceDefinition]([ExtResource("7"), ExtResource("5"), ExtResource("6")])
 curated_piece_sequence = Array[PieceDefinition]([ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("6"), ExtResource("7"), ExtResource("5"), ExtResource("9"), ExtResource("8"), ExtResource("6")])
-expected_moves_min = 30
-expected_moves_max = 42
+expected_moves_min = 28
+expected_moves_max = 40
+hard_move_limit = 50
+game_scene_path = "res://scenes/screens/game_screen_ch3_08.tscn"
+piece_generation = ExtResource("pg_chapter")
